@@ -1,0 +1,38 @@
+{
+  "name": "udn-newmedia-vue-components",
+  "version": "1.0.4",
+  "description": "Udn NewMedia Vue Components",
+  "main": "dist/udn-newmedia-vue-components.min.js",
+  "scripts": {
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udn-newmedia/udn-newmedia-vue-components.git"
+  },
+  "keywords": [
+    "Vue",
+    "Webpack",
+    "Node.js"
+  ],
+  "author": "waiting7777",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udn-newmedia/udn-newmedia-vue-components/issues"
+  },
+  "homepage": "https://github.com/udn-newmedia/udn-newmedia-vue-components#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "vue": "^2.5.2",
+    "vue-loader": "^13.3.0",
+    "vue-template-compiler": "^2.5.2",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "udn-newmedia-utils": "^1.0.8"
+  }
+}
