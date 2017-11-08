@@ -1,5 +1,7 @@
+[![NPM](https://nodei.co/npm/udn-newmedia-vue-components.png)](https://npmjs.org/package/udn-newmedia-vue-components)
+
 # udn-newmedia-vue-components
-Udn NewMedia Vue Components
+聯合報新媒體中心 vue.js 組件
 
 ## Install
 
@@ -12,6 +14,13 @@ $ npm install udn-newmedia-vue-components --save
 import 想用的 components，EX:
 
 ```js
+<template>
+	<App>
+		<Indicator color="#FFFFFF" />
+		<Quote text="引言" />
+	</App>
+</template>
+
 import {Indicator, Content, Quote} from 'udn-newmedia-vue-components'
 
 new Vue({
