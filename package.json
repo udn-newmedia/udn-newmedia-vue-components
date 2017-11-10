@@ -4,7 +4,8 @@
   "description": "Udn NewMedia Vue Components",
   "main": "dist/udn-newmedia-vue-components.min.js",
   "scripts": {
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
     "udn-newmedia-utils": "^1.0.8"
   }
 }
