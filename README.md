@@ -40,8 +40,13 @@ new Vue({
 
 	* [color] 進度條顏色 預設: #AA4444
 
++ HeadBar
+	
+	###### - porps
+	*[BgColor] 選單棒背景色 預設: #000
+	*[MenuSlideFrom] 手機版選單滑入方向 預設:上面滑下來 value: top, left , right, bottom
 
-+ Content
++ ContentContainer
 
 	用於包內文，內含內文行高等CSS設定
     
