@@ -42,10 +42,10 @@ new Vue({
 
 + HeadBar
 	
-	###### - porps
-	*[BgColor] 選單棒背景色 預設: #000
-	
-	*[MenuSlideFrom] 手機版選單滑入方向 預設:上面滑下來 value: top, left , right, bottom
+    ##### - Props
+
+	* [BgColor] 頁頭背景色 預設: #000
+  	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
 + ContentContainer
 
