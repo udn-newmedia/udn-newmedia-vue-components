@@ -7,5 +7,5 @@ import Logo from '../components/Logo.vue'
 import Quote from '../components/Quote.vue'
 import Relate from '../components/Relate.vue'
 import Share from '../components/Share.vue'
-
-export { ContentContainer, Editor, FBComment, Foot, Indicator, Logo, Quote, Relate, Share }
+import HeadBar from '../components/Header.vue'
+export { ContentContainer, Editor, FBComment, Foot, Indicator, Logo, Quote, Relate, Share, HeadBar, }
