@@ -45,6 +45,6 @@ export default {
         float: left;
         cursor: pointer;
         margin-left: 5px;
-        margin-top: -1px;
+        margin-top: 1px;
     }
 </style>
