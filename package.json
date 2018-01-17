@@ -36,6 +36,9 @@
   "dependencies": {
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
-    "udn-newmedia-utils": "^1.0.8"
+    "udn-newmedia-utils": "^1.0.8",
+    "d3": "^4.11.0",
+    "hammerjs": "^2.0.8",
+    "lottie-web": "^5.0.5"    
   }
 }
