@@ -12,7 +12,9 @@ module.exports = {
         umdNamedDefine: true
     },
     externals: {
-        Utils: 'udn-newmedia-utils'
+        Utils: 'udn-newmedia-utils',
+        lottieWeb: 'lottie-web',
+        d3: 'd3'
     },
     module: {
         loaders: [

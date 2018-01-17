@@ -20,10 +20,8 @@
 import Utils from 'udn-newmedia-utils'
 
 // let title = document.title
-if (process.browser) {
-  var isMob = Utils.detectMob(10)
-  var platform = (isMob === true) ? 'Mob' : 'PC'
-}
+var isMob = Utils.detectMob(10)
+var platform = (isMob === true) ? 'Mob' : 'PC'
 
 export default {
   name: 'embededvideo',
