@@ -8,4 +8,9 @@ import Quote from '../components/Quote.vue'
 import Relate from '../components/Relate.vue'
 import Share from '../components/Share.vue'
 import HeadBar from '../components/Header.vue'
-export { ContentContainer, Editor, FBComment, Foot, Indicator, Logo, Quote, Relate, Share, HeadBar, }
+import Bodymovin from '../components/Bodymovin.vue'
+import EmbededVideo from '../components/EmbededVideo.vue'
+import ImageContain from '../components/ImageContain.vue'
+import PhotoComparison from '../components/PhotoComparison.vue'
+
+export { ContentContainer, Editor, FBComment, Foot, Indicator, Logo, Quote, Relate, Share, HeadBar, Bodymovin, EmbededVideo, ImageContain, PhotoComparison}

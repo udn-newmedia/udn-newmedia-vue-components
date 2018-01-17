@@ -4,9 +4,7 @@
 
 <script>
 
-if (process.browser) {
-  var bodymovin = require('lottie-web')
-}
+import * as bodymovin from 'lottie-web'
 
 export default {
   name: 'Bodymovin',
