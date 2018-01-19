@@ -1,7 +1,8 @@
-[![NPM](https://nodei.co/npm/udn-newmedia-vue-components.png)](https://npmjs.org/package/udn-newmedia-vue-components)
 
 # udn-newmedia-vue-components
 聯合報新媒體中心 vue.js 組件
+
+[![github version](https://img.shields.io/github/release/udn-newmedia/udn-newmedia-vue-components.svg)](https://github.com/udn-newmedia/udn-newmedia-vue-components/releases/) [![npm version](https://img.shields.io/npm/v/udn-newmedia-vue-components.svg)](https://www.npmjs.com/package/taiwan-vue-components) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/udn-newmedia/udn-newmedia-vue-components/pulls) [![code with hearth by Udn Newmedia Eng.](https://img.shields.io/badge/Udn%20Newmedia-Eng.-brightgreen.svg)](https://github.com/udn-newmedia)
 
 ## Install
 
