@@ -13,19 +13,24 @@ module.exports = {
     },
     externals: {
         Utils: 'udn-newmedia-utils',
-        lottieWeb: 'lottie-web',
-        d3: 'd3'
+        // lottieWeb: 'lottie-web',
+        // d3: 'd3'
     },
     module: {
         loaders: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
+                include: __dirname,
+                exclude: /node_modules/,
             },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'style!less!css'
             }
         ]
     },

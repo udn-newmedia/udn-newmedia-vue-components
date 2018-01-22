@@ -28,10 +28,10 @@
     "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
-    "vue": "^2.5.2",
-    "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.8.1"
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
   },
   "dependencies": {
     "node-sass": "^4.6.0",

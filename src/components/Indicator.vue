@@ -26,7 +26,7 @@ export default {
             this.progress = ((currentH / totalH) * 100).toFixed(2)
             if(Math.floor(this.progress/10) > this.readProgress) {
                 for(var i = this.readProgress + 1; i <= Math.floor(this.progress / 10); i++) {
-                    console.log(" [page read " + (i*10) + "%]")
+                    console.log("[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [page read " + (i*10) + "%]")
                     ga("send", {
                         "hitType": "event",
                         "eventCategory": "read",
@@ -64,18 +64,18 @@ export default {
     }
     @media screen and (max-width: 1024px){
         #indicator{
-            height: 4px;
+            height: 2px;
         }
         #indicator-bar{
-            height: 4px;
+            height: 2px;
         }
     }
     @media screen and (min-width: 1025px){
         #indicator{
-            height: 6px;
+            height: 2px;
         }
         #indicator-bar{
-            height: 6px;
+            height: 2px;
         }
     }
 </style>

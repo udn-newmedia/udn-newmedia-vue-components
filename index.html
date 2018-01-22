@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel=stylesheet href=https://udn.com/upf/newmedia/css/font-awesome.min.css>
+    <link rel=stylesheet href=https://udn.com/upf/newmedia/css/bootstrap.min.css>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.min.css" /> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://udn.com/upf/newmedia/js/jquery.fullPage.min.js"></script> -->
+    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="./dist/udn-newmedia-vue-components.min.js"></script>
+
+    <!-- ours google analytic -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-83853620-2', 'auto');
+        ga('create', 'UA-19660006-1', 'auto', {'name' : 'udn'});
+        ga('create', 'UA-44955675-22', 'auto', {'name' : 'theme'});
+        ga('send', 'pageview');
+        ga('udn.send', 'pageview');
+        ga('theme.send', 'pageview');
+        ga('udn.send', 'event', '圖表看時事', 'view', '圖解新聞');
+    </script>
+    <style>
+        html, body, #app{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js?t-1#xfbml=1&version=v2.7&appId=1010324812347164";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="app">
+        <Head-Bar Menu-Slide-From="top"></Head-Bar>
+        <Share></Share>
+    </div>
+    <script>
+        
+        var app = new Vue({
+            el: '#app'
+        })
+        
+
+    </script>
+</body>
+</html>
