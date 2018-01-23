@@ -1,7 +1,7 @@
 <template>
     <header id="head-bar" :style="{top: top+'px',backgroundColor: BgColor}">
         <div id="icon">
-            <a href="./index"><img src="https://udn.com/upf/newmedia/image/udn_logo_circle.png" title="聯合報"></a>
+            <a href="./index"><i class="udn-icon udn-icon-logo"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection}">
             <slot></slot>
@@ -105,10 +105,11 @@ export default {
     top: 0;
 }
 
-#icon img {
-    width: 36px;
-    margin-top: -3px;
-    margin-left: 3px;
+#icon i.udn-icon{
+    color: #FFFFFF;
+    font-size: 36px;
+    margin-top: 7px;
+    margin-left: 7px;
     z-index: 30;
 }
 

@@ -1,19 +1,31 @@
 <template>
-    <div id="report" class="gray-back">
+    <div id="report" class="gray-back" :style="{color: color}">
         <div>
             <h6>{{ title }}</h6>
             <div class="row">
                 <div class="col-sm-6 col-md-3">
-                    <slot name="relate-1"></slot>
+                    <a :href="href1" target="_blank">
+                        <img :src="img1" />
+                        <p :style="{color: color}">{{text1}}</p>
+                    </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <slot name="relate-2"></slot>
+                    <a :href="href2" target="_blank">
+                        <img :src="img2" />
+                        <p :style="{color: color}">{{text2}}</p>
+                    </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <slot name="relate-3"></slot>
+                    <a :href="href3" target="_blank">
+                        <img :src="img3" />
+                        <p :style="{color: color}">{{text3}}</p>
+                    </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <slot name="relate-4"></slot>
+                    <a :href="href4" target="_blank">
+                        <img :src="img4" />
+                        <p :style="{color: color}">{{text4}}</p>
+                    </a>
                 </div>
             </div>
         </div>
@@ -22,36 +34,44 @@
 
 <script>
 export default {
-    props: ['title'],
+    props: ['title', 'color', 'href1', 'img1', 'text1', 'href2', 'img2', 'text2', 'href3', 'img3', 'text3', 'href4', 'img4', 'text4'],
 }
 </script>
 
 <style scoped>
     h6 {
         font-size: 17px;
-        color: #434242;
         font-weight: bold;
+    }
+    #report{
+        padding: 50px 0;
+        border-top: 1px solid #363434;
+        border-bottom: 1px solid #363434;
+        color: #363434;
     }
     #report p{
         font-size: 16px;
+        font-weight: bold;
     }
     #report a {
-        color: #000000;
+        color: #363434;
+        text-decoration: none;
+    }
+    #report a:hover{
         text-decoration: none;
     }
     #report img:hover{
         opacity: .5;
         transition: opacity .2s ease;
-    }
-    #report a:hover { 
-        text-decoration: underline;
-    }
-        
+    }   
     #report .col-sm-6 img{
         width: 100%;
     }
     @media screen and (max-width: 767px){
-         #report .col-sm-6{
+        #report{
+            padding: 30px 0;
+        }
+        #report .col-sm-6{
             clear: both;
         }
         .people-contain img{
@@ -78,6 +98,10 @@ export default {
             width: 100%;
             height: auto;
         }
+        #report p{
+            margin-top: 10px;
+            margin-bottom: 32px;
+        }
     }
     @media screen and (min-width: 1025px){
         .row{
@@ -87,6 +111,9 @@ export default {
         #report .col-md-3{
             padding-left: 10px;
             padding-right: 10px;
+        }
+        #report p{
+            margin-top: 10px;
         }
     }
 </style>
