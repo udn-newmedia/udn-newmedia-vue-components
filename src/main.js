@@ -11,6 +11,7 @@ import Page from './components/Page.vue'
 import Question from './components/Question.vue'
 import Quote from './components/Quote.vue'
 import Relate from './components/Relate.vue'
+import SectionBg from './components/SectionBg.vue'
 import SectionFixedBg from './components/SectionFixedBg.vue'
 import Share from './components/Share.vue'
 
@@ -30,6 +31,7 @@ const UdnComponent = {
         Vue.component('Question', Question)
         Vue.component('Quote', Quote)
         Vue.component('Relate', Relate)
+        Vue.component('SectionBg', SectionBg)
         Vue.component('SectionFixedBg', SectionFixedBg)
         Vue.component('Share', Share)
 
@@ -38,7 +40,7 @@ const UdnComponent = {
 
 export default UdnComponent
 
-export { ColumnThree, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, Question, Quote, Relate, SectionFixedBg, Share }
+export { ColumnThree, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, Question, Quote, Relate, SectionBg, SectionFixedBg, Share }
 
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(UdnComponent)
