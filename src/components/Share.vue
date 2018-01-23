@@ -14,6 +14,7 @@
 import Utils from 'udn-newmedia-utils'
 
 export default {
+    name: 'Share',
     props: ['href'],
     methods: {
         lineShare: function() {

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+    name: 'FbComment',
     props: ['href']
 }
 </script>

@@ -34,6 +34,7 @@
 
 <script>
 export default {
+    name: 'Relate',
     props: ['title', 'color', 'href1', 'img1', 'text1', 'href2', 'img2', 'text2', 'href3', 'img3', 'text3', 'href4', 'img4', 'text4'],
 }
 </script>

@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'Cover',
     props: ['title', 'subtitle', 'bg', 'bgweb', "position"],
     data: function(){
         return{

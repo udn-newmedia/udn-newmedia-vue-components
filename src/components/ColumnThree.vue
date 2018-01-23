@@ -15,7 +15,7 @@
 
 <script>
 export default {
-    name: '3column',
+    name: 'ColumnThree',
     props: ['img1', 'img2', 'img3', 'imgweb1', 'imgweb2', 'imgweb3', 'imgsay'],
     computed: {
       imgRWD1: function(){
