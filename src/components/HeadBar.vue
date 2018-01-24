@@ -30,13 +30,11 @@
 </template>
 
 <script>
-import Logo from './Logo.vue';
 
 export default {
 
     name: 'HeadBar',
     props: ['background-color', 'MenuSlideFrom', 'color'],
-    components: { Logo },
     data: function() {
         return {
             top: 0,
