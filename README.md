@@ -40,17 +40,17 @@ new Vue({
 + Indicator
 
 	頁面上方進度條
-
+`
 	<Indicator color="#FF0000"></Indicator>
-
+`
 	###### - Props
 
 	* [color] 進度條顏色 預設: #AA4444
 
 + Head-Bar
-	
+`	
 	<Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
-
+`
     ##### - Props
 
 	* [BgColor] 頁頭背景色 預設: #000
@@ -59,9 +59,9 @@ new Vue({
 + Cover
 
 	封面
-
+`
 	<Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="middle"></Cover>
-
+`
 	##### Props
 
 	* [title] 大標
@@ -73,9 +73,9 @@ new Vue({
 + Content-Container
 
 	用於包內文，內含內文行高等CSS設定
-
+`
 	<Content-Container background-color="#FFFFFF">
-    
+`  
     ##### - Props
     
     * [background-color] 區塊背景色 預設: 無
@@ -83,9 +83,9 @@ new Vue({
 + Column-Two
 
 	2格圖片排列
-
+`
 	<Column-Two imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg"></Column-Two>
-
+`
 	##### - Props
 
 	* [img1~2] 圖片1~2
@@ -94,9 +94,9 @@ new Vue({
 + Column-Three
 
 	3格圖片排列
-
+`
 	<Column-Three imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" img3="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg" imgweb3="./static/web/bg_wang.jpg"></Column-Three>
-
+`
 	##### - Props
 
 	* [img1~3] 圖片1~3
@@ -105,9 +105,9 @@ new Vue({
 + Quote
 
 	內文引言區塊，內含引言CSS設定
-
+`
 	<Quote text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"/>
-    
+`  
     ##### - Props
 
 	* [text] 引言內文
@@ -118,9 +118,9 @@ new Vue({
 + Youtube
 
 	youtube嵌入
-
+`
 	<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A"></Youtube>
-
+`
 	##### - Props
 
 	* [src] 連結網址
@@ -128,9 +128,9 @@ new Vue({
 + Section-Fixed-Bg
 
 	滾動視差過場
-
+`
 	<Section-Fixed-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
-
+`
 	##### - Props
 
 	* [text] 過場文字
@@ -141,9 +141,9 @@ new Vue({
 + Section-Bg
 
 	滿版圖過場
-
+`
 	<Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
-
+`
 	##### - Props
 
 	* [bg] 手機圖
@@ -178,14 +178,14 @@ new Vue({
 + Relate
 
 	延伸閱讀區塊，內含CSS設定
-
+`
 	<Relate title="延伸閱讀" color="#363434" 
 		href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
 		href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
 		href3="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img3="./static/web/bg_wang.jpg" text3="兒少發展帳戶推動3個月 申請率25%" 
 		href4="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img4="./static/web/bg_wang.jpg" text4="流沙中年 棄6萬月新顧爸媽，我在貧窮線下度日" > 
 	</Relate>
-    
+`
     ##### - Props
     
     * [title] 延伸閱讀
@@ -197,9 +197,9 @@ new Vue({
 + Share
 
 	FB and Line 分享區塊。
-
+`
 	<Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
-    
+`    
     ##### - Props
     
     * [href] 分享用網址 (必填)
@@ -207,9 +207,9 @@ new Vue({
 + Fb-Comment
 
 	FB 留言 plugin。
-
+`
 	<Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
-    
+`
     ##### - Props
     
     * [href] 分享用網址 (必填)
@@ -217,9 +217,9 @@ new Vue({
 + Foot
 
 	頁腳
-
+`
 	<Foot background-color="#FFFFFF"></Foot>
-
+`
 	##### - Props
 
 	* [background-color] 區塊背景色 預設: 無
@@ -301,19 +301,20 @@ new Vue({
 + Page
 
 	開啟滿版滾動，所有的版面都要放在裡面。
-
+`
     <Page>
         <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
         <Page-Intro fontcolor="#fff" Bg-Color="#000"></Page-Intro>
         <Page-Card Video-Src='static/video.mp4'></Page-Card>
-    </Page>	
+    </Page>
+`	
 
 + PageArrow
 
 	向下提示箭頭。
 
 	注意：要放在 <Page></Page> 外面
-
+`
 	<div id="app">
 		<Page>
 			<Page1>
@@ -322,6 +323,7 @@ new Vue({
 		</Page>
 		<Page-Arrow src="./static/ic-keyboard-arrow-down-white-24-px@3x.png"/>
 	</div>
+`
 
 	##### - Props
 
@@ -330,9 +332,9 @@ new Vue({
 + PageIntro
 
 	滿版標題Cover
-
+`
 	<Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
-
+`
 	##### Props
 
 	* [title] 大標
@@ -345,11 +347,11 @@ new Vue({
 + PageCard
 
 	滿版影片卡片，影片說明請用 <p></p>
-
+`
     <Page-Card Video-Src='static/video.mp4'>
         <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
     </Page-Card>
-
+`
     ##### Props
 
     * [Video-Src] 影片來源
