@@ -1,5 +1,5 @@
 <template>
-    <div class="section pageCover">
+    <div class="section">
         <div id="cover" :style="{backgroundImage: 'url(' + bgRWD + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
             <div id="title-contain">
                 <h1 :style='{color: fontcolor}'>{{title}}</h1>
