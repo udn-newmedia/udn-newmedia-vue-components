@@ -19,21 +19,6 @@ export default {
   }
 }
 </script>
-<style lang='scss'>
-	.pageIntro{
-		.fp-tableCell{
-			padding-top: 20%;
-			vertical-align: top;
-		}
-	}
-    @media screen and (min-width: 1024px){
-		.pageIntro{
-			.fp-tableCell{
-				padding-top: 10%;
-			}
-		}
-    }	
-</style>
 <style lang="scss" scoped>
     h2{
         text-align: left;

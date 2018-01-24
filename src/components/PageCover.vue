@@ -1,5 +1,5 @@
 <template>
-    <div class="section">
+    <div class="section pageCover">
         <div id="cover" :style="{backgroundImage: 'url(' + bgRWD + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
             <div id="title-contain">
                 <h1 :style='{color: fontcolor}'>{{title}}</h1>
@@ -44,7 +44,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang='scss'>
     #title-contain{
         padding: 20px 20px 20px 8.333%;
     }

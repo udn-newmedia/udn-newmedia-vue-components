@@ -1,7 +1,7 @@
 <template>
     <div class="videocontainer" id="thevideo">
         <div class="video-contain" :style="{backgroundColor: backgroundColor}">
-            <video id="introVideo" preload="metadata" :src="source" :poster="videoPoster" :muted="isMuted" playsinline controls></video>
+            <video id="introVideo" preload="metadata" :src="source" :poster="videoPoster" :muted="isMuted" playsinline :controls="useControls" @click='handle_clickVideo'></video>
             <div class="video-control">
               <div class="progress">
                 <div id="progress-bar" class="progress-bar progress-bar-striped" ref="progressbar"></div>
@@ -31,7 +31,7 @@ export default {
   data: function () {
     return {
       progress: 0,
-      getProgressTimer: null
+      getProgressTimer: null,
     }
   },
   computed: {
@@ -46,6 +46,13 @@ export default {
         return true
       } else {
         return false
+      }
+    },
+    useControls: function() {
+      if(platform === 'Mob'){
+        return false
+      } else {
+        return true
       }
     }
   },
@@ -134,6 +141,14 @@ export default {
       thisvideo.currentTime = 0
       document.getElementById('progress-bar').style.width = 0
       thisvideo.play()
+    },
+    handle_clickVideo: function() {
+      const thisvideo = document.getElementById('introVideo')
+      if(thisvideo.paused){
+        thisvideo.play()
+      } else{
+        thisvideo.pause()
+      }
     }
   }
 }
@@ -143,6 +158,7 @@ export default {
 
 .videocontainer {
     width: 100%;
+    margin-bottom: 50px;
     z-index: 1;
 }
 
@@ -239,7 +255,8 @@ video{
 
 @media screen and (min-width: 1024px){
     .videocontainer{
-        width: 955px;
+        max-width: 880px;
+        margin-bottom: 20px;
     }
 }
 </style>

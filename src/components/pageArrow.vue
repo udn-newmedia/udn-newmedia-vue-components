@@ -1,6 +1,6 @@
 <template>
 	<div class="arrow" @click='nextPage'>
-		<span class="hint">往下滑動</span>
+		<span class="arrowHint">往下滑動</span>
 		<img class="arrowImg" :src="src" alt="往下滑動" title="往下滑動">
 	</div>
 </template>
@@ -20,7 +20,7 @@ export default {
   methods: {
   	nextPage: _throttle(function() {
   		$.fn.fullpage.moveSectionDown();
-  	}, 777)
+  	}, 1000)
   }
 }
 </script>
@@ -39,7 +39,7 @@ export default {
 		align-items: center;
 		cursor: pointer;
 	}
-	.hint{
+	.arrowHint{
 		text-align: center;
 		font-size: 16px;
 		letter-spacing: normal;
@@ -60,4 +60,9 @@ export default {
 			transform: translate(0, 5px)
 		}
 	}
+    @media screen and (min-width: 1025px){
+		.arrow{
+			bottom: 40px;
+		}
+    }	
 </style>

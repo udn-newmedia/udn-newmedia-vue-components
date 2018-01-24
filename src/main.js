@@ -17,6 +17,7 @@ import Share from './components/Share.vue'
 import PageArrow from './components/pageArrow.vue'
 import PageCover from './components/PageCover.vue'
 import PageIntro from './components/PageIntro.vue'
+import PageCard from './components/PageCard.vue'
 
 const UdnComponent = {
     install: function(Vue){
@@ -40,6 +41,7 @@ const UdnComponent = {
         Vue.component('PageArrow', PageArrow)
         Vue.component('PageCover', PageCover)
         Vue.component('PageIntro', PageIntro)
+        Vue.component('PageCard', PageCard)
 
     }
 }
@@ -54,6 +56,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 if (typeof window !== 'undefined' && window.Vue && typeof $ !== 'undefined' && typeof $.fn.fullpage !== 'undefined'){
     $(document).ready(function(){
-        $('#page').fullpage({})
+        console.log('Page!')
     })
 }
