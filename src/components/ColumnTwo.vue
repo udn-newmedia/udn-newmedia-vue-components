@@ -6,17 +6,14 @@
       <div class="col-md-6 right">
         <img :src="imgRWD2">
       </div>
-      <div class="col-md-12">
-        <img :src="imgRWD3">
-      </div>
       <div class="img-say">{{imgsay}}</div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'ColumnThree',
-    props: ['img1', 'img2', 'img3', 'imgweb1', 'imgweb2', 'imgweb3', 'imgsay'],
+    name: 'ColumnTwo',
+    props: ['img1', 'img2', 'imgweb1', 'imgweb2', 'imgsay'],
     computed: {
       imgRWD1: function(){
         if(window.innerWidth <= 768){
@@ -32,14 +29,6 @@ export default {
         }
         else{
             return this.imgweb2
-        }
-      },
-      imgRWD3: function(){
-        if(window.innerWidth <= 768){
-            return this.img3
-        }
-        else{
-            return this.imgweb3
         }
       }
     }
@@ -60,20 +49,12 @@ export default {
       margin-top: 15px;
       padding: 0;
     }
-    .col-md-12{
-      margin-top: 15px;
-      padding: 0;
-    }
     .img-say{
       font-size: 15px;
     }
   }
   @media screen and (min-width: 768px) and (max-width: 1024px){
     .col-md-6{
-      margin-top: 15px;
-      padding: 0;
-    }
-    .col-md-12{
       margin-top: 15px;
       padding: 0;
     }
@@ -85,10 +66,6 @@ export default {
     .right{
       padding-right: 0;
     }
-    .col-md-12{
-      padding: 0;
-      margin-top: 30px;
-    }  
   }
   
 </style>
