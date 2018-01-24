@@ -14,6 +14,8 @@ import Relate from './components/Relate.vue'
 import SectionBg from './components/SectionBg.vue'
 import SectionFixedBg from './components/SectionFixedBg.vue'
 import Share from './components/Share.vue'
+import PageArrow from './components/pageArrow.vue'
+import PageCover from './components/PageCover.vue'
 
 const UdnComponent = {
     install: function(Vue){
@@ -34,6 +36,8 @@ const UdnComponent = {
         Vue.component('SectionBg', SectionBg)
         Vue.component('SectionFixedBg', SectionFixedBg)
         Vue.component('Share', Share)
+        Vue.component('PageArrow', PageArrow)
+        Vue.component('PageCover', PageCover)
 
     }
 }

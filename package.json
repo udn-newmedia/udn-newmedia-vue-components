@@ -34,11 +34,13 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "node-sass": "^4.6.0",
-    "sass-loader": "^6.0.6",
-    "udn-newmedia-utils": "^1.0.8",
     "d3": "^4.11.0",
     "hammerjs": "^2.0.8",
-    "lottie-web": "^5.0.5"
+    "lodash.throttle": "^4.1.1",
+    "lottie-web": "^5.0.5",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "udn-newmedia-utils": "^1.0.8",
+    "webpack-dev-server": "^2.11.1"
   }
 }

@@ -1,19 +1,25 @@
 <template>
-  <div id="page">
-        <div class="section">Some section</div>
-        <div class="section">Some section</div>
-        <div class="section">Some section</div>
-        <div class="section">Some section</div>
-  </div>
+	<div id='page'>
+		<slot></slot>
+	</div>
 </template>
 
 <script>
 export default {
-    name: 'page',
+
+  name: 'Page',
+
+  data () {
+    return {
+
+    }
+  },
+  mounted() {
+  
+  }
 }
 </script>
 
-<style scoped>
-    
-</style>
+<style lang="scss" scoped>
 
+</style>
