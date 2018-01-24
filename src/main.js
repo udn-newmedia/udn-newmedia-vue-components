@@ -16,6 +16,7 @@ import SectionFixedBg from './components/SectionFixedBg.vue'
 import Share from './components/Share.vue'
 import PageArrow from './components/pageArrow.vue'
 import PageCover from './components/PageCover.vue'
+import PageIntro from './components/PageIntro.vue'
 
 const UdnComponent = {
     install: function(Vue){
@@ -38,6 +39,7 @@ const UdnComponent = {
         Vue.component('Share', Share)
         Vue.component('PageArrow', PageArrow)
         Vue.component('PageCover', PageCover)
+        Vue.component('PageIntro', PageIntro)
 
     }
 }
