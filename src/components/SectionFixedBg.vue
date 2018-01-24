@@ -87,5 +87,24 @@ export default {
         z-index: -1;
         transition: opacity 0.7s ease;
     }
+
+    @media screen and (max-width: 767px){
+        .fix-text{
+            padding: 0 20px;
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px){
+        .fix-text{
+            padding: 0 100px;
+        }
+    }
+    
+    @media screen and (min-width: 1025px){
+        .fix-text{
+            font-size: 40px;
+            font-weight: bold;
+        }
+    }
     
 </style>

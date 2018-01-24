@@ -37,28 +37,72 @@ new Vue({
 
 	頁面上方進度條
 
+	<Indicator color="#FF0000"></Indicator>
+
 	###### - Props
 
 	* [color] 進度條顏色 預設: #AA4444
 
-+ HeadBar
++ Head-Bar
 	
+	<Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
+
     ##### - Props
 
 	* [BgColor] 頁頭背景色 預設: #000
   	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
-+ ContentContainer
++ Cover
+
+	封面
+
+	<Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="middle"></Cover>
+
+	##### Props
+
+	* [title] 大標
+	* [subtitle] 副標
+	* [bg] 手機板封面
+	* [bgweb] 網頁版封面
+	* [position] 標題位置 有 top middle bottom center 4種
+
++ Content-Container
 
 	用於包內文，內含內文行高等CSS設定
+
+	<Content-Container background-color="#FFFFFF">
     
     ##### - Props
     
     * [background-color] 區塊背景色 預設: 無
 
++ Column-Two
+
+	2格圖片排列
+
+	<Column-Two imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg"></Column-Two>
+
+	##### - Props
+
+	* [img1~2] 圖片1~2
+	* [imgsay] 圖說
+
++ Column-Three
+
+	3格圖片排列
+
+	<Column-Three imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" img3="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg" imgweb3="./static/web/bg_wang.jpg"></Column-Three>
+
+	##### - Props
+
+	* [img1~3] 圖片1~3
+	* [imgsay] 圖說
+
 + Quote
 
 	內文引言區塊，內含引言CSS設定
+
+	<Quote text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"/>
     
     ##### - Props
 
@@ -66,6 +110,50 @@ new Vue({
   	* [refer] 引言者
   	* [color] 引言文字顏色 預設:#888888
   	* [border-color] 引言框顏色
+
++ Youtube
+
+	youtube嵌入
+
+	<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A"></Youtube>
+
+	##### - Props
+
+	* [src] 連結網址
+
++ Section-Fixed-Bg
+
+	滾動視差過場
+
+	<Section-Fixed-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
+
+	##### - Props
+
+	* [text] 過場文字
+	* [bg] 手機圖
+	* [bgweb] 網頁圖
+	* [position] 文字位置 有 center 跟 bottom 兩種
+
++ Section-Bg
+
+	滿版圖過場
+
+	<Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
+
+	##### - Props
+
+	* [bg] 手機圖
+	* [bgweb] 網頁圖
+	* [imgsay] 圖說
+
++ Question
+
+	問卷問題
+
+	##### - Props
+
+	* [href] 連結位置
+	* [text] 文字
 
 + Editor
 	
@@ -86,22 +174,37 @@ new Vue({
 + Relate
 
 	延伸閱讀區塊，內含CSS設定
+
+	<Relate title="延伸閱讀" color="#363434" 
+		href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
+		href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
+		href3="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img3="./static/web/bg_wang.jpg" text3="兒少發展帳戶推動3個月 申請率25%" 
+		href4="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img4="./static/web/bg_wang.jpg" text4="流沙中年 棄6萬月新顧爸媽，我在貧窮線下度日" > 
+	</Relate>
     
     ##### - Props
     
     * [title] 延伸閱讀
+	* [color] 文字顏色
+	* [href1~4] 連結 1~4
+	* [img1~4] 圖片 1~4
+	* [text1~4] 文字 1~4
 
 + Share
 
 	FB and Line 分享區塊。
+
+	<Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
     
     ##### - Props
     
     * [href] 分享用網址 (必填)
 
-+ FBComment
++ Fb-Comment
 
 	FB 留言 plugin。
+
+	<Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
     
     ##### - Props
     
@@ -110,6 +213,8 @@ new Vue({
 + Foot
 
 	頁腳
+
+	<Foot background-color="#FFFFFF"></Foot>
 
 	##### - Props
 

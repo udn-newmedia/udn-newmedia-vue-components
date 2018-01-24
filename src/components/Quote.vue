@@ -42,4 +42,13 @@ export default {
             font-size: 26px;
         }
     }
+    @media screen and (min-width: 1024px){
+        .quote-contain {
+            padding: 50px;
+            min-height: 220px;
+        }
+        .quote-ref{
+            font-size: 17px;
+        }
+    }
 </style>

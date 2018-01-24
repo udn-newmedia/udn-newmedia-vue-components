@@ -1,4 +1,5 @@
 import ColumnThree from './components/ColumnThree.vue'
+import ColumnTwo from './components/ColumnTwo.vue'
 import Content from './components/Content.vue'
 import Cover from './components/Cover.vue'
 import Editor from './components/Editor.vue'
@@ -14,11 +15,13 @@ import Relate from './components/Relate.vue'
 import SectionBg from './components/SectionBg.vue'
 import SectionFixedBg from './components/SectionFixedBg.vue'
 import Share from './components/Share.vue'
+import Youtube from './components/Youtube.vue'
 
 const UdnComponent = {
     install: function(Vue){
         
         Vue.component('ColumnThree', ColumnThree)
+        Vue.component('ColumnTwo', ColumnTwo)
         Vue.component('ContentContainer', Content)
         Vue.component('Cover', Cover)
         Vue.component('Editor', Editor)
@@ -34,13 +37,14 @@ const UdnComponent = {
         Vue.component('SectionBg', SectionBg)
         Vue.component('SectionFixedBg', SectionFixedBg)
         Vue.component('Share', Share)
+        Vue.component('Youtube', Youtube)
 
     }
 }
 
 export default UdnComponent
 
-export { ColumnThree, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, Question, Quote, Relate, SectionBg, SectionFixedBg, Share }
+export { ColumnThree, ColumnTwo, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, Question, Quote, Relate, SectionBg, SectionFixedBg, Share, Youtube }
 
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(UdnComponent)
