@@ -1,9 +1,9 @@
 <template>
-    <header id="head-bar" :style="{top: top+'px',backgroundColor: BgColor}">
+    <header id="head-bar" :style="{top: top+'px',backgroundColor: backgroundColor}">
         <div id="icon">
-            <a href="./index"><i class="udn-icon udn-icon-logo"></i></a>
+            <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
-        <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection}">
+        <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
             <slot></slot>
             <div id="logo-contain" class="hidden-lg">
                 <Logo />
@@ -13,10 +13,10 @@
             <div class="nav-icon" :class="{open: isOpen}"
                 @click="handleBurger()"
             >
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+                <span :style="{backgroundColor: color}"></span>
+                <span :style="{backgroundColor: color}"></span>
+                <span :style="{backgroundColor: color}"></span>
+                <span :style="{backgroundColor: color}"></span>
             </div>
         </div>
     </header>
@@ -28,7 +28,7 @@ import Logo from './Logo.vue';
 export default {
 
     name: 'HeadBar',
-    props: ['BgColor', 'MenuSlideFrom'],
+    props: ['background-color', 'MenuSlideFrom', 'color'],
     components: { Logo },
     data: function() {
         return {
