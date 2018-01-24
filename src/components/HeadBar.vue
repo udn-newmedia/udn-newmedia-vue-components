@@ -6,7 +6,14 @@
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
             <slot></slot>
             <div id="logo-contain" class="hidden-lg">
-                <Logo />
+                <div class="logo-block">
+                    <div class="logo">
+                        <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn_logo_2018_v.svg"></a>
+                    </div>
+                    <div class="logo" id="nmd">
+                        <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018_v.svg"></a>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="hbutton" class="hidden-lg">
@@ -89,6 +96,20 @@ export default {
 
 </script>
 <style lang="scss" scoped>
+
+.logo{
+    width: 140px;
+    display: inline-block;
+}
+
+#nmd{
+    width: 160px;
+}
+
+#nmd img{
+    width: 100%;
+}
+
 #head-bar {
     position: fixed;
     background-color: #231815;
@@ -243,6 +264,9 @@ export default {
         justify-content: center;
         padding-top: 20%;
     }
+    .logo-block{
+        margin-top: 32px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -252,6 +276,14 @@ export default {
     #icon {
         height: 50px;
         line-height: 50px;
+    }
+    .logo-block{
+        float: right;
+        margin-top: -45px;
+    }
+
+    #nmd{
+        width: 236px;
     }
 }
 
