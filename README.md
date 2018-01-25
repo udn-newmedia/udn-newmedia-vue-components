@@ -33,7 +33,10 @@ new Vue({
 
 ### Demo Page
 
-[Demo Page](https://udn-newmedia.github.io/udn-newmedia-vue-components/)
+[Demo LongForm](https://udn-newmedia.github.io/udn-newmedia-vue-components/)
+
+[Demo Page](https://udn-newmedia.github.io/udn-newmedia-vue-components/page.html)
+
 
 ### Components
 
