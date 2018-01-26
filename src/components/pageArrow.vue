@@ -1,7 +1,7 @@
 <template>
 	<div class="arrow" @click='nextPage'>
-		<span class="arrowHint">往下滑動</span>
-		<img class="arrowImg" :src="src" alt="往下滑動" title="往下滑動">
+		<span class="arrowHint" :style="{color: hintColor}">往下滑動</span>
+		<i class="fa fa-angle-down fa-3x arrowImg" aria-hidden="true" :style="{color: color}"></i>
 	</div>
 </template>
 
@@ -11,7 +11,7 @@ import _throttle from 'lodash.throttle';
 export default {
 
   name: 'pageArrow',
-  props: ['src'],
+  props: ['color', 'hintColor'],
   data () {
     return {
 
@@ -47,9 +47,6 @@ export default {
 		color: #908f8f;
 	}
 	.arrowImg{
-		width: 38px;
-		height: 24px;
-		object-fit: contain;
 		animation: arrow 555ms infinite ease-out;		
 	}
 	@keyframes arrow {

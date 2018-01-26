@@ -1,8 +1,15 @@
 <template>
-	<div class="section pageContent">
-		<div class="mediaContainer">
-			<EmbededVideo :src='VideoSrc' :poster='VideoPoster'/>
-			<slot></slot>
+	<div class="section pageContent" :style="{backgroundColor: BgColor}">
+		<div class="mediaContainer" :class="{videoIntro: isVideo}" :style="{backgroundColor: BoxColor}">
+            <div class="videoModel" v-if="isVideo">
+                <EmbededVideo :src='VideoSrc' :poster='VideoPoster'/>
+            </div>
+            <div class="imgModel" v-if="isImg">
+                <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
+            </div>
+            <div class="articleModel">
+                <slot></slot>
+            </div>
 		</div>
 	</div>
 </template>
@@ -15,10 +22,26 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['VideoSrc', 'VideoPoster'],
+  props: ['VideoSrc', 'VideoPoster', 'BgColor', 'BoxColor', 'ImgSrc', 'ImgSay'],
   data () {
     return {
 
+    }
+  },
+  computed: {
+    isVideo: function() {
+        if(this.VideoSrc || this.VideoPoster){
+            return true
+        } else {
+            return false
+        }
+    },
+    isImg: function() {
+        if(this.ImgSrc || this.ImgSay){
+            return true
+        } else {
+            return false
+        }
     }
   }
 }
@@ -33,7 +56,31 @@ export default {
 		background-color: #fff;
 		display: flex;
 		flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 	}
+    .videoModel{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .imgModel{
+        width: 100%;
+        margin-bottom: 30px;
+        img{
+            width: 100%;
+            max-height: 40%;
+        }
+    }
+    .articleModel{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .videoIntro{
+        width: calc(100% - 30px) !important;
+    }
     h2{
         text-align: left;
         font-size: 30px;
@@ -44,6 +91,7 @@ export default {
     p{
         font-size: 21px;
         margin: 0;
+        text-align: left;
     }
     @media screen and (max-width: 767px){
         p{
@@ -60,6 +108,23 @@ export default {
     @media screen and (min-width: 1025px){
         .mediaContainer{
             width: 880px;
+            flex-direction: row;
+            padding: 30px 25px;
+        }
+        .videoIntro{
+            width: 70% !important;
+        }        
+        .imgModel{
+            margin-bottom: 0;
+        }
+        .videoModel{
+            margin-bottom: 0;
+        }
+        p{
+            max-width: 880px;
+        }        
+        .articleModel{
+            padding: 0 15px;
         }
         p>br{
             line-height: 50px;

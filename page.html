@@ -51,8 +51,10 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
 
-    <div id="app" style="background-color: black">
-        <Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
+    <div id="app" style="background-color: black;">
+        <Head-Bar Menu-Slide-From="top">
+            <a href=""></a>
+        </Head-Bar>
         <Page>
             <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
             <Page-Intro fontcolor="#fff" Bg-Color="#000">
@@ -62,11 +64,26 @@
                 <h6>2017.08.25更新</h6>
                 <Share href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"/>
             </Page-Intro>
-            <Page-Card Video-Src='static/video.mp4'>
-                <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+            <Page-Card video-src='./static/video/pcvideo.mp4' >
+                <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+                <p><br/></p>
+                <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+            </Page-Card>          
+            <Page-Card Img-Src='./static/imageSmaple.png'>
+                <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+                <p><br/></p>
+                <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+            </Page-Card>              
+            <Page-Card>
+                <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+                <p><br/></p>
+                <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+                <p><br/></p>
+                <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
             </Page-Card>
+            <Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
         </Page>
-        <Page-Arrow src="./static/ic-keyboard-arrow-down-white-24-px@3x.png"/>
+        <Page-Arrow color='#fff'/>
     </div>
     <script>
         

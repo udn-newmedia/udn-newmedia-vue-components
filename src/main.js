@@ -10,9 +10,10 @@ import Indicator from './components/Indicator.vue'
 import Logo from './components/Logo.vue'
 import Page from './components/Page.vue'
 import PageArrow from './components/pageArrow.vue'
-import PageCover from './components/PageCover.vue'
-import PageIntro from './components/PageIntro.vue'
 import PageCard from './components/PageCard.vue'
+import PageCover from './components/PageCover.vue'
+import PageFullvideo from './components/PageFullvideo.vue'
+import PageIntro from './components/PageIntro.vue'
 import Question from './components/Question.vue'
 import Quote from './components/Quote.vue'
 import Relate from './components/Relate.vue'
@@ -20,7 +21,6 @@ import SectionBg from './components/SectionBg.vue'
 import SectionFixedBg from './components/SectionFixedBg.vue'
 import Share from './components/Share.vue'
 import Youtube from './components/Youtube.vue'
-
 
 const UdnComponent = {
     install: function(Vue){
@@ -37,9 +37,10 @@ const UdnComponent = {
         Vue.component('Logo', Logo)
         Vue.component('Page', Page)
         Vue.component('PageArrow', PageArrow)
-        Vue.component('PageCover', PageCover)
-        Vue.component('PageIntro', PageIntro)
         Vue.component('PageCard', PageCard)        
+        Vue.component('PageCover', PageCover)
+        Vue.component('PageFullvideo', PageFullvideo)
+        Vue.component('PageIntro', PageIntro)        
         Vue.component('Question', Question)
         Vue.component('Quote', Quote)
         Vue.component('Relate', Relate)
@@ -48,6 +49,7 @@ const UdnComponent = {
         Vue.component('Share', Share)
         Vue.component('Youtube', Youtube)
 
+        Vue.component('EmbededVideo', EmbededVideo)
     }
 }
 
