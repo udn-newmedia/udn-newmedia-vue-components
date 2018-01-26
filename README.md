@@ -326,13 +326,14 @@ new Vue({
 			<Page2>
 			<Page3>
 		</Page>
-		<Page-Arrow src="./static/ic-keyboard-arrow-down-white-24-px@3x.png"/>
+		<Page-Arrow color="#fff" hint-color="#000"/>
 	</div>
 ```
 
     ##### - Props
 
-	* [src] 箭頭的圖片
+	* [color] 箭頭的顏色
+	* [hint-color] 首頁提示文字的顏色
 
 + PageIntro
 
@@ -355,6 +356,7 @@ new Vue({
 	滿版卡片，可放入圖片，影片，或純文字
 
 	影片範例
+
 ```js
     <Page-Card Video-Src='static/video.mp4'>
         <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
@@ -362,6 +364,7 @@ new Vue({
 ```
 
 	圖片範例
+
 ```js
     <Page-Card Img-Src='./static/imageSmaple.png'>
         <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
@@ -371,6 +374,7 @@ new Vue({
 ```	
 
 	純文字範例
+
 ```js
     <Page-Card>
         <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>

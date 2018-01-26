@@ -43,7 +43,7 @@ export default {
   },
   computed: {
     source: function () {
-        return this.src
+      return this.src
     },
     videoPoster: function () {
       return this.poster
