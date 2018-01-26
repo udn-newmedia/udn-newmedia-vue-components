@@ -305,6 +305,7 @@ new Vue({
 + Page
 
 	開啟滿版滾動，所有的版面都要放在裡面。
+
 ```js
     <Page>
         <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
@@ -316,8 +317,8 @@ new Vue({
 + PageArrow
 
 	向下提示箭頭。
-
 	注意：要放在 Page外面
+
 ```js
 	<div id="app">
 		<Page>
@@ -329,13 +330,14 @@ new Vue({
 	</div>
 ```
 
-	##### - Props
+    ##### - Props
 
 	* [src] 箭頭的圖片
 
 + PageIntro
 
 	滿版標題Cover
+
 ```js
 	<Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
 ```
@@ -350,12 +352,51 @@ new Vue({
 
 + PageCard
 
-	滿版影片卡片，影片說明請用 <p></p>
+	滿版卡片，可放入圖片，影片，或純文字
+
+	影片範例
 ```js
     <Page-Card Video-Src='static/video.mp4'>
         <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
     </Page-Card>
 ```
+
+	圖片範例
+```js
+    <Page-Card Img-Src='./static/imageSmaple.png'>
+        <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+        <p><br/></p>
+        <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+    </Page-Card>  	
+```	
+
+	純文字範例
+```js
+    <Page-Card>
+        <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+        <p><br/></p>
+        <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+        <p><br/></p>
+        <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+    </Page-Card>	
+```	
+
     ##### Props
 
     * [Video-Src] 影片來源
+    * [Video-Poster] 影片預覽圖
+    * [Img-Src] 圖片來源
+    * [Img-Say] 圖片說(alt, title)
+
++ PageFullvideo
+
+```js
+    <Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
+```	
+
+	##### Props
+
+	* [src] 手機影片來源
+	* [poster] 手機愈覽圖
+	* [src-Web] 電腦版影片來源
+	* [poster-Web] 電腦版預覽圖
