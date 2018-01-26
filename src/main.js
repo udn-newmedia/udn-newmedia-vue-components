@@ -48,14 +48,12 @@ const UdnComponent = {
         Vue.component('SectionFixedBg', SectionFixedBg)
         Vue.component('Share', Share)
         Vue.component('Youtube', Youtube)
-
-        Vue.component('EmbededVideo', EmbededVideo)
     }
 }
 
 export default UdnComponent
 
-export { ColumnThree, ColumnTwo, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, Question, Quote, Relate, SectionBg, SectionFixedBg, Share, Youtube }
+export { ColumnThree, ColumnTwo, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, PageArrow, PageCard, PageCover, PageFullvideo, Question, Quote, Relate, SectionBg, SectionFixedBg, Share, Youtube }
 
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(UdnComponent)
