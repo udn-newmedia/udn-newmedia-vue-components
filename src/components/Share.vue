@@ -3,6 +3,9 @@
         <div class="fb-like-block">
     		<div class="fb-like" :data-href="href" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 		</div>
+        <div class="fb-send-block">
+            <div class="fb-send" :data-href="href" data-layout="button_count"></div>
+        </div>
         <div class="line-block" @click="lineShare">
 		    <img class="line-share" src="//media.line.me/img/button/zh-hant/84x20.png" width="92" height="22" alt="LINE分享給朋友">
 		</div>
@@ -38,6 +41,10 @@ export default {
 <style scoped>
     .share-block{
         height: 28px;
+    }
+    .fb-send-block{
+        float: left;
+        margin-left: 5px;
     }
     .fb-like-block{
         float: left;

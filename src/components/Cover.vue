@@ -55,7 +55,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 30% 0;
+        padding: 12% 8%;
     }
     #cover.top{
         justify-content: flex-start;
@@ -87,11 +87,17 @@ export default {
         #sub-title{
             font-size: 25px;
         }
+        #cover{
+            padding: 30% 0;
+        }
     }
 
     @media screen and (min-width: 768px) and (max-width: 1024px) {
         h1{
             font-size: 45px;
+        }
+        #cover{
+            padding: 30% 0;
         }
     }
 
