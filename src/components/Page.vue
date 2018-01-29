@@ -14,7 +14,12 @@ export default {
     	isHintShow: true,
     }
   },
+  beforeMount() {
+
+  },
   mounted() {
+    const pageLength = Number($('.section').length);
+    console.log(pageLength)
     $('#page').fullpage({
         afterLoad: function(anchorLink, index) {
             console.log(index)
@@ -24,7 +29,12 @@ export default {
             $('.arrow').css('opacity', 1)
             if(index === 1){
                 $('.arrowHint').css('opacity', 1)
-            }                 
+            } 
+            if(index === pageLength){
+                $('.arrow').css('display', 'none');
+            } else {
+                $('.arrow').css('display', 'flex');
+            }
         },
         onLeave: function(index, nextIndex, direction) {
             $('.section').eq(index - 1).css({
