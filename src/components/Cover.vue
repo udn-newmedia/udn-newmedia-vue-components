@@ -96,8 +96,14 @@ export default {
         h1{
             font-size: 45px;
         }
+        #sub-title{
+            font-size: 30px;
+        }
         #cover{
             padding: 30% 0;
+        }
+        #title-contain{
+            padding: 0 100px;
         }
     }
 
