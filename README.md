@@ -391,6 +391,8 @@ new Vue({
     * [Video-Poster] 影片預覽圖
     * [Img-Src] 圖片來源
     * [Img-Say] 圖片說(alt, title)
+    * [Bg-Color] 背景色
+    * [box-color] 卡片被景色
 
 + PageFullvideo
 

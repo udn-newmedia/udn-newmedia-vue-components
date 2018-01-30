@@ -1,5 +1,5 @@
 <template>
-	<div class="arrow" @click='nextPage'>
+	<div class="arrow" @click='nextPage' v-show="isShow">
 		<span class="arrowHint" :style="{color: hintColor}">往下滑動</span>
 		<i class="fa fa-angle-down fa-3x arrowImg" aria-hidden="true" :style="{color: color}"></i>
 	</div>
@@ -14,13 +14,16 @@ export default {
   props: ['color', 'hintColor'],
   data () {
     return {
-
+    	isShow: true,
     }
   },
   methods: {
   	nextPage: _throttle(function() {
   		$.fn.fullpage.moveSectionDown();
   	}, 1000)
+  },
+  mounted() {
+  	console.log('video L: '+ $('video').length)
   }
 }
 </script>
@@ -59,7 +62,7 @@ export default {
 	}
     @media screen and (min-width: 1025px){
 		.arrow{
-			bottom: 40px;
+			bottom: 25px;
 		}
     }	
 </style>

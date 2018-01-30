@@ -12,8 +12,11 @@ import Page from './components/Page.vue'
 import PageArrow from './components/pageArrow.vue'
 import PageCard from './components/PageCard.vue'
 import PageCover from './components/PageCover.vue'
+import PageFooter from './components/PageFooter.vue'
 import PageFullvideo from './components/PageFullvideo.vue'
+import PageImgsay from './components/PageImgsay.vue'
 import PageIntro from './components/PageIntro.vue'
+import PageQuote from './components/PageQuote.vue'
 import Question from './components/Question.vue'
 import Quote from './components/Quote.vue'
 import Relate from './components/Relate.vue'
@@ -39,8 +42,11 @@ const UdnComponent = {
         Vue.component('PageArrow', PageArrow)
         Vue.component('PageCard', PageCard)        
         Vue.component('PageCover', PageCover)
+        Vue.component('PageFooter', PageFooter)
         Vue.component('PageFullvideo', PageFullvideo)
-        Vue.component('PageIntro', PageIntro)        
+        Vue.component('PageImgsay', PageImgsay)
+        Vue.component('PageIntro', PageIntro)
+        Vue.component('PageQuote', PageQuote)        
         Vue.component('Question', Question)
         Vue.component('Quote', Quote)
         Vue.component('Relate', Relate)
@@ -53,7 +59,34 @@ const UdnComponent = {
 
 export default UdnComponent
 
-export { ColumnThree, ColumnTwo, Content, Cover, Editor, FbComment, Foot, HeadBar, Indicator, Logo, Page, PageArrow, PageCard, PageCover, PageFullvideo, Question, Quote, Relate, SectionBg, SectionFixedBg, Share, Youtube }
+export { 
+    ColumnThree,
+    ColumnTwo,
+    Content,
+    Cover,
+    Editor,
+    FbComment,
+    Foot,
+    HeadBar,
+    Indicator,
+    Logo,
+    Page,
+    PageArrow,
+    PageCard,
+    PageCover,
+    PageFooter,
+    PageFullvideo,
+    PageImgsay,
+    PageIntro,
+    PageQuote,
+    Question,
+    Quote,
+    Relate,
+    SectionBg,
+    SectionFixedBg,
+    Share,
+    Youtube
+}
 
 if (typeof window !== 'undefined' && window.Vue) {
     window.Vue.use(UdnComponent)

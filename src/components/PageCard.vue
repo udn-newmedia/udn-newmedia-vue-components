@@ -2,7 +2,7 @@
 	<div class="section pageContent" :style="{backgroundColor: BgColor}">
 		<div class="mediaContainer" :class="{videoIntro: isVideo}" :style="{backgroundColor: BoxColor}">
             <div class="videoModel" v-if="isVideo">
-                <EmbededVideo :src='VideoSrc' :poster='VideoPoster'/>
+                <EmbededVideo :src='videoSrc' :srcWeb='videoSrcWeb' :poster='videoPoster' :posterWeb='videoPosterWeb' customControl='yes'/>
             </div>
             <div class="imgModel" v-if="isImg">
                 <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
@@ -22,7 +22,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['VideoSrc', 'VideoPoster', 'BgColor', 'BoxColor', 'ImgSrc', 'ImgSay'],
+  props: ['videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BgColor', 'BoxColor', 'ImgSrc', 'ImgSay'],
   data () {
     return {
 
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     isVideo: function() {
-        if(this.VideoSrc || this.VideoPoster){
+        if(this.videoSrc || this.videoPoster){
             return true
         } else {
             return false
@@ -124,7 +124,7 @@ export default {
             max-width: 880px;
         }        
         .articleModel{
-            padding: 0 15px;
+            padding-left: 20px;
         }
         p>br{
             line-height: 50px;

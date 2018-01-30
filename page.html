@@ -52,7 +52,11 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="app" style="background-color: black;">
-        <Head-Bar Menu-Slide-From="top"></Head-Bar>
+        <Head-Bar Menu-Slide-From="top">
+<!--             <a href="https://github.com/udn-newmedia/udn-newmedia-vue-components">偏鄉就醫有多苦</a>
+            <a href="https://nmdap.udn.com.tw/ecard/index.php">你的家鄉安寧嗎</a>
+            <a href="http://es6.ruanyifeng.com/#docs/let">醫生病人相對論</a> -->
+        </Head-Bar>
         <Page>
             <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
             <Page-Intro fontcolor="#fff" Bg-Color="#000">
@@ -62,16 +66,19 @@
                 <h6>2017.08.25更新</h6>
                 <Share href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"/>
             </Page-Intro>
-            <Page-Card video-src='./static/video/pcvideo.mp4' >
+            <Page-Card video-src='./static/video/pcvideo.mp4' video-poster="./static/bg_wang.jpg">
                 <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
             </Page-Card>          
-            <Page-Card Img-Src='./static/imageSmaple.png'>
+            <Page-Card Img-Src='./static/imageSmaple.png' Img-Say="我是圖說文字">
                 <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
-            </Page-Card>              
+            </Page-Card>
+            <Page-Quote quoter="體操國手 李智凱" src='static/squareVideo.mp4' bg-color='#82c539'>
+                <p>奧運失敗的時候，當下腦筋是一片空白的，什麼都沒有想法，就是最不想發生的事發生了。下一個想法就是我還在比賽，要把比賽完成。</p>
+            </Page-Quote>                        
             <Page-Card>
                 <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
                 <p><br/></p>
@@ -79,7 +86,24 @@
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
             </Page-Card>
-            <Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
+            <Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4' poster="./static/bg_wang.jpg" poster-web="./static/web/bg_wang.jpg"></Page-Fullvideo>
+            <Page-Imgsay src="./static/bg_wang.jpg" src-web="static/web/bg_wang.jpg">
+                <p>學童突發奇想，將廢棄漁業浮球做成樂器吹奏。</p>
+            </Page-Imgsay>
+            <Page-Footer 
+                color="#fff" udncom='yes' newmedia='yes'
+                link1='https://goo.gl/wJMfCh' text1='競技體操的秘密 選手如何對抗地心引力' img1='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+                link2='https://goo.gl/iVf5H8' text2='為同一個名字努力' img2='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+                link3='https://goo.gl/wJMfCh' text3='跆拳道得分5招 國首示範給你看' img3='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+                link4='https://goo.gl/iVf5H8' text4='我只是範例' img4='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'>
+                <p>製作團隊：</p>
+                <p>文字：魏妤庭、連珮宇</p>
+                <p>攝影：許正宏、王騰毅</p>
+                <p>網頁製作：方泰鈞</p>
+                <p>監製：林新輝、鄭朝陽、董谷音、蔡幸怡</p>
+                <p><br/></p>
+                <p>2017.05.25更新</p>
+            </Page-Footer>
         </Page>
         <Page-Arrow color='#fff'/>
     </div>

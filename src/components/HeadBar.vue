@@ -30,9 +30,7 @@
 </template>
 
 <script>
-
 export default {
-
     name: 'HeadBar',
     props: ['background-color', 'MenuSlideFrom', 'color'],
     data: function() {
@@ -43,7 +41,6 @@ export default {
         }
     },
     computed: {
-
     },
     methods: {
         handleScroll: function(event) {
@@ -68,19 +65,15 @@ export default {
             case 'top':
                 this.menuSlideDirection = 'translate(0, -110%)';
                 break;
-
             case 'bottom':
                 this.menuSlideDirection = 'translate(0, 100%)';
                 break;
-
             case 'left':
                 this.menuSlideDirection = 'translate(-100%, 0)';
                 break;
-
             case 'right':
                 this.menuSlideDirection = 'translate(100%, 0)';
                 break;
-
             default:    
                 this.menuSlideDirection = 'translate(0, -110%)';
                 console.log("please set value is top, bottom, left or right") 
@@ -91,23 +84,18 @@ export default {
         window.addEventListener('scroll', this.handleScroll);
     },    
 }
-
 </script>
 <style lang="scss" scoped>
-
 .logo{
     width: 140px;
     display: inline-block;
 }
-
 #nmd{
     width: 160px;
 }
-
 #nmd img{
     width: 100%;
 }
-
 #head-bar {
     position: fixed;
     background-color: #231815;
@@ -117,13 +105,11 @@ export default {
     z-index: 99999;
     transition: opacity 0.7s ease;
 }
-
 #icon {
     position: absolute;
     z-index: 30;
     top: 0;
 }
-
 #icon i.udn-icon{
     color: #FFFFFF;
     font-size: 36px;
@@ -131,7 +117,6 @@ export default {
     margin-left: 7px;
     z-index: 30;
 }
-
 #hbutton {
     width: 46px;
     height: 46px;
@@ -141,7 +126,6 @@ export default {
     position: absolute;
     z-index: 30;
 }
-
 .nav-icon {
     width: 46px;
     height: 46px;
@@ -210,19 +194,15 @@ export default {
     cursor: pointer;
     float: left;
 }
-
 .hbutton:hover {
     background-color: #FF4612;
 }
-
 .hbutton-select {
     color: #F589BA;
 }
-
 .transformToNone {
     transform: translate(0, 0) !important;
 }
-
 @media screen and (max-width: 1024px) {
     #head-bar {
         height: 46px;
@@ -266,7 +246,6 @@ export default {
         margin-top: 32px;
     }
 }
-
 @media screen and (min-width: 1025px) {
     #head-bar {
         height: 50px;
@@ -279,10 +258,8 @@ export default {
         float: right;
         margin-top: -45px;
     }
-
     #nmd{
         width: 236px;
     }
 }
-
 </style>

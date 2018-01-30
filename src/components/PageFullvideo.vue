@@ -139,7 +139,6 @@ export default {
 	},  
 	mounted() {
 		platform === 'Mob' ? this.isMute = true : this.isMute = false
-		console.log(this.$refs)
 		const video = this.$refs.video
 		const progressbar = this.$refs.progressbar
 		const spinner = this.$refs.spinner

@@ -2,7 +2,7 @@
     <div class="videocontainer">
         <div class="video-contain" :style="{backgroundColor: backgroundColor}">
             <video preload="metadata" playsinline
-                   :src="source" :poster="videoPoster" :muted="isMute" :controls="useControls" 
+                   :src="source" :poster="videoPoster" :controls="useControls" 
                    @click='handle_clickVideo' ref='video'></video>
             <div class="video-control">
               <div class="progress">
@@ -10,12 +10,12 @@
                      :style="{width: progressWidth + '%'}" ref="progressbar"></div>
               </div>
               <!-- <i class="fa fa-play video-play hidden-md hidden-lg"></i> -->
-              <div class="img-say-out volume-text hidden-lg" @click="volumeClick">點按開聲音</div>
+              <div class="img-say-out volume-text hidden-lg" @click="volumeClick" v-if='customControl'>點按開聲音</div>
               <i class="fa fa-spinner fa-pulse video-wait" :style="{opacity: isOpacity}"></i>            
               <i class="fa volume hidden-lg" 
-                 ref='volume' @click="volumeClick"
+                 v-if='customControl' ref='volume' @click="volumeClick" 
                  :class="{'fa-volume-up': !isMute, 'fa-volume-off': isMute}"></i>
-              <i class="fa fa-repeat replay hidden-lg" @click="replay"></i>
+              <i class="fa fa-repeat replay hidden-lg" v-if='customControl' @click="replay"></i>
             </div>
         </div>
     </div>
@@ -26,10 +26,10 @@ import Utils from 'udn-newmedia-utils'
 // let title = document.title
 var isMob = Utils.detectMob(10)
 var platform = (isMob === true) ? 'Mob' : 'PC'
-
+const w = window.innerWidth
 export default {
   name: 'embededvideo',
-  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'background-color'],
+  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'background-color', 'customControl'],
   components: {
   },
   data: function () {
@@ -43,10 +43,18 @@ export default {
   },
   computed: {
     source: function () {
-      return this.src
+      if(w < 1024){
+        return this.src 
+      } else {
+        return this.srcWeb || this.src
+      }
     },
     videoPoster: function () {
-      return this.poster
+      if(w < 1024){
+        return this.poster 
+      } else {
+        return this.posterWeb || this.poster
+      }
     },
     useControls: function() {
       if(platform === 'Mob'){
@@ -69,7 +77,6 @@ export default {
   },
   mounted: function () {
     platform === 'Mob' ? this.isMute = true : this.isMute = false
-    console.log(this.$refs)
     const video = this.$refs.video
     const progressbar = this.$refs.progressbar
     const spinner = this.$refs.spinner
@@ -92,6 +99,9 @@ export default {
         this.progress = 0
         this.progressWidth = 0
       }
+    }
+    if(w < 1024) {
+      video.muted = true
     }
   },
   methods: {
@@ -131,20 +141,15 @@ export default {
       }
     },
     volumeClick: function () {
-      console.count('click')
       const video = this.$refs.video
       const volume = this.$refs.volume
-      if (video.muted) {
-        video.muted = true
-
-        // document.querySelector('.volume').classList.remove('fa-volume-off')
-        // document.querySelector('.volume').classList.add('fa-volume-up')
+      console.log('點到?')
+      if (this.isMute === true) {
+        video.muted = false
         this.isMute = false
       } else {
-        video.muted = false
+        video.muted = true
         this.isMute = true
-        // document.querySelector('.volume').classList.remove('fa-volume-up')
-        // document.querySelector('.volume').classList.add('fa-volume-off')
       }
     },
     replay: function () {
