@@ -1,18 +1,19 @@
 <template>
-	<div class="section">
+	<div class="section" :style="{backgroundColor: bgColor}">
 		<div class="wrapper">
 			<Share :href='href'/>
 			<p><br/></p>
-			<Editor :style="{color: color}">
+			<Editor :style='{color: color}'>
 				<slot />
+				<p :style="{color: color}">{{update}}</p>
 			</Editor>
 			<div class="pageRelate">
 				<h3 :style="{color: color}">延伸閱讀</h3>
 				<ul :style="{color: color}">
-					<li><a :href="link1" target='_blank'><img :src="img1"><p>{{text1}}</p></a></li>
-					<li><a :href="link2" target='_blank'><img :src="img2"><p>{{text2}}</p></a></li>
-					<li><a :href="link3" target='_blank'><img :src="img3"><p>{{text3}}</p></a></li>
-					<li><a :href="link4" target='_blank'><img :src="img4"><p>{{text4}}</p></a></li>
+					<li><a :href="link1" target='_blank'><img :src="img1"><p :style="{color: color}">{{text1}}</p></a></li>
+					<li><a :href="link2" target='_blank'><img :src="img2"><p :style="{color: color}">{{text2}}</p></a></li>
+					<li><a :href="link3" target='_blank'><img :src="img3"><p :style="{color: color}">{{text3}}</p></a></li>
+					<li><a :href="link4" target='_blank'><img :src="img4"><p :style="{color: color}">{{text4}}</p></a></li>
 				</ul>
 			</div>			
 		</div>
@@ -32,7 +33,7 @@ import Share from '../components/Share.vue'
 export default {
 
   name: 'PageFooter',
-  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom'],
+  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom', 'update', 'bgColor'],
   components:{
   	Editor,
   	Share
@@ -80,6 +81,11 @@ export default {
 				}
 				img{
 					display: none;
+					opacity: 1;
+					transition: opacity 444ms linear;
+					&:hover{
+						opacity: 0.8;
+					}
 				}
 				p::before {
 					content: "．";

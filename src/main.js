@@ -9,7 +9,6 @@ import HeadBar from './components/HeadBar.vue'
 import Indicator from './components/Indicator.vue'
 import Logo from './components/Logo.vue'
 import Page from './components/Page.vue'
-import PageArrow from './components/pageArrow.vue'
 import PageCard from './components/PageCard.vue'
 import PageCover from './components/PageCover.vue'
 import PageFooter from './components/PageFooter.vue'
@@ -39,7 +38,6 @@ const UdnComponent = {
         Vue.component('Indicator', Indicator)
         Vue.component('Logo', Logo)
         Vue.component('Page', Page)
-        Vue.component('PageArrow', PageArrow)
         Vue.component('PageCard', PageCard)        
         Vue.component('PageCover', PageCover)
         Vue.component('PageFooter', PageFooter)
@@ -71,7 +69,6 @@ export {
     Indicator,
     Logo,
     Page,
-    PageArrow,
     PageCard,
     PageCover,
     PageFooter,

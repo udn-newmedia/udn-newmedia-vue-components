@@ -26,24 +26,11 @@ export default {
             $('.section').eq(index - 1).css({
                 'z-index': 99,
             })
-            $('.arrow').css('opacity', 1)
-            if(index === 1){
-                $('.arrowHint').css('opacity', 1)
-            } 
-            if(index === pageLength){
-                $('.arrow').css('display', 'none');
-            } else {
-                $('.arrow').css('display', 'flex');
-            }
         },
         onLeave: function(index, nextIndex, direction) {
             $('.section').eq(index - 1).css({
                 'z-index': 0,
-            })
-            $('.arrow').css('opacity', 0)
-            if(index === 1){
-                $('.arrowHint').css('opacity', 0)
-            }                
+            })               
         }            
     })
   }
@@ -64,11 +51,14 @@ export default {
         overflow: hidden;
     }
 	.section{
-		// position: absolute;
-		// top: 0;
-		// left: 0;
+		position: relative;
+        top: 0;
+		left: 0;
 		z-index: 0;
 		// opacity: 0;
 		transition: opacity 777ms ease-in-out;	
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;        
 	}
 </style>

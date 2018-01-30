@@ -1,20 +1,37 @@
 <template>
-	<div class="section pageIntro" :style="{backgroundColor: BgColor}">
-        <div class="container content" :style="{color: fontcolor}">
+	<div class="section pageIntro" :style="{backgroundImage: 'url('+ bgSrc +')', backgroundColor: bgColor}">
+        <div class="glass"></div>
+        <div class="container content" :style="{color: fontColor}">
             <slot></slot>
             <h6>{{update}}</h6>
-        </div>
+        </div>            
+        <PageArrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>  
 	</div>
 </template>
 
 <script>
+import PageArrow from './pageArrow.vue' 
+
+const w = window.innerWidth
 export default {
 
   name: 'PageIntro',
-  props: ['BgColor', 'update', 'fontcolor'],
+  components: {
+    PageArrow
+  },
+  props: ['bg', 'bgWeb', 'update', 'fontColor', 'arrowColor', 'hint', 'hintColor', 'bgColor'],
   data () {
     return {
 
+    }
+  },
+  computed: {
+    bgSrc: function() {
+        if(w < 1024) {
+            return this.bg
+        } else {
+            return this.bgWeb
+        }
     }
   }
 }
@@ -26,6 +43,10 @@ export default {
         font-weight: bold;
         line-height: 1.5;
         margin: 0;
+    }
+    .container{
+        position: relative;
+        z-index: 1;
     }
     .chart-title{
         font-size: 28px;
@@ -41,6 +62,15 @@ export default {
     }
     h6{
     	font-size: 16px;
+    }
+    .glass{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, 0.7);
     }
     @media screen and (max-width: 767px){
         h2{

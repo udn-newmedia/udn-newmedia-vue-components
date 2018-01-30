@@ -8,7 +8,7 @@
 				<div class='quoteFrom'>
 					<h3>{{quoter}}</h3>
 					<div class='volume' @click='handle_volume'>
-						<i class="fa fa-2x hidden-lg" :class="{'fa-volume-off': isMute, 'fa-volume-up': !isMute}" aria-hidden="true"></i>
+						<i class="fa fa-2x" :class="{'fa-volume-off': isMute, 'fa-volume-up': !isMute}" aria-hidden="true"></i>
 					</div>
 				</div>
 				<div class='quote'>
@@ -46,7 +46,15 @@ export default {
   	}
   },
   mounted() {
-
+  	if(window.innerWidth < 1024) {
+  		const selfVideo = this.$refs.sqVideo.$refs.video
+  		this.isMute = true
+  		selfVideo.muted = true
+  	} else {
+  		const selfVideo = this.$refs.sqVideo.$refs.video
+  		this.isMute = false
+  		selfVideo.muted = false  		
+  	}
   }
 }
 </script>
@@ -96,10 +104,10 @@ export default {
     @media screen and (min-width: 1024px) {
     	.wrapper{
     		flex-direction: row;
-    		align-items: center;
+    		// align-items: center;
     		justify-content: center;
     		width: 80%;
-    		max-width: 950px;
+    		max-width: 1080px;
     	}
     	.squareVideo{
     		width: 40%;
@@ -108,11 +116,13 @@ export default {
     	.quoteSection{
     		display: flex;
     		flex-direction: column;
-    		align-items: center;
     		justify-content: space-between;
     		height: 90%;
     		width: 40%;
-    		margin-left: 8.333%;
+    		margin-left: 20px;
     	}
+		.quoteSection{
+			padding-top: 20px;
+		}
     }
 </style>

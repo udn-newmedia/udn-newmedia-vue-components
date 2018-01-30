@@ -40,7 +40,6 @@ export default {
 		align-items: center;
 		width: 100%;
 		height: 100%;
-		padding-bottom: 60px;
 		img{
 			position: absolute;
 			z-index: 0;
@@ -72,6 +71,11 @@ export default {
     @media screen and (min-width: 1025px){
         p>br{
             line-height: 50px;
+        }
+        p{
+          width: 100%;
+          text-align: left;
+          background-color: rgba(black, 0.7);
         }
     }	
 </style>

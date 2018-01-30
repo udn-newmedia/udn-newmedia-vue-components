@@ -5,14 +5,19 @@
                 <h1 :style='{color: fontcolor}'>{{title}}</h1>
                 <div id="sub-title" :style='{color: fontcolor}'>{{subtitle}}</div>
             </div>
-        </div>        
+        </div>
+        <PageArrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>    
     </div>
 </template>
 
 <script>
+import PageArrow from './pageArrow.vue'
 export default {
     name: 'PageCover',
-    props: ['title', 'subtitle', 'bg', 'bgweb', "position", 'fontcolor'],
+    components: {
+        PageArrow
+    },
+    props: ['title', 'subtitle', 'bg', 'bgweb', "position", 'fontcolor', 'arrowColor', 'hint', 'hintColor'],
     data: function(){
         return{
             aligncenter: false,
