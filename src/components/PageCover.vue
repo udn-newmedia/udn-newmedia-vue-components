@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import Bus from '../eventBus.js'
 import PageArrow from './pageArrow.vue'
 export default {
     name: 'PageCover',
@@ -25,6 +26,25 @@ export default {
             bottom: false,
         }
     },
+    computed: {
+      bgRWD: function(){
+        if(window.innerWidth <= 768){
+            return this.bg
+        }
+        else{
+            return this.bgWeb
+        }
+      }
+    },
+    methods: {
+        handle_Emit: function() {
+          const self = this
+          Bus.$emit('emitCoverTitle', {
+            title: self.title,
+            pageIndex : $(self.$el).index()
+          })
+        }
+    }, 
     created: function(){
         if(this.position == 'top'){
             this.top = true
@@ -36,16 +56,10 @@ export default {
             this.aligncenter = true
         }
     },
-    computed: {
-        bgRWD: function(){
-            if(window.innerWidth <= 768){
-                return this.bg
-            }
-            else{
-                return this.bgWeb
-            }
-        }
-    }
+    mounted() {
+        this.handle_Emit()
+        console.log($(this.$el).index())
+    },
 }
 </script>
 

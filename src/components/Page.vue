@@ -10,29 +10,26 @@ export default {
   name: 'Page',
   data () {
     return {
-    	isHintShow: true,
+        titleList: [],
     }
-  },
-  beforeMount() {
-
   },
   mounted() {
     const pageLength = Number($('.section').length);
-    console.log(pageLength)
     $('#page').fullpage({
         afterLoad: function(anchorLink, index) {
-            console.log(index)
-            $('.section').eq(index - 1).css({
+            $('.active').css({
                 'z-index': 99,
             })
         },
         onLeave: function(index, nextIndex, direction) {
-            $('.section').eq(index - 1).css({
+            $('.active').css({
                 'z-index': 0,
             })               
         }            
     })
-    console.log(this)
+    // console.log('page.vue')
+    // console.log(this)
+    // console.log(this.$data)
   }
 }
 </script>

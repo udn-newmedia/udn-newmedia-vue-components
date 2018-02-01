@@ -13,6 +13,7 @@ import PageCard from './components/PageCard.vue'
 import PageCover from './components/PageCover.vue'
 import PageFooter from './components/PageFooter.vue'
 import PageFullvideo from './components/PageFullvideo.vue'
+import PageHeadBar from './components/PageHeadBar.vue'
 import PageImgsay from './components/PageImgsay.vue'
 import PageIntro from './components/PageIntro.vue'
 import PageQuote from './components/PageQuote.vue'
@@ -42,6 +43,7 @@ const UdnComponent = {
         Vue.component('PageCover', PageCover)
         Vue.component('PageFooter', PageFooter)
         Vue.component('PageFullvideo', PageFullvideo)
+        Vue.component('PageHeadBar', PageHeadBar)
         Vue.component('PageImgsay', PageImgsay)
         Vue.component('PageIntro', PageIntro)
         Vue.component('PageQuote', PageQuote)        
@@ -73,6 +75,7 @@ export {
     PageCover,
     PageFooter,
     PageFullvideo,
+    PageHeadBar,
     PageImgsay,
     PageIntro,
     PageQuote,
@@ -94,3 +97,4 @@ if (typeof window !== 'undefined' && window.Vue && typeof $ !== 'undefined' && t
         console.log('Page!')
     })
 }
+

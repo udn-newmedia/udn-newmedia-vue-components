@@ -37,77 +37,77 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+h2{
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin: 0;
+}
+.container{
+    position: relative;
+    z-index: 1;
+}
+.chart-title{
+    font-size: 28px;
+}
+p{
+    font-size: 16px;
+    margin: 0;
+}
+.img-say{
+    font-size: 17px;
+    color: gray;
+    margin-top: 5px;
+}
+h6{
+	font-size: 16px;
+}
+.glass{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(black, 0.7);
+}
+@media screen and (max-width: 767px){
     h2{
-        text-align: left;
         font-size: 25px;
-        font-weight: bold;
-        line-height: 1.5;
-        margin: 0;
-    }
-    .container{
-        position: relative;
-        z-index: 1;
-    }
-    .chart-title{
-        font-size: 28px;
     }
     p{
         font-size: 16px;
-        margin: 0;
-    }
-    .img-say{
-        font-size: 17px;
-        color: gray;
-        margin-top: 5px;
+        line-height: 32px;
     }
     h6{
-    	font-size: 16px;
+    	font-size: 13px;
     }
-    .glass{
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .container{
         width: 100%;
-        height: 100%;
-        background-color: rgba(black, 0.7);
     }
-    @media screen and (max-width: 767px){
-        h2{
-            font-size: 25px;
-        }
-        p{
-            font-size: 16px;
-            line-height: 32px;
-        }
-        h6{
-        	font-size: 13px;
-        }
+    h2{
+        font-size: 25px;
     }
-    @media screen and (min-width: 768px) and (max-width: 1023px){
-        .container{
-            width: 100%;
-        }
-        h2{
-            font-size: 25px;
-        }
-        p{
-            font-size: 16px;
-            line-height: 32px;
-        }
-        h6{
-        	font-size: 13px;
-        }
+    p{
+        font-size: 16px;
+        line-height: 32px;
     }
-    @media screen and (min-width: 1024px){
-        .container{
-            width: 880px;
-        }
-        p{
-            font-size: 18px;
-        }
-        p>br{
-            line-height: 36px;
-        }
+    h6{
+    	font-size: 13px;
     }
+}
+@media screen and (min-width: 1024px){
+    .container{
+        width: 880px;
+    }
+    p{
+        font-size: 18px;
+    }
+    p>br{
+        line-height: 36px;
+    }
+}
 </style>
