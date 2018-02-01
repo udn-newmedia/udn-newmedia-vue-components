@@ -91,7 +91,7 @@ new Vue({
 
 	2格圖片排列
 ```js
-	<Column-Two imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg"></Column-Two>
+<Column-Two imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg"></Column-Two>
 ```
 	##### - Props
 
@@ -102,7 +102,7 @@ new Vue({
 
 	3格圖片排列
 ```js
-	<Column-Three imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" img3="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg" imgweb3="./static/web/bg_wang.jpg"></Column-Three>
+<Column-Three imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" img3="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg" imgweb3="./static/web/bg_wang.jpg"></Column-Three>
 ```
 	##### - Props
 
@@ -113,7 +113,7 @@ new Vue({
 
 	內文引言區塊，內含引言CSS設定
 ```js
-	<Quote img="./static/lee.png" text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"/>
+<Quote img="./static/lee.png" text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"/>
 ``` 
     ##### - Props
 
@@ -127,7 +127,7 @@ new Vue({
 
 	youtube嵌入
 ```js
-	<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A"></Youtube>
+<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A"></Youtube>
 ```
 	##### - Props
 
@@ -137,7 +137,7 @@ new Vue({
 
 	滾動視差過場
 ```js
-	<Section-Fixed-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
+<Section-Fixed-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
 ```
 	##### - Props
 
@@ -150,7 +150,7 @@ new Vue({
 
 	滿版圖過場
 ```js
-	<Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
+<Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
 ```
 	##### - Props
 
@@ -313,7 +313,7 @@ new Vue({
 
 + Page
 
-	開啟滿版滾動，所有的版面都要放在裡面。
+	滿版滾動容器，所有的版面都要放在裡面。
 
 ```js
 <Page>
