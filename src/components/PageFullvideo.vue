@@ -3,22 +3,16 @@
 		<div class="videocontainer">
 		    <div class="video-contain" :style="{backgroundColor: backgroundColor}">
 		        <video preload="metadata" playsinline webkit-playsinline="true"
-		               :poster="videoPoster" :muted="isMute" :controls="useControls" 
-		               @click='handle_clickVideo' ref='video'>
+		               :poster="videoPoster" :muted="isMute"
+		               @click='handle_clickVideo'
+		                ref='video'>
 		        	<source :src="source" type="video/mp4">       	
 		        </video>
-		        <div class="video-control">
-		          <div class="progress">
-		            <div class="progress-bar progress-bar-striped" 
-		                 :style="{width: progressWidth + '%'}" ref="progressbar"></div>
-		          </div>
-		          <!-- <i class="fa fa-play video-play hidden-md hidden-lg"></i> -->
-		          <div class="img-say-out volume-text hidden-lg" @click="volumeClick">點按開聲音</div>
-		          <i class="fa fa-spinner fa-pulse video-wait" :style="{opacity: isOpacity}"></i>            
-		          <i class="fa volume hidden-lg" 
-		             ref='volume' @click="volumeClick"
-		             :class="{'fa-volume-up': !isMute, 'fa-volume-off': isMute}"></i>
-		          <i class="fa fa-repeat replay hidden-lg" @click="replay"></i>
+		        <div class='controls'>
+		        	<canvas class="progressCircle" ref='canvas'></canvas>
+		        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
+		        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+		        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
 		        </div>
 		    </div>
 		</div>
@@ -34,15 +28,18 @@ var w = window.innerWidth
 export default {
 
   name: 'PageFullvideo',
-  props: ['src', 'srcWeb', 'poster', 'posterWeb','dataTarget', 'BgColor'],
+  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'BgColor'],
 	data: function () {
-	return {
-	  progress: 0,
-	  progressWidth: 0,
-	  getProgressTimer: null,
-	  isOpacity: 0,
-	  isMute: null,
-	}
+		return {
+		  progress: 0,
+		  progressWidth: 0,
+		  getProgressTimer: null,
+		  isOpacity: 0,
+		  isMute: null,
+		  isRepeat: false,
+		  isPause: true,
+		  isPlay: false,
+		}
 	},
 	computed: {
 		source: function () {
@@ -59,15 +56,69 @@ export default {
 				return this.posterWeb
 			}
 		},
-		useControls: function() {
-			if(platform === 'Mob'){
-			    return false
-			} else {
-			    return true
-			}
-		}
 	},
 	methods: {
+		drawCircleBox: function() {
+		 	const canvas = this.$refs.canvas
+		 	const ctx = canvas.getContext('2d')
+		 	canvas.width = 50
+		 	canvas.height = 50
+		 	const posX = canvas.width / 2,
+		 		  	posY = canvas.height / 2
+		 	ctx.clearRect( 0, 0, canvas.width, canvas.height );
+			const self = this
+		 	ctx.lineCap = 'round'
+			ctx.beginPath();
+			ctx.arc( posX, posY, 20, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+			ctx.strokeStyle = '#8e8e8e';
+			ctx.lineWidth = '2';
+			ctx.stroke();
+		},
+		drawCircular: function(pW) {
+		 	const canvas = this.$refs.canvas
+		 	const ctx = canvas.getContext('2d')
+		 	canvas.width = 50
+		 	canvas.height = 50
+		 	const posX = canvas.width / 2,
+		 		  	posY = canvas.height / 2
+		 	ctx.clearRect( 0, 0, canvas.width, canvas.height );
+			const self = this
+		 	ctx.lineCap = 'round'
+			ctx.beginPath();
+			ctx.arc( posX, posY, 20, (Math.PI/180) * 270, (Math.PI/180) * (270 + 360) );
+			ctx.strokeStyle = '#8e8e8e';
+			ctx.lineWidth = '2';
+			ctx.stroke();
+
+			ctx.beginPath();
+			ctx.strokeStyle = '#fff';
+			ctx.lineWidth = '2';
+			ctx.arc( posX, posY, 20, (Math.PI/180) * 270, (Math.PI/180) * (270 + pW) );
+			ctx.stroke();
+		},
+		getPlayingProgress: function () {
+		  const thisvideo = this.$refs.video
+		  const progressbar = this.$refs.progressbar
+		  const self = this
+		  if (this.getProgressTimer == null) {
+		    this.getProgressTimer = setInterval(function () {
+		      let curTime = thisvideo.currentTime
+		      let picent = curTime / thisvideo.duration * 360
+		      if (picent !== 360) {
+		        self.progressWidth = picent
+		        self.drawCircular(picent)      
+		      } else {
+		        self.progressWidth = 0
+		        self.drawCircular(0)
+		      }
+		      // Send GA every 5 seconds
+		      if (Math.floor(curTime / 5) > self.progress) {
+		        self.progress = Math.floor(curTime / 5)
+		      }
+		    }, 600)
+		  }
+		  console.log(this.progressWidth)
+		},		
 		onScroll: function () {
 		  const thisvideo = this.$refs.video
 		  let thisvideoTop = thisvideo.getBoundingClientRect().top
@@ -82,50 +133,13 @@ export default {
 		    }
 		  }
 		},
-		getPlayingProgress: function () {
-		  // let thisvideo = document.getElementById('introVideo')
-		  const thisvideo = this.$refs.video
-		  const progressbar = this.$refs.progressbar
-		  const self = this
-		  if (this.getProgressTimer == null) {
-		    this.getProgressTimer = setInterval(function () {
-		      let curTime = thisvideo.currentTime
-		      let percent = curTime / thisvideo.duration * 100
-		      if (percent !== 100) {
-		        self.progressWidth = percent        
-		      } else {
-		        self.progressWidth = 0
-		      }
-		      // Send GA every 5 seconds
-		      if (Math.floor(curTime / 5) > self.progress) {
-		        self.progress = Math.floor(curTime / 5)
-		      }
-		    }, 600)
-		  }
-		},
-		volumeClick: function () {
-		  console.count('click')
-		  const video = this.$refs.video
-		  const volume = this.$refs.volume
-		  if (video.muted) {
-		    video.muted = true
-
-		    // document.querySelector('.volume').classList.remove('fa-volume-off')
-		    // document.querySelector('.volume').classList.add('fa-volume-up')
-		    this.isMute = false
-		  } else {
-		    video.muted = false
-		    this.isMute = true
-		    // document.querySelector('.volume').classList.remove('fa-volume-up')
-		    // document.querySelector('.volume').classList.add('fa-volume-off')
-		  }
-		},
 		replay: function () {
 		  // let thisvideo = document.getElementById('introVideo')
 		  const thisvideo = this.$refs.video
 		  thisvideo.currentTime = 0
 		  this.progressWidth = 0
 		  thisvideo.play()
+		  this.isRepeat = false
 		},
 		handle_clickVideo: function() {
 		  // const thisvideo = document.getElementById('introVideo')
@@ -145,23 +159,35 @@ export default {
 		const self = this
 		if (video) {
 		  video.onwaiting = function () {
-		    this.isOpacity = 1
+		    self.isOpacity = 1
 		  }
 		  video.oncanplay = function () {
-		    this.isOpacity = 0
+		    self.isOpacity = 0
 		  }
-		  video.onplay = this.getPlayingProgress()
+		  video.onplay = function() {
+		  	self.getPlayingProgress()
+		  	self.isPause = false
+		  	self.isPlay = true
+		  }
 		  video.onpause = function () {
-		    if (this.getProgressTimer) {
-		      clearInterval(this.getProgressTimer)
-		      this.getProgressTimer = null
+		  	self.isPause = true
+		  	self.isPlay = false
+		    if(self.getProgressTimer) {
+					clearInterval(self.getProgressTimer)
+					self.getProgressTimer = null
 		    }
 		  }
 		  video.onended = function () {
-		    this.progress = 0
-		    this.progressWidth = 0
+		    self.progress = 0
+		    self.isRepeat = true
+		    self.isPause = false
+		    self.isPlay = false
 		  }
 		}
+		if(w < 1024) {
+		  video.muted = true
+		}
+		this.drawCircleBox()
 	},
 	beforeMount: function () {
 		window.addEventListener('scroll', this.onScroll)
@@ -177,10 +203,31 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
+.controls{
+	position: absolute;
+	z-index: 9999;
+	bottom: 25px;
+	left: 50%;
+	margin-left: -25px;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0.77;
+	canvas{
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 50px;
+		height: 50px;
+	}
+}
 .videocontainer {
     width: 100%;
-    height: 90vh;
+    height: 100%;
     z-index: 1;
 }
 video::-webkit-media-controls-start-playback-button {
@@ -193,15 +240,12 @@ video::-webkit-media-controls-fullscreen-button {
 	height: 100%;
     background: rgb(236, 234, 234);
     position: relative;
-    margin-bottom: 10px;
+    z-index: 0;
 }
 video{
     width: 100%;
     height: 100%;
     object-fit: fill;
-}
-.video-control{
-    margin-top: -8px;
 }
 .video-wait {
     position: absolute;
@@ -226,43 +270,35 @@ video{
     transition: opacity 0.2s ease;
     pointer-events: none;
 }
-/* .volume {
-    color: #9fa0a0;
-    z-index: 999;
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 2rem;
-} */
-.volume{
-    color: #FFB93E;
-    z-index: 999;
-    position: absolute;
-    bottom: -24px;
-    left: 28px;
+.repeat{
+		position: relative;
+		z-index: 9999;
+		color: #fff;
+		font-size: 1.6em;
+		cursor: pointer;
+		animation-name: fadeIn;
+		animation-duration: 777ms;
+		animation-fill-mode: both;
+		animation-timing-function: cubic-bezier(0.42, 0, 0, 1.7);
 }
-.volume-text{
-    position: absolute;
-    left: 47px;
-    bottom: -28px;
-    color: #FFB93E;
+.videoBtn{
+		position: relative;
+		z-index: 9999;
+		color: #fff;
+		font-size: 1em;
+		cursor: pointer;
 }
-.replay{
-    color: #FFB93E;
-    z-index: 999;
-    position: absolute;
-    bottom: -26px;
-    right: 15px;
-}
-.progress{
-    height: 4px;
-    margin-bottom: 0;
-}
-.progress-bar{
-    height: 4px;
-    width: 0;
-    background-color: #FFB93E;
-    transition: width 0.6s linear;
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	60%{
+		transform: scale(1.1);
+	}
+	to{
+		transform: scale(1.0);
+		opacity: 1;
+	}
 }
 @media screen and (min-width: 1024px){
     .videocontainer{

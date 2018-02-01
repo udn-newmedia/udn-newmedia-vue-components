@@ -2,11 +2,11 @@
 	<div class='section' :style="{backgroundColor: bgColor}">
 		<div class='wrapper' :style="{backgroundColor: boxColor}">
 			<div class='squareVideo'>
-				<EmbededVideo :src='src' :poster='poster' style="object-fit: cover" ref='sqVideo'/>
+				<EmbededVideo :src='src' :poster='poster' :srcWeb='srcWeb' :posterWeb='posterWeb' style="object-fit: cover" ref='sqVideo'/>
 			</div>
 			<div class="quoteSection">
 				<div class='quoteFrom'>
-					<h3>{{quoter}}</h3>
+					<h2>{{quoter}}</h2>
 					<div class='volume' @click='handle_volume'>
 						<i class="fa fa-2x" :class="{'fa-volume-off': isMute, 'fa-volume-up': !isMute}" aria-hidden="true"></i>
 					</div>
@@ -27,7 +27,7 @@ export default {
   components: {
   	EmbededVideo
   },
-  props:['bgColor', 'boxColor', 'quoter', 'src', 'poster'],
+  props:['bgColor', 'boxColor', 'quoter', 'src', 'poster', 'srcWeb', 'posterWeb'],
   data () {
     return {
     	isMute: true,
@@ -68,7 +68,7 @@ export default {
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
-		padding: 0 15px;
+		padding: 15px;
 	}
 	.squareVideo{
 		width: 45%;
@@ -79,7 +79,7 @@ export default {
 		align-items: center;
 		justify-content: flex-start;
 		width: 100%;
-		h3{
+		h2{
 			font-size: 18px;
 			margin: 0;
 		}
@@ -94,7 +94,7 @@ export default {
 		padding: 20px 0;
 	}
 	p{
-		font-size: 21px;
+		font-size: 16px;
 		line-height: 32px;
 		font-weight: bold;
 	}
@@ -102,6 +102,9 @@ export default {
 
     }	
     @media screen and (min-width: 1024px) {
+    	p{
+    		font-size: 18px;
+    	}
     	.wrapper{
     		flex-direction: row;
     		// align-items: center;
@@ -112,6 +115,7 @@ export default {
     	.squareVideo{
     		width: 40%;
     		height: auto;
+    		margin-left: 0;
     	}
     	.quoteSection{
     		display: flex;

@@ -50,7 +50,6 @@ export default {
 		}
 	}
     p{
-        font-size: 21px;
         margin: 0;
         color: #fff;
         z-index: 5;
@@ -58,21 +57,22 @@ export default {
     }
     @media screen and (max-width: 767px){
         p{
-            font-size: 18px;
+            font-size: 16px;
             line-height: 32px;
         }
     }
     @media screen and (min-width: 768px) and (max-width: 1024px){
         p{
-            font-size: 20px;
+            // font-size: 20px;
             line-height: 32px;
         }
     }
     @media screen and (min-width: 1025px){
         p>br{
-            line-height: 50px;
+            line-height: 36px;
         }
         p{
+          font-size: 18px;
           width: 100%;
           text-align: left;
           background-color: rgba(black, 0.7);

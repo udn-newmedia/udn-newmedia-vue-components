@@ -8,7 +8,6 @@
 export default {
 
   name: 'Page',
-  props: ['BgImg'],
   data () {
     return {
     	isHintShow: true,
@@ -33,6 +32,7 @@ export default {
             })               
         }            
     })
+    console.log(this)
   }
 }
 </script>

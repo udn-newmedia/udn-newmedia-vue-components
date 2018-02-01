@@ -39,7 +39,7 @@ export default {
 <style lang="scss" scoped>
     h2{
         text-align: left;
-        font-size: 30px;
+        font-size: 25px;
         font-weight: bold;
         line-height: 1.5;
         margin: 0;
@@ -52,7 +52,7 @@ export default {
         font-size: 28px;
     }
     p{
-        font-size: 21px;
+        font-size: 16px;
         margin: 0;
     }
     .img-say{
@@ -74,10 +74,10 @@ export default {
     }
     @media screen and (max-width: 767px){
         h2{
-            font-size: 26px;
+            font-size: 25px;
         }
         p{
-            font-size: 18px;
+            font-size: 16px;
             line-height: 32px;
         }
         h6{
@@ -89,22 +89,25 @@ export default {
             width: 100%;
         }
         h2{
-            font-size: 30px;
+            font-size: 25px;
         }
         p{
-            font-size: 20px;
+            font-size: 16px;
             line-height: 32px;
         }
         h6{
-        	font-size: 17px;
+        	font-size: 13px;
         }
     }
     @media screen and (min-width: 1024px){
         .container{
             width: 880px;
         }
+        p{
+            font-size: 18px;
+        }
         p>br{
-            line-height: 50px;
+            line-height: 36px;
         }
     }
 </style>

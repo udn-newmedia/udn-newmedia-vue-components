@@ -46,14 +46,14 @@ export default {
       if(w < 1024){
         return this.src 
       } else {
-        return this.srcWeb || this.src
+        return this.srcWeb
       }
     },
     videoPoster: function () {
       if(w < 1024){
         return this.poster 
       } else {
-        return this.posterWeb || this.poster
+        return this.posterWeb
       }
     },
     useControls: function() {
@@ -82,22 +82,22 @@ export default {
     const spinner = this.$refs.spinner
     const self = this
     if (video) {
-      video.onwaiting = function () {
+      video.onwaiting = () => {
         this.isOpacity = 1
       }
       video.oncanplay = function () {
-        this.isOpacity = 0
+        self.isOpacity = 0
       }
       video.onplay = this.getPlayingProgress()
       video.onpause = function () {
-        if (this.getProgressTimer) {
-          clearInterval(this.getProgressTimer)
-          this.getProgressTimer = null
+        if (self.getProgressTimer) {
+          clearInterval(self.getProgressTimer)
+          self.getProgressTimer = null
         }
       }
       video.onended = function () {
-        this.progress = 0
-        this.progressWidth = 0
+        self.progress = 0
+        self.progressWidth = 0
       }
     }
     if(w < 1024) {
@@ -191,6 +191,7 @@ video::-webkit-media-controls-fullscreen-button {
 video{
     width: 100%;
     object-fit: cover;
+    cursor: pointer;
 }
 .video-control{
     margin-top: -8px;
@@ -258,7 +259,10 @@ video{
 }
 @media screen and (min-width: 1024px){
     .videocontainer{
-        max-width: 880px;
+      max-width: 880px;
+    }
+    .video-contain{
+      margin-bottom: 0px;
     }
 }
 </style>

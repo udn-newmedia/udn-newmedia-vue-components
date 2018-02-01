@@ -44,7 +44,7 @@ new Vue({
 
 	頁面上方進度條
 ```js
-	<Indicator color="#FF0000"></Indicator>
+<Indicator color="#FF0000"></Indicator>
 ```
 	###### - Props
 
@@ -52,7 +52,7 @@ new Vue({
 
 + Head-Bar
 ```js
-	<Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
+<Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
 ```
     ##### - Props
 
@@ -63,21 +63,25 @@ new Vue({
 
 	封面
 ```js
-	<Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="middle"></Cover>
+<Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="middle"></Cover>
 ```
 	##### Props
 
 	* [title] 大標
 	* [subtitle] 副標
-	* [bg] 手機板封面
-	* [bgweb] 網頁版封面
+	* [bg] 手機板封面圖
+	* [bgweb] 網頁版封面圖
 	* [position] 標題位置 有 top middle bottom center 4種
 
 + Content-Container
 
 	用於包內文，內含內文行高等CSS設定
 ```js
-	<Content-Container background-color="#FFFFFF">
+<Content-Container background-color="#FFFFFF">
+	<p>再過43年，台灣幾乎人人都可以活到90歲，但活得長，卻不一定能活得好。高齡化下一階段最大挑戰，將變成「活著要幹嘛」？</p>
+	<p><br/></p>
+	<p>面對變長的人生下半場，有些人不退也不休，利用上半場累積的經驗與智慧，開創第二春傳承給下一代。有人則急流勇退，人生下半場追求自我實現。</p>	
+</Content-Container>
 ```  
     ##### - Props
     
@@ -160,13 +164,23 @@ new Vue({
 
 	##### - Props
 
-	* [href] 連結位置
+	* [href] 表單連結位置
 	* [text] 文字
 
 + Editor
 	
     作者區塊，內含CSS設定
-    
+```js
+<Editor>
+     <div>文字：蔡佩蓉、洪欣慈</div>
+     <div>視覺設計、影音：張心慈、許瑋琳</div>
+     <div>網頁製作：鄭偉廷</div>
+     <div>攝影：許正宏</div>
+     <div>場地提供：一直是晴天</div>
+     <div>2017.10.30</div>
+</Editor>
+```   
+
     ##### - Props
     
     * None
@@ -183,12 +197,12 @@ new Vue({
 
 	延伸閱讀區塊，內含CSS設定
 ```js
-	<Relate title="延伸閱讀" color="#363434" 
-		href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
-		href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
-		href3="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img3="./static/web/bg_wang.jpg" text3="兒少發展帳戶推動3個月 申請率25%" 
-		href4="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img4="./static/web/bg_wang.jpg" text4="流沙中年 棄6萬月新顧爸媽，我在貧窮線下度日" > 
-	</Relate>
+<Relate title="延伸閱讀" color="#363434" 
+	href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
+	href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
+	href3="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img3="./static/web/bg_wang.jpg" text3="兒少發展帳戶推動3個月 申請率25%" 
+	href4="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img4="./static/web/bg_wang.jpg" text4="流沙中年 棄6萬月新顧爸媽，我在貧窮線下度日" > 
+</Relate>
 ```
     ##### - Props
     
@@ -202,7 +216,7 @@ new Vue({
 
 	FB and Line 分享區塊。
 ```js
-	<Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
+<Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
 ```
     ##### - Props
     
@@ -212,7 +226,7 @@ new Vue({
 
 	FB 留言 plugin。
 ```js
-	<Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
+<Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
 ```
     ##### - Props
     
@@ -222,7 +236,7 @@ new Vue({
 
 	頁腳
 ```js
-	<Foot background-color="#FFFFFF"></Foot>
+<Foot background-color="#FFFFFF"></Foot>
 ```
 	##### - Props
 
@@ -244,20 +258,15 @@ new Vue({
 
 	* [src] 影片位址 (mobile版)
 
-	* [srcWeb] 影片位址 (pc版)
-
-	* [srcPad] 影片位址 (pad版)
+	* [src-web] 影片位址 (pc版)
 
 	* [poster] 影片預覽圖 (mobile版)
 
-	* [posterWeb] 影片預覽圖 (pc版)
-
-	* [posterPad] 影片預覽圖 (pad版)
-
-	* [dataTarget] 影片編號 (可自行指定1, 2, ...etc)
+	* [poster-web] 影片預覽圖 (pc版)
 
 	* [background-color] 背景色
-
+	
+	* [custom-control] 是否使用自定義樣式
 + ImageContain
 
 	嵌入文章中的圖片
@@ -307,73 +316,71 @@ new Vue({
 	開啟滿版滾動，所有的版面都要放在裡面。
 
 ```js
-    <Page>
-        <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
-        <Page-Intro fontcolor="#fff" Bg-Color="#000"></Page-Intro>
-        <Page-Card Video-Src='static/video.mp4'></Page-Card>
-    </Page>
+<Page>
+    <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
+    <Page-Intro fontcolor="#fff" Bg-Color="#000"></Page-Intro>
+    <Page-Card Video-Src='static/video.mp4'></Page-Card>
+</Page>
 ```
 
-+ PageArrow
-
-	向下提示箭頭。
-	注意：要放在 Page外面
-
-```js
-	<div id="app">
-		<Page>
-			<Page1>
-			<Page2>
-			<Page3>
-		</Page>
-		<Page-Arrow color="#fff" hint-color="#000"/>
-	</div>
-```
-
-    ##### - Props
-
-	* [color] 箭頭的顏色
-	* [hint-color] 首頁提示文字的顏色
-
-+ PageIntro
++ page-cover
 
 	滿版標題Cover
 
 ```js
-	<Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
+<Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
+arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 ```
 	##### Props
 
 	* [title] 大標
 	* [subtitle] 副標
-	* [fontcolor] 大/副題顏色
-	* [bg] 手機板封面
-	* [bgweb] 網頁版封面
-	* [position] 標題位置 有 top middle bottom 4種	
+	* [font-color] 大/副題顏色
+	* [bg] 手機封面圖
+	* [bg-web] 網頁封面圖
+	* [position] 標題位置 有 top middle bottom 3種	
+	* [arrow-color] 向下提示箭頭顏色
+	* [hint] 是否需要向下滾動提示字樣
+	* [hint-color] 提示字樣顏色
 
++ PageIntro
+
+	滿版引言
+
+```js
+<Page-Intro font-color="#fff" bg="./static/w1-bg_s.jpg" bg-web="./static/w1-bg2.jpg" arrow-color='#fff' hint-color='#fff'>
+   <p>「不拚什麼都沒有！」21歲競技體操國手李智凱，曾經是紀錄片《翻滾吧！男孩》中的「菜市場凱」，從小苦練「湯瑪士迴旋」絕技，讓他在去年為台灣搶下睽違16年的奧運體操門票，也讓世界注意到台灣體操選手。</p>
+   <p><br/></p>
+   <p>這次在台北世大運鞍馬決賽，李智凱以完美表現，摘下我國在世大運史上首面鞍馬金牌（奪金時刻影片）。他說：「努力過、嘗試過至少有50%的機會，不嘗試的話等於0。」不怕失敗，愈戰愈勇，就是他能在體操路上堅持15年的原因。</p>
+   <h6>2017.08.25更新</h6>
+   <Share href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"/>
+</Page-Intro>
+```	
 + PageCard
 
-	滿版卡片，可放入圖片，影片，或純文字
+   page卡片，可放入圖片，影片，或純文字
 
-	影片範例
+   影片範例
 
 ```js
-    <Page-Card Video-Src='static/video.mp4'>
-        <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
-    </Page-Card>
+<Page-Card video-src='./static/video/pcvideo.mp4' video-src-web='static/video/pcvideo.mp4' video-poster="./static/bg_wang.jpg" video-poster-web='static/bg_wang.jpg' bg-color='#000'>
+    <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+    <p><br/></p>
+    <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+</Page-Card> 
 ```
 
-	圖片範例
+   圖片範例
 
 ```js
-    <Page-Card Img-Src='./static/imageSmaple.png'>
-        <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
-        <p><br/></p>
-        <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
-    </Page-Card>  	
+<Page-Card Img-Src='./static/imageSmaple.png'>
+    <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+    <p><br/></p>
+    <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+</Page-Card>  	
 ```	
 
-	純文字範例
+   純文字範例
 
 ```js
     <Page-Card>
@@ -387,22 +394,67 @@ new Vue({
 
     ##### Props
 
-    * [Video-Src] 影片來源
-    * [Video-Poster] 影片預覽圖
-    * [Img-Src] 圖片來源
-    * [Img-Say] 圖片說(alt, title)
-    * [Bg-Color] 背景色
-    * [box-color] 卡片被景色
-
+    * [video-src] 影片來源
+    * [video-poster] 影片預覽圖
+    * [video-src-web] 電腦版影片來源
+    * [video-poster-web] 電腦版預覽圖來源
+    * [img-src] 圖片來源
+    * [img-say] 圖片說(alt, title)
+    * [bg-color] 背景色
+    * [font-color] 字體顏色
+    * [box-color] 卡片背景色
+    * [bg] 手機背景圖
+    * [bg-web] 網頁背景圖
+    
 + PageFullvideo
 
+  page滿版影音
+
 ```js
-    <Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
+<Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
 ```	
 
 	##### Props
 
 	* [src] 手機影片來源
 	* [poster] 手機愈覽圖
-	* [src-Web] 電腦版影片來源
-	* [poster-Web] 電腦版預覽圖
+	* [src-web] 電腦版影片來源
+	* [poster-web] 電腦版預覽圖
+	* [bg-color] 背景色
+
++ PageQuote
+  
+  page引言
+
+```js
+<Page-Quote quoter="體操國手 李智凱" src='static/squareVideo.mp4' src-web='./static/squareVideo.mp4' bg-color='#82c539'>
+    <p>奧運失敗的時候，當下腦筋是一片空白的，什麼都沒有想法，就是最不想發生的事發生了。下一個想法就是我還在比賽，要把比賽完成。</p>
+</Page-Quote>  
+``` 
+
+	##### Props
+
+	* [bg-color] 版面背景色
+	* [box-color] 內文區塊背景色
+	* [qouter] 引言來源
+	* [src] 影片來源
+	* [src-web] 電腦版影片來源
+	* [poster] 預覽圖來源
+	* [poster-web] 電腦版預覽圖來源
+
++ PageImgsay
+
+  滿版圖說
+
+  圖說文字用 `p` 輸入
+
+```js
+<Page-Imgsay src="./static/bg_wang.jpg" src-web="static/web/bg_wang.jpg">
+    <p>學童突發奇想，將廢棄漁業浮球做成樂器吹奏。</p>
+</Page-Imgsay>
+```
+
+	######Props
+
+	* [src] 圖片來源
+	* [src-web] 電腦版圖片來源

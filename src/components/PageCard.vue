@@ -7,7 +7,7 @@
             <div class="imgModel" v-if="isImg">
                 <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
             </div>
-            <div class="articleModel" :style="{color: color}">
+            <div class="articleModel" :style="{color: fontColor}">
                 <slot></slot>
             </div>
 		</div>
@@ -23,7 +23,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor'],
+  props: ['videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor'],
   data () {
     return {
 
@@ -81,7 +81,7 @@ export default {
         margin-bottom: 30px;
         img{
             width: 100%;
-            max-height: 40%;
+            height: auto;
         }
     }
     .articleModel{
@@ -96,7 +96,7 @@ export default {
     }
     h2{
         text-align: left;
-        font-size: 30px;
+        font-size: 25px;
         font-weight: bold;
         margin-bottom: 20px;
         line-height: 1.5;
@@ -104,26 +104,15 @@ export default {
         width: 100%;
     }
     p{
-        font-size: 21px;
+        font-size: 16px;
         margin: 0;
         text-align: left;
+        line-height: 1.5;
     }
-    @media screen and (max-width: 767px){
-        p{
-            font-size: 18px;
-            line-height: 32px;
-        }
+    p > br{
+        line-height: 32px;
     }
-    @media screen and (min-width: 768px) and (max-width: 1024px){
-        p{
-            font-size: 20px;
-            line-height: 32px;
-        }
-    }
-    @media screen and (min-width: 1025px){
-        h2{
-            font-size: 40px;
-        }
+    @media screen and (min-width: 1024px){
         .mediaContainer{
             width: 880px;
             flex-direction: row;
@@ -131,25 +120,31 @@ export default {
         }
         .videoIntro{
             width: 70% !important;
+            min-width: 880px;
         }
         .imgIntro{
             width: 70% !important;
+            min-width: 880px;
         }             
         .imgModel{
-            margin-bottom: 0;
+            margin-bottom: 0;          
         }
         .videoModel{
             margin-bottom: 0;
         }
+        h2{
+            font-size: 40px;
+        }        
         p{
             max-width: 880px;
+            font-size: 18px;
         }        
         .articleModel{
             max-width: 880px;
             padding-left: 20px;
         }
         p>br{
-            line-height: 50px;
+            line-height: 36px;
         }
     }	
 </style>

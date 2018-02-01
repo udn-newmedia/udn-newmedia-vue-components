@@ -17,7 +17,7 @@ export default {
     components: {
         PageArrow
     },
-    props: ['title', 'subtitle', 'bg', 'bgweb', "position", 'fontcolor', 'arrowColor', 'hint', 'hintColor'],
+    props: ['title', 'subtitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
     data: function(){
         return{
             aligncenter: false,
@@ -42,7 +42,7 @@ export default {
                 return this.bg
             }
             else{
-                return this.bgweb
+                return this.bgWeb
             }
         }
     }
@@ -74,7 +74,7 @@ export default {
         align-items: flex-start;
     }
     h1{
-        font-size: 55px;
+        font-size: 45px;
         font-weight: bold;
         letter-spacing: -1px;
         color: #FFFFFF;
@@ -83,25 +83,19 @@ export default {
         margin: 0;
     }
     #sub-title{
-        font-size: 55px;
+        font-size: 30px;
         color: #FFFFFF;
     }
 
     @media screen and (max-width: 767px) {
         h1{
-            font-size: 40px;
+            font-size: 38px;
         }
         #sub-title{
             font-size: 25px;
         }
         #cover{
             padding: 25% 0;
-        }
-    }
-
-    @media screen and (min-width: 768px) and (max-width: 1024px) {
-        h1{
-            font-size: 45px;
         }
     }
 
