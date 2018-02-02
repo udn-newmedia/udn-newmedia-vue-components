@@ -104,6 +104,7 @@ export default {
         width: 100%;
     }
     p{
+        width: 100%;
         font-size: 16px;
         margin: 0;
         text-align: left;
@@ -127,9 +128,11 @@ export default {
             min-width: 880px;
         }             
         .imgModel{
+            flex: 1;
             margin-bottom: 0;          
         }
         .videoModel{
+            flex: 1;
             margin-bottom: 0;
         }
         h2{
@@ -140,6 +143,7 @@ export default {
             font-size: 18px;
         }        
         .articleModel{
+            flex: 1;
             max-width: 880px;
             padding-left: 20px;
         }

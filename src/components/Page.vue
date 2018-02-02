@@ -20,16 +20,22 @@ export default {
             $('.active').css({
                 'z-index': 99,
             })
+            if(index === 1) {
+                $('.navWrapper').css('transform', 'translate(0, -100%)')
+            }
         },
         onLeave: function(index, nextIndex, direction) {
             $('.active').css({
                 'z-index': 0,
-            })               
+            })
+            if(index === 1) {
+                $('.navWrapper').css('transform', 'translate(0, 0)')
+            }
+            if(index === 2 && direction === 'up') {
+                $('.navWrapper').css('transform', 'translate(0, -100%)')
+            }
         }            
     })
-    // console.log('page.vue')
-    // console.log(this)
-    // console.log(this.$data)
   }
 }
 </script>

@@ -323,6 +323,28 @@ new Vue({
 </Page>
 ```
 
++ page-head-bar
+
+	page的head-bar。 請放在page標籤外!。
+	該標籤會自動抓 page-cover 中的 title內容。
+	如需外連區塊則在`<page-head-bar>`內 置入 `<a>`。
+
+```js
+<page-head-bar href='https://udn.com/upf/newmedia/2017_data/universide_taipei_2017/jump_boys.html' youtube='yes'>
+    <a href='./page.html'>外連結1</a>
+    <a href='./page.html'>外連結2</a>
+    <a href='./page.html'>外連結3</a>
+</page-head-bar>
+```
+
+
+   ##### Props
+	* [href] Facebook Comment href參數(必填)
+	* [color] icon和導引字顏色 預設:白字 手機只變icon顏色
+	* [bg-color] headrbar的顏色
+	* [youtube] youtube Icon 
+	* [youtube-link] youtube 連結
+
 + page-cover
 
 	滿版標題Cover
@@ -331,7 +353,7 @@ new Vue({
 <Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
 arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 ```
-	##### Props
+    ##### Props
 
 	* [title] 大標
 	* [subtitle] 副標
