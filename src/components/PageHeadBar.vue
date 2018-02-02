@@ -108,12 +108,6 @@ export default {
   		self.getTitle.push(msg)
   	})
   },
-  updated() {
-
-  },
-  mounted() {
-  	console.log(this.$props)
-  }
 }
 </script>
 

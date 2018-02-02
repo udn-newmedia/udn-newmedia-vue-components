@@ -64,7 +64,7 @@ export default {
 		 	canvas.width = 50
 		 	canvas.height = 50
 		 	const posX = canvas.width / 2,
-		 		  	posY = canvas.height / 2
+		 		  posY = canvas.height / 2
 		 	ctx.clearRect( 0, 0, canvas.width, canvas.height );
 			const self = this
 		 	ctx.lineCap = 'round'
@@ -117,7 +117,6 @@ export default {
 		      }
 		    }, 600)
 		  }
-		  console.log(this.progressWidth)
 		},		
 		onScroll: function () {
 		  const thisvideo = this.$refs.video
