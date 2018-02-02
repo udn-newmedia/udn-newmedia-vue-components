@@ -1,19 +1,19 @@
 <template>
 	<div class="section">
 		<div class="videocontainer">
-		    <div class="video-contain" :style="{backgroundColor: backgroundColor}">
-		        <video preload="metadata" playsinline webkit-playsinline="true"
-		               :poster="videoPoster" :muted="isMute"
-		               @click='handle_clickVideo'
-		                ref='video'>
-		        	<source :src="source" type="video/mp4">       	
-		        </video>
-		        <div class='controls'>
-		        	<canvas class="progressCircle" ref='canvas'></canvas>
-		        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
-		        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-		        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-		        </div>
+		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster +')'}">
+	        <video preload="metadata" playsinline='true' webkit-playsinline="true"
+	               :poster="videoPoster" :muted="isMute"
+	               ref='video'>
+	        	<source :src="source" type="video/mp4">       	
+	        </video>		    	
+		    	<canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
+	        <div class='controls'>
+	        	<canvas class="progressCircle" ref='controlCanvas'></canvas>
+	        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
+	        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+	        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+	        </div>
 		    </div>
 		</div>
 	</div>
@@ -59,12 +59,12 @@ export default {
 	},
 	methods: {
 		drawCircleBox: function() {
-		 	const canvas = this.$refs.canvas
+		 	const canvas = this.$refs.controlCanvas
 		 	const ctx = canvas.getContext('2d')
 		 	canvas.width = 50
 		 	canvas.height = 50
 		 	const posX = canvas.width / 2,
-		 		  posY = canvas.height / 2
+		 		 		posY = canvas.height / 2
 		 	ctx.clearRect( 0, 0, canvas.width, canvas.height );
 			const self = this
 		 	ctx.lineCap = 'round'
@@ -75,7 +75,7 @@ export default {
 			ctx.stroke();
 		},
 		drawCircular: function(pW) {
-		 	const canvas = this.$refs.canvas
+		 	const canvas = this.$refs.controlCanvas
 		 	const ctx = canvas.getContext('2d')
 		 	canvas.width = 50
 		 	canvas.height = 50
@@ -96,6 +96,20 @@ export default {
 			ctx.arc( posX, posY, 20, (Math.PI/180) * 270, (Math.PI/180) * (270 + pW) );
 			ctx.stroke();
 		},
+		drawVideo: function() {
+		 	const canvas = this.$refs.videoCanvas
+		 	const ctx = canvas.getContext('2d')
+			const video = this.$refs.video
+			if(window.innerWidth < 1024) {
+				canvas.width = 768
+				canvas.height = 1024
+			} else {
+				canvas.width = 1440
+				canvas.height = 810
+			}
+			ctx.clearRect( 0, 0, canvas.width, canvas.height );
+			ctx.drawImage(video, 0, 0, canvas.width, canvas.height)
+		},
 		getPlayingProgress: function () {
 		  const thisvideo = this.$refs.video
 		  const progressbar = this.$refs.progressbar
@@ -106,7 +120,8 @@ export default {
 		      let picent = curTime / thisvideo.duration * 360
 		      if (picent !== 360) {
 		        self.progressWidth = picent
-		        self.drawCircular(picent)      
+		        self.drawCircular(picent)
+		        self.drawVideo()
 		      } else {
 		        self.progressWidth = 0
 		        self.drawCircular(0)
@@ -115,7 +130,7 @@ export default {
 		      if (Math.floor(curTime / 5) > self.progress) {
 		        self.progress = Math.floor(curTime / 5)
 		      }
-		    }, 600)
+		    }, 41)
 		  }
 		},		
 		onScroll: function () {
@@ -161,8 +176,7 @@ export default {
 		    self.isOpacity = 1
 		  }
 		  video.oncanplay = function () {
-		    self.isOpacity = 0
-		  }
+		    self.isOpacity = 0		  }
 		  video.onplay = function() {
 		  	self.getPlayingProgress()
 		  	self.isPause = false
@@ -242,9 +256,10 @@ video::-webkit-media-controls-fullscreen-button {
     z-index: 0;
 }
 video{
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+	display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 .video-wait {
     position: absolute;
@@ -286,6 +301,14 @@ video{
 		color: #fff;
 		font-size: 1em;
 		cursor: pointer;
+}
+.videoCanvas{
+	position: absolute;
+	z-index: auto;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 @keyframes fadeIn {
 	from {
