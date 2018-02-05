@@ -334,6 +334,10 @@ new Vue({
 </Page>
 ```
 
+   #####Props
+
+	* [scroll-speed] 滿版滾動速度, 預設700 ex: scroll-speed=1000	 	 
+
 + page-head-bar
 
 	page的head-bar。 請放在page標籤外!。
@@ -502,7 +506,44 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 </Page-Imgsay>
 ```
 
-	######Props
+	#####Props
 
 	* [src] 圖片來源
 	* [src-web] 電腦版圖片來源
+
++ PageFooter
+
+  Page最後一頁
+
+  製作群請用 `p` 輸入
+
+```js
+<page-footer 
+    href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"
+    bg-img='./static/bg_mobile.jpg' bg-img-web='./static/bg.jpg'
+    color="#fff" bg-color='#000' udncom='yes' newmedia='yes' update='2017.05.25更新'
+    link1='https://goo.gl/wJMfCh' text1='競技體操的秘密 選手如何對抗地心引力' img1='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link2='https://goo.gl/iVf5H8' text2='為同一個名字努力' img2='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link3='https://goo.gl/wJMfCh' text3='跆拳道得分5招 國首示範給你看' img3='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link4='https://goo.gl/iVf5H8' text4='我只是範例' img4='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'>
+    <p>製作團隊：</p>
+    <p>文字：魏妤庭、連珮宇</p>
+    <p>攝影：許正宏、王騰毅</p>
+    <p>網頁製作：方泰鈞</p>
+    <p>監製：林新輝、鄭朝陽、董谷音、蔡幸怡</p>
+</page-footer>
+```
+
+	#####Props
+
+	*[href] 分享出去的連結網址
+	*[bg-img] 手機版背景圖
+	*[bg-img-web] 電腦版背景圖
+	*[color] 字體顏色
+	*[bg-color] 滿版背景色
+	*[udncom] 使用聯合新聞網Logo ex: udncom='yes'
+	*[newmedia] 使用新媒體中心Logo ex: newmedia='yes'
+	*[ubrand] 使用融媒體Logo ex: ubrand='yes'
+	*[link1~4] 延伸閱讀1~4連結
+	*[text1~4] 延伸閱讀1~4標題
+	*[img1~4] 延伸閱讀1~4圖
