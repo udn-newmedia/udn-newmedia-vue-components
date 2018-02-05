@@ -1,3 +1,4 @@
+import ColumnOne from './components/ColumnOne.vue'
 import ColumnThree from './components/ColumnThree.vue'
 import ColumnTwo from './components/ColumnTwo.vue'
 import Content from './components/Content.vue'
@@ -28,6 +29,7 @@ import Youtube from './components/Youtube.vue'
 const UdnComponent = {
     install: function(Vue){
         
+        Vue.component('ColumnOne', ColumnOne)
         Vue.component('ColumnThree', ColumnThree)
         Vue.component('ColumnTwo', ColumnTwo)
         Vue.component('ContentContainer', Content)
@@ -60,6 +62,7 @@ const UdnComponent = {
 export default UdnComponent
 
 export { 
+    ColumnOne,
     ColumnThree,
     ColumnTwo,
     Content,
