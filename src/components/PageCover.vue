@@ -58,7 +58,6 @@ export default {
     },
     mounted() {
         this.handle_Emit()
-        console.log($(this.$el).index())
     },
 }
 </script>

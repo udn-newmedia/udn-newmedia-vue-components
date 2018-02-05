@@ -254,6 +254,8 @@ video::-webkit-media-controls-fullscreen-button {
     background: rgb(236, 234, 234);
     position: relative;
     z-index: 0;
+    background-position: center center;
+    background-size: cover;
 }
 video{
 	display: none;

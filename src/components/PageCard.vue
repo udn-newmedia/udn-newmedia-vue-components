@@ -8,7 +8,13 @@
                 <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
             </div>
             <div class="articleModel" :style="{color: fontColor}">
-                <slot></slot>
+                <h2>{{title}}</h2>
+                <div class="articleContent">
+                    <slot></slot>
+                </div>
+                <div class='quote' :style="{order: isFirst}" v-if='useQuote' :class="{quoteFirst: letFirst}">
+                    <p>究竟有多少海洋垃圾堆在台灣海岸？這些塑膠垃圾對魚類蝦蟹，甚至人體，影響又如何？</p>
+                </div>
             </div>
 		</div>
 	</div>
@@ -23,7 +29,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor'],
+  props: ['title', 'quoteFirst', 'useQuote', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor'],
   data () {
     return {
 
@@ -50,6 +56,13 @@ export default {
         } else {
             return this.bgWeb
         }
+    },
+    letFirst: function() {
+        if(this.quoteFirst === 'yes') {
+            return true
+        } else if(this.quoteFirst === 'no'){
+            return false
+        }
     }
   }
 }
@@ -63,6 +76,7 @@ export default {
     }
 	.mediaContainer{
 		width: calc(100% - 30px);
+        max-width: 940px;
 		margin: 0 auto;
 		border-radius: 4px;
 		padding: 20px 15px;
@@ -91,8 +105,26 @@ export default {
         align-items: center;
         justify-content: center;
     }
-    .videoIntro{
-        width: calc(100% - 30px) !important;
+    .quote{
+        width: 100%;
+        margin: 15px 0;
+        order: 4;
+        p{
+            border-top: 2px solid #29b0af;
+            border-bottom: 2px solid #29b0af;            
+            padding-top: 15px;
+            padding-bottom: 15px;            
+            font-weight: bold;
+        }
+    }
+    .articleContent{
+        width: 100%;
+        order: 3;
+    }
+    .quoteFirst{
+        order: 2 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
     h2{
         text-align: left;
@@ -102,6 +134,7 @@ export default {
         line-height: 1.5;
         margin: 0;
         width: 100%;
+        order: 1;
     }
     p{
         width: 100%;
@@ -115,18 +148,9 @@ export default {
     }
     @media screen and (min-width: 1024px){
         .mediaContainer{
-            width: 880px;
             flex-direction: row;
             padding: 30px 25px;
-        }
-        .videoIntro{
-            width: 70% !important;
-            min-width: 880px;
-        }
-        .imgIntro{
-            width: 70% !important;
-            min-width: 880px;
-        }             
+        }            
         .imgModel{
             flex: 1;
             margin-bottom: 0;          
@@ -144,11 +168,27 @@ export default {
         }        
         .articleModel{
             flex: 1;
-            max-width: 880px;
-            padding-left: 20px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 10px;
         }
         p>br{
             line-height: 36px;
         }
+        .articleContent{
+            flex: 1.5;
+        }
+        .quote{
+            margin: 0;
+            flex: 1;
+            padding-left: 20px;
+        }
+        .quoteFirst{
+            order: 2 !important;
+            padding-left: 0 !important;
+            padding-right: 20px !important;
+        }        
     }	
 </style>

@@ -13,8 +13,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://udn.com/upf/newmedia/js/jquery.fullPage.min.js"></script>
-    <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="./dist/udn-newmedia-vue-components.min.js"></script>
+    <!-- <script src="https://udn-newmedia.github.io/udn-newmedia-vue-components/dist/udn-newmedia-vue-components.min.js"></script> -->
 
     <!-- ours google analytic -->
     <script>
@@ -67,13 +68,14 @@
                 <h6>2017.08.25更新</h6>
                 <Share href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"></Share>
             </page-intro>
-            <page-card font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff'>
-                <h2>小學門口 大海送垃圾</h2>
+            <page-card title='小學門口 大海送垃圾' font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff' use-quote='yes'>
                 <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+                <p><br/></p>
+                <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p> 
             </page-card>            
-            <page-card font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff'>
+            <page-card font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff' use-quote='yes' quote-first='yes' title='主文+引言+標題'>
                 <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
@@ -104,7 +106,7 @@
                 <p><br/></p>
                 <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
             </page-card>                     
-            <page-quote quoter="體操國手 李智凱" src='static/squareVideo.mp4' src-web='./static/squareVideo.mp4' bg-color='#82c539'>
+            <page-quote quoter="體操國手 李智凱" src='static/squareVideo.mp4' src-web='./static/squareVideo.mp4' bg-color='#82c539' box-color='#fff'>
                 <p>奧運失敗的時候，當下腦筋是一片空白的，什麼都沒有想法，就是最不想發生的事發生了。下一個想法就是我還在比賽，要把比賽完成。</p>
             </page-quote>                        
             <page-fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4' poster="./static/bg_wang.jpg" poster-web="./static/web/bg_wang.jpg"></page-fullvideo>
@@ -113,6 +115,7 @@
             </page-imgsay>
             <page-footer 
                 href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"
+                bg-img='./static/bg_mobile.jpg' bg-img-web='./static/bg.jpg'
                 color="#fff" bg-color='#000' udncom='yes' newmedia='yes' update='2017.05.25更新'
                 link1='https://goo.gl/wJMfCh' text1='競技體操的秘密 選手如何對抗地心引力' img1='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
                 link2='https://goo.gl/iVf5H8' text2='為同一個名字努力' img2='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'

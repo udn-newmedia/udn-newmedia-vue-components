@@ -414,8 +414,21 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 </Page-Card>	
 ```	
 
+   純文字 + 引文 +標題範例
+
+```js
+<page-card title='小學門口 大海送垃圾' font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff' use-quote='yes'>
+ <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+ <p><br/></p>
+ <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+ <p><br/></p>
+ <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>                
+</page-card>  
+```
+
     ##### Props
 
+	* [title] 卡片標題
     * [video-src] 影片來源
     * [video-poster] 影片預覽圖
     * [video-src-web] 電腦版影片來源
@@ -427,6 +440,8 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
     * [box-color] 卡片背景色
     * [bg] 手機背景圖
     * [bg-web] 網頁背景圖
+    * [use-quote] 使用引言 ex: use-quote='yes'
+    * [quote-first] 引言在前面 ex: quote-first='yes'
     
 + PageFullvideo
 
