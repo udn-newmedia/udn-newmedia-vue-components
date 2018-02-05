@@ -90,7 +90,7 @@ export default {
 				}
 				img{
 					display: none;
-					opacity: 0.8;
+					opacity: 0.9;
 					transition: opacity 444ms linear;
 					&:hover{
 						opacity: 1;

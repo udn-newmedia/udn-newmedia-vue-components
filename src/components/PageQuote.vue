@@ -94,6 +94,7 @@ export default {
 		padding: 20px 0;
 	}
 	p{
+    margin: 0;
 		font-size: 16px;
 		line-height: 32px;
 		font-weight: bold;

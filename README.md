@@ -338,7 +338,7 @@ new Vue({
 
 	* [scroll-speed] 滿版滾動速度, 預設700 ex: scroll-speed=1000	 	 
 
-+ page-head-bar
++ PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
 	該標籤會自動抓 page-cover 中的 title內容。
@@ -360,9 +360,11 @@ new Vue({
 	* [youtube] youtube Icon 
 	* [youtube-link] youtube 連結
 
-+ page-cover
++ PageCover
 
 	滿版標題Cover
+
+	會將Title 傳給page-head-bar做連結使用
 
 ```js
 <Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
