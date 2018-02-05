@@ -87,6 +87,17 @@ new Vue({
     
     * [background-color] 區塊背景色 預設: 無
 
++ Column-One
+
+	1格圖片排列
+```js
+<Column-One imgsay="圖說" img1="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg"></Column-One>
+```
+	##### - Props
+
+	* [img1] 圖片1
+	* [imgsay] 圖說
+
 + Column-Two
 
 	2格圖片排列
