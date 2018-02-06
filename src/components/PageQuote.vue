@@ -2,7 +2,7 @@
 	<div class='section' :style="{backgroundColor: bgColor}">
 		<div class='wrapper' :style="{backgroundColor: boxColor}">
 			<div class='squareVideo'>
-				<EmbededVideo :src='src' :poster='poster' :srcWeb='srcWeb' :posterWeb='posterWeb' style="object-fit: cover" ref='sqVideo' customControls='yes'/>
+				<EmbededVideo :src='src' :poster='poster' :srcWeb='srcWeb' :posterWeb='posterWeb' style="object-fit: cover" ref='sqVideo' customControls='yes' :controlColor="controlColor"/>
 			</div>
 			<div class="quoteSection">
 				<div class='quoteFrom'>
@@ -27,7 +27,7 @@ export default {
   components: {
   	EmbededVideo
   },
-  props:['bgColor', 'boxColor', 'quoter', 'src', 'poster', 'srcWeb', 'posterWeb'],
+  props:['bgColor', 'boxColor', 'quoter', 'src', 'poster', 'srcWeb', 'posterWeb', 'controlColor'],
   data () {
     return {
     	isMute: true,

@@ -2,7 +2,7 @@
 	<div class="section pageContent" :style="{backgroundImage: 'url('+ bgSrc +')', backgroundColor: bgColor}">
 		<div class="mediaContainer" :class="{videoIntro: isVideo, imgIntro: isImg}" :style="{backgroundColor: BoxColor}">
             <div class="videoModel" v-if="isVideo">
-                <EmbededVideo :src='videoSrc' :srcWeb='videoSrcWeb' :poster='videoPoster' :posterWeb='videoPosterWeb' customControl='yes'/>
+                <EmbededVideo :src='videoSrc' :srcWeb='videoSrcWeb' :poster='videoPoster' :posterWeb='videoPosterWeb' customControl='yes' :controlColor="controlColor"/>
             </div>
             <div class="imgModel" v-if="isImg">
                 <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
@@ -29,7 +29,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['title', 'quoteFirst', 'useQuote', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor'],
+  props: ['title', 'quoteFirst', 'useQuote', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'controlColor'],
   data () {
     return {
 

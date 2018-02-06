@@ -6,16 +6,16 @@
                    @click='handle_clickVideo' ref='video'></video>
             <div class="video-control">
               <div class="progress">
-                <div class="progress-bar progress-bar-striped" 
-                     :style="{width: progressWidth + '%'}" ref="progressbar"></div>
+                <div class="progress-bar progress-bar-striped"
+                     :style="{width: progressWidth + '%', backgroundColor: controlColor}" ref="progressbar"></div>
               </div>
               <!-- <i class="fa fa-play video-play hidden-md hidden-lg"></i> -->
-              <div class="img-say-out volume-text hidden-lg" @click="volumeClick" v-if='customControl'>點按開聲音</div>
-              <i class="fa fa-spinner fa-pulse video-wait" :style="{opacity: isOpacity}"></i>            
+              <div class="img-say-out volume-text hidden-lg" @click="volumeClick" v-if='customControl' :style="{color: controlColor}">點按開聲音</div>
+              <i class="fa fa-spinner fa-pulse video-wait" :style="{opacity: isOpacity, color: controlColor}"></i>            
               <i class="fa volume hidden-lg" 
-                 v-if='customControl' ref='volume' @click="volumeClick" 
+                 v-if='customControl' ref='volume' @click="volumeClick" :style="{color: controlColor}"
                  :class="{'fa-volume-up': !isMute, 'fa-volume-off': isMute}"></i>
-              <i class="fa fa-repeat replay hidden-lg" v-if='customControl' @click="replay"></i>
+              <i class="fa fa-repeat replay hidden-lg" v-if='customControl' @click="replay" :style="{color: controlColor}"></i>
             </div>
         </div>
     </div>
@@ -29,7 +29,7 @@ var platform = (isMob === true) ? 'Mob' : 'PC'
 const w = window.innerWidth
 export default {
   name: 'embededvideo',
-  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'background-color', 'customControl'],
+  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'background-color', 'customControl', 'controlColor'],
   components: {
   },
   data: function () {
@@ -163,6 +163,7 @@ export default {
       const thisvideo = this.$refs.video
       if(thisvideo.paused){
         thisvideo.play()
+        this.getPlayingProgress()
       } else{
         thisvideo.pause()
       }
@@ -257,9 +258,6 @@ video{
     transition: width 0.6s linear;
 }
 @media screen and (min-width: 1024px){
-    .videocontainer{
-      max-width: 880px;
-    }
     .video-contain{
       margin-bottom: 0px;
     }
