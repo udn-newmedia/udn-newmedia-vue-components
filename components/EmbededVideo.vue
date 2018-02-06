@@ -143,7 +143,6 @@ export default {
     volumeClick: function () {
       const video = this.$refs.video
       const volume = this.$refs.volume
-      console.log('點到?')
       if (this.isMute === true) {
         video.muted = false
         this.isMute = false
