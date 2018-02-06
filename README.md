@@ -334,7 +334,11 @@ new Vue({
 </Page>
 ```
 
-+ page-head-bar
+   #####Props
+
+	* [scroll-speed] 滿版滾動速度, 預設700 ex: scroll-speed=1000	 	 
+
++ PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
 	該標籤會自動抓 page-cover 中的 title內容。
@@ -356,9 +360,11 @@ new Vue({
 	* [youtube] youtube Icon 
 	* [youtube-link] youtube 連結
 
-+ page-cover
++ PageCover
 
 	滿版標題Cover
+
+	會將Title 傳給page-head-bar做連結使用
 
 ```js
 <Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
@@ -425,8 +431,21 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 </Page-Card>	
 ```	
 
+   純文字 + 引文 +標題範例
+
+```js
+<page-card title='小學門口 大海送垃圾' font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff' use-quote='yes'>
+ <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
+ <p><br/></p>
+ <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>
+ <p><br/></p>
+ <p>世大運前十天，李智凱在競技體操測試賽中，展現獨家招式「湯瑪士迴旋」，華麗美技讓外國選手讚嘆。</p>                
+</page-card>  
+```
+
     ##### Props
 
+	* [title] 卡片標題
     * [video-src] 影片來源
     * [video-poster] 影片預覽圖
     * [video-src-web] 電腦版影片來源
@@ -438,6 +457,8 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
     * [box-color] 卡片背景色
     * [bg] 手機背景圖
     * [bg-web] 網頁背景圖
+    * [use-quote] 使用引言 ex: use-quote='yes'
+    * [quote-first] 引言在前面 ex: quote-first='yes'
     
 + PageFullvideo
 
@@ -487,7 +508,44 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 </Page-Imgsay>
 ```
 
-	######Props
+	#####Props
 
 	* [src] 圖片來源
 	* [src-web] 電腦版圖片來源
+
++ PageFooter
+
+  Page最後一頁
+
+  製作群請用 `p` 輸入
+
+```js
+<page-footer 
+    href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"
+    bg-img='./static/bg_mobile.jpg' bg-img-web='./static/bg.jpg'
+    color="#fff" bg-color='#000' udncom='yes' newmedia='yes' update='2017.05.25更新'
+    link1='https://goo.gl/wJMfCh' text1='競技體操的秘密 選手如何對抗地心引力' img1='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link2='https://goo.gl/iVf5H8' text2='為同一個名字努力' img2='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link3='https://goo.gl/wJMfCh' text3='跆拳道得分5招 國首示範給你看' img3='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
+    link4='https://goo.gl/iVf5H8' text4='我只是範例' img4='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'>
+    <p>製作團隊：</p>
+    <p>文字：魏妤庭、連珮宇</p>
+    <p>攝影：許正宏、王騰毅</p>
+    <p>網頁製作：方泰鈞</p>
+    <p>監製：林新輝、鄭朝陽、董谷音、蔡幸怡</p>
+</page-footer>
+```
+
+	#####Props
+
+	*[href] 分享出去的連結網址
+	*[bg-img] 手機版背景圖
+	*[bg-img-web] 電腦版背景圖
+	*[color] 字體顏色
+	*[bg-color] 滿版背景色
+	*[udncom] 使用聯合新聞網Logo ex: udncom='yes'
+	*[newmedia] 使用新媒體中心Logo ex: newmedia='yes'
+	*[ubrand] 使用融媒體Logo ex: ubrand='yes'
+	*[link1~4] 延伸閱讀1~4連結
+	*[text1~4] 延伸閱讀1~4標題
+	*[img1~4] 延伸閱讀1~4圖

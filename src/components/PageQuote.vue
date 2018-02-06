@@ -64,7 +64,7 @@ export default {
 		position: relative;
 		top: 0;
 		left: 0;
-		width: 100%;
+		width: calc(100% - 30px);
 		margin: 0 auto;
 		display: flex;
 		flex-direction: column;
@@ -94,6 +94,7 @@ export default {
 		padding: 20px 0;
 	}
 	p{
+    margin: 0;
 		font-size: 16px;
 		line-height: 32px;
 		font-weight: bold;
@@ -107,10 +108,11 @@ export default {
     	}
     	.wrapper{
     		flex-direction: row;
-    		// align-items: center;
-    		justify-content: center;
+        justify-content: center;
+    		align-items: center;
     		width: 80%;
-    		max-width: 1080px;
+        padding: 30px;
+    		max-width: 940px;
     	}
     	.squareVideo{
     		width: 40%;
@@ -121,12 +123,9 @@ export default {
     		display: flex;
     		flex-direction: column;
     		justify-content: space-between;
-    		height: 90%;
-    		width: 40%;
-    		margin-left: 20px;
+    		height: 100%;
+    		width: 60%;
+        padding: 50px 0 50px 30px;
     	}
-		.quoteSection{
-			padding-top: 20px;
-		}
     }
 </style>

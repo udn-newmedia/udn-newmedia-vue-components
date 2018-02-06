@@ -1,5 +1,5 @@
 <template>
-	<div class="section" :style="{backgroundColor: bgColor}">
+	<div class="section" :style="{backgroundColor: bgColor, backgroundImage: 'url('+ resImg +')'}">
 		<div class="wrapper">
 			<Share :href='href'/>
 			<p><br/></p>
@@ -33,7 +33,7 @@ import Share from '../components/Share.vue'
 export default {
 
   name: 'PageFooter',
-  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom', 'update', 'bgColor'],
+  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom', 'update', 'bgColor', 'bgImg', 'bgImgWeb'],
   components:{
   	Editor,
   	Share
@@ -43,6 +43,15 @@ export default {
 
     }
   },
+  computed: {
+  	resImg: function() {
+  		if(window.innerWidth < 1024) {
+  			return this.bgImg
+  		} else {
+  			return this.bgImgWeb
+  		}
+  	}
+  }
 }
 </script>
 
@@ -81,10 +90,10 @@ export default {
 				}
 				img{
 					display: none;
-					opacity: 1;
+					opacity: 0.9;
 					transition: opacity 444ms linear;
 					&:hover{
-						opacity: 0.8;
+						opacity: 1;
 					}
 				}
 				p::before {
