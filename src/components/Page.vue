@@ -22,7 +22,7 @@ export default {
             console.log('請輸入數字,單位為ms,目前為700')            
             return 700
         }
-    }
+    },
   },
   mounted() {
     const self = this
@@ -36,20 +36,24 @@ export default {
             })
             if(index === 1) {
                 $('.navWrapper').css('transform', 'translate(0, -100%)')
+                $('.pageHeader').css('top', '0')
+                $('.indicator-bar').css('height', '0')
             }
         },
         onLeave: function(index, nextIndex, direction) {
             $('.active').css({
                 'z-index': 0,
             })
-            // $('.section').css({
-            //     'opacity': 0,
-            // })
+            $('.indicator-bar').css('width', nextIndex/pageLength*100 + '%')
             if(index === 1) {
                 $('.navWrapper').css('transform', 'translate(0, 0)')
+                $('.indicator-bar').css('height', '2px')
+                $('.pageHeader').css('top', '2px')
             }
             if(index === 2 && direction === 'up') {
                 $('.navWrapper').css('transform', 'translate(0, -100%)')
+                $('.indicator-bar').css('height', '0')
+                $('.pageHeader').css('top', '0')
             }
         }            
     })
@@ -58,18 +62,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    .fixCover{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        overflow: hidden;
-    }
 	.section{
 		position: relative;
         // position: absolute;

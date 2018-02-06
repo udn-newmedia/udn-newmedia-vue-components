@@ -85,7 +85,8 @@ export default {
   	handle_scrollTo: function(pageIndex) {
   		this.isOpen = false
   		this.isCommentOpen = false
-  		$.fn.fullpage.moveTo(pageIndex + 1, 0);
+  		$.fn.fullpage.moveTo(pageIndex);
+  		console.log(pageIndex)
   	},
   	handle_comment: function() {
   		this.isCommentOpen === true ? this.isCommentOpen = false : this.isCommentOpen = true
@@ -108,6 +109,9 @@ export default {
   		self.getTitle.push(msg)
   	})
   },
+  mounted() {
+  	console.log(this.getTitle)
+  }
 }
 </script>
 
@@ -123,6 +127,7 @@ export default {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: top 333ms ease-in-out;
 }
 #icon i.udn-icon{
 	position: relative;

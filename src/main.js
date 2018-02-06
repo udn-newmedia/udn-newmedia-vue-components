@@ -15,6 +15,7 @@ import PageCover from './components/PageCover.vue'
 import PageFooter from './components/PageFooter.vue'
 import PageFullvideo from './components/PageFullvideo.vue'
 import PageHeadBar from './components/PageHeadBar.vue'
+import PageIndicator from './components/PageIndicator.vue'
 import PageImgsay from './components/PageImgsay.vue'
 import PageIntro from './components/PageIntro.vue'
 import PageQuote from './components/PageQuote.vue'
@@ -46,6 +47,7 @@ const UdnComponent = {
         Vue.component('PageFooter', PageFooter)
         Vue.component('PageFullvideo', PageFullvideo)
         Vue.component('PageHeadBar', PageHeadBar)
+        Vue.component('PageIndicator', PageIndicator)
         Vue.component('PageImgsay', PageImgsay)
         Vue.component('PageIntro', PageIntro)
         Vue.component('PageQuote', PageQuote)        
@@ -79,6 +81,7 @@ export {
     PageFooter,
     PageFullvideo,
     PageHeadBar,
+    PageIndicator,
     PageImgsay,
     PageIntro,
     PageQuote,

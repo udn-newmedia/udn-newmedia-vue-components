@@ -130,9 +130,9 @@ export default {
         text-align: left;
         font-size: 25px;
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-top: 0px;
+        margin-bottom: 10px;
         line-height: 1.5;
-        margin: 0;
         width: 100%;
         order: 1;
     }
@@ -161,6 +161,7 @@ export default {
         }
         h2{
             font-size: 40px;
+            margin-bottom: 20px;
         }        
         p{
             max-width: 880px;
