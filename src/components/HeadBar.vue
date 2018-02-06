@@ -4,7 +4,7 @@
             <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-            <slot></slot>
+	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}">{{title.title}}</div>
             <div id="logo-contain" class="hidden-lg">
                 <div class="logo-block">
                     <div class="logo">
@@ -30,6 +30,9 @@
 </template>
 
 <script>
+
+import Bus from '../eventBus.js'
+
 export default {
     name: 'HeadBar',
     props: ['background-color', 'MenuSlideFrom', 'color'],
@@ -38,9 +41,8 @@ export default {
             top: 0,
             isOpen: false,
             menuSlideDirection: "",
+            getTitle: []
         }
-    },
-    computed: {
     },
     methods: {
         handleScroll: function(event) {
@@ -60,25 +62,34 @@ export default {
         }
     },
     created: function() {
-        console.log(this)
-        switch(this.MenuSlideFrom) {
-            case 'top':
-                this.menuSlideDirection = 'translate(0, -110%)';
-                break;
-            case 'bottom':
-                this.menuSlideDirection = 'translate(0, 100%)';
-                break;
-            case 'left':
-                this.menuSlideDirection = 'translate(-100%, 0)';
-                break;
-            case 'right':
-                this.menuSlideDirection = 'translate(100%, 0)';
-                break;
-            default:    
-                this.menuSlideDirection = 'translate(0, -110%)';
-                console.log("please set value is top, bottom, left or right") 
-                break;
+        var self = this
+        Bus.$on('emitHeadbarTitle', function(msg) {
+            self.getTitle.push(msg)
+          })
+        if(window.innerWidth > 1024){
+            this.menuSlideDirection = 'translate(0, 0)'
         }
+        else{
+            switch(this.MenuSlideFrom) {
+                case 'top':
+                    this.menuSlideDirection = 'translate(0, -110%)';
+                    break;
+                case 'bottom':
+                    this.menuSlideDirection = 'translate(0, 100%)';
+                    break;
+                case 'left':
+                    this.menuSlideDirection = 'translate(-100%, 0)';
+                    break;
+                case 'right':
+                    this.menuSlideDirection = 'translate(100%, 0)';
+                    break;
+                default:    
+                    this.menuSlideDirection = 'translate(0, -110%)';
+                    console.log("please set value is top, bottom, left or right") 
+                    break;
+            }
+        }
+        
     },
     mounted: function() {
         window.addEventListener('scroll', this.handleScroll);
@@ -86,6 +97,18 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+
+.scrollTo-Btn{
+    background-color: #FFFFFF;
+    color: #000000;
+    height: 60px;
+    padding: 0;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 8px;
+    float: none;
+}
 .logo{
     width: 140px;
     display: inline-block;
@@ -245,6 +268,10 @@ export default {
     .logo-block{
         margin-top: 32px;
     }
+    .scrollTo-Btn{
+        border-bottom: 1px solid #000000;
+        margin-top: 1px;
+    }
 }
 @media screen and (min-width: 1025px) {
     #head-bar {
@@ -260,6 +287,15 @@ export default {
     }
     #nmd{
         width: 236px;
+    }
+    .scrollTo-Btn{
+        padding: 0 12px;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
     }
 }
 </style>

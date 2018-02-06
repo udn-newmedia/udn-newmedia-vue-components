@@ -8,9 +8,12 @@
 </template>
 
 <script>
+
+import Bus from '../eventBus.js'
+
 export default {
     name: 'SectionFixedBg',
-    props: ['text', 'bg', 'bgweb', 'position'],
+    props: ['text', 'bg', 'bgweb', 'position', 'menu-text'],
     data: function(){
         return{
             opacity: 0,
@@ -37,6 +40,12 @@ export default {
             else{
                 this.opacity = 0
             }
+        },
+        handle_Emit: function() {
+          const self = this
+          Bus.$emit('emitHeadbarTitle', {
+            title: self.menuText
+          })
         }
     },
     mounted: function(){
@@ -44,6 +53,7 @@ export default {
             this.middle = 0
             this.bottom = 1
         }
+        this.handle_Emit()
         window.addEventListener('scroll', this.handleScroll)
     }
 }

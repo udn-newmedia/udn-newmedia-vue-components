@@ -8,9 +8,23 @@
 </template>
 
 <script>
+
+import Bus from '../eventBus.js'
+
 export default {
     name: 'SectionBg',
-    props: ['bg', 'bgweb', 'imgsay'],
+    props: ['bg', 'bgweb', 'imgsay', 'menu-text'],
+    methods: {
+        handle_Emit: function() {
+          const self = this
+          Bus.$emit('emitHeadbarTitle', {
+            title: self.menuText
+          })
+        }
+    }, 
+    mounted: function(){
+        this.handle_Emit()
+    },
     computed: {
         bgRWD: function(){
             if(window.innerWidth <= 768){
