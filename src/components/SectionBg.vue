@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100%;">
+  <div style="height:100%;" :id="menuText">
     <div class="section-bg" :style="{backgroundImage: 'url(' + bgRWD + ')'}">
 
     </div>

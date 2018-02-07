@@ -4,7 +4,7 @@
             <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}">{{title.title}}</div>
+	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
             <div id="logo-contain" class="hidden-lg">
                 <div class="logo-block">
                     <div class="logo">
@@ -35,7 +35,7 @@ import Bus from '../eventBus.js'
 
 export default {
     name: 'HeadBar',
-    props: ['background-color', 'MenuSlideFrom', 'color'],
+    props: ['background-color', 'MenuSlideFrom', 'color', 'hover-color'],
     data: function() {
         return {
             top: 0,
@@ -45,6 +45,10 @@ export default {
         }
     },
     methods: {
+        handleScrollTo: function(target){
+            this.isOpen = false
+            $('html, body').animate({scrollTop : $('#' + target).offset().top}, 1000, function(){});
+        },
         handleScroll: function(event) {
             let currentH = window.pageYOffset
             if (currentH < window.innerHeight / 2) {
@@ -65,6 +69,16 @@ export default {
         var self = this
         Bus.$on('emitHeadbarTitle', function(msg) {
             self.getTitle.push(msg)
+            setTimeout(function(){
+                $('.scrollTo-Btn').hover(function(){
+                    $(this).css('color', self.backgroundColor)
+                    $(this).css('background-color', self.color)
+                }, function(){
+                    $(this).css('color', self.color)
+                    $(this).css('background-color', self.backgroundColor)
+                })
+            }, 500)
+            
           })
         if(window.innerWidth > 1024){
             this.menuSlideDirection = 'translate(0, 0)'

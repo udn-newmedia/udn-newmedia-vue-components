@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed-background">
+    <div class="fixed-background" :id="menuText">
         <div class="fixed-bg" :style="{opacity: opacity, backgroundImage: 'url(' + bgRWD + ')'}">
             <div class="fix-text-bottom" :style="{opacity: bottom}">{{text}}</div>
         </div>
