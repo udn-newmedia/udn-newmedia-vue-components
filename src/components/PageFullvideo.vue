@@ -3,8 +3,7 @@
 		<div class="videocontainer">
 		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster +')'}">
 	        <video preload="metadata" playsinline='true' webkit-playsinline="true"
-	               :poster="videoPoster" :muted="isMute"
-	               ref='video'>
+	               :poster="videoPoster" ref='video'>
 	        	<source :src="source" type="video/mp4">       	
 	        </video>		    	
 		    	<canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
@@ -196,9 +195,6 @@ export default {
 		    self.isPause = false
 		    self.isPlay = false
 		  }
-		}
-		if(w < 1024) {
-		  video.muted = true
 		}
 		this.drawCircleBox()
 	},

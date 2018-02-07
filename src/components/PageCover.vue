@@ -18,7 +18,7 @@ export default {
     components: {
         PageArrow
     },
-    props: ['title', 'subtitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
+    props: ['title', 'menuTitle', 'subTitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
     data: function(){
         return{
             aligncenter: false,
@@ -40,8 +40,8 @@ export default {
         handle_Emit: function() {
           const self = this
           Bus.$emit('emitCoverTitle', {
-            title: self.title,
-            pageIndex : $(self.$el).index()
+            title: self.menuTitle,
+            pageIndex : $(self.$el).index() + 1
           })
         }
     }, 

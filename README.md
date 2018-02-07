@@ -338,6 +338,19 @@ new Vue({
 
 	* [scroll-speed] 滿版滾動速度, 預設700 ex: scroll-speed=1000	 	 
 
++ PageIndicator
+	
+	滿版進度表
+
+```js
+<page-indicator bar-color="#000" bg-color="#fff"></page-indicator>
+```
+
+   #####Props
+
+	* [bg-color] 進度背景色
+	* [bar-color] 進度條顏色   
+
 + PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
