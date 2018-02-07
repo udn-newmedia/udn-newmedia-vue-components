@@ -156,6 +156,7 @@ new Vue({
 	* [bg] 手機圖
 	* [bgweb] 網頁圖
 	* [position] 文字位置 有 center 跟 bottom 兩種
+	* [menu-text] headbar 文字
 
 + Section-Bg
 
@@ -168,6 +169,7 @@ new Vue({
 	* [bg] 手機圖
 	* [bgweb] 網頁圖
 	* [imgsay] 圖說
+	* [menu-text] headbar 文字
 
 + Question
 
