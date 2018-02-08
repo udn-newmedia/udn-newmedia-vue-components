@@ -1,7 +1,7 @@
 <template>
     <header id="head-bar" :style="{top: top+'px',backgroundColor: backgroundColor}">
         <div id="icon">
-            <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
+            <a href="./"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
 	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
