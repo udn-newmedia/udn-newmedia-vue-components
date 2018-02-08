@@ -356,7 +356,7 @@ new Vue({
 + PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
-	該標籤會自動抓 page-cover 中的 title內容。
+	該標籤會自動抓 page-cover 中的 menu-title內容。
 	如需外連區塊則在`<page-head-bar>`內 置入 `<a>`。
 
 ```js
@@ -369,17 +369,17 @@ new Vue({
 
 
    ##### Props
-	* [href] Facebook Comment href參數(必填)
+	* [href] Facebook Comment href參數(必填) ex: href='專題URL'
 	* [color] icon和導引字顏色 預設:白字 手機只變icon顏色
 	* [bg-color] headrbar的顏色
-	* [youtube] youtube Icon 
-	* [youtube-link] youtube 連結
+	* [youtube] 是否使用 youtube連結 ex: youtube='yes' 
+	* [youtube-link] youtube 連結網址 ex: youtube='Youtube URL'
 
 + PageCover
 
 	滿版標題Cover
 
-	會將Title 傳給page-head-bar做連結使用
+	會將menu-title 傳給page-head-bar做連結使用
 
 ```js
 <Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
@@ -389,27 +389,39 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 
 	* [title] 大標
 	* [subtitle] 副標
+	* [menu-title] Page-Head-Bar 滾動選單錨點 ex: menu-title='這只是個範例'
 	* [font-color] 大/副題顏色
 	* [bg] 手機封面圖
 	* [bg-web] 網頁封面圖
 	* [position] 標題位置 有 top middle bottom 3種	
-	* [arrow-color] 向下提示箭頭顏色
-	* [hint] 是否需要向下滾動提示字樣
-	* [hint-color] 提示字樣顏色
+	* [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
+	* [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
+	* [hint-color] 提示字樣顏色 ex: hint-color="#212121"
 
 + PageIntro
 
 	滿版引言
+	文案請用`p`插入
 
 ```js
-<Page-Intro font-color="#fff" bg="./static/w1-bg_s.jpg" bg-web="./static/w1-bg2.jpg" arrow-color='#fff' hint-color='#fff'>
+<Page-Intro update='2017.08.25更新' href='https://udn.com/upf/newmedia/2018_data/elderhome/' font-color="#fff" bg="./static/w1-bg_s.jpg" bg-web="./static/w1-bg2.jpg" arrow-color='#fff' hint-color='#fff'>
    <p>「不拚什麼都沒有！」21歲競技體操國手李智凱，曾經是紀錄片《翻滾吧！男孩》中的「菜市場凱」，從小苦練「湯瑪士迴旋」絕技，讓他在去年為台灣搶下睽違16年的奧運體操門票，也讓世界注意到台灣體操選手。</p>
    <p><br/></p>
    <p>這次在台北世大運鞍馬決賽，李智凱以完美表現，摘下我國在世大運史上首面鞍馬金牌（奪金時刻影片）。他說：「努力過、嘗試過至少有50%的機會，不嘗試的話等於0。」不怕失敗，愈戰愈勇，就是他能在體操路上堅持15年的原因。</p>
-   <h6>2017.08.25更新</h6>
-   <Share href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"/>
 </Page-Intro>
 ```	
+
+    ##### Props
+
+	* [font-color] 字體顏色 font-color="#fff"
+	* [bg] 手機封面圖
+	* [bg-web] 網頁封面圖
+	* [bg-color] 背景顏色
+	* [update] 更新時間
+	* [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
+	* [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
+	* [hint-color] 提示字樣顏色 ex: hint-color="#212121"
+
 + PageCard
 
    page卡片，可放入圖片，影片，或純文字
@@ -474,6 +486,7 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
     * [bg-web] 網頁背景圖
     * [use-quote] 使用引言 ex: use-quote='yes'
     * [quote-first] 引言在前面 ex: quote-first='yes'
+    * [quote-say] 引言內容 ex: quote-say='你要的引言'
     
 + PageFullvideo
 
@@ -486,10 +499,9 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
 	##### Props
 
 	* [src] 手機影片來源
-	* [poster] 手機愈覽圖
+	* [poster] 手機影片預覽圖 ex: poster='圖片url'
 	* [src-web] 電腦版影片來源
-	* [poster-web] 電腦版預覽圖
-	* [bg-color] 背景色
+	* [poster-web] 電腦版預覽圖 ex: poster-web='圖片url'
 
 + PageQuote
   

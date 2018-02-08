@@ -13,7 +13,7 @@
                     <slot></slot>
                 </div>
                 <div class='quote' :style="{order: isFirst}" v-if='useQuote' :class="{quoteFirst: letFirst}">
-                    <p>究竟有多少海洋垃圾堆在台灣海岸？這些塑膠垃圾對魚類蝦蟹，甚至人體，影響又如何？</p>
+                    <p>{{quoteSay}}</p>
                 </div>
             </div>
 		</div>
@@ -29,7 +29,7 @@ export default {
   components:{
   	EmbededVideo
   },
-  props: ['title', 'quoteFirst', 'useQuote', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'controlColor'],
+  props: ['title', 'quoteFirst', 'useQuote', 'quoteSay', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'controlColor'],
   data () {
     return {
 

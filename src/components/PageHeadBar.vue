@@ -109,9 +109,6 @@ export default {
   		self.getTitle.push(msg)
   	})
   },
-  mounted() {
-  	console.log(this.getTitle)
-  }
 }
 </script>
 
