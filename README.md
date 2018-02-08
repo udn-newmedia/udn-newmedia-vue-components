@@ -493,7 +493,7 @@ arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
   page滿版影音
 
 ```js
-<Page-Fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4'></Page-Fullvideo>  
+<page-fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4' poster="./static/bg_wang.jpg" poster-web="./static/web/bg_wang.jpg"></page-fullvideo>
 ```	
 
 	##### Props
