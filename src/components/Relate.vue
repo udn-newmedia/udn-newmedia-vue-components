@@ -45,7 +45,7 @@ export default {
                 "hitType": "event",
                 "eventCategory": "relate",
                 "eventAction": "click",
-                "eventLabel": "[" + Utils.detectPlatform() + "] [" + target + "] [click]"
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + target + "] [relate click]"
             });
         }
     }
