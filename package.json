@@ -1,6 +1,6 @@
 {
   "name": "udn-newmedia-vue-components",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Udn NewMedia Vue Components",
   "main": "dist/udn-newmedia-vue-components.min.js",
   "scripts": {
@@ -26,21 +26,21 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.17",
-    "css-loader": "^0.28.7",
+    "clean-webpack-plugin": "^0.1.18",
+    "css-loader": "^0.28.9",
     "vue": "^2.5.13",
-    "vue-loader": "^13.7.0",
+    "vue-loader": "^13.7.1",
     "vue-template-compiler": "^2.5.13",
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "d3": "^4.11.0",
+    "d3": "^4.13.0",
     "hammerjs": "^2.0.8",
     "lodash.throttle": "^4.1.1",
-    "lottie-web": "^5.0.5",
+    "lottie-web": "^5.1.7",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",
-    "udn-newmedia-utils": "^1.0.8",
+    "udn-newmedia-utils": "^1.0.9",
     "webpack-dev-server": "^2.11.1"
   }
 }

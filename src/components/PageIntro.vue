@@ -4,22 +4,25 @@
         <div class="container content" :style="{color: fontColor}">
             <slot></slot>
             <h6>{{update}}</h6>
+            <Share :href='href'></Share>
         </div>            
         <PageArrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>  
 	</div>
 </template>
 
 <script>
-import PageArrow from './pageArrow.vue' 
+import PageArrow from './pageArrow.vue'
+import Share from './Share.vue'
 
 const w = window.innerWidth
 export default {
 
   name: 'PageIntro',
   components: {
-    PageArrow
+    PageArrow,
+    Share
   },
-  props: ['bg', 'bgWeb', 'update', 'fontColor', 'arrowColor', 'hint', 'hintColor', 'bgColor'],
+  props: ['arrowColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'hint', 'hintColor', 'href', 'update'],
   data () {
     return {
 
@@ -33,6 +36,9 @@ export default {
             return this.bgWeb
         }
     }
+  },
+  mounted() {
+    console.log(this.$props)
   }
 }
 </script>
