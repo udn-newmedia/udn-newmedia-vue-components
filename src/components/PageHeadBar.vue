@@ -43,8 +43,9 @@
 
 <script>
 import Bus from '../eventBus.js'
-import Logo from '../components/Logo.vue'
 import Comment from '../components/FbComment.vue'
+import Logo from '../components/Logo.vue'
+import Utils from 'udn-newmedia-utils'
 
 export default {
 
@@ -85,8 +86,7 @@ export default {
   	handle_scrollTo: function(pageIndex) {
   		this.isOpen = false
   		this.isCommentOpen = false
-  		$.fn.fullpage.moveTo(pageIndex);
-  		console.log(pageIndex)
+  		$.fn.fullpage.moveTo(pageIndex); 		
   	},
   	handle_comment: function() {
   		this.isCommentOpen === true ? this.isCommentOpen = false : this.isCommentOpen = true
@@ -94,11 +94,17 @@ export default {
   		if(window.innerWidth >= 1024) {
   			this.glassOp === 1 ? this.glassOp = 0 : this.glassOp = 1
   		}
+      ga("send", {
+          "hitType": "event",
+          "eventCategory": "headbar",
+          "eventAction": "click",
+          "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [打開 / 關閉FB留言]"
+      });  		
   	},
   	handle_glass: function() {
   		this.isCommentOpen = false
   		this.glassOp = 0
-  	}
+  	},
   },
   created() {
   	const self = this
@@ -109,6 +115,35 @@ export default {
   		self.getTitle.push(msg)
   	})
   },
+  mounted() {
+  	const self = this
+  	for(let i = 0; i < this.$slots.default.length; i++){
+  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
+  			this.$slots.default[i].elm.addEventListener('click', function() {
+	        ga("send", {
+	           "hitType": "event",
+	           "eventCategory": "headbar",
+	           "eventAction": "click",
+	           "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
+	        });  				
+  			})
+  		}
+  	}
+  },
+  beforeDestroyed: function() {
+  	for(let i = 0; i < this.$slots.default.length; i++){
+  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
+  			this.$slots.default[i].elm.removeEventListener('click', function() {
+	        ga("send", {
+	           "hitType": "event",
+	           "eventCategory": "headbar",
+	           "eventAction": "click",
+	           "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
+	        });  				
+  			})
+  		}
+  	}
+  }
 }
 </script>
 
