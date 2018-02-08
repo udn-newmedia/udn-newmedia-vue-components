@@ -53,7 +53,7 @@ export default {
                 "hitType": "event",
                 "eventCategory": "headbar",
                 "eventAction": "click",
-                "eventLabel": "[" + Utils.detectPlatform() + "] [headbar] [" + target + "]"
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + target + "] [headbar click]"
             });
         },
         handleScroll: function(event) {
@@ -74,7 +74,7 @@ export default {
                 "hitType": "event",
                 "eventCategory": "hamburger",
                 "eventAction": "click",
-                "eventLabel": "[" + Utils.detectPlatform() + "] [hamburger]"
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [hamburger]"
             });
         }
     },
