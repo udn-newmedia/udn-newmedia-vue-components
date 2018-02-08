@@ -98,12 +98,7 @@
         var temp = window.location.href.split('/')
         var pid = ''
         if(temp.length > 3){
-            if(temp[temp.length-1].indexOf('index.html') != -1){
-                pid = temp[temp.length-3] + '_' + temp[temp.length-2]
-            }
-            else{
-                pid = temp[temp.length-2] + '_' + temp[temp.length-1]
-            }
+            pid = temp[temp.length-3] + '_' + temp[temp.length-2]
         }
         var erUrlPrefix='https://rec.udn.com/';
         var _qevents = _qevents || [];
