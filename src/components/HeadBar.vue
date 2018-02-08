@@ -32,6 +32,7 @@
 <script>
 
 import Bus from '../eventBus.js'
+import Utils from 'udn-newmedia-utils'
 
 export default {
     name: 'HeadBar',
@@ -48,6 +49,12 @@ export default {
         handleScrollTo: function(target){
             this.isOpen = false
             $('html, body').animate({scrollTop : $('#' + target).offset().top}, 1000, function(){});
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "headbar",
+                "eventAction": "click",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [headbar] [" + target + "]"
+            });
         },
         handleScroll: function(event) {
             let currentH = window.pageYOffset
@@ -63,6 +70,12 @@ export default {
         },
         handleBurger: function(event) {
             this.isOpen == false ? this.isOpen = true : this.isOpen = false;
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "hamburger",
+                "eventAction": "click",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [hamburger]"
+            });
         }
     },
     created: function() {

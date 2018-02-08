@@ -4,25 +4,25 @@
             <h6>{{ title }}</h6>
             <div class="row">
                 <div class="col-sm-6 col-md-3">
-                    <a :href="href1" target="_blank">
+                    <a :href="href1" target="_blank" @click="relateClick(text1)">
                         <img :src="img1" />
                         <p :style="{color: color}">{{text1}}</p>
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <a :href="href2" target="_blank">
+                    <a :href="href2" target="_blank" @click="relateClick(text2)">
                         <img :src="img2" />
                         <p :style="{color: color}">{{text2}}</p>
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <a :href="href3" target="_blank">
+                    <a :href="href3" target="_blank" @click="relateClick(text3)">
                         <img :src="img3" />
                         <p :style="{color: color}">{{text3}}</p>
                     </a>
                 </div>
                 <div class="col-sm-6 col-md-3">
-                    <a :href="href4" target="_blank">
+                    <a :href="href4" target="_blank" @click="relateClick(text4)">
                         <img :src="img4" />
                         <p :style="{color: color}">{{text4}}</p>
                     </a>
@@ -33,9 +33,22 @@
 </template>
 
 <script>
+
+import Utils from 'udn-newmedia-utils'
+
 export default {
     name: 'Relate',
     props: ['title', 'color', 'href1', 'img1', 'text1', 'href2', 'img2', 'text2', 'href3', 'img3', 'text3', 'href4', 'img4', 'text4'],
+    methods: {
+        relateClick: function(target){
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "relate",
+                "eventAction": "click",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + target + "] [click]"
+            });
+        }
+    }
 }
 </script>
 
