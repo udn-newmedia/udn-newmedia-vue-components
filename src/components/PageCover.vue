@@ -2,8 +2,8 @@
     <div class="section">
         <div id="cover" :style="{backgroundImage: 'url(' + bgRWD + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
             <div id="title-contain">
-                <h1 :style='{color: fontcolor}'>{{title}}</h1>
-                <div id="sub-title" :style='{color: fontcolor}'>{{subtitle}}</div>
+                <h1 :style='{color: fontColor}'>{{title}}</h1>
+                <div id="sub-title" :style='{color: fontColor}'>{{subTitle}}</div>
             </div>
         </div>
         <PageArrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>    
