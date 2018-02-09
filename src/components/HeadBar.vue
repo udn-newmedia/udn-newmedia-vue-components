@@ -122,18 +122,21 @@ export default {
     },
     mounted: function() {
         var self = this
-        for(let i = 0; i < this.$slots.default.length; i++){
-            if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
-                this.$slots.default[i].elm.addEventListener('click', function() {
-                    ga("send", {
-                        "hitType": "event",
-                        "eventCategory": "headbar",
-                        "eventAction": "click",
-                        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
-                    });  				
-                })
+        if(this.$slots.default != undefined){
+            for(let i = 0; i < this.$slots.default.length; i++){
+                if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
+                    this.$slots.default[i].elm.addEventListener('click', function() {
+                        ga("send", {
+                            "hitType": "event",
+                            "eventCategory": "headbar",
+                            "eventAction": "click",
+                            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
+                        });  				
+                    })
+                }
             }
         }
+        
         $('.linkOut a').hover(function(){
             $(this).css('color', self.backgroundColor)
             $(this).css('background-color', self.color)
