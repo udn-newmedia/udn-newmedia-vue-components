@@ -1,5 +1,5 @@
 <template>
-    <div id="cover" :style="{backgroundImage: 'url(' + bgRWD + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
+    <div id="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
         <div id="title-contain">
             <h1>{{title}}</h1>
             <div id="sub-title">{{subtitle}}</div>
@@ -19,6 +19,9 @@ export default {
         }
     },
     created: function(){
+        window.addEventListener('resize', () => {
+            this.$forceUpdate()
+        })
         if(this.position == 'top'){
             this.top = true
         }
@@ -29,7 +32,7 @@ export default {
             this.aligncenter = true
         }
     },
-    computed: {
+    methods: {
         bgRWD: function(){
             if(window.innerWidth <= 768){
                 return this.bg
