@@ -1,6 +1,6 @@
 {
   "name": "udn-newmedia-vue-components",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Udn NewMedia Vue Components",
   "main": "dist/udn-newmedia-vue-components.min.js",
   "scripts": {
