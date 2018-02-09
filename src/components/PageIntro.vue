@@ -30,13 +30,24 @@ export default {
   },
   computed: {
     bgSrc: function() {
-        if(w < 1024) {
-            return this.bg
-        } else {
+        if(window.innerWidth <= 768){
+            if(window.matchMedia("(orientation: landscape)").matches){
+                return this.bgWeb
+            }
+            else{
+                return this.bg
+            }
+        }
+        else{
             return this.bgWeb
         }
     }
   },
+  created() {
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })       
+  }
 }
 </script>
 <style lang="scss" scoped>

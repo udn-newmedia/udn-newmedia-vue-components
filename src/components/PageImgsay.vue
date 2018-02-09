@@ -1,7 +1,7 @@
 <template>
 	<div class="section">
 		<div class="fullImg">
-			<img :src="source">
+			<img :src="source()">
 			<slot></slot>
 		</div>
 	</div>
@@ -18,14 +18,25 @@ export default {
 
     }
   },
-  computed: {
+  methods: {
   	source: function() {
-  		if(w < 1024){
-  			return this.src
-  		} else {
-  			return this.srcWeb
-  		}
+      if(window.innerWidth <= 768){
+          if(window.matchMedia("(orientation: landscape)").matches){
+              return this.srcWeb
+          }
+          else{
+              return this.src
+          }
+      }
+      else{
+          return this.srcWeb
+      }      
   	}
+  },
+  created () {
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })    
   }
 }
 </script>

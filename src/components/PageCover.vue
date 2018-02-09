@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-        <div id="cover" :style="{backgroundImage: 'url(' + bgRWD + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
+        <div id="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
             <div id="title-contain">
                 <h1 :style='{color: fontColor}'>{{title}}</h1>
                 <div id="sub-title" :style='{color: fontColor}'>{{subTitle}}</div>
@@ -27,14 +27,7 @@ export default {
         }
     },
     computed: {
-      bgRWD: function(){
-        if(window.innerWidth <= 768){
-            return this.bg
-        }
-        else{
-            return this.bgWeb
-        }
-      }
+
     },
     methods: {
         handle_Emit: function() {
@@ -43,7 +36,20 @@ export default {
             title: self.menuTitle,
             pageIndex : $(self.$el).index() + 1
           })
-        }
+        },
+        bgRWD: function(){
+            if(window.innerWidth <= 768){
+                if(window.matchMedia("(orientation: landscape)").matches){
+                    return this.bgWeb
+                }
+                else{
+                    return this.bg
+                }
+            }
+            else{
+                return this.bgWeb
+            }
+        }   
     }, 
     created: function(){
         if(this.position == 'top'){
@@ -55,6 +61,11 @@ export default {
         if(this.position == 'middle'){
             this.aligncenter = true
         }
+    },
+    created(){
+        window.addEventListener('resize', () => {
+            this.$forceUpdate()
+        })    
     },
     mounted() {
         this.handle_Emit()

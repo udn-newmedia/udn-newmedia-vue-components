@@ -26,7 +26,6 @@ export default {
     },
   },
   mounted() {
-    console.log(this.$slots)
     const self = this
     const pageLength = Number($('.section').length);
     $('#page').fullpage({
