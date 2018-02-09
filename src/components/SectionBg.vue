@@ -1,6 +1,6 @@
 <template>
   <div style="height:100%;" :id="menuText">
-    <div class="section-bg" :style="{backgroundImage: 'url(' + bgRWD + ')'}">
+    <div class="section-bg" :style="{backgroundImage: 'url(' + bgRWD() + ')'}">
 
     </div>
     <div class="img-say">{{imgsay}}</div>
@@ -20,12 +20,7 @@ export default {
           Bus.$emit('emitHeadbarTitle', {
             title: self.menuText
           })
-        }
-    }, 
-    mounted: function(){
-        this.handle_Emit()
-    },
-    computed: {
+        },
         bgRWD: function(){
             if(window.innerWidth <= 768){
                 return this.bg
@@ -34,6 +29,14 @@ export default {
                 return this.bgweb
             }
         }
+    },
+    created: function() {
+      window.addEventListener('resize', () => {
+        this.$forceUpdate()
+      })
+    },
+    mounted: function(){
+        this.handle_Emit()
     }
 }
 </script>

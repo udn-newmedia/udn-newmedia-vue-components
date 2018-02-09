@@ -1,6 +1,6 @@
 <template>
     <div class="fixed-background" :id="menuText">
-        <div class="fixed-bg" :style="{opacity: opacity, backgroundImage: 'url(' + bgRWD + ')'}">
+        <div class="fixed-bg" :style="{opacity: opacity, backgroundImage: 'url(' + bgRWD() + ')'}">
             <div class="fix-text-bottom" :style="{opacity: bottom}">{{text}}</div>
         </div>
          <div class="fix-text" :style="{opacity: middle}">{{text}}</div>
@@ -21,15 +21,10 @@ export default {
             bottom: 0
         }
     },
-    computed: {
-        bgRWD: function(){
-            if(window.innerWidth <= 768){
-                return this.bg
-            }
-            else{
-                return this.bgweb
-            }
-        }
+    created: function() {
+      window.addEventListener('resize', () => {
+        this.$forceUpdate()
+      })
     },
     methods: {
         handleScroll: function(e){
@@ -46,6 +41,14 @@ export default {
           Bus.$emit('emitHeadbarTitle', {
             title: self.menuText
           })
+        },
+        bgRWD: function(){
+            if(window.innerWidth <= 768){
+                return this.bg
+            }
+            else{
+                return this.bgweb
+            }
         }
     },
     mounted: function(){
