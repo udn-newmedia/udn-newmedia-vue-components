@@ -5,6 +5,9 @@
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
 	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
+            <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
+	    		<slot></slot>
+	    	</div>
             <div id="logo-contain" class="hidden-lg">
                 <div class="logo-block">
                     <div class="logo">
@@ -90,9 +93,8 @@ export default {
                     $(this).css('color', self.color)
                     $(this).css('background-color', self.backgroundColor)
                 })
-            }, 500)
-            
-          })
+            }, 500)    
+        })
         if(window.innerWidth > 1024){
             this.menuSlideDirection = 'translate(0, 0)'
         }
@@ -119,12 +121,44 @@ export default {
         
     },
     mounted: function() {
+        var self = this
+        for(let i = 0; i < this.$slots.default.length; i++){
+            if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
+                this.$slots.default[i].elm.addEventListener('click', function() {
+                    ga("send", {
+                        "hitType": "event",
+                        "eventCategory": "headbar",
+                        "eventAction": "click",
+                        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
+                    });  				
+                })
+            }
+        }
+        $('.linkOut a').hover(function(){
+            $(this).css('color', self.backgroundColor)
+            $(this).css('background-color', self.color)
+        }, function(){
+            $(this).css('color', self.color)
+            $(this).css('background-color', self.backgroundColor)
+        })
         window.addEventListener('scroll', this.handleScroll);
     },    
 }
 </script>
 <style lang="scss" scoped>
-
+.linkOut{
+    text-align: center;
+}
+.linkOut a{
+    background-color: #FFFFFF;
+    color: #000000;
+    height: 60px;
+    padding: 0;
+    line-height: 60px;
+    font-size: 20px;
+    text-decoration: none;
+    display: block;
+}
 .scrollTo-Btn{
     background-color: #FFFFFF;
     color: #000000;
@@ -297,6 +331,11 @@ export default {
         border-bottom: 1px solid #000000;
         margin-top: 1px;
     }
+    .linkOut a{
+        border-bottom: 1px solid #000000;
+        margin-top: 1px;
+    }
+    
 }
 @media screen and (min-width: 1025px) {
     #head-bar {
@@ -316,6 +355,17 @@ export default {
     .scrollTo-Btn{
         padding: 0 12px;
         color: #fff;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        float: left;
+    }
+    .linkOut{
+        float: left;
+    }
+    .linkOut a{
+        padding: 0 12px;
         height: 50px;
         line-height: 50px;
         font-size: 16px;

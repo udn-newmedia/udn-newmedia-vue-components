@@ -59,6 +59,12 @@ new Vue({
 	* [BgColor] 頁頭背景色 預設: #000
   	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
+	如果要增加外連連結 就如範例所示 增加 a tag
+	<Head-Bar>
+	    <a href="http://udn.com" target="_blank">以活到90</a>
+		<a href="http://udn.com" target="_blank">不退也不休，利用上半</a>
+	</Head-Bar>
+
 + Cover
 
 	封面
