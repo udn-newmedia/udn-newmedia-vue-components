@@ -1,13 +1,13 @@
 <template>
   <div class="row">
       <div class="col-md-6 left">
-        <img :src="imgRWD1">
+        <img :src="imgRWD1()">
       </div>
       <div class="col-md-6 right">
-        <img :src="imgRWD2">
+        <img :src="imgRWD2()">
       </div>
       <div class="col-md-12">
-        <img :src="imgRWD3">
+        <img :src="imgRWD3()">
       </div>
       <div class="img-say">{{imgsay}}</div>
   </div>
@@ -17,7 +17,12 @@
 export default {
     name: 'ColumnThree',
     props: ['img1', 'img2', 'img3', 'imgweb1', 'imgweb2', 'imgweb3', 'imgsay'],
-    computed: {
+    created: function(){
+      window.addEventListener('resize', () => {
+        this.$forceUpdate()
+      })
+    },
+    methods: {
       imgRWD1: function(){
         if(window.innerWidth <= 768){
             return this.img1
@@ -68,7 +73,7 @@ export default {
       font-size: 15px;
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 1024px){
+  @media screen and (min-width: 768px) and (max-width: 1023px){
     .col-md-6{
       margin-top: 15px;
       padding: 0;
@@ -78,7 +83,7 @@ export default {
       padding: 0;
     }
   }
-  @media screen and (min-width: 1025px){
+  @media screen and (min-width: 1024px){
     .left{
       padding-left: 0;
     }
