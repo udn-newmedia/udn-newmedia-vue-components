@@ -44,7 +44,12 @@ export default {
         },
         bgRWD: function(){
             if(window.innerWidth <= 768){
-                return this.bg
+                if(window.matchMedia("(orientation: landscape)").matches){
+                    return this.bgweb
+                }
+                else{
+                    return this.bg
+                }
             }
             else{
                 return this.bgweb
