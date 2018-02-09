@@ -4,22 +4,19 @@
         <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
     </div>
     <div class='navWrapper' :style="{backgroundColor: bgColor}">
-	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuWrapperStyle.height + 'px'}">
+	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
 	    	<div class="scrollTo">
 	    		<div class="scrollTo-Btn" :style="{color: mobColor}" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'>{{title.title}}</div>
 	    	</div>
-	    	<div class="linkOut" :style="{color: mobColor}">
+	    	<div class="linkOut" :style="{color: mobColor()}">
 	    		<slot></slot>
 	    	</div>
 	    	<div class="logoBox hidden-lg hidden-md">
 	    		<Logo/>
 	    	</div>
 	    </div>
-	    <div class="commentWrapper" :class="{menuOpen: isCommentOpen}" :style="{height: commentHeight + 'px'}">
+	    <div class="commentWrapper" :class="{menuOpen: isCommentOpen}" :style="{height: windowHeight() + 'px'}">
 	    	<div class='glass' :style='{opacity: glassOp}' @click='handle_glass'></div>
-<!-- 	    	<div class='closeComment' @click='handle_comment'>
-	    		<i class="fa fa-close fa-2x" style='color: #000;' aria-hidden="true"></i>
-	    	</div> -->
 	    	<Comment class="comment" :href='href'></Comment>
 	    </div>
 	<!-- button -->
@@ -59,16 +56,19 @@ export default {
     return {
     	isOpen: false,
     	isCommentOpen: false,
-    	menuWrapperStyle: {
-    		height: null,
-    	},
     	getTitle: [],
     }
   },
   computed: {
-  	commentHeight: function() {
-  		const h = window.innerHeight
-  		return h
+
+  },
+  methods: {
+  	menuHeight: function() {
+	  	if(window.innerWidth < 1024){
+	  		return window.innerHeight + 'px';
+	  	} else {
+	  		return '100%'
+	  	}
   	},
   	mobColor: function() {
   		if(window.innerWidth < 1024) {
@@ -76,9 +76,11 @@ export default {
   		} else {
   			return this.color
   		}
-  	},
-  },
-  methods: {
+  	},  	
+  	windowHeight: function() {
+  		const h = window.innerHeight
+  		return h
+  	},  	
   	handle_burger: function() {
   		this.isOpen === true ? this.isOpen = false : this.isOpen = true
   		this.isCommentOpen = false
@@ -108,9 +110,9 @@ export default {
   },
   created() {
   	const self = this
-  	if(window.innerWidth < 1024){
-  		this.menuWrapperStyle.height = window.innerHeight;
-  	}
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })  	
   	Bus.$on('emitCoverTitle', function(msg) {
   		self.getTitle.push(msg)
   	})
@@ -425,5 +427,10 @@ export default {
   		color: inherit;
   	}
   }
+}
+@media screen and (orientation: landscape) {
+    .logoBox{
+        display: none;
+    }
 }
 </style>

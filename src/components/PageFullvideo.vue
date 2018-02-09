@@ -1,10 +1,9 @@
 <template>
 	<div class="section">
 		<div class="videocontainer">
-		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster +')'}">
+		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster() +')'}">
 		        <video preload="metadata" playsinline='true' webkit-playsinline="true"
-		               :poster="videoPoster" ref='video'>
-		        	<source :src="source" type="video/mp4">       	
+		               :poster="videoPoster()" ref='video' :src="srcRWD()">  	
 		        </video>		    	
 			    <canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
 		        <div class='controls'>
@@ -23,7 +22,6 @@ import Utils from 'udn-newmedia-utils'
 
 var isMob = Utils.detectMob(10)
 var platform = (isMob === true) ? 'Mob' : 'PC'
-var w = window.innerWidth
 export default {
 
   name: 'PageFullvideo',
@@ -41,22 +39,35 @@ export default {
 		}
 	},
 	computed: {
-		source: function () {
-			if(w < 1024){
-				return this.src	
-			} else {
-				return this.srcWeb
-			}
-		},
-		videoPoster: function () {
-			if(w < 1024) {
-				return this.poster		
-			} else {
-				return this.posterWeb
-			}
-		},
+	
 	},
 	methods: {
+	    srcRWD: function(){
+	        if(window.innerWidth <= 768){
+	            if(window.matchMedia("(orientation: landscape)").matches){
+	                return this.srcWeb
+	            }
+	            else{
+	                return this.src
+	            }
+	        }
+	        else{
+	            return this.srcWeb
+	        }
+	    },
+	    videoPoster: function(){
+	        if(window.innerWidth <= 768){
+	            if(window.matchMedia("(orientation: landscape)").matches){
+	                return this.posterWeb
+	            }
+	            else{
+	                return this.poster
+	            }
+	        }
+	        else{
+	            return this.posterWeb
+	        }
+	    },
 		drawCircleBox: function() {
 		 	const canvas = this.$refs.controlCanvas
 		 	const ctx = canvas.getContext('2d')
@@ -171,6 +182,11 @@ export default {
 		  }
 		}
 	},  
+	created(){
+        window.addEventListener('resize', () => {
+            this.$forceUpdate()
+        })    
+	},
 	mounted() {
 		platform === 'Mob' ? this.isMute = true : this.isMute = false
 		const video = this.$refs.video

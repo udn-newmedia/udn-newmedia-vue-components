@@ -1,5 +1,5 @@
 <template>
-	<div class="section pageContent" :style="{backgroundImage: 'url('+ bgSrc +')', backgroundColor: bgColor}">
+	<div class="section pageContent" :style="{backgroundImage: 'url('+ bgRWD() +')', backgroundColor: bgColor}">
 		<div class="mediaContainer" :class="{videoIntro: isVideo, imgIntro: isImg}" :style="{backgroundColor: BoxColor}">
             <div class="videoModel" v-if="isVideo">
                 <EmbededVideo :src='videoSrc' :srcWeb='videoSrcWeb' :poster='videoPoster' :posterWeb='videoPosterWeb' customControl='yes' :controlColor="controlColor"/>
@@ -23,7 +23,6 @@
 <script>
 import EmbededVideo from '../../components/EmbededVideo.vue';
 
-const w = window.innerWidth
 export default {
   name: 'PageContent',
   components:{
@@ -50,13 +49,6 @@ export default {
             return false
         }
     },
-    bgSrc: function() {
-        if(w < 1024) {
-            return this.bg
-        } else {
-            return this.bgWeb
-        }
-    },
     letFirst: function() {
         if(this.quoteFirst === 'yes') {
             return true
@@ -64,6 +56,26 @@ export default {
             return false
         }
     }
+  },
+  methods: {
+    bgRWD: function(){
+        if(window.innerWidth <= 768){
+            if(window.matchMedia("(orientation: landscape)").matches){
+                return this.bgWeb
+            }
+            else{
+                return this.bg
+            }
+        }
+        else{
+            return this.bgWeb
+        }
+    }
+  },
+  created() {
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })    
   }
 }
 </script>

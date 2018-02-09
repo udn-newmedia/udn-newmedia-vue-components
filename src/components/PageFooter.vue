@@ -1,5 +1,5 @@
 <template>
-	<div class="section" :style="{backgroundColor: bgColor, backgroundImage: 'url('+ resImg +')'}">
+	<div class="section" :style="{backgroundColor: bgColor, backgroundImage: 'url('+ resImg() +')'}">
 		<div class="wrapper">
 			<Share :href='href'/>
 			<p><br/></p>
@@ -43,15 +43,26 @@ export default {
 
     }
   },
-  computed: {
+  methods: {
   	resImg: function() {
-  		if(window.innerWidth < 1024) {
-  			return this.bgImg
-  		} else {
-  			return this.bgImgWeb
-  		}
+        if(window.innerWidth <= 768){
+            if(window.matchMedia("(orientation: landscape)").matches){
+                return this.bgImgWeb
+            }
+            else{
+                return this.bgImg
+            }
+        }
+        else{
+            return this.bgImgWeb
+        }  		
   	}
-  }
+  },
+  created() {
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })      	
+  }  
 }
 </script>
 

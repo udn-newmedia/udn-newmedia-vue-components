@@ -2,7 +2,7 @@
     <div class="videocontainer">
         <div class="video-contain" :style="{backgroundColor: backgroundColor}">
             <video preload="metadata" playsinline
-                   :src="source" :poster="videoPoster" :controls="useControls" 
+                   :src="srcRWD" :poster="videoPoster" :controls="useControls" 
                    @click='handle_clickVideo' ref='video'></video>
             <div class="video-control">
               <div class="progress">
@@ -42,20 +42,32 @@ export default {
     }
   },
   computed: {
-    source: function () {
-      if(w < 1024){
-        return this.src 
-      } else {
-        return this.srcWeb
-      }
-    },
-    videoPoster: function () {
-      if(w < 1024){
-        return this.poster 
-      } else {
-        return this.posterWeb
-      }
-    },
+      srcRWD: function(){
+          if(window.innerWidth <= 768){
+              if(window.matchMedia("(orientation: landscape)").matches){
+                  return this.srcWeb
+              }
+              else{
+                  return this.src
+              }
+          }
+          else{
+              return this.srcWeb
+          }
+      },
+      videoPoster: function(){
+          if(window.innerWidth <= 768){
+              if(window.matchMedia("(orientation: landscape)").matches){
+                  return this.posterWeb
+              }
+              else{
+                  return this.poster
+              }
+          }
+          else{
+              return this.posterWeb
+          }
+      },
     useControls: function() {
       if(platform === 'Mob'){
         return false
@@ -74,6 +86,11 @@ export default {
   destroyed: function () {
     clearInterval(this.getProgressTimer)
     window.removeEventListener('scroll', this.onScroll)
+  },
+  created() {
+    window.addEventListener('resize', () => {
+        this.$forceUpdate()
+    })            
   },
   mounted: function () {
     platform === 'Mob' ? this.isMute = true : this.isMute = false
