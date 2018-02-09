@@ -4,13 +4,17 @@
             <h1>{{title}}</h1>
             <div id="sub-title">{{subtitle}}</div>
         </div>
+        <Arrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>    
     </div>
 </template>
 
 <script>
+
+import Arrow from './Arrow.vue'
+
 export default {
     name: 'Cover',
-    props: ['title', 'subtitle', 'bg', 'bgweb', "position"],
+    props: ['title', 'subtitle', 'bg', 'bgweb', "position", "arrowColor", "hint", "hintColor"],
     data: function(){
         return{
             aligncenter: false,
@@ -46,7 +50,8 @@ export default {
                 return this.bgweb
             }
         }
-    }
+    },
+    components: {Arrow}
 }
 </script>
 
