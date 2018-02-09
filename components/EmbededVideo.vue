@@ -136,6 +136,12 @@ export default {
           // Send GA every 5 seconds
           if (Math.floor(curTime / 5) > self.progress) {
             self.progress = Math.floor(curTime / 5)
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "video",
+                "eventAction": "play",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + thisvideo.currentSrc + "] [已觀看 " + Math.floor(curTime) + ' / ' + Math.floor(thisvideo.duration) + " 秒]"
+            });          
           }
         }, 600)
       }
@@ -145,7 +151,7 @@ export default {
       const volume = this.$refs.volume
       if (this.isMute === true) {
         video.muted = false
-        this.isMute = false
+        this.isMute = false        
       } else {
         video.muted = true
         this.isMute = true

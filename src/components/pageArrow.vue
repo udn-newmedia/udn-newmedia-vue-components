@@ -7,7 +7,6 @@
 
 <script>
 import _throttle from 'lodash.throttle';
-
 export default {
 
   name: 'pageArrow',
@@ -19,7 +18,7 @@ export default {
   },
   methods: {
   	nextPage: _throttle(function() {
-  		$.fn.fullpage.moveSectionDown();
+  		$.fn.fullpage.moveSectionDown();	
   	}, 1000)
   },
 }

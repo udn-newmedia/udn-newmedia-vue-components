@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import Utils from 'udn-newmedia-utils'
 export default {
 
   name: 'Page',
@@ -25,15 +26,22 @@ export default {
     },
   },
   mounted() {
+    console.log(this.$slots)
     const self = this
     const pageLength = Number($('.section').length);
     $('#page').fullpage({
-        scrollingSpeed: self.scrollSpeed,
+        scrollingSpeed: self.scrollSpeed,        
         afterLoad: function(anchorLink, index) {
             $('.active').css({
                 'z-index': 99,
                 'opacity': 1,
             })
+            ga("send", {
+                "hitType": "event",
+                "eventCategory": "Page",
+                "eventAction": "scroll",
+                "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [觀看第"+ index +"頁]"
+            });       
             if(index === 1) {
                 $('.navWrapper').css('transform', 'translate(0, -100%)')
                 $('.pageHeader').css('top', '0')

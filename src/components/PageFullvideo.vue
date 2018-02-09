@@ -2,17 +2,17 @@
 	<div class="section">
 		<div class="videocontainer">
 		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster +')'}">
-	        <video preload="metadata" playsinline='true' webkit-playsinline="true"
-	               :poster="videoPoster" ref='video'>
-	        	<source :src="source" type="video/mp4">       	
-	        </video>		    	
-		    	<canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
-	        <div class='controls'>
-	        	<canvas class="progressCircle" ref='controlCanvas'></canvas>
-	        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
-	        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-	        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-	        </div>
+		        <video preload="metadata" playsinline='true' webkit-playsinline="true"
+		               :poster="videoPoster" ref='video'>
+		        	<source :src="source" type="video/mp4">       	
+		        </video>		    	
+			    <canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
+		        <div class='controls'>
+		        	<canvas class="progressCircle" ref='controlCanvas'></canvas>
+		        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
+		        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+		        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+		        </div>
 		    </div>
 		</div>
 	</div>
@@ -128,6 +128,12 @@ export default {
 		      // Send GA every 5 seconds
 		      if (Math.floor(curTime / 5) > self.progress) {
 		        self.progress = Math.floor(curTime / 5)
+		        ga("send", {
+		            "hitType": "event",
+		            "eventCategory": "video",
+		            "eventAction": "play",
+		            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + thisvideo.currentSrc + "] [已觀看 " + Math.floor(curTime) + ' / ' + Math.floor(thisvideo.duration) + " 秒]"
+		        });     
 		      }
 		    }, 41)
 		  }
@@ -157,6 +163,7 @@ export default {
 		handle_clickVideo: function() {
 		  // const thisvideo = document.getElementById('introVideo')
 		  const thisvideo = this.$refs.video
+		  this.isRepeat = false
 		  if(thisvideo.paused){
 		    thisvideo.play()
 		  } else{
@@ -180,10 +187,12 @@ export default {
 		  	self.getPlayingProgress()
 		  	self.isPause = false
 		  	self.isPlay = true
+		  	self.isRepeat = false
 		  }
 		  video.onpause = function () {
 		  	self.isPause = true
 		  	self.isPlay = false
+		  	self.isRepeat = false
 		    if(self.getProgressTimer) {
 					clearInterval(self.getProgressTimer)
 					self.getProgressTimer = null
