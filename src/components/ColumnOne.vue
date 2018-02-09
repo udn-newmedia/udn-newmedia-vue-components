@@ -1,6 +1,6 @@
 <template>
   <div class="image-contain">
-    <img :src="imgRWD1">
+    <img :src="imgRWD1()">
     <div class="img-say">{{imgsay}}</div>
   </div>
 </template>
@@ -9,7 +9,12 @@
 export default {
     name: 'ColumnOne',
     props: ['img1', 'imgweb1', 'imgsay'],
-    computed: {
+    created: function() {
+      window.addEventListener('resize', () => {
+        this.$forceUpdate()
+      })
+    },
+    methods: {
       imgRWD1: function(){
         if(window.innerWidth <= 768){
             return this.img1

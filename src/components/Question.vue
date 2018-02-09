@@ -20,6 +20,7 @@ export default {
     .question-button{
         width: 100%;
         max-width: 500px;
+        margin: 0 auto;
         height: 70px;
         border-radius: 35px;
         border: solid 2px #DCDCDC;
