@@ -323,4 +323,11 @@ export default {
         float: left;
     }
 }
+
+@media screen and (orientation: landscape) {
+    #logo-contain{
+        display: none;
+    }
+}
+
 </style>
