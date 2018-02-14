@@ -20,7 +20,7 @@ export default {
         PageArrow
     },
     mixins: [srcRWD],
-    props: ['title', 'menuTitle', 'subTitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
+    props: ['title', 'menuText', 'subTitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
     data: function(){
         return{
             aligncenter: false,
@@ -35,7 +35,7 @@ export default {
         handle_Emit: function() {
           const self = this
           Bus.$emit('emitCoverTitle', {
-            title: self.menuTitle,
+            title: self.menuText,
             pageIndex : $(self.$el).index() + 1
           })
         }  

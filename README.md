@@ -362,7 +362,7 @@ new Vue({
 + PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
-	該標籤會自動抓 page-cover 中的 menu-title內容。
+	該標籤會自動抓 page-cover 中的 menu-text內容。
 	如需外連區塊則在`<page-head-bar>`內 置入 `<a>`。
 
 ```js
@@ -388,14 +388,14 @@ new Vue({
 	會將menu-title 傳給page-head-bar做連結使用
 
 ```js
-<Page-Cover title="李志凱" subtitle="15秒翻滾人生 拚一秒完美落地" bg="./static/m-bg_s.jpg" bgWeb="./static/m-bg.jpg" position="bottom" fontcolor="#fff" 
-arrow-color='#fff' hint='yes' hint-color='#fff'></Page-Cover>
+    <page-cover title="李志凱" sub-title="15秒翻滾人生 拚一秒完美落地" menu-text='翻滾洛地15秒' bg="./static/m-bg_s.jpg" bg-web="./static/m-bg.jpg" position="bottom" font-color="#fff" 
+    arrow-color='#fff' hint='yes' hint-color='#fff'></page-cover>
 ```
     ##### Props
 
 	* [title] 大標
 	* [subtitle] 副標
-	* [menu-title] Page-Head-Bar 滾動選單錨點 ex: menu-title='這只是個範例'
+	* [menu-text] Page-Head-Bar 滾動選單錨點 ex: menu-title='這只是個範例'
 	* [font-color] 大/副題顏色
 	* [bg] 手機封面圖
 	* [bg-web] 網頁封面圖
