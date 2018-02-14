@@ -5,8 +5,8 @@
     </div>
     <div class='navWrapper' :style="{backgroundColor: bgColor}">
 	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
-	    	<div class="scrollTo">
-	    		<div class="scrollTo-Btn" :style="{color: mobColor}" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'>{{title.title}}</div>
+	    	<div class="scrollTo" :style="{color: mobColor()}">
+	    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'>{{title.title}}</div>
 	    	</div>
 	    	<div class="linkOut" :style="{color: mobColor()}">
 	    		<slot></slot>
@@ -21,7 +21,7 @@
 	    </div>
 	<!-- button -->
 			<div class="btnBox">
-				<div class="cbtn" v-if='youtube'>
+				<div class="cbtn" v-if='isYoutube'>
 					<a :href="youtubeLink" target='_blank'><i class="fa fa-youtube-play fa-2x" aria-hidden="true" :style='{color: color}'></i></a>
 				</div>
 				<div class="cbtn" @click='handle_comment'>
@@ -51,7 +51,7 @@ export default {
   	Comment,
   	Logo
   },
-  props: ['href', 'color', 'youtube', 'youtubeLink', 'bgColor'],
+  props: ['href', 'color', 'youtubeLink', 'bgColor'],
   data () {
     return {
     	isOpen: false,
@@ -60,7 +60,13 @@ export default {
     }
   },
   computed: {
-
+  	isYoutube: function() {
+  		if(this.youtubeLink !== undefined){
+  			return true
+  		} else {
+  			return false
+  		}
+  	}
   },
   methods: {
   	menuHeight: function() {
@@ -270,7 +276,7 @@ export default {
 	border-bottom: 1px solid #c1c1c1;
 	width: calc(100% - 30px);
 	margin: 10px auto 0 auto;
-	color: #000;
+	color: inherit;
 	cursor: pointer;
 }
 .logoBox{
@@ -417,8 +423,8 @@ export default {
   	border-bottom: none;
   	margin-right: 50px;
   	margin-top: 0px;
-		color: #fff;
-		font-weight: bold;  	
+	color: inherit;
+	font-weight: bold;  	
   }
   .linkOut{
   	flex-direction: row;

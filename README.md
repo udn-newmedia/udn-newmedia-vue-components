@@ -366,10 +366,9 @@ new Vue({
 	如需外連區塊則在`<page-head-bar>`內 置入 `<a>`。
 
 ```js
-<page-head-bar href='https://udn.com/upf/newmedia/2017_data/universide_taipei_2017/jump_boys.html' youtube='yes'>
-    <a href='./page.html'>外連結1</a>
-    <a href='./page.html'>外連結2</a>
-    <a href='./page.html'>外連結3</a>
+<page-head-bar href='https://udn.com/upf/newmedia/2017_data/universide_taipei_2017/jump_boys.html' bg-color='#215151' youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM' color="#212121">
+    <a href='https://udn.com/upf/newmedia/2018_data/elderhome/'>大人宅</a>
+    <a href='#'>外連結2</a>
 </page-head-bar>
 ```
 
@@ -378,8 +377,7 @@ new Vue({
 	* [href] Facebook Comment href參數(必填) ex: href='專題URL'
 	* [color] icon和導引字顏色 預設:白字 手機只變icon顏色
 	* [bg-color] headrbar的顏色
-	* [youtube] 是否使用 youtube連結 ex: youtube='yes' 
-	* [youtube-link] youtube 連結網址 ex: youtube='Youtube URL'
+	* [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
 
 + PageCover
 
