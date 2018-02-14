@@ -1,5 +1,5 @@
 <template>
-	<div class="section pageIntro" :style="{backgroundImage: 'url('+ bgSrc +')', backgroundColor: bgColor}">
+	<div class="section pageIntro" :style="{backgroundImage: 'url('+ srcRWD(bg, bgWeb) +')', backgroundColor: bgColor}">
         <div class="glass"></div>
         <div class="container content" :style="{color: fontColor}">
             <slot></slot>
@@ -13,34 +13,19 @@
 <script>
 import PageArrow from './pageArrow.vue'
 import Share from './Share.vue'
+import srcRWD from '../mixin/srcRWD.js'
 
-const w = window.innerWidth
 export default {
-
   name: 'PageIntro',
   components: {
     PageArrow,
     Share
   },
+  mixins: [srcRWD],
   props: ['arrowColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'hint', 'hintColor', 'href', 'update'],
   data () {
     return {
 
-    }
-  },
-  computed: {
-    bgSrc: function() {
-        if(window.innerWidth <= 768){
-            if(window.matchMedia("(orientation: landscape)").matches){
-                return this.bgWeb
-            }
-            else{
-                return this.bg
-            }
-        }
-        else{
-            return this.bgWeb
-        }
     }
   },
   created() {

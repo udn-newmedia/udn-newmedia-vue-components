@@ -1,37 +1,23 @@
 <template>
 	<div class="section">
 		<div class="fullImg">
-			<img :src="source()">
+			<img :src="srcRWD(src, srcWeb)">
 			<slot></slot>
 		</div>
 	</div>
 </template>
 
 <script>
-const w = window.innerWidth
+import srcRWD from '../mixin/srcRWD.js'
 export default {
 
   name: 'PageImgsay',
   props: ['src', 'srcWeb'],
+  mixins: [srcRWD],
   data () {
     return {
 
     }
-  },
-  methods: {
-  	source: function() {
-      if(window.innerWidth <= 768){
-          if(window.matchMedia("(orientation: landscape)").matches){
-              return this.srcWeb
-          }
-          else{
-              return this.src
-          }
-      }
-      else{
-          return this.srcWeb
-      }      
-  	}
   },
   created () {
     window.addEventListener('resize', () => {

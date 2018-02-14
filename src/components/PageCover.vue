@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-        <div id="cover" :style="{backgroundImage: 'url(' + bgRWD() + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
+        <div id="cover" :style="{backgroundImage: 'url(' + srcRWD(bg, bgWeb) + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
             <div id="title-contain">
                 <h1 :style='{color: fontColor}'>{{title}}</h1>
                 <div id="sub-title" :style='{color: fontColor}'>{{subTitle}}</div>
@@ -13,11 +13,13 @@
 <script>
 import Bus from '../eventBus.js'
 import PageArrow from './pageArrow.vue'
+import srcRWD from '../mixin/srcRWD.js'
 export default {
     name: 'PageCover',
     components: {
         PageArrow
     },
+    mixins: [srcRWD],
     props: ['title', 'menuTitle', 'subTitle', 'bg', 'bgWeb', "position", 'fontColor', 'arrowColor', 'hint', 'hintColor'],
     data: function(){
         return{
@@ -36,20 +38,7 @@ export default {
             title: self.menuTitle,
             pageIndex : $(self.$el).index() + 1
           })
-        },
-        bgRWD: function(){
-            if(window.innerWidth <= 768){
-                if(window.matchMedia("(orientation: landscape)").matches){
-                    return this.bgWeb
-                }
-                else{
-                    return this.bg
-                }
-            }
-            else{
-                return this.bgWeb
-            }
-        }   
+        }  
     }, 
     created: function(){
         if(this.position == 'top'){

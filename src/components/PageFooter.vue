@@ -1,5 +1,5 @@
 <template>
-	<div class="section" :style="{backgroundColor: bgColor, backgroundImage: 'url('+ resImg() +')'}">
+	<div class="section" :style="{backgroundColor: bgColor, backgroundImage: 'url('+ srcRWD(bg, bgWeb) +')'}">
 		<div class="wrapper">
 			<Share :href='href'/>
 			<p><br/></p>
@@ -29,34 +29,21 @@
 import Editor from '../components/Editor.vue'
 import Relate from '../components/Relate.vue'
 import Share from '../components/Share.vue'
+import srcRWD from '../mixin/srcRWD.js'
 
 export default {
 
   name: 'PageFooter',
-  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom', 'update', 'bgColor', 'bgImg', 'bgImgWeb'],
+  props:['href', 'link1', 'link2', 'link3', 'link4', 'img1', 'img2', 'img3', 'img4', 'text1', 'text2', 'text3', 'text4', 'color', 'newmedia', 'ubrand', 'udncom', 'update', 'bgColor', 'bg', 'bgWeb'],
   components:{
   	Editor,
   	Share
   },
+  mixins: [srcRWD],
   data () {
     return {
 
     }
-  },
-  methods: {
-  	resImg: function() {
-        if(window.innerWidth <= 768){
-            if(window.matchMedia("(orientation: landscape)").matches){
-                return this.bgImgWeb
-            }
-            else{
-                return this.bgImg
-            }
-        }
-        else{
-            return this.bgImgWeb
-        }  		
-  	}
   },
   created() {
     window.addEventListener('resize', () => {

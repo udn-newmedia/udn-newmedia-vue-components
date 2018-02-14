@@ -1,5 +1,5 @@
 <template>
-	<div class="section pageContent" :style="{backgroundImage: 'url('+ bgRWD() +')', backgroundColor: bgColor}">
+	<div class="section pageContent" :style="{backgroundImage: 'url('+ srcRWD(bg, bgWeb) +')', backgroundColor: bgColor}">
 		<div class="mediaContainer" :class="{videoIntro: isVideo, imgIntro: isImg}" :style="{backgroundColor: BoxColor}">
             <div class="videoModel" v-if="isVideo">
                 <EmbededVideo :src='videoSrc' :srcWeb='videoSrcWeb' :poster='videoPoster' :posterWeb='videoPosterWeb' customControl='yes' :controlColor="controlColor"/>
@@ -22,12 +22,13 @@
 
 <script>
 import EmbededVideo from '../../components/EmbededVideo.vue';
-
+import srcRWD from '../mixin/srcRWD.js'
 export default {
   name: 'PageContent',
   components:{
   	EmbededVideo
   },
+  mixins: [srcRWD],
   props: ['title', 'quoteFirst', 'useQuote', 'quoteSay', 'videoSrc', 'videoSrcWeb', 'videoPoster', 'videoPosterWeb', 'BoxColor', 'ImgSrc', 'ImgSay', 'fontColor', 'bg', 'bgWeb', 'bgColor', 'fontColor', 'controlColor'],
   data () {
     return {
@@ -76,7 +77,7 @@ export default {
     window.addEventListener('resize', () => {
         this.$forceUpdate()
     })    
-  }
+  },
 }
 </script>
 

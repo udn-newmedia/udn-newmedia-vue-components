@@ -1,9 +1,9 @@
 <template>
 	<div class="section">
 		<div class="videocontainer">
-		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ videoPoster() +')'}">
+		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ srcRWD(poster, posterWeb) +')'}">
 		        <video preload="metadata" playsinline='true' webkit-playsinline="true"
-		               :poster="videoPoster()" ref='video' :src="srcRWD()">  	
+		               :poster="srcRWD(poster, posterWeb)" ref='video' :src="srcRWD(src,srcWeb)">  	
 		        </video>		    	
 			    <canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
 		        <div class='controls'>
@@ -19,13 +19,15 @@
 
 <script>
 import Utils from 'udn-newmedia-utils'
-
+import srcRWD from '../mixin/srcRWD.js'
 var isMob = Utils.detectMob(10)
 var platform = (isMob === true) ? 'Mob' : 'PC'
+
 export default {
 
   name: 'PageFullvideo',
   props: ['src', 'srcWeb', 'poster', 'posterWeb', 'BgColor'],
+  mixins: [srcRWD],
 	data: function () {
 		return {
 		  progress: 0,
@@ -42,32 +44,6 @@ export default {
 	
 	},
 	methods: {
-	    srcRWD: function(){
-	        if(window.innerWidth <= 768){
-	            if(window.matchMedia("(orientation: landscape)").matches){
-	                return this.srcWeb
-	            }
-	            else{
-	                return this.src
-	            }
-	        }
-	        else{
-	            return this.srcWeb
-	        }
-	    },
-	    videoPoster: function(){
-	        if(window.innerWidth <= 768){
-	            if(window.matchMedia("(orientation: landscape)").matches){
-	                return this.posterWeb
-	            }
-	            else{
-	                return this.poster
-	            }
-	        }
-	        else{
-	            return this.posterWeb
-	        }
-	    },
 		drawCircleBox: function() {
 		 	const canvas = this.$refs.controlCanvas
 		 	const ctx = canvas.getContext('2d')

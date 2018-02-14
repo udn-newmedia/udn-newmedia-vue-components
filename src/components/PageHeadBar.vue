@@ -119,7 +119,8 @@ export default {
   },
   mounted() {
   	const self = this
-  	if(this.$slots.default != undefined){
+  	if(this.$slots.default !== undefined){
+  		console.log('good?')
 	  	for(let i = 0; i < this.$slots.default.length; i++){
 	  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
 	  			this.$slots.default[i].elm.addEventListener('click', function() {
@@ -135,7 +136,7 @@ export default {
   	}
   },
   beforeDestroyed: function() {
-  	if(this.$slots.default != undefined){
+  	if(this.$slots.default !== undefined){
 	  	for(let i = 0; i < this.$slots.default.length; i++){
 	  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
 	  			this.$slots.default[i].elm.removeEventListener('click', function() {
