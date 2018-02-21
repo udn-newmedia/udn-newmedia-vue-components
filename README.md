@@ -43,7 +43,7 @@ new Vue({
 + Indicator
 
 	頁面上方進度條
-```js
+```html
 <Indicator color="#FF0000"></Indicator>
 ```
 	###### - Props
@@ -51,7 +51,7 @@ new Vue({
 	* [color] 進度條顏色 預設: #AA4444
 
 + Head-Bar
-```js
+```html
 <Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
 ```
     ##### - Props
@@ -68,7 +68,7 @@ new Vue({
 + Cover
 
 	封面
-```js
+```html
 <Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="middle"></Cover>
 ```
 	##### Props
@@ -82,7 +82,7 @@ new Vue({
 + Content-Container
 
 	用於包內文，內含內文行高等CSS設定
-```js
+```html
 <Content-Container background-color="#FFFFFF">
 	<p>再過43年，台灣幾乎人人都可以活到90歲，但活得長，卻不一定能活得好。高齡化下一階段最大挑戰，將變成「活著要幹嘛」？</p>
 	<p><br/></p>
@@ -96,7 +96,7 @@ new Vue({
 + Column-One
 
 	1格圖片排列
-```js
+```html
 <Column-One imgsay="圖說" img1="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg"></Column-One>
 ```
 	##### - Props
@@ -107,7 +107,7 @@ new Vue({
 + Column-Two
 
 	2格圖片排列
-```js
+```html
 <Column-Two imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg"></Column-Two>
 ```
 	##### - Props
@@ -118,7 +118,7 @@ new Vue({
 + Column-Three
 
 	3格圖片排列
-```js
+```html
 <Column-Three imgsay="圖說" img1="./static/bg_wang.jpg" img2="./static/bg_wang.jpg" img3="./static/bg_wang.jpg" imgweb1="./static/web/bg_wang.jpg" imgweb2="./static/web/bg_wang.jpg" imgweb3="./static/web/bg_wang.jpg"></Column-Three>
 ```
 	##### - Props
@@ -129,7 +129,7 @@ new Vue({
 + Quote
 
 	內文引言區塊，內含引言CSS設定
-```js
+```html
 <Quote img="./static/lee.png" text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"/>
 ``` 
     ##### - Props
@@ -143,7 +143,7 @@ new Vue({
 + Youtube
 
 	youtube嵌入
-```js
+```html
 <Youtube src="https://www.youtube.com/embed/kMguxxwW_-A"></Youtube>
 ```
 	##### - Props
@@ -153,7 +153,7 @@ new Vue({
 + Section-Fixed-Bg
 
 	滾動視差過場
-```js
+```html
 <Section-Fixed-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
 ```
 	##### - Props
@@ -167,7 +167,7 @@ new Vue({
 + Section-Bg
 
 	滿版圖過場
-```js
+```html
 <Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
 ```
 	##### - Props
@@ -189,7 +189,7 @@ new Vue({
 + Editor
 	
     作者區塊，內含CSS設定
-```js
+```html
 <Editor>
      <div>文字：蔡佩蓉、洪欣慈</div>
      <div>視覺設計、影音：張心慈、許瑋琳</div>
@@ -215,7 +215,7 @@ new Vue({
 + Relate
 
 	延伸閱讀區塊，內含CSS設定
-```js
+```html
 <Relate title="延伸閱讀" color="#363434" 
 	href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
 	href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
@@ -234,7 +234,7 @@ new Vue({
 + Share
 
 	FB and Line 分享區塊。
-```js
+```html
 <Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
 ```
     ##### - Props
@@ -244,7 +244,7 @@ new Vue({
 + Fb-Comment
 
 	FB 留言 plugin。
-```js
+```html
 <Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
 ```
     ##### - Props
@@ -254,7 +254,7 @@ new Vue({
 + Foot
 
 	頁腳
-```js
+```html
 <Foot background-color="#FFFFFF"></Foot>
 ```
 	##### - Props
@@ -334,7 +334,7 @@ new Vue({
 
 	滿版滾動容器，所有的版面都要放在裡面。
 
-```js
+```html
 <Page>
     <Page-Cover title="好好說再見" subtitle="插畫記林杰樑走後1500天" bg="./static/bg_wang.jpg" bgWeb="./static/web/bg_wang.jpg" position="bottom" fontcolor="#fff"></Page-Cover>
     <Page-Intro fontcolor="#fff" Bg-Color="#000"></Page-Intro>
@@ -350,7 +350,7 @@ new Vue({
 	
 	滿版進度表
 
-```js
+```html
 <page-indicator bar-color="#000" bg-color="#fff"></page-indicator>
 ```
 
@@ -385,7 +385,7 @@ new Vue({
 
 	會將menu-title 傳給page-head-bar做連結使用
 
-```js
+```html
     <page-cover title="李志凱" sub-title="15秒翻滾人生 拚一秒完美落地" menu-text='翻滾洛地15秒' bg="./static/m-bg_s.jpg" bg-web="./static/m-bg.jpg" position="bottom" font-color="#fff" 
     arrow-color='#fff' hint='yes' hint-color='#fff'></page-cover>
 ```
@@ -407,7 +407,7 @@ new Vue({
 	滿版引言
 	文案請用`p`插入
 
-```js
+```html
 <Page-Intro update='2017.08.25更新' href='https://udn.com/upf/newmedia/2018_data/elderhome/' font-color="#fff" bg="./static/w1-bg_s.jpg" bg-web="./static/w1-bg2.jpg" arrow-color='#fff' hint-color='#fff'>
    <p>「不拚什麼都沒有！」21歲競技體操國手李智凱，曾經是紀錄片《翻滾吧！男孩》中的「菜市場凱」，從小苦練「湯瑪士迴旋」絕技，讓他在去年為台灣搶下睽違16年的奧運體操門票，也讓世界注意到台灣體操選手。</p>
    <p><br/></p>
@@ -432,7 +432,7 @@ new Vue({
 
    影片範例
 
-```js
+```html
 <Page-Card video-src='./static/video/pcvideo.mp4' video-src-web='static/video/pcvideo.mp4' video-poster="./static/bg_wang.jpg" video-poster-web='static/bg_wang.jpg' bg-color='#000'>
     <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
     <p><br/></p>
@@ -442,7 +442,7 @@ new Vue({
 
    圖片範例
 
-```js
+```html
 <Page-Card Img-Src='./static/imageSmaple.png'>
     <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
     <p><br/></p>
@@ -452,7 +452,7 @@ new Vue({
 
    純文字範例
 
-```js
+```html
 <Page-Card>
     <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
     <p><br/></p>
@@ -464,7 +464,7 @@ new Vue({
 
    純文字 + 引文 +標題範例
 
-```js
+```html
 <page-card title='小學門口 大海送垃圾' font-color='#000' bg='./static/bg_mobile.jpg' bg-web="./static/bg.jpg" box-color='#fff' use-quote='yes'>
  <p>專注地盯著眼前的鞍馬，深吸一大口氣，為自己注入信心，緊握把手、一躍而上，雙腿在空中如疾風般旋轉。</p>
  <p><br/></p>
@@ -496,7 +496,7 @@ new Vue({
 
   page滿版影音
 
-```js
+```html
 <page-fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4' poster="./static/bg_wang.jpg" poster-web="./static/web/bg_wang.jpg"></page-fullvideo>
 ```	
 
@@ -511,7 +511,7 @@ new Vue({
   
   page引言
 
-```js
+```html
 <Page-Quote quoter="體操國手 李智凱" src='static/squareVideo.mp4' src-web='./static/squareVideo.mp4' bg-color='#82c539'>
     <p>奧運失敗的時候，當下腦筋是一片空白的，什麼都沒有想法，就是最不想發生的事發生了。下一個想法就是我還在比賽，要把比賽完成。</p>
 </Page-Quote>  
@@ -533,7 +533,7 @@ new Vue({
 
   圖說文字用 `p` 輸入
 
-```js
+```html
 <Page-Imgsay src="./static/bg_wang.jpg" src-web="static/web/bg_wang.jpg">
     <p>學童突發奇想，將廢棄漁業浮球做成樂器吹奏。</p>
 </Page-Imgsay>
@@ -550,7 +550,7 @@ new Vue({
 
   製作群請用 `p` 輸入
 
-```js
+```html
 <page-footer 
     href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"
     bg-img='./static/bg_mobile.jpg' bg-img-web='./static/bg.jpg'
