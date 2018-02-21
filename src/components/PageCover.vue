@@ -40,7 +40,7 @@ export default {
           })
         }  
     }, 
-    created: function(){
+    beforeMount: function(){
         if(this.position == 'top'){
             this.top = true
         }
