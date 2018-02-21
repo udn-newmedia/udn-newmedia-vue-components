@@ -365,8 +365,8 @@ new Vue({
 	該標籤會自動抓 page-cover 中的 menu-text內容。
 	如需外連區塊則在`<page-head-bar>`內 置入 `<a>`。
 
-```js
-<page-head-bar href='https://udn.com/upf/newmedia/2017_data/universide_taipei_2017/jump_boys.html' bg-color='#215151' youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM' color="#212121">
+```html
+<page-head-bar href='https://udn.com/upf/newmedia/2017_data/universide_taipei_2017/jump_boys.html' background-color='#215151' youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM' color="#212121">
     <a href='https://udn.com/upf/newmedia/2018_data/elderhome/'>大人宅</a>
     <a href='#'>外連結2</a>
 </page-head-bar>
@@ -376,7 +376,7 @@ new Vue({
    ##### Props
 	* [href] Facebook Comment href參數(必填) ex: href='專題URL'
 	* [color] icon和導引字顏色 預設:白字 手機只變icon顏色
-	* [bg-color] headrbar的顏色
+	* [background-color] headrbar的顏色
 	* [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
 
 + PageCover

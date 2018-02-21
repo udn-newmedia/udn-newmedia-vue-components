@@ -3,10 +3,11 @@
     <div id="icon">
         <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
     </div>
-    <div class='navWrapper' :style="{backgroundColor: bgColor}">
+    <div class='navWrapper' :style="{backgroundColor: backgroundColor}">
 	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
 	    	<div class="scrollTo" :style="{color: mobColor()}">
-	    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'>{{title.title}}</div>
+	    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'
+	    				 :style="{color: mobColor(), backgroundColor: backgroundColor}">{{title.title}}</div>
 	    	</div>
 	    	<div class="linkOut" :style="{color: mobColor()}">
 	    		<slot></slot>
@@ -51,7 +52,7 @@ export default {
   	Comment,
   	Logo
   },
-  props: ['href', 'color', 'youtubeLink', 'bgColor'],
+  props: ['href', 'color', 'youtubeLink', 'backgroundColor'],
   data () {
     return {
     	isOpen: false,
@@ -121,12 +122,20 @@ export default {
     })  	
   	Bus.$on('emitCoverTitle', function(msg) {
   		self.getTitle.push(msg)
+      setTimeout(function(){
+          $('.scrollTo-Btn').hover(function(){
+              $(this).css('color', self.backgroundColor)
+              $(this).css('background-color', self.color)
+          }, function(){
+              $(this).css('color', self.color)
+              $(this).css('background-color', self.backgroundColor)
+          })
+      }, 500)    		 		
   	})
   },
   mounted() {
   	const self = this
   	if(this.$slots.default !== undefined){
-  		console.log('good?')
 	  	for(let i = 0; i < this.$slots.default.length; i++){
 	  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
 	  			this.$slots.default[i].elm.addEventListener('click', function() {
@@ -140,6 +149,13 @@ export default {
 	  		}
 	  	}
   	}
+    $('.linkOut a').hover(function(){
+        $(this).css('color', self.backgroundColor)
+        $(this).css('background-color', self.color)
+    }, function(){
+        $(this).css('color', self.color)
+        $(this).css('background-color', self.backgroundColor)
+    })
   },
   beforeDestroyed: function() {
   	if(this.$slots.default !== undefined){
@@ -260,11 +276,12 @@ export default {
 		justify-content: center;
 		align-items: center;
 		font-size: 16px;
-		padding: 10px 0;
+		padding: 10px;
 		border-bottom: 1px solid #c1c1c1;
 		width: calc(100% - 30px);
 		margin: 10px auto 0 auto;
 		color: inherit;
+		text-decoration: none;
 	}	
 }
 .scrollTo-Btn{
@@ -272,7 +289,7 @@ export default {
 	justify-content: center;
 	align-items: center;
 	font-size: 16px;
-	padding: 10px 0;
+	padding: 10px;
 	border-bottom: 1px solid #c1c1c1;
 	width: calc(100% - 30px);
 	margin: 10px auto 0 auto;
