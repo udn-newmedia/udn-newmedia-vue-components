@@ -153,8 +153,8 @@ export default {
     text-align: center;
 }
 .linkOut a{
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: inherit;
+    color: inherit;
     height: 60px;
     padding: 0;
     line-height: 60px;
