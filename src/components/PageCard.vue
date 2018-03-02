@@ -9,7 +9,7 @@
             </div>
             <div class="articleModel" :style="{color: fontColor}">
                 <h2>{{title}}</h2>
-                <div class="articleContent">
+                <div class="articleContent" :class="{isQuote: useQuote}">
                     <slot></slot>
                 </div>
                 <div class='quote' :style="{order: isFirst}" v-if='useQuote' :class="{quoteFirst: letFirst}">
@@ -191,8 +191,8 @@ export default {
         p>br{
             line-height: 36px;
         }
-        .articleContent{
-            flex: 1.5;
+        .isQuote{
+            width: 50% !important;
         }
         .quote{
             margin: 0;

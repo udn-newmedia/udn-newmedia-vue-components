@@ -7,9 +7,9 @@
 	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
 	    	<div class="scrollTo" :style="{color: mobColor()}">
 	    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'
-	    				 :style="{color: mobColor(), backgroundColor: backgroundColor}">{{title.title}}</div>
+	    				 :style="{color: mobColor(color), backgroundColor: setBgColor(backgroundColor)}">{{title.title}}</div>
 	    	</div>
-	    	<div class="linkOut" :style="{color: mobColor()}">
+	    	<div class="linkOut" :style="{color: mobColor(color)}">
 	    		<slot></slot>
 	    	</div>
 	    	<div class="logoBox hidden-lg hidden-md">
@@ -77,11 +77,18 @@ export default {
 	  		return '100%'
 	  	}
   	},
-  	mobColor: function() {
+  	setBgColor: function(color) {
+  		if(window.innerWidth < 1024) {
+  			return '#fff'
+  		} else {
+  			return color
+  		}
+  	},
+  	mobColor: function(color) {
   		if(window.innerWidth < 1024) {
   			return '#000'
   		} else {
-  			return this.color
+  			return color
   		}
   	},  	
   	windowHeight: function() {

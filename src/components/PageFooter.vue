@@ -18,9 +18,11 @@
 			</div>			
 		</div>
 		<div class="pageFoot">
-			<a v-if="udncom" href="https://udn.com/news/index"><img src="https://udn.com/upf/newmedia/image/udn-logo.svg" alt="聯合新聞網" title="聯合新聞網"></a>
-			<a v-if="newmedia" href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018.png" alt="新媒體中心" title="新媒體中心"></a>
-			<a v-if="ubrand" href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg" alt="聯合報融媒體發展部" title="聯合報融媒體發展部"></a>
+			<div class="logoWrapper">
+				<a v-if="udncom" href="https://udn.com/news/index"><img src="https://udn.com/upf/newmedia/image/udn-logo.svg" alt="聯合新聞網" title="聯合新聞網"></a>
+				<a v-if="newmedia" href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018.png" alt="新媒體中心" title="新媒體中心"></a>	
+				<a v-if="ubrand" href="https://udn.com/upf/newmedia/ubrandstudio/?familybar_hide"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg" alt="聯合報融媒體發展部" title="聯合報融媒體發展部"></a>				
+			</div>
 		</div>
 	</div>
 </template>
@@ -107,13 +109,20 @@ export default {
 		bottom: 0;
 		width: 100%;
 		height: 60px;
-		display: flex;
-		align-items: center;
-		justify-content: space-around;
 		background-color: #fff;
 		img{
 			height: 30px;
 		}
+	}
+	.logoWrapper{
+		width: 100%;
+		height: 100%;
+		max-width: 880px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		background-color: #fff;
 	}
     @media screen and (max-width: 767px){
 
@@ -127,7 +136,6 @@ export default {
         }
         .pageFoot{
         	height: 70px;
-        	justify-content: center;
         	img{
         		height: 40px;
         		margin: 0 10px;
@@ -147,7 +155,6 @@ export default {
 					display: flex;
 					flex-direction: column;
 					justify-content: space-between;
-					align-items: center;
 					img{
 						width: 100%;
 						height: 80%;
