@@ -1,9 +1,9 @@
 <template>
     <div class="fixed-background" :id="menuText">
         <div class="fixed-bg" :style="{opacity: opacity, backgroundImage: 'url(' + bgRWD() + ')'}">
-            <div class="fix-text-bottom" :style="{opacity: bottom}">{{text}}</div>
+            <div class="fix-text-bottom" :style="{opacity: bottom}"><div v-html="textTrans"></div></div>
         </div>
-         <div class="fix-text" :style="{opacity: middle}">{{text}}</div>
+         <div class="fix-text" :style="{opacity: middle}"><div v-html="textTrans"></div></div>
     </div>
 </template>
 
@@ -54,6 +54,23 @@ export default {
             else{
                 return this.bgweb
             }
+        }
+    },
+    computed: {
+        textTrans: function(){
+            
+            var res = ''
+            if(this.text != undefined){
+                var temp = this.text.split('<br/>')
+                for(var i in temp){
+                    if(i != 0){
+                        res += '<br/>'
+                    }
+                    res += temp[i]
+                }
+            }
+            
+            return res
         }
     },
     mounted: function(){
