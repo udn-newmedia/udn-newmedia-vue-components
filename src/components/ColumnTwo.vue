@@ -6,7 +6,7 @@
       <div class="col-md-6 right">
         <img :src="imgRWD2()">
       </div>
-      <div class="img-say">{{imgsay}}</div>
+      <div class="img-say"><div v-html="imgsay"></div></div>
   </div>
 </template>
 
