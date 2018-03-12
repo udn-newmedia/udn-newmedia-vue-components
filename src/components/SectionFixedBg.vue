@@ -77,6 +77,7 @@ export default {
     }
     .fix-text{
         font-size: 26px;
+        font-weight: bold;
         letter-spacing: -0.5px;
         color: #FFFEFE;
         text-shadow: 0px 3px 7px rgba(0, 0, 0, 0.4)

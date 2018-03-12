@@ -1,6 +1,9 @@
 <template>
     <div class="logo-block">
         <div class="logo">
+            <a href="https://vision.udn.com/"><img src="https://udn.com/upf/newmedia/image/vision_logo.png" alt=""></a>
+        </div>
+        <div class="logo">
             <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn-logo.svg"></a>
         </div>
         <div class="logo" id="nmd">
