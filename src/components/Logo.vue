@@ -1,6 +1,6 @@
 <template>
     <div class="logo-block">
-        <div class="logo">
+        <div id="vision" class="logo" :class="{hidden: !vision}">
             <a href="https://vision.udn.com/"><img src="https://udn.com/upf/newmedia/image/vision_logo.png" alt=""></a>
         </div>
         <div class="logo">
@@ -14,7 +14,8 @@
 
 <script>
 export default {
-    name: 'Logo'
+    name: 'Logo',
+    props: ['vision']
 }
 </script>
 
@@ -22,6 +23,10 @@ export default {
     .logo{
         width: 140px;
         display: inline-block;
+    }
+
+    #vision img{
+        width: 100%;
     }
     
     #nmd{
