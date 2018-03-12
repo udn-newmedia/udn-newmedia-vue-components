@@ -41,7 +41,7 @@ export default {
         font-size: 32px;
         /* min-height: 125px; */
         color: #888888;
-        padding: 15px 0;
+        padding: 35px 0;
         border-top: dotted 1px #DCDDDD;
         border-bottom: dotted 1px #DCDDDD;
         position: relative;
@@ -62,7 +62,7 @@ export default {
             text-align: center;
         }
         .quote-text{
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
         .quote-contain{
             font-size: 26px;
