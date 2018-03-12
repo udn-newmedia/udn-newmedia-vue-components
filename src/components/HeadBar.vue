@@ -84,6 +84,10 @@ export default {
     created: function() {
         var self = this
         Bus.$on('emitHeadbarTitle', function(msg) {
+            console.log(msg.title)
+            if(msg.title == undefined){
+                return
+            }
             self.getTitle.push(msg)
             setTimeout(function(){
                 $('.scrollTo-Btn').hover(function(){
