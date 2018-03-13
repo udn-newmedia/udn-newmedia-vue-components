@@ -10,6 +10,9 @@
 	    	</div>
             <div id="logo-contain" class="hidden-lg">
                 <div class="logo-block">
+                    <div id="vision" class="logo" :class="{hidden: !vision}">
+                        <a href="https://vision.udn.com/"><img src="https://udn.com/upf/newmedia/image/vision_logo.jpg" alt=""></a>
+                    </div>
                     <div class="logo">
                         <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn_logo_2018_v.svg"></a>
                     </div>
@@ -39,7 +42,7 @@ import Utils from 'udn-newmedia-utils'
 
 export default {
     name: 'HeadBar',
-    props: ['background-color', 'MenuSlideFrom', 'color', 'hover-color'],
+    props: ['background-color', 'MenuSlideFrom', 'color', 'hover-color', 'vision'],
     data: function() {
         return {
             top: 0,
@@ -186,6 +189,9 @@ export default {
 #nmd img{
     width: 100%;
 }
+#vision img{
+        width: 100%;
+    }
 #head-bar {
     position: fixed;
     background-color: #231815;
@@ -333,6 +339,14 @@ export default {
     }
     .logo-block{
         margin-top: 32px;
+        padding-left: 60px;
+    }
+    .logo{
+        display: block;
+        float: left;
+    }
+    #vision{
+        margin-top: 25px;
     }
     .scrollTo-Btn{
         border-bottom: 1px solid #000000;
