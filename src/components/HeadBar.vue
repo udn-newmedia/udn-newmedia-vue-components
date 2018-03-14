@@ -11,7 +11,7 @@
             <div id="logo-contain" class="hidden-lg">
                 <div class="logo-block">
                     <div id="vision" class="logo" :class="{hidden: !vision}">
-                        <a href="https://vision.udn.com/"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
+                        <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
                     </div>
                     <div class="logo">
                         <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn_logo_2018_v.svg"></a>
