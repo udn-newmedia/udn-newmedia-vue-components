@@ -273,6 +273,7 @@ export default {
     }        
 }
 #hbutton-contain {
+    overflow: hidden;
     position: absolute;
     z-index: 0;
     cursor: pointer;
