@@ -1,14 +1,14 @@
 <template>
-    <header id="head-bar" :style="{top: top+'px',backgroundColor: backgroundColor}">
+    <header id="head-bar" :style="{top: top+'px',backgroundColor: setBackgroundColor}">
         <div id="icon">
-            <a href="./"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
+            <a href="./"><i class="udn-icon udn-icon-logo" :style="{color: setColor}"></i></a>
         </div>
-        <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
-	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
-            <div class="linkOut" :style="{color: linkColor, backgroundColor: linkBackgroundColor}">
+        <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: setBackgroundColor}">
+	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: setColor, backgroundColor: setBackgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
+            <div class="linkOut" :style="{color: setLinkColor, backgroundColor: setLinkBackgroundColor}">
 	    		<slot></slot>
 	    	</div>
-            <div id="logo-contain" class="hidden-lg">
+            <div id="logo-contain" class="hidden-lg" v-if="!noLogo">
                 <div class="logo-block">
                     <div id="vision" class="logo" :class="{hidden: !vision}">
                         <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
@@ -26,10 +26,10 @@
             <div class="nav-icon" :class="{open: isOpen}"
                 @click="handleBurger()"
             >
-                <span :style="{backgroundColor: color}"></span>
-                <span :style="{backgroundColor: color}"></span>
-                <span :style="{backgroundColor: color}"></span>
-                <span :style="{backgroundColor: color}"></span>
+                <span :style="{backgroundColor: setColor}"></span>
+                <span :style="{backgroundColor: setColor}"></span>
+                <span :style="{backgroundColor: setColor}"></span>
+                <span :style="{backgroundColor: setColor}"></span>
             </div>
         </div>
     </header>
@@ -42,13 +42,47 @@ import Utils from 'udn-newmedia-utils'
 
 export default {
     name: 'HeadBar',
-    props: ['background-color', 'MenuSlideFrom', 'color', 'vision', 'link-background-color', 'link-color'],
+    props: ['background-color', 'MenuSlideFrom', 'color', 'vision', 'linkBackgroundColor', 'linkColor', 'noLogo'],
     data: function() {
         return {
             top: 0,
             isOpen: false,
             menuSlideDirection: "",
             getTitle: []
+        }
+    },
+    computed: {
+        setLinkBackgroundColor: function() {
+            if(this.linkBackgroundColor){
+                return this.linkBackgroundColor
+            } else if (this.linkBackgroundColor || this.backgroundColor) {
+                return this.backgroundColor
+            } else {
+                return '#fff'
+            }          
+        },
+        setLinkColor: function() {
+            if(this.linkColor){
+                return this.linkColor
+            } else if (this.linkColor || this.color) {
+                return this.color
+            } else {
+                return '#000'
+            }
+        },
+        setBackgroundColor: function() {
+            if(this.backgroundColor){
+                return this.backgroundColor
+            } else {
+                return '#fff'
+            }
+        },
+        setColor: function() {
+            if(this.color){
+                return this.color
+            } else {
+                return '#000'
+            }
         }
     },
     methods: {
@@ -84,7 +118,7 @@ export default {
             });
         }
     },
-    created: function() {
+    created: function() {      
         var self = this
         Bus.$on('emitHeadbarTitle', function(msg) {
             console.log(msg.title)
@@ -94,11 +128,11 @@ export default {
             self.getTitle.push(msg)
             setTimeout(function(){
                 $('.scrollTo-Btn').hover(function(){
-                    $(this).css('color', self.backgroundColor)
-                    $(this).css('background-color', self.color)
+                    $(this).css('color', self.setBackgroundColor)
+                    $(this).css('background-color', self.setColor)
                 }, function(){
-                    $(this).css('color', self.color)
-                    $(this).css('background-color', self.backgroundColor)
+                    $(this).css('color', self.setColor)
+                    $(this).css('background-color', self.setBackgroundColor)
                 })
             }, 500)    
         })
@@ -145,11 +179,11 @@ export default {
         }
         
         $('.linkOut a').hover(function(){
-            $(this).css('color', self.linkBackgroundColor)
-            $(this).css('background-color', self.linkColor)
+            $(this).css('color', self.setLinkBackgroundColor)
+            $(this).css('background-color', self.setLinkColor)
         }, function(){
-            $(this).css('color', self.linkColor)
-            $(this).css('background-color', self.linkBackgroundColor)
+            $(this).css('color', self.setLinkColor)
+            $(this).css('background-color', self.setLinkBackgroundColor)
         })
         window.addEventListener('scroll', this.handleScroll);
     },    
