@@ -9,7 +9,7 @@
       <div class="col-md-12">
         <img :src="imgRWD3()">
       </div>
-      <div class="img-say">{{imgsay}}</div>
+      <div class="img-say"><div v-html="imgsay"></div></div>
   </div>
 </template>
 

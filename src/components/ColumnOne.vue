@@ -1,7 +1,7 @@
 <template>
   <div class="image-contain">
     <img :src="imgRWD1()">
-    <div class="img-say">{{imgsay}}</div>
+    <div class="img-say"><div v-html="imgsay"></div></div>
   </div>
 </template>
 

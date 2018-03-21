@@ -8,7 +8,7 @@
             </div>
             <div :class="dynamicClass">
                 <div class="quote-text" v-html="text" v-bind:style="{color: color}"></div>
-                <div class="quote-ref">{{refer}}</div>
+                <div class="quote-ref" :class="{hidden: !refer}">{{refer}}</div>
             </div>
         </div>
         
@@ -39,9 +39,9 @@ export default {
         /* display: table; */
         font-weight: bold;
         font-size: 32px;
-        min-height: 125px;
+        /* min-height: 125px; */
         color: #888888;
-        padding: 15px 0;
+        padding: 35px 0;
         border-top: dotted 1px #DCDDDD;
         border-bottom: dotted 1px #DCDDDD;
         position: relative;
@@ -62,7 +62,7 @@ export default {
             text-align: center;
         }
         .quote-text{
-            margin-top: 20px;
+            /* margin-top: 20px; */
         }
         .quote-contain{
             font-size: 26px;
@@ -71,7 +71,7 @@ export default {
     @media screen and (min-width: 1024px){
         .quote-contain {
             padding: 50px;
-            min-height: 220px;
+            /* min-height: 220px; */
         }
         .quote-ref{
             font-size: 17px;
