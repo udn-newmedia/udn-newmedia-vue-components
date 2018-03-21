@@ -5,7 +5,7 @@
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: backgroundColor}">
 	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: color, backgroundColor: backgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
-            <div class="linkOut" :style="{color: color, backgroundColor: backgroundColor}">
+            <div class="linkOut" :style="{color: linkColor, backgroundColor: linkBackgroundColor}">
 	    		<slot></slot>
 	    	</div>
             <div id="logo-contain" class="hidden-lg">
