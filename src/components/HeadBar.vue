@@ -42,7 +42,7 @@ import Utils from 'udn-newmedia-utils'
 
 export default {
     name: 'HeadBar',
-    props: ['background-color', 'MenuSlideFrom', 'color', 'hover-color', 'vision'],
+    props: ['background-color', 'MenuSlideFrom', 'color', 'vision', 'link-background-color', 'link-color'],
     data: function() {
         return {
             top: 0,
@@ -145,11 +145,11 @@ export default {
         }
         
         $('.linkOut a').hover(function(){
-            $(this).css('color', self.backgroundColor)
-            $(this).css('background-color', self.color)
+            $(this).css('color', self.linkBackgroundColor)
+            $(this).css('background-color', self.linkColor)
         }, function(){
-            $(this).css('color', self.color)
-            $(this).css('background-color', self.backgroundColor)
+            $(this).css('color', self.linkColor)
+            $(this).css('background-color', self.linkBackgroundColor)
         })
         window.addEventListener('scroll', this.handleScroll);
     },    
