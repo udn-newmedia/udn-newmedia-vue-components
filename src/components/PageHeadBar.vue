@@ -1,26 +1,26 @@
 <template>
 	<div class="pageHeader">
-    <div id="icon">
-        <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
-    </div>
-    <div class='navWrapper' :style="{backgroundColor: backgroundColor}">
-	    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
-	    	<div class="scrollTo" :style="{color: mobColor()}">
-	    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'
-	    				 :style="{color: mobColor(color), backgroundColor: setBgColor(backgroundColor)}">{{title.title}}</div>
-	    	</div>
-	    	<div class="linkOut" :style="{color: mobColor(color)}">
-	    		<slot></slot>
-	    	</div>
-	    	<div class="logoBox hidden-lg hidden-md">
-	    		<Logo/>
-	    	</div>
-	    </div>
-	    <div class="commentWrapper" :class="{menuOpen: isCommentOpen}" :style="{height: windowHeight() + 'px'}">
-	    	<div class='glass' :style='{opacity: glassOp}' @click='handle_glass'></div>
-	    	<Comment class="comment" :href='href'></Comment>
-	    </div>
-	<!-- button -->
+    	<div id="icon">
+    	    <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
+    	</div>
+    	<div class='navWrapper' :style="{backgroundColor: backgroundColor}">
+		    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
+		    	<div class="scrollTo" :style="{color: mobColor()}">
+		    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'
+		    		 	 :style="{color: mobColor(color), backgroundColor: setBgColor(backgroundColor)}">{{title.title}}</div>
+		    	</div>
+		    	<div class="linkOut" :style="{color: mobColor(color)}">
+		    		<slot></slot>
+		    	</div>
+		    	<div class="logoBox hidden-lg hidden-md">
+		    		<Logo/>
+		    	</div>
+		    </div>
+		    <div class="commentWrapper" :class="{menuOpen: isCommentOpen}" :style="{height: windowHeight() + 'px'}">
+		    	<div class='glass' :style='{opacity: glassOp}' @click='handle_glass'></div>
+		    	<Comment class="comment" :href='href'></Comment>
+		    </div>
+		<!-- button -->
 			<div class="btnBox">
 				<div class="cbtn" v-if='isYoutube'>
 					<a :href="youtubeLink" target='_blank'><i class="fa fa-youtube-play fa-2x" aria-hidden="true" :style='{color: color}'></i></a>
@@ -28,14 +28,14 @@
 				<div class="cbtn" @click='handle_comment'>
 					<i class="fa fa-commenting-o fa-2x" aria-hidden="true" :style='{color: color}'></i>
 				</div>
-	      <div class='burger hidden-lg hidden-md' :class="{open: isOpen}" @click="handle_burger">
-	      	<span :style='{backgroundColor: color}'></span>
-	      	<span :style='{backgroundColor: color}'></span>
-	      	<span :style='{backgroundColor: color}'></span>
-	      	<span :style='{backgroundColor: color}'></span>
-	      </div>						
+		     	<div class='burger hidden-lg hidden-md' :class="{open: isOpen}" @click="handle_burger">
+		     		<span :style='{backgroundColor: color}'></span>
+		     		<span :style='{backgroundColor: color}'></span>
+		     		<span :style='{backgroundColor: color}'></span>
+		     		<span :style='{backgroundColor: color}'></span>
+		     	</div>						
 			</div>    	
-    </div>
+    	</div>
 	</div>
 </template>
 
