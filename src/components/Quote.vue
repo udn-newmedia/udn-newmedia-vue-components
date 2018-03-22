@@ -37,7 +37,7 @@ export default {
     .quote-contain {
         width: 100%;
         /* display: table; */
-        font-weight: bold;
+        font-weight: 500;
         font-size: 32px;
         /* min-height: 125px; */
         color: #888888;

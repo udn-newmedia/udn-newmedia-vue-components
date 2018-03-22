@@ -16,10 +16,13 @@ export default {
 <style scoped>
     h2{
         text-align: left;
-        font-size: 30px;
+        font-size: 40px;
         font-weight: bold;
         line-height: 1.5;
         margin: 0;
+    }
+    h3{
+        font-size: 34px;
     }
     .chart-title{
         font-size: 28px;
@@ -41,7 +44,10 @@ export default {
     }
     @media screen and (max-width: 767px){
         h2{
-            font-size: 26px;
+            font-size: 30px;
+        }
+        h3{
+            font-size: 24px;
         }
         .chart-title{
             font-size: 26px;
@@ -65,7 +71,10 @@ export default {
             padding: 64px 100px;
         }
         h2{
-            font-size: 30px;
+            font-size: 40px;
+        }
+        h3{
+            font-size: 34px;
         }
         p{
             font-size: 20px;
