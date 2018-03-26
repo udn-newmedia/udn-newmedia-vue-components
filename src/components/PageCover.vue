@@ -76,6 +76,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         padding: 10% 0;
+        background-clip: border-box;
     }
     #cover.top{
         justify-content: flex-start;
