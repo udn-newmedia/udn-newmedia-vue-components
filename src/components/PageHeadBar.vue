@@ -291,6 +291,9 @@ export default {
 		text-decoration: none;
 	}	
 }
+.scrollTo{
+	overflow: hidden;
+}
 .scrollTo-Btn{
 	display: flex;
 	justify-content: center;
@@ -415,9 +418,6 @@ export default {
   .commentWrapper{
   	padding-left: 40%;
   	padding-top: 50px;
-  }
-  .comment{
-
   }
   .closeComment{
 		position: absolute;

@@ -84,11 +84,9 @@ export default {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        // overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // padding: 10% 0;
     }
     #cover.top{
         justify-content: flex-start;
