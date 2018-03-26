@@ -63,6 +63,9 @@ export default {
 </script>
 
 <style lang='scss'>
+    .section{
+        overflow: hidden;
+    }
     #title-contain{
         padding: 20px 20px 20px 8.333%;
     }
@@ -71,7 +74,7 @@ export default {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
-        overflow: hidden;
+        // overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -109,7 +112,7 @@ export default {
             font-size: 25px;
         }
         #cover{
-            padding: 25% 0;
+            // padding: 25% 0;
         }
     }
 
