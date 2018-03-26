@@ -1,9 +1,9 @@
 <template>
     <div class="videocontainer">
         <div class="video-contain" :style="{backgroundColor: backgroundColor}">
-            <video preload="metadata" playsinline
+            <video preload="metadata" playsinline ref='video'
                    :src="srcRWD" :poster="videoPoster" :controls="useControls" 
-                   @click='handle_clickVideo' ref='video'></video>
+                   @click='handle_clickVideo' @playing='getPlayingProgress'></video>
             <div class="video-control">
               <div class="progress">
                 <div class="progress-bar progress-bar-striped"
