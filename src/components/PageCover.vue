@@ -78,7 +78,7 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 10% 0;
+        // padding: 10% 0;
         background-clip: border-box;
     }
     #cover.top{
