@@ -1,9 +1,11 @@
 <template>
     <div class="section">
-        <div id="cover" :style="{backgroundImage: 'url(' + srcRWD(bg, bgWeb) + ')'}" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
-            <div id="title-contain">
-                <h1 :style='{color: fontColor}'>{{title}}</h1>
-                <div id="sub-title" :style='{color: fontColor}'>{{subTitle}}</div>
+        <div id="cover" :style="{backgroundImage: 'url(' + srcRWD(bg, bgWeb) + ')'}">
+            <div class="titleWrapper" :class="{top: top, bottom: bottom, aligncenter: aligncenter}">
+                <div id="title-contain">
+                    <h1 :style='{color: fontColor}'>{{title}}</h1>
+                    <div id="sub-title" :style='{color: fontColor}'>{{subTitle}}</div>
+                </div>
             </div>
         </div>
         <PageArrow :color='arrowColor' :hint='hint' :hintColor='hintColor'/>    
@@ -66,6 +68,14 @@ export default {
     .section{
         overflow: hidden;
     }
+    .titleWrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10% 0;
+    }
     #title-contain{
         padding: 20px 20px 20px 8.333%;
     }
@@ -79,7 +89,6 @@ export default {
         flex-direction: column;
         justify-content: center;
         // padding: 10% 0;
-        background-clip: border-box;
     }
     #cover.top{
         justify-content: flex-start;
