@@ -1,6 +1,6 @@
 <template>
     <header id="head-bar" :style="{top: top+'px',backgroundColor: setBackgroundColor}">
-        <div id="icon" @click.prev='refresh'>
+        <div id="icon" @click.prevent='refresh'>
             <a href="./"><i class="udn-icon udn-icon-logo" :style="{color: setColor}"></i></a>
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: setBackgroundColor}">
