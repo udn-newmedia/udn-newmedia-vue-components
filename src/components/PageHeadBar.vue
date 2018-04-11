@@ -1,7 +1,7 @@
 <template>
 	<div class="pageHeader">
     	<div id="icon">
-    	    <a href="./index"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
+    	    <a href="./index" @click.prevent="handleLogo"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
     	</div>
     	<div class='navWrapper' :style="{backgroundColor: backgroundColor}">
 		    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
@@ -92,6 +92,9 @@ export default {
 		}
   },
   methods: {
+		handleLogo: function() {
+			window.location.href = window.location.href
+		},
   	menuHeight: function() {
 	  	if(window.innerWidth < 1024){
 	  		return window.innerHeight + 'px';

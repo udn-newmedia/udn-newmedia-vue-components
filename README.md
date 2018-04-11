@@ -16,18 +16,18 @@ import 想用的 components，EX:
 
 ```js
 <template>
-	<App>
-		<Indicator color="#FFFFFF" />
-		<Quote text="引言" />
-	</App>
+ <App>
+  <Indicator color="#FFFFFF" />
+  <Quote text="引言" />
+ </App>
 </template>
 
 import {Indicator, Content, Quote} from 'udn-newmedia-vue-components'
 
 new Vue({
-	components: {
-    	Indicator, Content, Quote
-    }
+ components: {
+  Indicator, Content, Quote
+ }
 })
 ```
 
@@ -58,8 +58,8 @@ new Vue({
 
 	如果要增加外連連結 就如範例所示 增加 a tag
 	<Head-Bar>
-	    <a href="http://udn.com" target="_blank">以活到90</a>
-		<a href="http://udn.com" target="_blank">不退也不休，利用上半</a>
+	 <a href="http://udn.com" target="_blank">以活到90</a>
+	 <a href="http://udn.com" target="_blank">不退也不休，利用上半</a>
 	</Head-Bar>
 
 + Cover
@@ -352,21 +352,19 @@ new Vue({
 
    #####Props
 
-	* [scroll-speed] 滿版滾動速度, 預設700 ex: scroll-speed=1000	 	 
+	* [scroll-speed] 滿版滾動速度,單位為 ms 預設700 ex: scroll-speed=1000	 	 
 
 + PageIndicator
 	
 	滿版進度表
 
 ```html
-<page-indicator bar-color="#000" bg-color="#fff"></page-indicator>
+<page-indicator></page-indicator>
 ```
 
    #####Props
 
-	* [bg-color] 進度背景色
-	* [bar-color] 進度條顏色   
-
+	* None
 + PageHeadBar
 
 	page的head-bar。 請放在page標籤外!。
@@ -383,8 +381,6 @@ new Vue({
 
    ##### Props
 	* [href] Facebook Comment href參數(必填) ex: href='專題URL'
-	* [color] icon和導引字顏色 預設:白字 手機只變icon顏色
-	* [background-color] headrbar的顏色
 	* [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
 
 + PageCover
@@ -562,7 +558,8 @@ new Vue({
 <page-footer 
     href="http://10.116.80.31:3000/udn-newmedia-vue-components/page.html"
     bg-img='./static/bg_mobile.jpg' bg-img-web='./static/bg.jpg'
-    color="#fff" bg-color='#000' udncom='yes' newmedia='yes' update='2017.05.25更新'
+		color="#fff" bg-color='#000' ubrand="yes" update='2017.05.25更新'
+		third-logo-link="https://udn.com/upf/newmedia/image/nmd_logo_2018.png" third-logo-img="https://udn.com/upf/newmedia/image/nmd_logo_2018.png"
     link1='https://goo.gl/wJMfCh' text1='競技體操的秘密 選手如何對抗地心引力' img1='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
     link2='https://goo.gl/iVf5H8' text2='為同一個名字努力' img2='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
     link3='https://goo.gl/wJMfCh' text3='跆拳道得分5招 國首示範給你看' img3='https://udn.com/upf/newmedia/image/projects/201706_hk20.jpg'
@@ -570,7 +567,7 @@ new Vue({
     <p>製作團隊：</p>
     <p>文字：魏妤庭、連珮宇</p>
     <p>攝影：許正宏、王騰毅</p>
-    <p>網頁製作：方泰鈞</p>
+    <p>網頁製作：鄭偉廷、廖克樸</p>
     <p>監製：林新輝、鄭朝陽、董谷音、蔡幸怡</p>
 </page-footer>
 ```
@@ -582,9 +579,9 @@ new Vue({
 	*[bg-img-web] 電腦版背景圖
 	*[color] 字體顏色
 	*[bg-color] 滿版背景色
-	*[udncom] 使用聯合新聞網Logo ex: udncom='yes'
-	*[newmedia] 使用新媒體中心Logo ex: newmedia='yes'
 	*[ubrand] 使用融媒體Logo ex: ubrand='yes'
 	*[link1~4] 延伸閱讀1~4連結
 	*[text1~4] 延伸閱讀1~4標題
 	*[img1~4] 延伸閱讀1~4圖
+	*[third-logo-link] 第三方LOGO連結
+	*[third-logo-img] 第三方LOGO圖片source
