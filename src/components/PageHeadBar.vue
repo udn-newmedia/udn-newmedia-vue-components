@@ -1,7 +1,7 @@
 <template>
 	<div class="pageHeader">
     	<div id="icon">
-    	    <a href="./index" @click.prevent="handleLogo"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
+    	    <a @click.prevent="handleLogo"><i class="udn-icon udn-icon-logo" :style="{color: color}"></i></a>
     	</div>
     	<div class='navWrapper' :style="{backgroundColor: backgroundColor}">
 		    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
