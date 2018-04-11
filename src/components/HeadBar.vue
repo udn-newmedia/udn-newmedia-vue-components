@@ -231,7 +231,7 @@ export default {
     }
 #head-bar {
     position: fixed;
-    background-color: #231815;
+    background-color: #FFFFFF;
     width: 100%;
     top: 0;
     left: 0;

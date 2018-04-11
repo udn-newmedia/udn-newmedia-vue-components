@@ -44,11 +44,11 @@ new Vue({
 
 	頁面上方進度條
 ```html
-<Indicator color="#FF0000"></Indicator>
+<Indicator color="#bf2923"></Indicator>
 ```
 	###### - Props
 
-	* [color] 進度條顏色 預設: #AA4444
+	* [color] 進度條顏色 預設: #bf2923
 
 + Head-Bar
 ```html
@@ -56,7 +56,7 @@ new Vue({
 ```
     ##### - Props
 
-	* [BgColor] 頁頭背景色 預設: #000
+	* [BgColor] 頁頭背景色 預設: #FFFFFF
   	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
 	如果要增加外連連結 就如範例所示 增加 a tag
@@ -210,7 +210,13 @@ new Vue({
     
     ##### - Props
     
-    * None
+    * [vision] 願景logo
+	* [ubrand] 融媒體logo
+
+```html
+<Logo vision="true" ubrand="true">
+</Logo>
+```
 
 + Relate
 
