@@ -25,13 +25,13 @@ export default {
         left: 0;
         width: 100%;
         height: 2px;
-        background-color: #000;
+        background-color: #fff;
         transition: height 444ms ease-in;
     }
     .indicator-bar{
         width: 0;
         height: 100%;
-        background-color: #29b0af;
+        background-color: #bf2923;
         transition: width 233ms linear, height 444ms ease-in;
     }
 </style>

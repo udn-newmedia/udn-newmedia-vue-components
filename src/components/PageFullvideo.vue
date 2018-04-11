@@ -1,18 +1,18 @@
 <template>
 	<div class="section">
 		<div class="videocontainer">
-		    <div class="video-contain" :style="{backgroundColor: backgroundColor, backgroundImage: 'url('+ srcRWD(poster, posterWeb) +')'}">
-		        <video preload="metadata" playsinline='true' webkit-playsinline="true"
-		               :poster="srcRWD(poster, posterWeb)" ref='video' :src="srcRWD(src,srcWeb)">  	
-		        </video>		    	
-			    <canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas>
-		        <div class='controls'>
-		        	<canvas class="progressCircle" ref='controlCanvas'></canvas>
-		        	<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
-		        	<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-		        	<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
-		        </div>
-		    </div>
+			<div class="video-contain" :style="{backgroundColor: backgroundColor}">
+				<video preload="metadata" playsinline='true' webkit-playsinline="true" :style="{objectFit: obj_fit}"
+							 :poster="srcRWD(poster, posterWeb)" ref='video' :src="srcRWD(src,srcWeb)" @click="handle_clickVideo">  	
+				</video>		    	
+				<!-- <canvas class='videoCanvas' ref='videoCanvas' @click='handle_clickVideo'></canvas> -->
+				<div class='controls'>
+					<canvas class="progressCircle" ref='controlCanvas'></canvas>
+					<i v-if='isRepeat' class="fa fa-repeat repeat" aria-hidden="true" @click='replay'></i>
+					<i v-if='isPause' class="fa fa-play videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+					<i v-if='isPlay' class="fa fa-pause videoBtn" aria-hidden="true" @click='handle_clickVideo'></i>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -26,7 +26,7 @@ var platform = (isMob === true) ? 'Mob' : 'PC'
 export default {
 
   name: 'PageFullvideo',
-  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'BgColor'],
+  props: ['src', 'srcWeb', 'poster', 'posterWeb', 'backgroundColor'],
   mixins: [srcRWD],
 	data: function () {
 		return {
@@ -37,11 +37,9 @@ export default {
 		  isMute: null,
 		  isRepeat: false,
 		  isPause: true,
-		  isPlay: false,
+			isPlay: false,
+			obj_fit: 'cover'
 		}
-	},
-	computed: {
-	
 	},
 	methods: {
 		drawCircleBox: function() {
@@ -107,7 +105,7 @@ export default {
 		      if (picent !== 360) {
 		        self.progressWidth = picent
 		        self.drawCircular(picent)
-		        self.drawVideo()
+		        // self.drawVideo()
 		      } else {
 		        self.progressWidth = 0
 		        self.drawCircular(0)
@@ -159,9 +157,9 @@ export default {
 		}
 	},  
 	created(){
-        window.addEventListener('resize', () => {
-            this.$forceUpdate()
-        })    
+		window.addEventListener('resize', () => {
+				this.$forceUpdate()
+		})    
 	},
 	mounted() {
 		platform === 'Mob' ? this.isMute = true : this.isMute = false
@@ -176,7 +174,8 @@ export default {
 		  video.oncanplay = function () {
 		    self.isOpacity = 0		  }
 		  video.onplay = function() {
-		  	self.getPlayingProgress()
+				self.getPlayingProgress()
+				self.obj_fit = 'contain'
 		  	self.isPause = false
 		  	self.isPlay = true
 		  	self.isRepeat = false
@@ -255,10 +254,9 @@ video::-webkit-media-controls-fullscreen-button {
     background-size: cover;
 }
 video{
-	display: none;
+	display: block;
   width: 100%;
   height: 100%;
-  object-fit: fill;
 }
 .video-wait {
     position: absolute;

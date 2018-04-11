@@ -6,10 +6,9 @@
     	<div class='navWrapper' :style="{backgroundColor: backgroundColor}">
 		    <div class="menuWrapper" :class="{menuOpen: isOpen}" :style="{height: menuHeight()}">
 		    	<div class="scrollTo" :style="{color: mobColor()}">
-		    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'
-		    		 	 	 :style="{color: mobColor(color), backgroundColor: setBgColor(backgroundColor)}">{{title.title}}</div>
+		    		<div class="scrollTo-Btn" v-for='title in getTitle' @click='handle_scrollTo(title.pageIndex)'>{{title.title}}</div>
 		    	</div>
-		    	<div class="linkOut" :style="{color: mobColor(color)}">
+		    	<div class="linkOut" :style="{color: setLinkColor}">
 		    		<slot></slot>
 		    	</div>
 		    	<div class="logoBox hidden-lg hidden-md">
@@ -23,16 +22,16 @@
 		<!-- button -->
 			<div class="btnBox">
 				<div class="cbtn" v-if='isYoutube'>
-					<a :href="youtubeLink" target='_blank'><i class="fa fa-youtube-play fa-2x" aria-hidden="true" :style='{color: color}'></i></a>
+					<a :href="youtubeLink" target='_blank'><i class="fa fa-youtube-play fa-2x" aria-hidden="true" :style='{color: setColor}'></i></a>
 				</div>
 				<div class="cbtn" @click='handle_comment'>
-					<i class="fa fa-commenting-o fa-2x" aria-hidden="true" :style='{color: color}'></i>
+					<i class="fa fa-commenting-o fa-2x" aria-hidden="true" :style='{color: setColor}'></i>
 				</div>
 		     	<div class='burger hidden-lg hidden-md' :class="{open: isOpen}" @click="handle_burger">
-		     		<span :style='{backgroundColor: color}'></span>
-		     		<span :style='{backgroundColor: color}'></span>
-		     		<span :style='{backgroundColor: color}'></span>
-		     		<span :style='{backgroundColor: color}'></span>
+		     		<span :style='{backgroundColor: setColor}'></span>
+		     		<span :style='{backgroundColor: setColor}'></span>
+		     		<span :style='{backgroundColor: setColor}'></span>
+		     		<span :style='{backgroundColor: setColor}'></span>
 		     	</div>						
 			</div>    	
     	</div>
@@ -52,7 +51,7 @@ export default {
   	Comment,
   	Logo
   },
-  props: ['href', 'color', 'youtubeLink', 'backgroundColor'],
+  props: ['href', 'youtubeLink','color', 'backgroundColor', 'linkColor'],
   data () {
     return {
     	isOpen: false,
@@ -67,7 +66,30 @@ export default {
   		} else {
   			return false
   		}
-  	}
+		},
+		setLinkColor: function() {
+				if(this.linkColor){
+						return this.linkColor
+				} else if (this.linkColor || this.color) {
+						return this.color
+				} else {
+						return '#000'
+				}
+		},
+		setBackgroundColor: function() {
+				if(this.backgroundColor){
+						return this.backgroundColor
+				} else {
+						return '#fff'
+				}
+		},
+		setColor: function() {
+				if(this.color){
+						return this.color
+				} else {
+						return '#000'
+				}
+		}
   },
   methods: {
   	menuHeight: function() {
@@ -128,14 +150,19 @@ export default {
         this.$forceUpdate()
     })  	
   	Bus.$on('emitCoverTitle', function(msg) {
-  		self.getTitle.push(msg)
+			if(msg.title === undefined){
+					return
+			}
+			else {
+				self.getTitle.push(msg)
+			}			
       setTimeout(function(){
           $('.scrollTo-Btn').hover(function(){
-              $(this).css('color', self.backgroundColor)
-              $(this).css('background-color', self.color)
+              $(this).css('color', self.setBackgroundColor)
+              $(this).css('background-color', self.setColor)
           }, function(){
-              $(this).css('color', self.color)
-              $(this).css('background-color', self.backgroundColor)
+              $(this).css('color', self.setColor)
+              $(this).css('background-color', self.setBackgroundColor)
           })
       }, 500)    		 		
   	})
@@ -146,22 +173,22 @@ export default {
 	  	for(let i = 0; i < this.$slots.default.length; i++){
 	  		if(this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a'){
 	  			this.$slots.default[i].elm.addEventListener('click', function() {
-			        ga("send", {
-			           "hitType": "event",
-			           "eventCategory": "headbar",
-			           "eventAction": "click",
-			           "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
-			        });  				
+						ga("send", {
+								"hitType": "event",
+								"eventCategory": "headbar",
+								"eventAction": "click",
+								"eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] ["+ self.$slots.default[i].elm.href +"]["+ self.$slots.default[i].elm.innerHTML +"]"
+						});  				
 	  			})
 	  		}
 	  	}
   	}
     $('.linkOut a').hover(function(){
-        $(this).css('color', self.backgroundColor)
-        $(this).css('background-color', self.color)
+        $(this).css('color', self.setBackgroundColor)
+        $(this).css('background-color', self.setLinkColor)
     }, function(){
-        $(this).css('color', self.color)
-        $(this).css('background-color', self.backgroundColor)
+        $(this).css('color', self.setLinkColor)
+        $(this).css('background-color', self.setBackgroundColor)
     })
   },
   beforeDestroyed: function() {
@@ -199,7 +226,7 @@ export default {
 }
 #icon i.udn-icon{
 	position: relative;
-  color: #FFFFFF;
+  color: #000;
   font-size: 36px;
   margin-top: 7px;
   margin-left: 7px;
@@ -213,7 +240,7 @@ export default {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #434343;
+	background-color: #fff;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

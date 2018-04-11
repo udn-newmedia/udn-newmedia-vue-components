@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+
 module.exports = {
     entry: path.resolve(__dirname + '/src/main.js'),
     output: {
@@ -26,7 +27,19 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    // 注意：不要在 `loader` 下嵌入 `postcss` 选项
+                    postcss: [require('postcss-cssnext')(
+                        {
+                            browsers: [
+                                "> 1%",
+                                "last 4 versions",
+                                "not ie <= 8"
+                            ]
+                        }
+                    )],
+                }
             },
             {
                 test: /\.css$/,

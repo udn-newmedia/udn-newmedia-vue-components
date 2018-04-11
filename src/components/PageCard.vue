@@ -6,6 +6,7 @@
             </div>
             <div class="imgModel" v-if="isImg">
                 <img :src="ImgSrc" :title="ImgSay" :alt="ImgSay">
+                <p>{{ImgSay}}</p>
             </div>
             <div class="articleModel" :style="{color: fontColor}">
                 <h2>{{title}}</h2>
@@ -110,6 +111,10 @@ export default {
             width: 100%;
             height: auto;
         }
+        p{
+            font-size: 15px;
+            color: gray;            
+        }
     }
     .articleModel{
         width: 100%;
@@ -166,7 +171,10 @@ export default {
         }            
         .imgModel{
             flex: 1;
-            margin-bottom: 0;          
+            margin-bottom: 0; 
+            p{
+                font-size: 17px;
+            }         
         }
         .videoModel{
             flex: 1;

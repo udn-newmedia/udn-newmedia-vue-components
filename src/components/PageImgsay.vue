@@ -1,7 +1,7 @@
 <template>
 	<div class="section">
-		<div class="fullImg">
-			<img :src="srcRWD(src, srcWeb)">
+		<div class="fullImg" :style="{backgroundImage: 'url('+ srcRWD(src, srcWeb) +')'}">
+			<!-- <img :src="srcRWD(src, srcWeb)"> -->
 			<slot></slot>
 		</div>
 	</div>
@@ -37,6 +37,9 @@ export default {
 		align-items: center;
 		width: 100%;
 		height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
 		img{
 			position: absolute;
 			z-index: 0;
