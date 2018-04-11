@@ -60,7 +60,7 @@ export default {
     }
     /* Default Bar Color */
     #indicator-bar{
-        background-color: #AA4444;
+        background-color: #bf2923;
     }
     @media screen and (max-width: 1024px){
         #indicator{

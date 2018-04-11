@@ -44,19 +44,16 @@ new Vue({
 
 	頁面上方進度條
 ```html
-<Indicator color="#FF0000"></Indicator>
+<Indicator></Indicator>
 ```
 	###### - Props
 
-	* [color] 進度條顏色 預設: #AA4444
-
 + Head-Bar
 ```html
-<Head-Bar Menu-Slide-From="top" Bg-Color="transparent"></Head-Bar>
+<Head-Bar Menu-Slide-From="top"></Head-Bar>
 ```
     ##### - Props
 
-	* [BgColor] 頁頭背景色 預設: #000
   	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
 	如果要增加外連連結 就如範例所示 增加 a tag
@@ -207,10 +204,21 @@ new Vue({
 + Logo
 
 	頁面 Logo 區塊
+
+```html
+<Logo vision="true" ubrand="true">
+	<div class="logo">
+		<a href="https://udn.com/news/index" target="_blank"><img src="./static/nightlogo.svg"></a>
+	</div> 
+</Logo>
+```
     
     ##### - Props
     
-    * None
+    * [vision] 願景logo
+	* [ubrand] 融媒體logo
+
+如果要增加外連連結 就如範例所示 增加 a tag
 
 + Relate
 
