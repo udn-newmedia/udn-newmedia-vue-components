@@ -13,7 +13,7 @@
             <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018.png"></a>
         </div> 
         <div class="logo" id="nmd" v-else>
-            <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg"></a>
+            <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg"></a>
         </div>                     
     </div>
 </template>

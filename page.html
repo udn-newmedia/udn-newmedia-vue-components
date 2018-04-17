@@ -6,27 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>滿版公版TEST</title>
 
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable = no">
-
     <!-- for Facebook -->
     <meta property="og:title" content="人人90歲的時代 你想怎麼活？"/>
-    <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://udn.com/upf/newmedia/2017_data/ideal/index.html"/>
     <meta property="og:image" content="https://udn.com/upf/newmedia/2017_data/ideal/static/fb_index.jpg"/>
-    <meta property="og:site_name" content="聯合報"/>
-    <meta property="article:author" content="https://www.facebook.com/udnplus">
-    <meta property="article:publisher" content="https://www.facebook.com/udnplus">
     <meta property="og:description" content="再過43年，台灣幾乎人人都可以活到90歲，高齡化的最大挑戰，不再只是活出健康，「活著要幹嘛」，是更難回答的提問。有人選擇退而不休，在職場找到自己的新價值；有人選擇急流勇退，在人生下半場追求自我實現。當老後人生變成延長賽，人人都是第一次踏進「老後人生」的學生，只是需要時間學習與想像。"/>
 
     <!-- for Google -->
+    <meta name="application-name" content="人人90歲的時代 你想怎麼活？"/>
     <meta name="description" content="再過43年，台灣幾乎人人都可以活到90歲，高齡化的最大挑戰，不再只是活出健康，「活著要幹嘛」，是更難回答的提問。有人選擇退而不休，在職場找到自己的新價值；有人選擇急流勇退，在人生下半場追求自我實現。當老後人生變成延長賽，人人都是第一次踏進「老後人生」的學生，只是需要時間學習與想像。"/>
     <meta name="copyright" content="聯合報"/>
-    <meta name="application-name" content="人人90歲的時代 你想怎麼活？"/>
 
     <meta property="fb:admins" content="671188086">
     <meta property="fb:app_id" content="1010324812347164">
-
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="聯合報"/>
+    <meta property="article:author" content="https://www.facebook.com/udnplus">
+    <meta property="article:publisher" content="https://www.facebook.com/udnplus">    
+    
     <link rel="icon" type="image/ico" href="https://udn.com/upf/newmedia/image/udn-icon.ico"/>
     
     <link rel="stylesheet" href='https://udn.com/upf/newmedia/css/font-awesome.min.css'>
@@ -37,10 +34,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://udn.com/upf/newmedia/js/jquery.fullPage.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
+    <!-- 請確認是否使用程式檔案來源　https開頭的那一支程式 -->
     <script src="./dist/udn-newmedia-vue-components.min.js"></script>
     <!-- <script src="https://udn-newmedia.github.io/udn-newmedia-vue-components/dist/udn-newmedia-vue-components.min.js"></script> -->
 
-    <!-- ours google analytic -->
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -66,14 +63,15 @@
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
         ga('create', 'UA-83853620-2', 'auto');
-        // ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
         ga('create', 'UA-19660006-1', 'auto', {'name' : 'udn'});
         ga('create', 'UA-44955675-22', 'auto', {'name' : 'theme'});
         ga('send', 'pageview');
         ga('udn.send', 'pageview');
         ga('theme.send', 'pageview');
-        // ga('nightPaper.send', 'pageview');
         ga('udn.send', 'event', '圖表看時事', 'view', '圖解新聞');
+        // 聯合報新聞部用GA，請將下面註解消除
+        // ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
+        // ga('nightPaper.send', 'pageview');
     </script>
 
     <!-- udn comScore Tag -->
