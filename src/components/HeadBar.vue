@@ -5,12 +5,11 @@
         </div>
         <div id="hbutton-contain" :class="{transformToNone: isOpen}" :style="{transform: menuSlideDirection, backgroundColor: setBackgroundColor}">
 	    	<div class="scrollTo-Btn" v-for='title in getTitle' :style="{color: setColor, backgroundColor: setBackgroundColor}" @click="handleScrollTo(title.title)">{{title.title}}</div>
-            <div class="linkOut" :style="{color: setLinkColor, backgroundColor: setLinkBackgroundColor}">
+            <div class="linkOut" :style="{color: setLinkColor, backgroundColor: setLinkBackgroundColor}" @click="handleLinkOut">
 	    		<slot></slot>
 	    	</div>
             <div id="logo-contain" class="hidden-lg" v-if="!noLogo">
                 <div class="logo-block">
-                    <slot name="logo"></slot>
                     <div id="vision" class="logo" :class="{hidden: !vision}">
                         <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
                     </div>
@@ -87,6 +86,9 @@ export default {
         }
     },
     methods: {
+        handleLinkOut: function() {
+            this.isOpen = false
+        },
         refresh: function() {
             location.reload()
         },
