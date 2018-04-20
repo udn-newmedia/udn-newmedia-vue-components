@@ -62,6 +62,11 @@ new Vue({
 	 <a href="http://udn.com" target="_blank">不退也不休，利用上半</a>
 	</Head-Bar>
 
+	要增加第三方 tag 請用這個格式
+	<div class="logo" slot="logo">
+		<a href="https://udn.com/news/index" target="_blank"><img src="./static/nightlogo.svg"></a>
+	</div>
+
 + Cover
 
 	封面
