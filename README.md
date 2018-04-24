@@ -271,7 +271,7 @@ new Vue({
 ```
 + Props
 
-  * [scroll-speed] 滿版滾動速度,單位為 ms 預設700 ex: scroll-speed=1000	 	 
+  * [scroll-speed] 滿版滾動速度,單位為 ms 預設700
 
 
 #### - PageIndicator
@@ -297,8 +297,8 @@ new Vue({
 ```
 + Props
 
-	+ [href] Facebook Comment href參數(必填) ex: href='專題URL'
-	+ [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
+	+ [href] Facebook Comment href參數(必填)
+	+ [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube
 
 
 #### - PageCover
@@ -312,14 +312,14 @@ new Vue({
  
   * [title] 大標
   * [subtitle] 副標
-  * [menu-text] Page-Head-Bar 滾動選單錨點 ex: menu-title='這只是個範例'
+  * [menu-text] Page-Head-Bar 滾動選單錨點
   * [font-color] 大/副題顏色
   * [bg] 手機封面圖
   * [bg-web] 網頁封面圖
   * [position] 標題位置 有 top middle bottom 3種	
-  * [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
-  * [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
-  * [hint-color] 提示字樣顏色 ex: hint-color="#212121"
+  * [arrow-color] 向下提示箭頭顏色 
+  * [hint] 是否需要向下滾動提示字樣
+  * [hint-color] 提示字樣顏色
 
 #### - PageIntro
 >滿版引言
@@ -334,14 +334,14 @@ new Vue({
 ```	
 + Props
 
-	+ [font-color] 字體顏色 font-color="#fff"
+	+ [font-color] 字體顏色 
 	+ [bg] 手機封面圖
 	+ [bg-web] 網頁封面圖
 	+ [bg-color] 背景顏色
 	+ [update] 更新時間
-	+ [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
-	+ [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
-	+ [hint-color] 提示字樣顏色 ex: hint-color="#212121"
+	+ [arrow-color] 向下提示箭頭顏色 
+	+ [hint] 是否需要向下滾動提示字樣
+	+ [hint-color] 提示字樣顏色
 
 
 #### - PageCard
@@ -402,9 +402,9 @@ new Vue({
 	+ [box-color] 卡片背景色
 	+ [bg] 手機背景圖
 	+ [bg-web] 網頁背景圖
-	+ [use-quote] 使用引言 ex: use-quote='yes'
-	+ [quote-first] 引言在前面 ex: quote-first='yes'
-	+ [quote-say] 引言內容 ex: quote-say='你要的引言'
+	+ [use-quote] 使用引言
+	+ [quote-first] 引言在前面
+	+ [quote-say] 引言內容
 
 
 #### - PageFullvideo
@@ -416,9 +416,9 @@ new Vue({
 + Props
 
 	+ [src] 手機影片來源
-	+ [poster] 手機影片預覽圖 ex: poster='圖片url'
+	+ [poster] 手機影片預覽圖
 	+ [src-web] 電腦版影片來源
-	+ [poster-web] 電腦版預覽圖 ex: poster-web='圖片url'
+	+ [poster-web] 電腦版預覽圖
 
 
 #### - PageQuote
@@ -486,7 +486,7 @@ new Vue({
   + [bg-img-web] 電腦版背景圖
   + [color] 字體顏色
   + [bg-color] 滿版背景色
-  + [ubrand] 使用融媒體Logo ex: ubrand='yes'
+  + [ubrand] 使用融媒體Logo
   + [link1 ~ 4] 延伸閱讀1 ~ 4連結
   + [text1 ~ 4] 延伸閱讀1 ~ 4標題
   + [img1 ~ 4] 延伸閱讀1 ~ 4圖
