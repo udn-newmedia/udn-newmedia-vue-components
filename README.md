@@ -369,7 +369,7 @@ new Vue({
 </Page-Intro>
 ```	
 
-  ##### Props
+  ##### - Props
 
 	* [font-color] 字體顏色 font-color="#fff"
 	* [bg] 手機封面圖
@@ -425,7 +425,7 @@ new Vue({
 </page-card>  
 ```
 
-  ##### Props
+  ##### - Props
 
 	* [title] 卡片標題
 	* [video-src] 影片來源
@@ -451,7 +451,7 @@ new Vue({
 <page-fullvideo src='./static/video/mobvideo.mp4' src-web='./static/video/pcvideo.mp4' poster="./static/bg_wang.jpg" poster-web="./static/web/bg_wang.jpg"></page-fullvideo>
 ```	
 
-  ##### Props
+  ##### - Props
 
 	* [src] 手機影片來源
 	* [poster] 手機影片預覽圖 ex: poster='圖片url'
@@ -468,7 +468,7 @@ new Vue({
 </Page-Quote>  
 ``` 
 
-  ##### Props
+  ##### - Props
 
 	* [bg-color] 版面背景色
 	* [box-color] 內文區塊背景色
@@ -490,7 +490,7 @@ new Vue({
 </Page-Imgsay>
 ```
 
-  #####Props
+  ##### - Props
 
   * [src] 圖片來源
   * [src-web] 電腦版圖片來源
@@ -531,4 +531,4 @@ new Vue({
   * [text1~4] 延伸閱讀1~4標題
   * [img1~4] 延伸閱讀1~4圖
   * [third-logo-link] 第三方LOGO連結
-  * [third-logo-img] 第三方LOGO圖片sourc
+  * [third-logo-img] 第三方LOGO圖片source
