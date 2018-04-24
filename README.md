@@ -172,10 +172,10 @@ new Vue({
 ```
   ##### - Props
   
-	* [bg] 手機圖
-	* [bgweb] 網頁圖
-	* [imgsay] 圖說
-	* [menu-text] headbar 文字
+	*	[bg] 手機圖
+	*	[bgweb] 網頁圖
+	*	[imgsay] 圖說
+	*	[menu-text] headbar 文字
 
 + Question
 
