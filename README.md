@@ -110,7 +110,7 @@ new Vue({
 ```
 + Props
 
-  * [img1~2] 圖片1~2
+  * [img1 ~ 2] 圖片1 ~ 2
   * [imgsay] 圖說
 
 
@@ -121,7 +121,7 @@ new Vue({
 ```
 + Props
 
-  + [img1~3] 圖片1~3
+  + [img1 ~ 3] 圖片1 ~ 3
   + [imgsay] 圖說
 
 #### - Quote
@@ -229,9 +229,9 @@ new Vue({
     
 	+ [title] 延伸閱讀
 	+ [color] 文字顏色
-	+ [href1~4] 連結 1~4
-	+ [img1~4] 圖片 1~4
-	+ [text1~4] 文字 1~4
+	+ [href1 ~ 4] 連結 1 ~ 4
+	+ [img1 ~ 4] 圖片 1 ~ 4
+	+ [text1 ~ 4] 文字 1 ~ 4
 
 #### - Share
 >FB and Line 分享區塊。
