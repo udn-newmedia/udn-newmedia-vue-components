@@ -55,7 +55,7 @@ new Vue({
 ```
   ##### - Props
   
-  * [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
+	* [MenuSlideFrom] 選單滑入點 預設: top , value: top, left, right, bottom
 
 	如果要增加外連連結 就如範例所示 增加 a tag
 ```html
@@ -73,11 +73,11 @@ new Vue({
 ```
   ##### Props
   
-  * [title] 大標
-  * [subtitle] 副標
-  * [bg] 手機板封面圖
-  * [bgweb] 網頁版封面圖
-  * [position] 標題位置 有 top middle bottom center 4種
+	* [title] 大標
+	* [subtitle] 副標
+	* [bg] 手機板封面圖
+	* [bgweb] 網頁版封面圖
+	* [position] 標題位置 有 top middle bottom center 4種
 
 + Content-Container
 
@@ -91,7 +91,7 @@ new Vue({
 ```  
   ##### - Props
       
-  * [background-color] 區塊背景色 預設: 無
+	* [background-color] 區塊背景色 預設: 無
   
 + Column-One
 
@@ -101,8 +101,8 @@ new Vue({
 ```
   ##### - Props
   
-  * [img1] 圖片1
-  * [imgsay] 圖說
+	* [img1] 圖片1
+	* [imgsay] 圖說
 
 + Column-Two
 
@@ -112,8 +112,8 @@ new Vue({
 ```
   ##### - Props
   
-  * [img1~2] 圖片1~2
-  * [imgsay] 圖說
+	* [img1~2] 圖片1~2
+	* [imgsay] 圖說
 
 + Column-Three
 
@@ -123,8 +123,8 @@ new Vue({
 ```
   ##### - Props
   
-  * [img1~3] 圖片1~3
-  * [imgsay] 圖說
+	* [img1~3] 圖片1~3
+	* [imgsay] 圖說
 
 + Quote
 
@@ -134,11 +134,11 @@ new Vue({
 ``` 
   ##### - Props
   
-  * [img] 人頭圖
-  * [text] 引言內文
-  * [refer] 引言者
-  * [color] 引言文字顏色 預設:#888888
-  * [border-color] 引言框顏色
+	* [img] 人頭圖
+	* [text] 引言內文
+	* [refer] 引言者
+	* [color] 引言文字顏色 預設:#888888
+	* [border-color] 引言框顏色
 
 + Youtube
 
@@ -148,7 +148,7 @@ new Vue({
 ```
   ##### - Props
 
-  * [src] 連結網址
+	* [src] 連結網址
 
 + Section-Fixed-Bg
 
@@ -158,11 +158,11 @@ new Vue({
 ```
   ##### - Props
 
-  * [text] 過場文字
-  * [bg] 手機圖
-  * [bgweb] 網頁圖
-  * [position] 文字位置 有 center 跟 bottom 兩種
-  * [menu-text] headbar 文字
+	* [text] 過場文字
+	* [bg] 手機圖
+	* [bgweb] 網頁圖
+	* [position] 文字位置 有 center 跟 bottom 兩種
+	* [menu-text] headbar 文字
 
 + Section-Bg
 
@@ -172,23 +172,23 @@ new Vue({
 ```
   ##### - Props
   
-  * [bg] 手機圖
-  * [bgweb] 網頁圖
-  * [imgsay] 圖說
-  * [menu-text] headbar 文字
+	* [bg] 手機圖
+	* [bgweb] 網頁圖
+	* [imgsay] 圖說
+	* [menu-text] headbar 文字
 
 + Question
 
-	問卷問題
+  問卷問題
 
-	##### - Props
+  ##### - Props
 
 	* [href] 表單連結位置
 	* [text] 文字
 
 + Editor
 	
-    作者區塊，內含CSS設定
+  作者區塊，內含CSS設定
 ```html
 <Editor>
   <div>文字：蔡佩蓉、洪欣慈</div>
@@ -202,7 +202,7 @@ new Vue({
 
   ##### - Props
     
-  * None
+	* None
 
 + Logo
 
@@ -218,7 +218,7 @@ new Vue({
     
   ##### - Props
     
-  * [vision] 願景logo
+	* [vision] 願景logo
 	* [ubrand] 融媒體logo
 
   如果要增加外連連結 就如範例所示 增加 a tag
@@ -236,7 +236,7 @@ new Vue({
 ```
   ##### - Props
     
-  * [title] 延伸閱讀
+	* [title] 延伸閱讀
 	* [color] 文字顏色
 	* [href1~4] 連結 1~4
 	* [img1~4] 圖片 1~4
@@ -250,7 +250,7 @@ new Vue({
 ```
   ##### - Props
     
-  * [href] 分享用網址 (必填)
+	* [href] 分享用網址 (必填)
 
 + Fb-Comment
 
@@ -260,7 +260,7 @@ new Vue({
 ```
   ##### - Props
   
-  * [href] 分享用網址 (必填)
+	* [href] 分享用網址 (必填)
 
 + Foot
 
@@ -270,11 +270,11 @@ new Vue({
 ```
   ##### - Props
 
-  * [background-color] 區塊背景色 預設: 無
+	* [background-color] 區塊背景色 預設: 無
 
 + Page
 
-	滿版滾動容器，所有的版面都要放在裡面。
+  滿版滾動容器，所有的版面都要放在裡面。
 
 ```html
 <Page>
@@ -286,7 +286,7 @@ new Vue({
 
   #####Props
 
-  * [scroll-speed] 滿版滾動速度,單位為 ms 預設700 ex: scroll-speed=1000	 	 
+	* [scroll-speed] 滿版滾動速度,單位為 ms 預設700 ex: scroll-speed=1000	 	 
 
 + PageIndicator
 	
@@ -315,12 +315,13 @@ new Vue({
 
 
   ##### Props
-  * [href] Facebook Comment href參數(必填) ex: href='專題URL'
-  * [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
+
+	* [href] Facebook Comment href參數(必填) ex: href='專題URL'
+	* [youtube-link] 輸入youtube連結 會自動產生youtube Icon 點擊Icon 會連到youtube觀看youtube ex: youtube-link='https://www.youtube.com/watch?v=uIm11-0JRdM'
 
 + PageCover
 
-	滿版標題Cover
+  滿版標題Cover
 
 	會將menu-title 傳給page-head-bar做連結使用
 
@@ -342,8 +343,8 @@ new Vue({
 
 + PageIntro
 
-	滿版引言
-	文案請用`p`插入
+  滿版引言
+  文案請用`p`插入
 
 ```html
 <Page-Intro update='2017.08.25更新' href='https://udn.com/upf/newmedia/2018_data/elderhome/' font-color="#fff" bg="./static/w1-bg_s.jpg" bg-web="./static/w1-bg2.jpg" arrow-color='#fff' hint-color='#fff'>
@@ -355,14 +356,14 @@ new Vue({
 
   ##### Props
 
-  * [font-color] 字體顏色 font-color="#fff"
-  * [bg] 手機封面圖
-  * [bg-web] 網頁封面圖
-  * [bg-color] 背景顏色
-  * [update] 更新時間
-  * [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
-  * [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
-  * [hint-color] 提示字樣顏色 ex: hint-color="#212121"
+	* [font-color] 字體顏色 font-color="#fff"
+	* [bg] 手機封面圖
+	* [bg-web] 網頁封面圖
+	* [bg-color] 背景顏色
+	* [update] 更新時間
+	* [arrow-color] 向下提示箭頭顏色 ex: arrow-color='#313131'
+	* [hint] 是否需要向下滾動提示字樣 ex: hint='yes'
+	* [hint-color] 提示字樣顏色 ex: hint-color="#212121"
 
 + PageCard
 
@@ -414,22 +415,22 @@ new Vue({
 
   ##### Props
 
-  * [title] 卡片標題
-  * [video-src] 影片來源
-  * [video-poster] 影片預覽圖
-  * [video-src-web] 電腦版影片來源
-  * [video-poster-web] 電腦版預覽圖來源
-  * [img-src] 圖片來源
-  * [img-say] 圖片說(alt, title)
-  * [bg-color] 背景色
-  * [font-color] 字體顏色
-  * [box-color] 卡片背景色
-  * [bg] 手機背景圖
-  * [bg-web] 網頁背景圖
-  * [use-quote] 使用引言 ex: use-quote='yes'
-  * [quote-first] 引言在前面 ex: quote-first='yes'
-  * [quote-say] 引言內容 ex: quote-say='你要的引言'
-  
+	* [title] 卡片標題
+	* [video-src] 影片來源
+	* [video-poster] 影片預覽圖
+	* [video-src-web] 電腦版影片來源
+	* [video-poster-web] 電腦版預覽圖來源
+	* [img-src] 圖片來源
+	* [img-say] 圖片說(alt, title)
+	* [bg-color] 背景色
+	* [font-color] 字體顏色
+	* [box-color] 卡片背景色
+	* [bg] 手機背景圖
+	* [bg-web] 網頁背景圖
+	* [use-quote] 使用引言 ex: use-quote='yes'
+	* [quote-first] 引言在前面 ex: quote-first='yes'
+	* [quote-say] 引言內容 ex: quote-say='你要的引言'
+
 + PageFullvideo
 
   page滿版影音
@@ -440,10 +441,10 @@ new Vue({
 
   ##### Props
 
-  * [src] 手機影片來源
-  * [poster] 手機影片預覽圖 ex: poster='圖片url'
-  * [src-web] 電腦版影片來源
-  * [poster-web] 電腦版預覽圖 ex: poster-web='圖片url'
+	* [src] 手機影片來源
+	* [poster] 手機影片預覽圖 ex: poster='圖片url'
+	* [src-web] 電腦版影片來源
+	* [poster-web] 電腦版預覽圖 ex: poster-web='圖片url'
 
 + PageQuote
   
@@ -457,13 +458,13 @@ new Vue({
 
   ##### Props
 
-  * [bg-color] 版面背景色
-  * [box-color] 內文區塊背景色
-  * [qouter] 引言來源
-  * [src] 影片來源
-  * [src-web] 電腦版影片來源
-  * [poster] 預覽圖來源
-  * [poster-web] 電腦版預覽圖來源
+	* [bg-color] 版面背景色
+	* [box-color] 內文區塊背景色
+	* [qouter] 引言來源
+	* [src] 影片來源
+	* [src-web] 電腦版影片來源
+	* [poster] 預覽圖來源
+	* [poster-web] 電腦版預覽圖來源
 
 + PageImgsay
 
@@ -508,14 +509,14 @@ new Vue({
 
   #####Props
 
-  * [href] 分享出去的連結網址
-  * [bg-img] 手機版背景圖
-  * [bg-img-web] 電腦版背景圖
-  * [color] 字體顏色
-  * [bg-color] 滿版背景色
-  * [ubrand] 使用融媒體Logo ex: ubrand='yes'
-  * [link1~4] 延伸閱讀1~4連結
-  * [text1~4] 延伸閱讀1~4標題
-  * [img1~4] 延伸閱讀1~4圖
-  * [third-logo-link] 第三方LOGO連結
-  * [third-logo-img] 第三方LOGO圖片source
+	* [href] 分享出去的連結網址
+	* [bg-img] 手機版背景圖
+	* [bg-img-web] 電腦版背景圖
+	* [color] 字體顏色
+	* [bg-color] 滿版背景色
+	* [ubrand] 使用融媒體Logo ex: ubrand='yes'
+	* [link1~4] 延伸閱讀1~4連結
+	* [text1~4] 延伸閱讀1~4標題
+	* [img1~4] 延伸閱讀1~4圖
+	* [third-logo-link] 第三方LOGO連結
+	* [third-logo-img] 第三方LOGO圖片source
