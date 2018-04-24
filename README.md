@@ -487,8 +487,8 @@ new Vue({
   + [color] 字體顏色
   + [bg-color] 滿版背景色
   + [ubrand] 使用融媒體Logo ex: ubrand='yes'
-  + [link1~4] 延伸閱讀1~4連結
-  + [text1~4] 延伸閱讀1~4標題
-  + [img1~4] 延伸閱讀1~4圖
+  + [link1 ~ 4] 延伸閱讀1 ~ 4連結
+  + [text1 ~ 4] 延伸閱讀1 ~ 4標題
+  + [img1 ~ 4] 延伸閱讀1 ~ 4圖
   + [third-logo-link] 第三方LOGO連結
   + [third-logo-img] 第三方LOGO圖片source
