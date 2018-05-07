@@ -7,13 +7,13 @@
             <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
         </div>
         <div class="logo">
-            <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn-logo.svg"></a>
+            <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn20180507.jpg"></a>
         </div>
         <div class="logo" id="nmd" v-if="!ubrand">
-            <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/nmd_logo_2018.png"></a>
+            <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/newmedia20180507.jpg"></a>
         </div> 
         <div class="logo" id="nmd" v-else>
-            <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/logo_u_brand.svg"></a>
+            <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/ubrand20180507.jpg"></a>
         </div>                     
     </div>
 </template>
@@ -21,21 +21,25 @@
 <script>
 export default {
     name: 'Logo',
-    props: ['vision', 'ubrand']
+    props: ['vision', 'ubrand'],
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .logo{
         width: 140px;
         display: inline-block;
+        img{
+            width: 100%;
+            height: auto;
+        }
     }
     #vision img{
         width: 100%;
     }
     
     #nmd{
-        width: 160px;
+        width: 170px;
     }
     .thirdparty{
         display: block;
@@ -52,9 +56,6 @@ export default {
         .logo-block{
             float: right;
             margin-top: -45px;
-        }
-        #nmd{
-            width: 236px;
         }
         .thirdparty{
             display: inline-block;

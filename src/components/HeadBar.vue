@@ -90,7 +90,7 @@ export default {
             this.isOpen = false
         },
         refresh: function() {
-            location.reload()
+            location.href = location.href
         },
         handleScrollTo: function(target){
             this.isOpen = false
@@ -245,6 +245,9 @@ export default {
     position: absolute;
     z-index: 30;
     top: 0;
+    a{
+        text-decoration: none;
+    }
 }
 #icon i.udn-icon{
     color: #FFFFFF;
