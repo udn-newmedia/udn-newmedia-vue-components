@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <title>美術編輯，你懂什麼！</title>
+    <title>Long Form Demo</title>
 
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable = no">
 
     <!-- for Facebook -->
-    <meta property="og:title" content="美術編輯，你懂什麼！"/>
+    <meta property="og:title" content="Long Form Demo"/>
     <meta property="og:url" content="https://udn.com/upf/newmedia/2017_data/ideal/index.html"/>
     <meta property="og:image" content="https://udn.com/upf/newmedia/2017_data/ideal/static/fb_index.jpg"/>
-    <meta property="og:description" content="在我的櫃子裡收藏了兩樣東西：一把日式美工刀，刀片還在，只是鏽蝕得厲害。另一把三十公分的長尺，泛著灰黃的色澤，尺緣凹凸不平、刻度已消磨殆盡；上頭貼了一截膠帶沒了黏性，靠著邊緣沈積的灰塵，那麼輕描淡寫式地附著在尺面上，好像漂浮在隱而不見的刻度間。中間貼著編輯部—美術編輯，以及我的名字。"/>
+    <meta property="og:description" content="Long Form Demo 詳細請參閱教學手冊"/>
 
     <!-- for Google -->
-    <meta name="application-name" content="美術編輯，你懂什麼！"/>
-    <meta name="description" content="在我的櫃子裡收藏了兩樣東西：一把日式美工刀，刀片還在，只是鏽蝕得厲害。另一把三十公分的長尺，泛著灰黃的色澤，尺緣凹凸不平、刻度已消磨殆盡；上頭貼了一截膠帶沒了黏性，靠著邊緣沈積的灰塵，那麼輕描淡寫式地附著在尺面上，好像漂浮在隱而不見的刻度間。中間貼著編輯部—美術編輯，以及我的名字。"/>
+    <meta name="application-name" content="Long Form Demo"/>
+    <meta name="description" content="Long Form Demo 詳細請參閱教學手冊"/>
     <meta name="copyright" content="聯合報"/>
 
     <meta property="fb:admins" content="671188086">
@@ -33,27 +33,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
 
-    <!-- 請確認是否使用程式檔案來源　https開頭的那一支程式 -->
+    <!-- 請確認是否使用程式檔案來源　是否為網路資源 -->
+    <!-- 本地資源 -->
     <script src="./dist/udn-newmedia-vue-components.min.js"></script>
+    <!-- 網路資源 -->
     <!-- <script src="https://udn-newmedia.github.io/udn-newmedia-vue-components/dist/udn-newmedia-vue-components.min.js"></script> -->
-
-    <!-- Facebook Pixel Code -->
-	<script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '285426731894626');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=285426731894626&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
 
     <!-- ours google analytic -->
     <script>
@@ -72,6 +56,24 @@
         // ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
         // ga('nightPaper.send', 'pageview');        
     </script>
+
+    <!-- Facebook Pixel Code -->
+	<script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '285426731894626');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=285426731894626&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
 
     <!-- udn comScore Tag -->
     <script>
@@ -155,8 +157,8 @@
         <Indicator color="#bf2923"></Indicator>
         <Cover title="Long Form Demo" subtitle="Long Form subTitle" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="bottom" arrow-color="#fff" hint="yes" hint-color="#fff"></Cover>
         <Head-Bar Menu-Slide-From="top" no-logo="true">
-            <a href="http://udn.com" target="_blank">這五年</a>
-            <a href="http://udn.com" target="_blank">退休前</a>
+            <a href="http://udn.com" target="_blank">外聯一</a>
+            <a href="http://udn.com" target="_blank">外聯二</a>
         </Head-Bar>
         <Content-Container background-color="#FFFFFF">
             <Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
@@ -278,6 +280,7 @@
         </Content-Container>
         <Foot background-color="#FFFFFF"></Foot>
     </div>
+    <!-- 請勿修改 -->
     <script>
         
         var app = new Vue({
