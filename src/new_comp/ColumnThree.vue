@@ -15,8 +15,8 @@
   </div>
 </template>
 <script>
-import srcRWD from "@/mixin/srcRWD.js"
-import setProps from "@/mixin/setProps.js"
+import srcRWD from "../mixin/srcRWD.js"
+import setProps from "../mixin/setProps.js"
 import _debounce from "lodash.debounce"
 
 export default {

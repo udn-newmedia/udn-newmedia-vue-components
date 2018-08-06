@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import yesToBoolean from '@/mixin/yesToBoolean.js'
-import setProps from '@/mixin/setProps.js'
+import yesToBoolean from '../mixin/yesToBoolean.js'
+import setProps from '../mixin/setProps.js'
 export default {
   name: 'Logo',
   mixins: [setProps, yesToBoolean],

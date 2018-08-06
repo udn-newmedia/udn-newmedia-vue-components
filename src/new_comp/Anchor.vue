@@ -6,7 +6,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import setProps from '@/mixin/setProps.js'
+import setProps from '../mixin/setProps.js'
 export default {
   name: 'Anchor',
   mixins: [setProps],

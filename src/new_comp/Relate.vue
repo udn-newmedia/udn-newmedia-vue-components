@@ -35,7 +35,7 @@
 <script>
 
 import Utils from 'udn-newmedia-utils'
-import setProps from '@/mixin/setProps.js'
+import setProps from '../mixin/setProps.js'
 export default {
   name: 'Relate',
   mixins: [setProps],

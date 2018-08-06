@@ -15,9 +15,9 @@
 <script>
 import _throttle from 'lodash.throttle'
 import _debounce from 'lodash.debounce'
-import srcRWD from '@/mixin/srcRWD.js'
-import setProps from '@/mixin/setProps.js'
-import yesToBoolean from '@/mixin/yesToBoolean.js'
+import srcRWD from '../mixin/srcRWD.js'
+import setProps from '../mixin/setProps.js'
+import yesToBoolean from '../mixin/yesToBoolean.js'
 export default {
   name: 'Cover',
   mixins: [srcRWD, setProps, yesToBoolean],

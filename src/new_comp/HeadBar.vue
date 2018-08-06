@@ -43,7 +43,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import setProps from '@/mixin/setProps.js'
+import setProps from '../mixin/setProps.js'
 import Utils from 'udn-newmedia-utils'
 import _debounce from 'lodash.debounce'
 import _throttle from 'lodash.throttle'
