@@ -22,7 +22,7 @@
         </div>
       </div>
     </div>
-    <nav class="scroll_nav" :class="{ 'nav_show': isNavShow }" @mouseenter="handle_hint" @mouseleave="handle_hint">
+    <nav v-if="anchorMenu.length > 0" class="scroll_nav" :class="{ 'nav_show': isNavShow }" @mouseenter="handle_hint" @mouseleave="handle_hint">
       <div v-if="canNavScroll" class="nav_arrow nav_arrow-left"
       @click="handle_nav_arrow('left')">
         <i class="fa fa-chevron-left fa-1x" aria-hidden="true"></i>
@@ -43,7 +43,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
-import setProps from '../mixin/setProps.js'
+import setProps from '@/mixin/setProps.js'
 import Utils from 'udn-newmedia-utils'
 import _debounce from 'lodash.debounce'
 import _throttle from 'lodash.throttle'
@@ -218,8 +218,10 @@ export default {
     }
   },
   updated () {
-    if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false) {
-      this.canNavScroll = true
+    if (this.anchorMenu.length > 0) {
+      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false) {
+        this.canNavScroll = true
+      }
     }
   },
   mounted () {

@@ -2,6 +2,9 @@ const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
+function resolve (dir) {
+  return path.join(__dirname, '.', dir)
+}
 
 module.exports = {
   entry: path.resolve(__dirname + '/src/main.js'),
@@ -20,7 +23,8 @@ module.exports = {
   resolve: {
     alias: {
       vue: 'vue/dist/vue.js',
-      vuex: 'vuex/dist/vuex.esm.js'
+      '@': resolve('src')
+      // vuex: 'vuex/dist/vuex.esm.js'
     }
   },    
   module: {

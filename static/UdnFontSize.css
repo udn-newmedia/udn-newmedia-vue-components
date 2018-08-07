@@ -1,0 +1,86 @@
+html, body {
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: Arial, "微軟正黑體", sans-serif;
+	word-wrap: break-word;
+	text-align: justify;
+}
+h1{
+	font-size: 40px;
+	line-height: 1;
+}
+h2{
+	font-size: 30px;
+	line-height: 1.2;
+}
+h3{
+	font-size: 24px;
+}
+p{
+	font-size: 18px;
+	line-height: 32px;
+}
+p > br {
+	line-height: 32px;
+}
+@media screen and (max-width: 374px) {
+h1{
+	font-size: 30px !important;
+	line-height: 1.5 !important;
+}
+h2{
+	font-size: 27px !important;
+	line-height: 1.5 !important;
+}
+h3{
+	font-size: 20px !important;
+}
+p{
+	font-size: 15px !important;
+	line-height: 1.5 !important;
+	margin-bottom: 0 !important;
+}
+p > br {
+	line-height: 1 !important;
+}	
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+h1{
+	font-size: 45px;
+	line-height: 36px;
+}
+h2{
+	font-size: 40px;
+	line-height: 36px;
+}
+h3{
+	font-size: 34px;
+}
+p{
+	font-size: 20px;
+	line-height: 36px;
+}
+p > br {
+	line-height: 36px
+}
+}
+@media screen and (min-width: 1024px) {
+h1{
+	font-size: 55px;
+	line-height: 1.5;
+}
+h2{
+	font-size: 40px;
+	line-height: 1.5;
+}
+h3{
+	font-size: 34px;
+}
+p{
+	font-size: 21px;
+	line-height: 1.5;
+}
+p > br {
+	line-height: 1.5;
+}
+}

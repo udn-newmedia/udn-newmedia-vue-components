@@ -52,29 +52,30 @@ Vue.config.productionTip = false
 // if (typeof window !== 'undefined' && window.Vue) {
 //   window.Vue.use(UdnComponent)
 // }
-
-const app = new Vue({
-  el: '#app',
-  store,
-  components: {
-    Anchor,
-    BackTop,
-    ColumnOne,
-    ColumnThree,
-    ColumnTwo,
-    ContentContainer,
-    Cover,
-    Editor,
-    FbComment,
-    Foot,
-    HeadBar,
-    Indicator,
-    Logo,
-    Question,
-    Quote,
-    Relate,
-    ParallaxBg,
-    Share,
-    Youtube
-  }
+document.addEventListener('DOMContentLoaded', function (event) {
+  const app = new Vue({
+    el: '#app',
+    store,
+    components: {
+      Anchor,
+      BackTop,
+      ColumnOne,
+      ColumnThree,
+      ColumnTwo,
+      ContentContainer,
+      Cover,
+      Editor,
+      FbComment,
+      Foot,
+      HeadBar,
+      Indicator,
+      Logo,
+      Question,
+      Quote,
+      Relate,
+      ParallaxBg,
+      Share,
+      Youtube
+    }
+  })
 })

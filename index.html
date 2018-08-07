@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <title>Long Form Demo</title>
+    <title>新媒體中心 vue Long Form Demo</title>
 
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable = no">
@@ -29,15 +29,16 @@
     <link rel="stylesheet" href='https://udn.com/upf/newmedia/css/font-awesome.min.css'>
     <link rel="stylesheet" href='https://udn.com/upf/newmedia/css/bootstrap.min.css'>
     <link rel="stylesheet" href="https://udn.com/upf/newmedia/css/udn-font.css?v=1">
+    <link rel="stylesheet" href="./static/UdnFontSize.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js" integrity="sha256-OI3N9zCKabDov2rZFzl8lJUXCcP7EmsGcGoP6DMXQCo=" crossorigin="anonymous"></script>
 
     <!-- 請確認是否使用程式檔案來源　是否為網路資源 -->
     <!-- 本地資源 -->
-    <script src="./dist/udn-newmedia-vue-components.min.js"></script>
+    <!-- <script src="./dist/udn-newmedia-vue-components.min.js"></script> -->
     <!-- 網路資源 -->
-    <!-- <script src="https://udn-newmedia.github.io/udn-newmedia-vue-components/dist/udn-newmedia-vue-components.min.js"></script> -->
+    <script src="https://cdn.rawgit.com/udn-newmedia/udn-newmedia-vue-components/v2.0/dist/udn-newmedia-vue-components.min.js"></script>
 
     <!-- ours google analytic -->
     <script>
@@ -196,7 +197,6 @@
 			<p>版面設計絕對是一項專業性的工作，非專業人員做不來；它仍然屬於美學創作的範疇。可是台灣媒體的文字編輯始終臉不紅氣不喘地把持版面設計的工作，完全不在乎美學的評價，只在乎創作獨一無二的「爛作」行為。</p>
             <p><br/></p>
         </Content-Container>
-        <Section-Fixed-Bg menu-text="我舉幾個例子" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" text="我舉幾個例子。"></Section-Fixed-Bg>
         <Content-Container background-color="#fff">
             <p><br/></p>
             <p>多年前我任職中時新聞版的美術組召集人，時值華航在日本名古屋的空難新聞，有一張外電照片，攝影記者以廣角拍攝在大禮堂的空地上擺滿了罹難者的鞋子，一雙雙整齊擺放著，令人為之鼻酸。</p>
@@ -210,10 +210,7 @@
 			<Quote text="＂你懂什麼！＂" refer="-- 那位主編"></Quote>
 			<p><br/></p>
 			<p>最後剩下一張三．五公分高的照片，以及一雙真的不知道是誰的鞋子。</p>
-        </Content-Container>
-        <Section-Fixed-Bg menu-text="難堪的年代" text="那真的是一段非常難堪的年代，我告訴自己有一天一定要離開這個單位。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
-        <Section-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Bg>
-        <Section-Fixed-Bg bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" imgsay="陳智遠（左圖）將老港味轉為深度旅遊的商機，頗受遊客歡迎。"></Section-Fixed-Bg>             
+        </Content-Container>          
         <Content-Container background-color="#FFFFFF">
             <p>雖然我姓董，事實上也的確懂得不多，但我懂得尊重專業，懂得尊重最前線工作人員的辛苦，懂得給讀者看精彩的版面，而不是用非專業的考量在做媒體的工作。</p>
             <p><br/></p>
@@ -280,14 +277,5 @@
         </Content-Container>
         <Foot background-color="#FFFFFF"></Foot>
     </div>
-    <!-- 請勿修改 -->
-    <script>
-        
-        var app = new Vue({
-            el: '#app'
-        })
-        
-
-    </script>
 </body>
 </html>
