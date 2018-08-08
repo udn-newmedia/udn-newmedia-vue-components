@@ -43,8 +43,8 @@ export default {
   data () {
     return {
       windowWidth: global.innerWidth,
-      errorMessage: "請輸入 " + ":srcWeb=" + '"' + "'路徑'" + '"' + "，例如： '../static/SectionBg/SectionBg_pc.jpg'",
-      errorMessage_mob: "請輸入 " + ":src=" + '"' + "'路徑'" + '"' + "，例如： '../static/SectionBg/SectionBg_mob.jpg'"
+      errorMessage: "請輸入 " + "srcWeb=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_pc.jpg",
+      errorMessage_mob: "請輸入 " + "src=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_mob.jpg"
     }
   },
   created () {
