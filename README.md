@@ -28,12 +28,25 @@
   + [color] 變更進度條的顏色
 
 #### - BackTop
+>回到頁面最上方的按鈕
 ```html
 <back-top arrow-color="#fff" arrow-box-color="#e5e5e5"></back-top>
 ```
 + Props
   + [arrow-color] 變更箭頭顏色
   + [arrow-box-color] 變更外框背景顏色
+
+#### - Anchor
+>告知head-bar內滾的物件
+>將目標以anchor包起來
+```html
+<anchor title="佈滿青紫傷痕的孩子">
+ <h2>佈滿青紫傷痕的孩子</h2>
+</anchor>
+```
++ Props
+  + [title] head-bar 內滾按鈕名稱
+
 #### - Head-Bar
 > 網頁的頁首
 ```html
@@ -51,8 +64,7 @@
    + [logo] 將放置圈圈聯合報旁 size: 220px*40px
 
 #### - Cover
-
-> 封面大圖
+> 非滾動視差過場也可作為首頁大圖
 ```html
 <Cover useArrow="yes" useAnimate="yes" use-hint="yes"
 	   arrow-color="#e5e5e5"
@@ -177,6 +189,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 
 #### - Question
+>橢圓形button
 ```html
 <Question href="https://www.surveycake.com/s/KpQKN" text="填寫閱讀體驗問卷"></Question>
 ```

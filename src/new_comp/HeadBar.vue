@@ -22,12 +22,12 @@
         </div>
       </div>
     </div>
-    <nav v-if="anchorMenu.length > 0" class="scroll_nav" :class="{ 'nav_show': isNavShow }" @mouseenter="handle_hint" @mouseleave="handle_hint">
+    <nav v-if="anchorMenu.length > 0" class="scroll_nav" :class="{ 'nav_show': isNavShow }">
       <div v-if="canNavScroll" class="nav_arrow nav_arrow-left"
       @click="handle_nav_arrow('left')">
         <i class="fa fa-chevron-left fa-1x" aria-hidden="true"></i>
       </div>
-      <div class="nav_list" ref="navigator">
+      <div class="nav_list" ref="navigator" :class="{'fix-padding': canNavScroll && !isIE}">
         <span v-for="(dish) in anchorMenu" :key="dish.id" class="nav_list_item" :class="{ 'nav_list_item-active': dish.isActive }" @click.prevent="handle_scrollTo(dish.title, dish.id)">{{dish.title}}</span>
       </div>
       <div v-if="canNavScroll" class="nav_arrow nav_arrow-right"
@@ -66,6 +66,7 @@ export default {
   },
   data () {
     return {
+      isIE: false,
       canNavScroll: false,
       header_top: 0,
       bar_color: 'transparent',
@@ -125,22 +126,6 @@ export default {
       }
       if (this.anchorMenu.length > 0) {
         this.handle_nav()
-      }
-    },
-    handle_hint (e) {
-      let eY = e.offsetY - 28
-      let eX = e.offsetX
-      if (Utils.detectMob() === false && this.$refs.navigator.scrollWidth > window.innerWidth) {
-        this.showScrollHint = true
-        switch (e.type) {
-          case 'mouseenter':
-            this.showScrollHint = true
-            this.$refs.scrollHinter.style.transform = 'translate3d(' + eX + 'px,' + eY + 'px, 0)'
-            break
-          case 'mouseleave':
-            this.showScrollHint = false
-            break
-        }
       }
     },
     handle_scrollTo: _throttle(function (title, id) {
@@ -206,6 +191,11 @@ export default {
     },
     handle_resize: _debounce(function () {
       this.isMenuOpen = false
+      if (this.anchorMenu.length > 0) {
+        if (this.$refs.navigator.scrollWidth > window.innerWidth) {
+          this.canNavScroll = true
+        }
+      }
       this.$forceUpdate()
     }, 333),
     handle_logoGA () {
@@ -217,11 +207,9 @@ export default {
       })
     }
   },
-  updated () {
-    if (this.anchorMenu.length > 0) {
-      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false) {
-        this.canNavScroll = true
-      }
+  created () {
+    if (Utils.detectIE()) {
+      Utils.detectIE() < 16 ? this.isIE = true : this.isIE = false
     }
   },
   mounted () {
@@ -259,6 +247,13 @@ export default {
             }
           })
         }
+      }
+    }
+  },
+  updated () {
+    if (this.anchorMenu.length > 0) {
+      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false) {
+        this.canNavScroll = true
       }
     }
   },
@@ -516,11 +511,15 @@ export default {
   display: flex;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   padding-bottom: 8px;
   @media screen and (min-width: 1024px) {
     top: 17px;
     padding-bottom: 17px;
   }
+}
+.fix-padding{
+  padding-bottom: 0 !important;
 }
 .nav_arrow {
   position: relative;
