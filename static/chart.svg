@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 880 268.2" style="enable-background:new 0 0 880 268.2;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#B81C25;}
+	.st1{fill:none;stroke:#C9CACA;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#898989;stroke-miterlimit:10;}
+	.st3{fill:#898989;}
+	.st4{font-family:'MicrosoftJhengHeiRegular';}
+	.st5{font-size:17px;}
+	.st6{fill:none;stroke:#B81C25;stroke-miterlimit:10;}
+	.st7{fill:#9FA0A0;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st8{fill:#B5B5B6;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st9{fill:#C9CACA;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st10{fill:#DCDDDD;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st11{fill:#EFEFEF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st12{fill:#F7F8F8;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st13{fill:#F7F8F8;}
+	.st14{fill:#EFEFEF;}
+	.st15{fill:#DCDDDD;}
+	.st16{fill:#C9CACA;}
+	.st17{fill:#B5B5B6;}
+	.st18{fill:#9FA0A0;}
+	.st19{font-family:'ArialMT';}
+	.st20{font-size:21px;}
+	.st21{fill:#595757;}
+</style>
+<g>
+	<text transform="matrix(0.9357 0 0 1 832.111 252.2354)" class="st3 st4 st5">(人次)</text>
+</g>
+<text transform="matrix(0.8971 0 0 1 97.6681 253.8633)" class="st3 st19 st20">0</text>
+<text transform="matrix(0.8971 0 0 1 264.3361 253.8633)" class="st3 st19 st20">500</text>
+<text transform="matrix(0.8971 0 0 1 440.5201 253.8633)" class="st3 st19 st20">1000</text>
+<text transform="matrix(0.8971 0 0 1 617.3395 253.8633)" class="st3 st19 st20">1500</text>
+<text transform="matrix(0.8971 0 0 1 786.8649 253.4907)" class="st3 st19 st20">2000</text>
+<line class="st2" x1="101.5" y1="227.5" x2="820.2" y2="227.5"/>
+<line class="st2" x1="281.1" y1="227.4" x2="281.1" y2="231.4"/>
+<line class="st2" x1="460.8" y1="227.4" x2="460.8" y2="231.4"/>
+<line class="st2" x1="640.5" y1="227.4" x2="640.5" y2="231.4"/>
+<line class="st2" x1="820.2" y1="227.4" x2="820.2" y2="231.4"/>
+<rect x="101.5" y="18.2" class="st0" width="21.6" height="13"/>
+<rect x="101.5" y="48.5" class="st0" width="51.7" height="13"/>
+<rect x="101.5" y="79.9" class="st0" width="90.9" height="13"/>
+<rect x="101.5" y="111.2" class="st0" width="195.5" height="13"/>
+<rect x="101.5" y="142.5" class="st0" width="210.2" height="13"/>
+<rect x="101.5" y="173.9" class="st0" width="305.4" height="13"/>
+<rect x="101.5" y="205.2" class="st0" width="610.5" height="13"/>
+<g>
+	<text transform="matrix(1 0 0 1 51.1532 32.6665)" class="st21 st4 st20">遺棄</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 9.1536 154.7451)" class="st21 st4 st20">身體虐待</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 30.1535 123.7256)" class="st21 st4 st20">性虐待</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 51.1535 185.7646)" class="st21 st4 st20">疏忽</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 9.1537 216.7842)" class="st21 st4 st20">不當管教</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 9.1533 61.686)" class="st21 st4 st20">目睹家暴</text>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 9.1533 92.7056)" class="st21 st4 st20">精神虐待</text>
+</g>
+<g>
+	<line class="st2" x1="101.5" y1="228" x2="101.5" y2="8"/>
+	<g>
+		<g>
+			<line class="st2" x1="101.5" y1="211.7" x2="95.8" y2="211.7"/>
+			<line class="st2" x1="101.5" y1="180.4" x2="95.8" y2="180.4"/>
+			<line class="st2" x1="101.5" y1="149" x2="95.8" y2="149"/>
+			<line class="st2" x1="101.5" y1="117.7" x2="95.8" y2="117.7"/>
+			<line class="st2" x1="101.5" y1="86.4" x2="95.8" y2="86.4"/>
+			<line class="st2" x1="101.5" y1="55" x2="95.8" y2="55"/>
+			<line class="st2" x1="101.5" y1="23.7" x2="95.8" y2="23.7"/>
+		</g>
+	</g>
+</g>
+</svg>

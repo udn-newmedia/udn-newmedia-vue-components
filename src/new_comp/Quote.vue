@@ -33,6 +33,9 @@ export default {
     },
     text: {
       type: String
+    },
+    color: {
+      type: String
     }
   },
   computed: {
