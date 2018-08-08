@@ -21,7 +21,7 @@
 
 #### - Indicator
 >頁面上方進度條
-```html
+```js
 <Indicator color="#bf2923"></Indicator>
 ```
 + Props
@@ -29,7 +29,7 @@
 
 #### - BackTop
 >回到頁面最上方的按鈕
-```html
+```js
 <back-top arrow-color="#fff" arrow-box-color="#e5e5e5"></back-top>
 ```
 + Props
@@ -39,7 +39,7 @@
 #### - Anchor
 >告知head-bar內滾的物件
 >將目標以anchor包起來
-```html
+```js
 <anchor title="佈滿青紫傷痕的孩子">
  <h2>佈滿青紫傷痕的孩子</h2>
 </anchor>
@@ -49,7 +49,7 @@
 
 #### - Head-Bar
 > 網頁的頁首
-```html
+```js
 <Head-Bar head-color="#fff" icon-color="#000">
   <a slot="logo" href="https://vision.udn.com/" target="_blank"><img class="other_logo" src="../static/visual-logo.png" alt="聯合報系願景工程"></a>
   <a href="https://udn.com">聯合新聞網</a>
@@ -65,7 +65,7 @@
 
 #### - Cover
 > 非滾動視差過場也可作為首頁大圖
-```html
+```js
 <Cover useArrow="yes" useAnimate="yes" use-hint="yes"
 	   arrow-color="#e5e5e5"
        src="./static/CoverBg/cover_mob.jpg"
@@ -95,7 +95,7 @@
 
 #### - Parallax-Bg
 > 滾動視差過場
-```html
+```js
 <Parallax-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
 ```
 + Props
@@ -110,7 +110,7 @@
 
 #### - Content-Container
 > 用於包內文，內含內文行高等CSS設定
-```html
+```js
 <Content-Container>
   <p>再過43年，台灣幾乎人人都可以活到90歲，但活得長，卻不一定能活得好。高齡化下一階段最大挑戰，將變成「活著要幹嘛」？</p>
   <p><br/></p>
@@ -122,7 +122,7 @@
 
 #### - Column-One
 >1格圖片排列
-```html
+```js
 <Column-One description="有段時間阿邦很怕人家問他「家在哪？」「爸爸媽媽呢？」只能笑而帶過" src="./static/SectionBg/SectionBg_mob.jpg" src-web="./static/SectionBg/SectionBg_pc.jpg"></Column-One>
 ```
 + Props
@@ -132,7 +132,7 @@
 
 #### - Column-Two
 >2格圖片排列
-```html
+```js
 <Column-Two description="有段時間阿邦很怕人家問他「家在哪？」「爸爸媽媽呢？」只能笑而帶過" src_1="./static/SectionBg/SectionBg_mob.jpg" src-web_1="./static/SectionBg/SectionBg_pc.jpg"
 src_2="./static/SectionBg/SectionBg_mob.jpg" src-web_2="./static/SectionBg/SectionBg_pc.jpg"></Column-Two>
 ```
@@ -147,7 +147,7 @@ src_2="./static/SectionBg/SectionBg_mob.jpg" src-web_2="./static/SectionBg/Secti
 
 #### - Column-Three
 >3格圖片排列
-```html
+```js
 <Column-Two description="有段時間阿邦很怕人家問他「家在哪？」「爸爸媽媽呢？」只能笑而帶過" src_1="./static/SectionBg/SectionBg_mob.jpg" src-web_1="./static/SectionBg/SectionBg_pc.jpg"
 src_2="./static/SectionBg/SectionBg_mob.jpg" src-web_2="./static/SectionBg/SectionBg_pc.jpg"
 src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/SectionBg_pc.jpg"></Column-Two>
@@ -163,7 +163,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Quote
 >內文引言區塊，內含引言CSS設定
-```html
+```js
 <Quote img="./static/lee.png" text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂" refer="-- 陳亮恭"></Quote>
 ``` 
 + Props
@@ -177,7 +177,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Youtube
 >Youtube嵌入
-```html
+```js
 <Youtube src="https://www.youtube.com/embed/kMguxxwW_-A" showinfo="yes"></Youtube>
 ```
 + Props
@@ -190,7 +190,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Question
 >橢圓形button
-```html
+```js
 <Question href="https://www.surveycake.com/s/KpQKN" text="填寫閱讀體驗問卷"></Question>
 ```
 >問卷問題
@@ -200,7 +200,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Editor
 >作者區塊，內含CSS設定
-```html
+```js
 <Editor>
   <div>文字：蔡佩蓉、洪欣慈</div>
   <div>視覺設計、影音：張心慈、許瑋琳</div>
@@ -215,7 +215,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Logo
 >頁面 Logo 區塊
-```html
+```js
 <Logo vision="true" ubrand="true">
   <div class="logo">
     <a href="https://udn.com/news/index" target="_blank"><img src="./static/nightlogo.svg"></a>
@@ -229,7 +229,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Relate
 >延伸閱讀區塊，內含CSS設定
-```html
+```js
 <Relate title="延伸閱讀" color="#363434" 
   href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
   href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
@@ -246,7 +246,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Share
 >FB and Line 分享區塊。
-```html
+```js
 <Share href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Share>
 ```
 + Props
@@ -254,7 +254,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Fb-Comment
 >FB 留言 plugin。
-```html
+```js
 <Fb-Comment href="https://udn.com/upf/newmedia/2017_data/ideal/index.html"></Fb-Comment>
 ```
 + Props
@@ -262,7 +262,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 
 #### - Foot
 >頁腳
-```html
+```js
 <Foot></Foot>
 ```
 + Props
