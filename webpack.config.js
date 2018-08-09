@@ -1,11 +1,13 @@
 const webpack = require('webpack')
 const path = require('path')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
   return path.join(__dirname, '.', dir)
 }
-
+  
 module.exports = {
   entry: path.resolve(__dirname + '/src/main.js'),
   output: {
@@ -57,6 +59,14 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    index: './index.html',
+    hot: true,
+    port: 8080,
+    overlay: {
+      errors: true
+    }
+  },
   plugins: [
     new CleanWebpackPlugin('dist'),
     new webpack.optimize.UglifyJsPlugin({
@@ -66,6 +76,10 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: './index.html'
+    }),
+    // new BundleAnalyzerPlugin()    
   ]
 }

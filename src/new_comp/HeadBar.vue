@@ -252,12 +252,13 @@ export default {
   },
   updated () {
     if (this.anchorMenu.length > 0) {
-      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false) {
+      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false && !Utils.detectMob()) {
         this.canNavScroll = true
       }
     }
   },
   destroyed () {
+    const vm = this
     window.removeEventListener('scroll', this.handle_scroll)
     window.removeEventListener('resize', this.handle_resize)
     if (this.$slots.default !== undefined) {
@@ -470,7 +471,7 @@ export default {
     font-size: 20px;
     line-height: 1.4;
     color: inherit;
-    transition: 321ms ease;
+    transition: 222ms ease;
     border-bottom: 1px solid lightgray;
     padding: 15px;
     color: inherit;

@@ -69,6 +69,7 @@ export default {
   width: 45px;
   height: 45px;
   overflow: hidden;
+  opacity: .6;
   @media screen and (min-width: 1025px) {
     bottom: 3.5vh;
     right: 50%;
