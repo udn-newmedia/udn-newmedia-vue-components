@@ -14,7 +14,7 @@
 
 ### Demo Page
 
-[Demo](http://nmdap.udn.com.tw/demo/new_comp/)
+  [Demo](http://nmdap.udn.com.tw/demo/new_comp/)
 
 
 ### Components
@@ -81,17 +81,17 @@
   + [src-web] 電腦版背景圖
   + [arrow-color] 箭頭顏色
   + [use-arrow] 是否使用箭頭提示
-   + yes : 顯示
-   + no : 不顯示
+    + yes : 顯示
+    + no : 不顯示
   + [use-animate] 是否使用箭頭動態
-   + yes : 使用
-   + no : 不使用
+    + yes : 使用
+    + no : 不使用
   + [use-hint] 是否使用箭頭文字題是
-   + yes : 使用
-   + no : 不使用
+    + yes : 使用
+    + no : 不使用
 + Slot
-  + default 標題區塊 
-  + DIY 可以在內新增自己要的樣式 記得用absolute
+   + default 標題區塊 
+   + DIY 可以在內新增自己要的樣式 記得用absolute
 
 #### - Parallax-Bg
 > 滾動視差過場
@@ -224,7 +224,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 ```
 + Props
  + [vision] 願景logo
- + [ubrand] 融媒體logo\ 
+ + [ubrand] 融媒體logo
  + 如果要增加外連連結 就如範例所示 增加 `div` 和 `a` Tag
 
 #### - Relate
