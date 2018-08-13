@@ -191,8 +191,9 @@ export default {
     },
     handle_resize: _debounce(function () {
       this.isMenuOpen = false
+      console.log('device:' + Utils.detectMob())
       if (this.anchorMenu.length > 0) {
-        if (this.$refs.navigator.scrollWidth > window.innerWidth) {
+        if (this.$refs.navigator.scrollWidth > window.innerWidth && !Utils.detectMob) {
           this.canNavScroll = true
         }
       }
@@ -213,6 +214,7 @@ export default {
     }
   },
   mounted () {
+    console.log('res')
     const vm = this
     window.addEventListener('scroll', this.handle_scroll)
     window.addEventListener('resize', this.handle_resize)

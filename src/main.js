@@ -47,8 +47,6 @@ Vue.config.productionTip = false
 //   }
 // }
 
-
-
 // if (typeof window !== 'undefined' && window.Vue) {
 //   window.Vue.use(UdnComponent)
 // }
