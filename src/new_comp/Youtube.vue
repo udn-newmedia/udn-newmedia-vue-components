@@ -1,6 +1,6 @@
 <template>
-  <div class="embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive-item" :src="setProps('src') + '?playsinline=1&rel=0&controls=' + setProps('controls') + '&showinfo=' + setProps('showinfo')" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <div class="embed-responsive embed-responsive-16by9 youtubeIframe">
+      <iframe class="embed-responsive-item" :src="setProps('src') + '?playsinline=1&rel=0&controls=' + controlsValue + '&showinfo=' + showinfoValue + '&autoplay=' + autoPlayValue + '&mute=' + mutedValue" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </template>
 
@@ -15,29 +15,53 @@ export default {
     },
     showinfo: {
       type: String,
-      default: '0',
-      validator: function (value) {
-        if (value === 'yes') {
-          return '1'
-        } else {
-          return '0'
-        }
-      }
+      default: 'no'
     },
     controls: {
       type: String,
-      default: '1',
-      validator: function (value) {
-        if (value === 'no') {
-          return '0'
-        } else {
-          return '1'
-        }
-      }
+      default: 'yes'
+    },
+    autoplay: {
+      type: String,
+      default: 'no'
+    },
+    muted: {
+      type: String,
+      default: 'no'
     },
     jsonProps: {
       type: Object,
       default: null
+    }
+  },
+  computed: {
+    showinfoValue () {
+      if (this.setProps('showinfo') === 'yes') {
+        return 1
+      } else {
+        return 0
+      }
+    },
+    controlsValue () {
+      if (this.setProps('controls') === 'yes') {
+        return 1
+      }  else {
+        return 0
+      }
+    },
+    autoPlayValue () {
+      if (this.setProps('autoplay') === 'yes') {
+        return 1
+      } else {
+        return 0
+      }
+    },
+    mutedValue () {
+      if (this.setProps('muted') === 'yes') {
+        return 1
+      } else {
+        return 0
+      }      
     }
   },
   created () {
@@ -48,6 +72,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.youtubeIframe{
+  position: relative;
+  z-index: 50;
+  width: 100%;
+}
 </style>

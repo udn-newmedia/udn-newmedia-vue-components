@@ -66,8 +66,8 @@
 #### - Cover
 > 非滾動視差過場也可作為首頁大圖
 ```js
-<Cover useArrow="yes" useAnimate="yes" use-hint="yes"
-	   arrow-color="#e5e5e5"
+<Cover use-arrow="yes" use-animate="yes" use-hint="yes"
+	     arrow-color="#e5e5e5"
        src="./static/CoverBg/cover_mob.jpg"
        src-web="./static/CoverBg/cover_pc.jpg">
   <h1>我是大標題</h1>
@@ -96,7 +96,10 @@
 #### - Parallax-Bg
 > 滾動視差過場
 ```js
-<Parallax-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" bg="./static/bg_wang.jpg" bgweb="./static/web/bg_wang.jpg" position="center"></Section-Fixed-Bg>
+<Parallax-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" src="./static/bg_wang.jpg" src-web="./static/web/bg_wang.jpg" position="center">
+  <h1>我是大標題</h1>
+  <h2>我是副標題></h2>
+</Parallax-Bg>
 ```
 + Props
   + [position] 標題位置
@@ -148,9 +151,9 @@ src_2="./static/SectionBg/SectionBg_mob.jpg" src-web_2="./static/SectionBg/Secti
 #### - Column-Three
 >3格圖片排列
 ```js
-<Column-Two description="有段時間阿邦很怕人家問他「家在哪？」「爸爸媽媽呢？」只能笑而帶過" src_1="./static/SectionBg/SectionBg_mob.jpg" src-web_1="./static/SectionBg/SectionBg_pc.jpg"
+<Column-Three description="有段時間阿邦很怕人家問他「家在哪？」「爸爸媽媽呢？」只能笑而帶過" src_1="./static/SectionBg/SectionBg_mob.jpg" src-web_1="./static/SectionBg/SectionBg_pc.jpg"
 src_2="./static/SectionBg/SectionBg_mob.jpg" src-web_2="./static/SectionBg/SectionBg_pc.jpg"
-src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/SectionBg_pc.jpg"></Column-Two>
+src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/SectionBg_pc.jpg"></Column-Three>
 ```
 + Props
   + [description] 圖說
@@ -178,14 +181,14 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 #### - Youtube
 >Youtube嵌入
 ```js
-<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A" showinfo="yes"></Youtube>
+<Youtube src="https://www.youtube.com/embed/kMguxxwW_-A" showinfo="no" controls="yes" autoplay="yes" muted="yes"></Youtube>
 ```
 + Props
 	+ [src] 連結網址
-	+ [showinfo] 是否顯示標題
-	  + yes 顯示
-	  + no 不顯示
-	+ [controls] 是否顯示控制板
+	+ [showinfo] 是否顯示標題 ex: showinfo="yes"
+	+ [controls] 是否顯示控制板 ex: controls="yes"
+  + [muted] 是否靜音 ex: muted="yes"
+  + [autoplay] 是否自動撥放 ex: autoplay="yes"
 
 
 #### - Question

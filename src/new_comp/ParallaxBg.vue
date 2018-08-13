@@ -77,7 +77,7 @@ export default {
   .fixed-background{
     height: 100vh;
     position: relative;
-    z-index: -1;
+    z-index: auto;
   }
   /* Props Position Class */
   .leftTop{
@@ -126,7 +126,7 @@ export default {
     display: flex;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: auto;
     transition: opacity 444ms ease-out;
     padding: 28.8888% 7.7777%;
     @media (min-width: 768px) and (max-width: 1023px) {

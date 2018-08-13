@@ -5,7 +5,7 @@
       <slot></slot>
     </div>
     <div v-if="yesToBoolean(setProps('useArrow'))" id="arrow" class="arrow" @click='nextPage' :style="{ color: setProps('arrowColor') }">
-      <span class="arrowHint" v-if="yesToBoolean(setProps('useHint'))">往下滑動</span>
+      <span class="arrowHint" v-if="yesToBoolean(setProps('useHint'))" :style="{color: setProps('hintColor')}">往下滑動</span>
       <i class="fa fa-angle-down fa-2x" :class="{ arrowAnimate: yesToBoolean(setProps('useAnimate')) }" aria-hidden="true"></i>
     </div>
     <slot name="DIY"></slot>
@@ -25,6 +25,10 @@ export default {
     arrowColor: {
       type: String,
       default: '#333333'
+    },
+    hintColor: {
+      type: String,
+      default: '#333333'      
     },
     jsonProps: {
       type: Object,
