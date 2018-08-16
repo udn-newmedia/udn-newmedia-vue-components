@@ -65,6 +65,7 @@ export default {
     }, 1000),
     handle_resize: _debounce(function (e) {
       if (this.viewWidth !== window.innerWidth) {
+        this.viewWidth = window.innerWidth
         this.$forceUpdate()
       }
     }, 133)
@@ -73,7 +74,10 @@ export default {
     if ((this.$props.src === undefined || this.$props.srcWeb === undefined) && this.$props.jsonProps !== null) {
       console.error('請檢查 src / src-web 是否都有輸入 ex: <Cover src="{imgae src}" src-web="{image src-web}"></Cover>')
     }
-  }
+  },
+  mounted () {
+    window.addEventListener('resize', this.handle_resize)
+  }  
 }
 </script>
 

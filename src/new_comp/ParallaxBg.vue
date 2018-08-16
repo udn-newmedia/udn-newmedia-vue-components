@@ -58,6 +58,7 @@ export default {
     },
     handle_resize: _debounce(function (e) {
       if (this.viewWidth !== window.innerWidth) {
+        this.viewWidth = window.innerWidth
         this.$forceUpdate()
       }
     }, 133)
