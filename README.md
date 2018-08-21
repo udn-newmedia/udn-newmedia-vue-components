@@ -8,6 +8,7 @@
 - 工程師
 
 	clone 整個專案 把new_comp 複製到你新的專案資料夾
+  >所有components皆有一個jsonProps 詳細自行看程式碼
 - 其他操作者
 
 	download 整個專案, 保留資料夾dist, static, index.html 其他檔案刪除
@@ -96,10 +97,11 @@
 #### - Parallax-Bg
 > 滾動視差過場
 ```js
-<Parallax-Bg text="王琄認為，大齡這個階段，是人生中最好、最穩定的狀態。" src="./static/bg_wang.jpg" src-web="./static/web/bg_wang.jpg" position="center">
-  <h1>我是大標題</h1>
-  <h2>我是副標題></h2>
-</Parallax-Bg>
+<parallax-bg 
+  position="centerCenter"
+  src="https://udn.com/upf/newmedia/2018_data/childabuse/static/img/cover_3.f045088.jpg"   src-web="https://udn.com/upf/newmedia/2018_data/childabuse/static/img/cover_3.7c34b9e.jpg">
+  <h2 style="color: #fff">第一層傷：不是外人才打得兇</h2>
+</parallax-bg>
 ```
 + Props
   + [position] 標題位置

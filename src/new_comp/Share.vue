@@ -35,9 +35,9 @@ export default {
       })
       if (Utils.detectMob()) {
         // 手機
-        window.open("//line.me/R/msg/text/?" + document.querySelector('title').innerHTML + "%0D%0A%0D%0A" + document.querySelector('meta[property="og:description"]').content + "%0D%0A%0D%0A" + setProps('href'))
+        window.open("//line.me/R/msg/text/?" + document.querySelector('title').innerHTML + "%0D%0A%0D%0A" + document.querySelector('meta[property="og:description"]').content + "%0D%0A%0D%0A" + this.setProps('href'))
       } else {
-        window.open("https://lineit.line.me/share/ui?url=" + setProps('href'))
+        window.open("https://lineit.line.me/share/ui?url=" + this.setProps('href'))
       }
     }
   },
