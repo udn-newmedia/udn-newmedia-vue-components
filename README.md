@@ -72,7 +72,7 @@
        src="./static/CoverBg/cover_mob.jpg"
        src-web="./static/CoverBg/cover_pc.jpg">
   <h1>我是大標題</h1>
-  <h2>我是副標題></h2>
+  <h2>我是副標題</h2>
 </Cover>
 ```
 + Props  
