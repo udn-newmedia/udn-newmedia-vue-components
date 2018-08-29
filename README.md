@@ -235,7 +235,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 #### - Relate
 >延伸閱讀區塊，內含CSS設定
 ```js
-<Relate title="延伸閱讀" color="#363434" 
+<Relate title="延伸閱讀"
   href1="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img1="./static/web/bg_wang.jpg" text1="我們長大，把光亮帶回黑暗家鄉" 
   href2="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img2="./static/web/bg_wang.jpg" text2="助脫貧…教技能 推存錢帳戶" 
   href3="https://p.udn.com.tw/upf/newmedia/2016_data/20161003_quicksand_middle_age/index.html" img3="./static/web/bg_wang.jpg" text3="兒少發展帳戶推動3個月 申請率25%" 
@@ -244,7 +244,6 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 ```
 + Props
   + [title] 延伸閱讀
-  + [color] 文字顏色
   + [href1 ~ 4] 連結 1 ~ 4
   + [img1 ~ 4] 圖片 1 ~ 4
   + [text1 ~ 4] 文字 1 ~ 4
