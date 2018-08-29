@@ -221,15 +221,15 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 #### - Logo
 >頁面 Logo 區塊
 ```js
-<Logo vision="true" ubrand="true">
+<Logo use-vision="true" use-ubrand="true">
   <div class="logo">
     <a href="https://udn.com/news/index" target="_blank"><img src="./static/nightlogo.svg"></a>
   </div> 
 </Logo>
 ```
 + Props
- + [vision] 願景logo
- + [ubrand] 融媒體logo
+ + [use-vision] 願景logo
+ + [use-ubrand] 融媒體logo
  + 如果要增加外連連結 就如範例所示 增加 `div` 和 `a` Tag
 
 #### - Relate
