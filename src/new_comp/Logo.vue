@@ -4,16 +4,16 @@
       <slot></slot>
     </div>
     <div id="vision" class="logo" v-if="yesToBoolean(setProps('useVision'))">
-      <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
+      <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/20180829Logo/logo_udnhope2.jpg" alt=""></a>
     </div>
     <div class="logo">
-      <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn20180507.jpg"></a>
+      <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_udn2.jpg"></a>
     </div>
     <div class="logo" id="nmd" v-if="yesToBoolean(setProps('useUbrand'))">
-      <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/ubrand20180507.jpg"></a>
+      <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_u_brand_studio2.jpg"></a>
     </div>
     <div class="logo" id="nmd" v-if="!yesToBoolean(setProps('useUbrand'))">
-      <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/newmedia20180507.jpg"></a>
+      <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_new_media_center2.jpg"></a>
     </div>
   </div>
 </template>
@@ -44,37 +44,42 @@ export default {
 
 <style lang="scss" scoped>
   .logo{
-      width: 140px;
-      display: inline-block;
-      img{
-          width: 100%;
-          height: auto;
-      }
+    width: 140px;
+    img{
+        width: 100%;
+        height: auto;
+    }
   }
   #vision img{
-      width: 100%;
-  }
-  #nmd{
-      width: 170px;
+    width: 100%;
   }
   .thirdparty{
-      display: block;
+    display: block;
   }
   #nmd img{
-      width: 100%;
+    width: 100%;
+  }
+  .logo-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    .logo{
+      flex-shrink: 0;
+    }
   }
   @media screen and (max-width: 1024px){
-      .logo-block{
-          margin-top: 32px;
-      }
+    .logo-block{
+        margin-top: 32px;
+    }
   }
   @media screen and (min-width: 1025px){
-      .logo-block{
-          float: right;
-          margin-top: -45px;
-      }
-      .thirdparty{
-          display: inline-block;
-      }
+    .logo-block{
+        margin-top: -45px;
+    }
+    .thirdparty{
+        display: inline-block;
+    }
   }
 </style>
