@@ -221,7 +221,7 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
 #### - Logo
 >頁面 Logo 區塊
 ```js
-<Logo use-vision="true" use-ubrand="true">
+<Logo use-vision="yes" use-ubrand="yes">
   <div class="logo">
     <a href="https://udn.com/news/index" target="_blank"><img src="./static/nightlogo.svg"></a>
   </div> 
