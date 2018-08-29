@@ -46,8 +46,8 @@ export default {
   .logo{
     width: 140px;
     img{
-        width: 100%;
-        height: auto;
+      width: 100%;
+      height: auto;
     }
   }
   #vision img{
@@ -62,24 +62,36 @@ export default {
   .logo-block{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    align-items: center;
-    .logo{
-      flex-shrink: 0;
-    }
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
   }
-  @media screen and (max-width: 1024px){
+  .logo{
+    flex-shrink: 0;
+  }  
+  @media (min-width: 768px) and (max-width: 1024px){
     .logo-block{
-        margin-top: 32px;
+      margin-top: 32px;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: center;      
+    }
+    .logo{
+      margin-left: 12px;
     }
   }
   @media screen and (min-width: 1025px){
     .logo-block{
-        margin-top: -45px;
+      margin-top: -45px;
+      justify-content: flex-end;
+      align-content: flex-start;
+      align-items: center;        
+    }
+    .logo{
+      margin-left: 12px;
     }
     .thirdparty{
-        display: inline-block;
+      display: inline-block;
     }
   }
 </style>
