@@ -1,8 +1,5 @@
 <template>
   <div class="logo-block">
-    <div class="thirdparty">
-      <slot></slot>
-    </div>
     <div id="vision" class="logo" v-if="yesToBoolean(setProps('useVision'))">
       <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/20180829Logo/logo_udnhope2.jpg" alt=""></a>
     </div>
@@ -15,6 +12,9 @@
     <div class="logo" id="nmd" v-if="!yesToBoolean(setProps('useUbrand'))">
       <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_new_media_center2.jpg"></a>
     </div>
+    <div class="thirdparty">
+      <slot></slot>
+    </div>    
   </div>
 </template>
 
