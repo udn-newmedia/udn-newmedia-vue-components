@@ -83,6 +83,7 @@ export default {
 .Anchor{
   position: relative;
   z-index: auto;
+  background-color: #fff;
   h1, h2, h3{
     padding-top: 12px !important;
   }

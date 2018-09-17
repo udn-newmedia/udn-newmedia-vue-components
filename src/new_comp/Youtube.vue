@@ -1,6 +1,6 @@
 <template>
   <div class="embed-responsive embed-responsive-16by9 youtubeIframe">
-      <iframe class="embed-responsive-item" :src="setProps('src') + '?playsinline=1&rel=0&controls=' + controlsValue + '&showinfo=' + showinfoValue + '&autoplay=' + autoPlayValue + '&mute=' + mutedValue" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <iframe class="embed-responsive-item" :src="setProps('src') + '?playsinline=1&rel=0&controls=' + controlsValue + '&showinfo=' + showinfoValue + '&autoplay=' + autoPlayValue + '&mute=' + mutedValue" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
 </template>
 
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.youtubeIframe{
+.embed-youtube{
   position: relative;
   z-index: 50;
   width: 100%;
