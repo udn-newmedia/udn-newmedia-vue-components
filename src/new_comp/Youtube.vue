@@ -75,7 +75,6 @@ export default {
 <style lang="scss" scoped>
 .youtubeIframe{
   position: relative;
-  z-index: 30;
   z-index: 50;
   width: 100%;
 }
