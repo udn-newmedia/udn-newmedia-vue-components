@@ -73,8 +73,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.embed-youtube{
+.youtubeIframe{
   position: relative;
+  z-index: 30;
   z-index: 50;
   width: 100%;
 }
