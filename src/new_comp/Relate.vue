@@ -87,7 +87,7 @@ export default {
   },
   methods: {
     relateClick (target) {
-      ga("send", {
+      ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "relate",
         "eventAction": "click",

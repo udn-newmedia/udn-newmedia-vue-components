@@ -130,7 +130,7 @@ export default {
     },
     handle_scrollTo: _throttle(function (title, id) {
       $('html, body').animate({ scrollTop: $('#' + id).offset().top - 85 }, 1333)
-      window.ga("send", {
+      window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "headbar",
         "eventAction": "click",
@@ -182,7 +182,7 @@ export default {
           window.pageYOffset < 2 ? this.bar_color = 'transparent' : this.bar_color = this.setProps('headColor')
         }, 444)
       }
-      window.ga("send", {
+      window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "hamburger",
         "eventAction": "click",
@@ -198,7 +198,7 @@ export default {
       }
     }, 333),
     handle_logoGA () {
-      window.ga("send", {
+      window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "hamburger",
         "eventAction": "click",
@@ -220,7 +220,7 @@ export default {
         if (this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a') {
           this.$slots.default[i].elm.addEventListener('click', function (e) {
             e.stopPropagation()
-            window.ga("send", {
+            window.ga("newmedia.send", {
               "hitType": "event",
               "eventCategory": "headbar",
               "eventAction": "click",
@@ -264,7 +264,7 @@ export default {
       for (let i = 0; i < this.$slots.default.length; i++) {
         if (this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a') {
           this.$slots.default[i].elm.removeEventListener('click', function () {
-            window.ga("send", {
+            window.ga("newmedia.send", {
               "hitType": "event",
               "eventCategory": "headbar",
               "eventAction": "click",

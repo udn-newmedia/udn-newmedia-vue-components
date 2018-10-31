@@ -35,7 +35,7 @@ export default {
     clickToTop () {
       this.isActive = true
       $('html, body').animate({ scrollTop: 0 }, 1000)
-      window.ga("send", {
+      window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "headbar",
         "eventAction": "click",

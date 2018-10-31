@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     lineShare: function () {
-      ga("send", {
+      ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "Line Share",
         "eventAction": "click",
