@@ -42,6 +42,14 @@ export default {
     }
   },
   created () {
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/zh_TW/sdk.js?t-1#xfbml=1&version=v2.7&appId=1010324812347164";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+
     if (this.$props.href === undefined && this.$props.jsonProps === null) {
       console.error('請輸入 href ex: <share href="{Url}"></share>')
     }
@@ -51,21 +59,22 @@ export default {
 
 <style scoped>
   .share-block{
-      height: 28px;
+      height: 22px;
+      vertical-align: middle;
+      margin: 2px;
   }
   .fb-send-block{
       float: left;
       cursor: pointer;
-      margin-left: 5px;
-      margin-top: 2px;
   }
   .fb-like-block{
       float: left;
+      margin: 0;
+      padding: 1px 0 0 0;
   }
   .line-block{
       float: left;
       cursor: pointer;
-      margin-left: 5px;
-      margin-top: 2px;
+      padding: 0 0 0 3px;
   }
 </style>
