@@ -350,7 +350,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     display: none;
   }
 }
@@ -421,7 +421,7 @@ export default {
   background-color: #fff;
   transition: height 444ms linear;
   -webkit-overflow-scrolling: auto;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     left: auto;
     padding-top: 0;
     z-index: 51;
@@ -438,7 +438,7 @@ export default {
   padding: 0;
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     border-top: none;
     padding: 0;
     flex-direction: row;
@@ -453,7 +453,7 @@ export default {
   background-color: #fff;
   padding: 0 15px 15px 15px;
   color: #000;
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     flex-direction: row;
     background-color: transparent;
     padding: 0;
@@ -475,7 +475,7 @@ export default {
     padding: 15px;
     color: inherit;
     text-decoration: none;
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 768px) {
       width: auto;
       border-bottom: none;
     }
@@ -487,54 +487,44 @@ export default {
   z-index: 0;
   top: 40px;
   right: 0;
+  height: 40px;
   overflow: hidden;
   opacity: 0;
   display: flex;
   align-items: center;
   transform: translate3d(0, -200%, 0);
   transition: transform 432ms ease-out;
-  padding: 0 12px;
-  @media screen and (min-width: 1024px) {
-    top: 31px;
-  }
+  padding: 10px 15px;
 }
 .nav_show {
   width: 100%;
   opacity: 1;
+  // padding-top: 5px;
   background-color: #fff;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 8px 6px -6px rgba(#a4a4a4, .3);
 }
 .nav_list{
   position: relative;
-  top: 8px;
+  top: 4px;
   display: flex;
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 8px;
-  @media screen and (min-width: 1024px) {
-    top: 17px;
-    padding-bottom: 17px;
-  }
 }
 .fix-padding{
   padding-bottom: 0 !important;
+  overflow-x: hidden;
 }
 .nav_arrow {
   position: relative;
-  top: 8px;
+  top: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 8px;
   width: 25px;
-  margin: 0 8px;
+  padding: 10px;
   cursor: pointer;
-  @media screen and (min-width: 1024px) {
-    top: 17px;
-    padding-bottom: 17px;
-  }
 }
 .nav_list_item {
   flex-shrink: 0;
