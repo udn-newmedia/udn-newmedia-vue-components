@@ -1,45 +1,93 @@
 <template>
   <div class="image-contain">
-    <img :src="imgRWD1()">
-    <div class="img-say"><div v-html="imgsay"></div></div>
+    <img :src="srcRWD(setProps('src'), setProps('srcWeb'))" :alt="setProps('description')">
+    <div class="description">{{setProps('description')}}</div>
   </div>
 </template>
-
 <script>
+import srcRWD from "../mixin/srcRWD.js"
+import setProps from "../mixin/setProps.js"
+import _debounce from "lodash.debounce"
+
 export default {
-    name: 'ColumnOne',
-    props: ['img1', 'imgweb1', 'imgsay'],
-    created: function() {
-      window.addEventListener('resize', () => {
-        this.$forceUpdate()
-      })
+  name: "ColumnOne",
+  mixins: [srcRWD, setProps],
+  props: {
+    src: {
+      type: String
     },
-    methods: {
-      imgRWD1: function(){
-        if(window.innerWidth <= 768){
-            return this.img1
+    srcWeb: {
+      type: String
+    },
+    description: {
+      type: String
+    },
+    jsonProps: {
+      type: Object,
+      default: null
+    }
+  },
+  data () {
+    return {
+      windowWidth: global.innerWidth,
+      errorMessage: "請輸入 " + "srcWeb=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_pc.jpg",
+      errorMessage_mob: "請輸入 " + "src=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_mob.jpg"
+    }
+  },
+  created () {
+    $(window).on(
+      "resize",
+      _debounce(() => {
+        if (this.windowWidth !== global.innerWidth) {
+          this.windowWidth = global.innerWidth
+          this.$forceUpdate()
         }
-        else{
-            return this.imgweb1
-        }
+      }, 200)
+    )
+
+    if (this.$props.jsonProps === null) {
+      if (this.srcWeb === undefined) {
+        console.error(
+          this.errorMessage
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.srcWeb === undefined) {
+        console.error(
+          this.errorMessage
+        )
       }
     }
-}
-</script>
 
-<style scoped>
-  img{
-    width: 100%;
-  }
-  .img-say{
-    font-size: 17px;
-    color: gray;
-    margin-top: 5px;
-  }
-  @media screen and (max-width: 767px){
-    .img-say{
-      font-size: 15px;
+    if (this.$props.jsonProps === null) {
+      if (this.src === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.src === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
     }
   }
-  
+}
+</script>
+<style lang="scss" scoped>
+.image-contain {
+  img {
+    width: 100%;
+  }
+}
+.description {
+  margin-top: 5px;
+  font-size: 17px;
+  color: gray;
+  width: 100%;
+  @media screen and (max-width: 767px) {
+    font-size: 15px;
+  }
+}
 </style>

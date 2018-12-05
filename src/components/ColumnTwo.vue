@@ -1,76 +1,168 @@
 <template>
-  <div class="row">
-      <div class="col-md-6 left">
-        <img :src="imgRWD1()">
+  <div class="contain">
+    <div class="image-contain">
+      <div class="left">
+        <img :src="srcRWD(setProps('src_1'), setProps('srcWeb_1'))" :alt="setProps('description')">
       </div>
-      <div class="col-md-6 right">
-        <img :src="imgRWD2()">
+      <div class="right">
+        <img :src="srcRWD(setProps('src_2'), setProps('srcWeb_2'))" :alt="setProps('description')">
       </div>
-      <div class="img-say"><div v-html="imgsay"></div></div>
+    </div>
+    <div class="description">{{setProps('description')}}</div>
   </div>
 </template>
-
 <script>
+import srcRWD from "../mixin/srcRWD.js"
+import setProps from "../mixin/setProps.js"
+import _debounce from "lodash.debounce"
+
 export default {
-    name: 'ColumnTwo',
-    props: ['img1', 'img2', 'imgweb1', 'imgweb2', 'imgsay'],
-    created: function() {
-      window.addEventListener('resize', () => {
-        this.$forceUpdate()
-      })
+  name: "ColumnTwo",
+  mixins: [srcRWD, setProps],
+  props: {
+    src_1: {
+      type: String
     },
-    methods: {
-      imgRWD1: function(){
-        if(window.innerWidth <= 768){
-            return this.img1
+    src_2: {
+      type: String
+    },
+    srcWeb_1: {
+      type: String
+    },
+    srcWeb_2: {
+      type: String
+    },
+    description: {
+      type: String
+    },
+    jsonProps: {
+      type: Object,
+      default: null
+    }
+  },
+  data () {
+    return {
+      windowWidth: global.innerWidth,
+      errorMessage: "請輸入 " + "srcWeb=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_pc.jpg",
+      errorMessage_mob: "請輸入 " + "src=" + '"' + "路徑" + '"' + "，例如： ../static/SectionBg/SectionBg_mob.jpg"
+    }
+  },
+  created () {
+    $(window).on(
+      "resize",
+      _debounce(() => {
+        if (this.windowWidth !== global.innerWidth) {
+          this.windowWidth = global.innerWidth
+          this.$forceUpdate()
         }
-        else{
-            return this.imgweb1
-        }
-      },
-      imgRWD2: function(){
-        if(window.innerWidth <= 768){
-            return this.img2
-        }
-        else{
-            return this.imgweb2
-        }
+      }, 200)
+    )
+
+    if (this.$props.jsonProps === null) {
+      if (this.srcWeb_1 === undefined) {
+        console.error(
+          this.errorMessage
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.srcWeb_1 === undefined) {
+        console.error(
+          this.errorMessage
+        )
       }
     }
+    if (this.$props.jsonProps === null) {
+      if (this.srcWeb_2 === undefined) {
+        console.error(
+          this.errorMessage
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.srcWeb_2 === undefined) {
+        console.error(
+          this.errorMessage
+        )
+      }
+    }
+    if (this.$props.jsonProps === null) {
+      if (this.src_1 === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.src_1 === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
+    }
+    if (this.$props.jsonProps === null) {
+      if (this.src_2 === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
+    } else {
+      if (this.$props.jsonProps.src_2 === undefined) {
+        console.error(
+          this.errorMessage_mob
+        )
+      }
+    }
+  }
 }
 </script>
-
 <style scoped>
-  img{
-    width: 100%;
+img {
+  width: 100%;
+}
+.description {
+  margin-top: 5px;
+  font-size: 17px;
+  color: gray;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .image-contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .img-say{
-    font-size: 17px;
-    color: gray;
-    margin-top: 5px;
+  .description {
+    font-size: 15px;
   }
-  @media screen and (max-width: 767px){
-    .col-md-6{
-      margin-top: 15px;
-      padding: 0;
-    }
-    .img-say{
-      font-size: 15px;
-    }
+  .left {
+    padding-bottom: 15px;
   }
-  @media screen and (min-width: 768px) and (max-width: 1023px){
-    .col-md-6{
-      margin-top: 15px;
-      padding: 0;
-    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .image-contain {
+    display: flex;
+    justify-content: center;
   }
-  @media screen and (min-width: 1024px){
-    .left{
-      padding-left: 0;
-    }
-    .right{
-      padding-right: 0;
-    }
+  .left {
+    padding-left: 0;
+    padding-right: 15px;
   }
-  
+  .right {
+    padding-left: 15px;
+    padding-right: 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .image-contain {
+    display: flex;
+    justify-content: center;
+  }
+  .left {
+    padding-left: 0;
+    padding-right: 15px;
+  }
+  .right {
+    padding-left: 15px;
+    padding-right: 0;
+  }
+}
 </style>

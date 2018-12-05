@@ -1,64 +1,97 @@
 <template>
-    <div class="logo-block">
-        <div class="thirdparty">
-            <slot></slot>
-        </div>
-        <div id="vision" class="logo" :class="{hidden: !vision}">
-            <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/vision_logo.svg" alt=""></a>
-        </div>
-        <div class="logo">
-            <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/udn20180507.jpg"></a>
-        </div>
-        <div class="logo" id="nmd" v-if="!ubrand">
-            <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/newmedia20180507.jpg"></a>
-        </div> 
-        <div class="logo" id="nmd" v-else>
-            <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/ubrand20180507.jpg"></a>
-        </div>                     
+  <div class="logo-block">
+    <div id="vision" class="logo" v-if="yesToBoolean(setProps('useVision'))">
+      <a href="https://vision.udn.com/" target="_blank"><img width="140" src="https://udn.com/upf/newmedia/image/20180829Logo/logo_udnhope2.jpg" alt=""></a>
     </div>
+    <div class="logo">
+      <a href="https://udn.com/news/index" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_udn2.jpg"></a>
+    </div>
+    <div class="logo" id="nmd" v-if="yesToBoolean(setProps('useUbrand'))">
+      <a href="https://udn.com/upf/newmedia/ubrandstudio/" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_u_brand_studio2.jpg"></a>
+    </div>
+    <div class="logo" id="nmd" v-if="!yesToBoolean(setProps('useUbrand'))">
+      <a href="https://www.facebook.com/udnNewMediaLab/" target="_blank"><img src="https://udn.com/upf/newmedia/image/20180829Logo/logo_new_media_center2.jpg"></a>
+    </div>
+    <div class="thirdparty">
+      <slot></slot>
+    </div>    
+  </div>
 </template>
 
 <script>
+import yesToBoolean from '../mixin/yesToBoolean.js'
+import setProps from '../mixin/setProps.js'
 export default {
-    name: 'Logo',
-    props: ['vision', 'ubrand'],
+  name: 'Logo',
+  mixins: [setProps, yesToBoolean],
+  props: {
+    jsonProps: {
+      type: Object,
+      default: null
+    },
+    useVision: {
+      type: String
+    },
+    useUbrand: {
+      type: String
+    }
+  },
+  mounted () {
+    console.log(this.useUbrand)
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+  .logo{
+    width: 140px;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  #vision img{
+    width: 100%;
+  }
+  .thirdparty{
+    display: block;
+  }
+  #nmd img{
+    width: 100%;
+  }
+  .logo-block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  .logo{
+    flex-shrink: 0;
+  }  
+  @media (min-width: 768px) and (max-width: 1024px){
+    .logo-block{
+      margin-top: 32px;
+      justify-content: flex-start;
+      align-content: flex-start;
+      align-items: center;      
+    }
     .logo{
-        width: 140px;
-        display: inline-block;
-        img{
-            width: 100%;
-            height: auto;
-        }
+      margin-left: 12px;
     }
-    #vision img{
-        width: 100%;
+  }
+  @media screen and (min-width: 1025px){
+    .logo-block{
+      margin-top: -45px;
+      justify-content: flex-end;
+      align-content: flex-start;
+      align-items: center;        
     }
-    
-    #nmd{
-        width: 170px;
+    .logo{
+      margin-left: 12px;
     }
     .thirdparty{
-        display: block;
+      display: inline-block;
     }
-    #nmd img{
-        width: 100%;
-    }
-    @media screen and (max-width: 1024px){
-        .logo-block{
-            margin-top: 32px;
-        }
-    }
-    @media screen and (min-width: 1025px){
-        .logo-block{
-            float: right;
-            margin-top: -45px;
-        }
-        .thirdparty{
-            display: inline-block;
-        }
-    }
+  }
 </style>

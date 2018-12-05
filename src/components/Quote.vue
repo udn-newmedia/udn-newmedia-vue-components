@@ -1,80 +1,97 @@
 <template>
-    <div class="quote-contain" v-bind:style="{ 'border-top-color': borderColor, 'border-bottom-color': borderColor}">
-        <div class="row">
-            <div class="col-sm-3" v-if="img">
-                <div class="quote-img">
-                    <img :src="img">
-                </div>
-            </div>
-            <div :class="dynamicClass">
-                <div class="quote-text" v-html="text" v-bind:style="{color: color}"></div>
-                <div class="quote-ref" :class="{hidden: !refer}">{{refer}}</div>
-            </div>
-        </div>
-        
-        
+  <div class="quote-contain container" :style="{ 'border-top-color': setProps('borderColor'), 'border-bottom-color': setProps('borderColor')}">
+    <div class="col-sm-3" v-if="setProps('img')">
+      <div class="quote-img">
+        <img :src="setProps('img')">
+      </div>
     </div>
+    <div :class="dynamicClass">
+      <div class="quote-text" v-html="setProps('text')" :style="{color: setProps('color')}"></div>
+      <div class="quote-ref" v-if="setProps('refer')">{{setProps('refer')}}</div>
+    </div>
+  </div>
 </template>
 
 <script>
+import setProps from '../mixin/setProps.js'
 export default {
-    name: 'Quote',
-    props: ['text', 'refer', 'color', 'borderColor', 'img'],
-    computed: {
-        dynamicClass: function(){
-            if(this.img != undefined){
-                return 'col-sm-9'
-            }
-            else{
-                return 'col-sm-12'
-            }
-        }
+  name: 'Quote',
+  mixins: [setProps],
+  props: {
+    borderColor: {
+      type: String
+    },
+    img: {
+      type: String
+    },
+    jsonProps: {
+      type: Object,
+      default: null
+    },
+    refer: {
+      type: String
+    },
+    text: {
+      type: String
+    },
+    color: {
+      type: String
     }
+  },
+  computed: {
+    dynamicClass () {
+      if (this.setProps('img') !== undefined) {
+        return 'col-sm-9'
+      } else {
+        return 'col-sm-12'
+      }
+    }
+  },
+  created () {
+    if (this.$props.jsonProps === null) {
+      if (this.$props.text === undefined) {
+        console.error('請輸入 text ex: <Quote text="{文字}"></Quote>')
+      }
+    }
+  }
 }
 </script>
 
-<style scoped>
-    .quote-contain {
-        width: 100%;
-        /* display: table; */
-        font-weight: 500;
-        font-size: 32px;
-        /* min-height: 125px; */
-        color: #888888;
-        padding: 35px 0;
-        border-top: dotted 1px #DCDDDD;
-        border-bottom: dotted 1px #DCDDDD;
-        position: relative;
-        letter-spacing: -1px;
+<style lang="scss" scoped>
+  .quote-contain {
+    width: 100%;
+    font-weight: 500;
+    font-size: 32px;
+    padding: 35px 0;
+    color: #888888;
+    border-top: dotted 1px #DCDDDD;
+    border-bottom: dotted 1px #DCDDDD;
+    position: relative;
+    letter-spacing: -1px;
+    &::after{
+      content: '';
+      clear: both;
     }
-    .quote-text{
-        /* float: left; */
-        /* display: table-cell; */
-        vertical-align: middle;
+  }
+  .quote-ref{
+    float: right;
+    font-size: 16px;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 767px) {
+    .quote-img{
+      text-align: center;
+    }
+    .quote-contain{
+      font-size: 26px;
+    }
+  }
+  @media screen and (min-width: 1024px){
+    .quote-contain {
+      padding: 50px;
     }
     .quote-ref{
-        float: right;
-        font-size: 16px;
-        margin-top: 30px;
+      font-size: 17px;
     }
-    @media screen and (max-width: 767px) {
-        .quote-img{
-            text-align: center;
-        }
-        .quote-text{
-            /* margin-top: 20px; */
-        }
-        .quote-contain{
-            font-size: 26px;
-        }
-    }
-    @media screen and (min-width: 1024px){
-        .quote-contain {
-            padding: 50px;
-            /* min-height: 220px; */
-        }
-        .quote-ref{
-            font-size: 17px;
-        }
-    }
+  }
 </style>
