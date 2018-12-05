@@ -1,3 +1,11 @@
+#***v3.0為開發中版本，公版製作請使用v2.0***
+
+
+
+
+
+
+
 
 # udn-newmedia-vue-components
 聯合報新媒體中心 vue.js 組件
