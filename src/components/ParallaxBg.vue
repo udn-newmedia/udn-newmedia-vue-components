@@ -52,7 +52,7 @@ export default {
         this.opacity = 1
         this.shouldRaise = true
       } else {
-        this.opacity = 1
+        this.opacity = 0
         this.shouldRaise = false
       }
     },
