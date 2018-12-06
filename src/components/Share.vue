@@ -59,9 +59,10 @@ export default {
 
 <style scoped>
   .share-block{
-      height: 22px;
-      vertical-align: middle;
+      height: 28px;
       margin: 2px;
+      display: flex;
+      align-items: center;
   }
   .fb-send-block{
       float: left;
@@ -70,11 +71,12 @@ export default {
   .fb-like-block{
       float: left;
       margin: 0;
-      padding: 1px 0 0 0;
+      padding: 0;
   }
   .line-block{
+      height: 24px;
       float: left;
       cursor: pointer;
-      padding: 0 0 0 3px;
+      padding: 1px 0 0 3px;
   }
 </style>
