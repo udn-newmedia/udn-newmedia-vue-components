@@ -58,5 +58,5 @@ typings/
 .env
 
 # html
-.html
+/index.html
 
