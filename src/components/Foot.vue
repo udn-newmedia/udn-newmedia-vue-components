@@ -14,9 +14,9 @@
       </div>
       <div class="fan-group-container">
         <span class="footer-fan-group">追蹤我們</span>
-        <a class="fan-group-icon" href="https://www.facebook.com/udnplus"><i class="fab fa-facebook-square"></i></a>
-        <a class="fan-group-icon" href="https://www.instagram.com/udngroup"><i class="fab fa-instagram"></i></a>
-        <a class="fan-group-icon" href="https://www.youtube.com/channel/UCEt9Vy6Kz4GKlePLgIJbtoA"><i class="fab fa-youtube"></i></a>
+        <a class="fan-group-icon" href="https://www.facebook.com/udnplus" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a class="fan-group-icon" href="https://www.instagram.com/udngroup" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a class="fan-group-icon" href="https://www.youtube.com/channel/UCEt9Vy6Kz4GKlePLgIJbtoA" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>
