@@ -78,20 +78,28 @@ export default {
     font-size: 16px;
     margin-top: 30px;
   }
+  .quote-img {
+    margin-bottom: 19px;
+  }
   @media screen and (max-width: 767px) {
-    .quote-img{
-      text-align: center;
-    }
     .quote-contain{
       font-size: 26px;
+    }
+    .quote-img {
+      display: flex;
+      justify-content: center;
     }
   }
   @media screen and (min-width: 1024px){
     .quote-contain {
-      padding: 50px;
+      padding: 50px 50px 50px 0;
     }
     .quote-ref{
       font-size: 17px;
+    }
+    .quote-img {
+      display: flex;
+      justify-content: flex-end;
     }
   }
 </style>
