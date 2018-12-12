@@ -31,13 +31,12 @@ export default {
   }
   .question-button{
     width: 100%;
-    max-width: 500px;
+    max-width: 212px;
     margin: 0 auto;
-    height: 70px;
+    height: 63px;
     border-radius: 35px;
-    border: solid 2px #DCDCDC;
-    background-color: #FFFFFF;
-    box-shadow: 0 0 5.6px 0.4px rgba(53, 53, 53, 0.3);
+    background-color: #f7f6f6;
+    /* box-shadow: 0 0 5.6px 0.4px rgba(53, 53, 53, 0.3); */
     text-align: center;
     color: #636363;
     letter-spacing: -0.4px;
@@ -46,8 +45,8 @@ export default {
   }
   @media screen and (min-width: 1024px){
     .question-button{
-      height: 100px;
-      line-height: 100px;
+      max-width: 250px;
+      height: 70px;
       margin: 0 auto;
       border-radius: 50px;
     }
