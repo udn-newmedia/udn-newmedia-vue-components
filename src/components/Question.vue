@@ -31,6 +31,9 @@ export default {
   }
   .question-button{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 212px;
     margin: 0 auto;
     height: 63px;
@@ -41,7 +44,7 @@ export default {
     color: #636363;
     letter-spacing: -0.4px;
     font-size: 18px;
-    line-height: 70px;
+    /* line-height: 70px; */
   }
   @media screen and (min-width: 1024px){
     .question-button{
