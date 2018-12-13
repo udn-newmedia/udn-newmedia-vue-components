@@ -1,7 +1,7 @@
 <template>
   <div class="image-contain">
     <img :src="srcRWD(setProps('src'), setProps('srcWeb'))" :alt="setProps('description')">
-    <div class="description">{{setProps('description')}}</div>
+    <div class="description" v-html="setProps('description')"></div>
   </div>
 </template>
 <script>
@@ -75,18 +75,27 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.image-contain {
-  img {
-    width: 100%;
-  }
+<style scoped>
+.image-contain img {
+  width: 100%;
 }
 .description {
   margin-top: 5px;
   font-size: 17px;
-  color: gray;
+  color: #808080;;
   width: 100%;
-  @media screen and (max-width: 767px) {
+}
+.description >>> a {
+  color: #808080;
+  border-bottom: 1px solid #808080;
+  text-decoration: none;
+}
+.description >>> a:hover {
+  font-weight: 700;
+  border-bottom: none;
+}
+@media screen and (max-width: 767px) {
+  .description {
     font-size: 15px;
   }
 }

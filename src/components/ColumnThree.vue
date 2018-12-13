@@ -11,7 +11,7 @@
         <img :src="srcRWD(setProps('src_3'), setProps('srcWeb_3'))"  :alt="setProps('description')">
       </div>
     </div>
-    <div class="description">{{setProps('description')}}</div>
+    <div class="description" v-html="setProps('description')"></div>
   </div>
 </template>
 <script>
@@ -156,10 +156,18 @@ img {
 .description {
   margin-top: 5px;
   font-size: 17px;
-  color: gray;
+  color: #808080;
   width: 100%;
 }
-
+.description >>> a {
+  color: #808080;
+  border-bottom: 1px solid #808080;
+  text-decoration: none;
+}
+.description >>> a:hover {
+  font-weight: 700;
+  border-bottom: none;
+}
 @media screen and (max-width: 767px) {
   .image-contain {
     display: flex;
