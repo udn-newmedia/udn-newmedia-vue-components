@@ -33,15 +33,15 @@ export default {
       let totalH = document.body.scrollHeight - window.innerHeight
       this.progress = ((currentH / totalH) * 100).toFixed(2)
       if (Math.floor(this.progress / 10) > this.readProgress) {
-        for (var i = this.readProgress + 1; i <= Math.floor(this.progress / 10); i++) {
-          window.ga("newmedia.send", {
+        this.readProgress = Math.floor(this.progress / 10)
+
+        window.ga("newmedia.send", {
             "hitType": "event",
             "eventCategory": "read",
             "eventAction": "scroll",
-            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [page read " + (i * 10) + "%]"
+            "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [page read " + (this.readProgress * 10) + "%]"
           })
-        }
-        this.readProgress = Math.floor(this.progress / 10)
+
       }
       currentH < 2 ? this.opacity = 0 : this.opacity = 1
     }
