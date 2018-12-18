@@ -6,6 +6,7 @@ import ColumnThree from './components/ColumnThree.vue'
 import ColumnTwo from './components/ColumnTwo.vue'
 import ContentContainer from './components/Content.vue'
 import Cover from './components/Cover.vue'
+import CoverVideo from './components/CoverVideo.vue'
 import Editor from './components/Editor.vue'
 import FbComment from './components/FbComment.vue'
 import Foot from './components/Foot.vue'
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       ColumnTwo,
       ContentContainer,
       Cover,
+      CoverVideo,
       Editor,
       FbComment,
       Foot,
