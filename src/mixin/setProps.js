@@ -7,7 +7,7 @@ var mixin = {
       if (this.jsonProps !== null) {
         if (this.jsonProps[p] !== undefined) {
           return this.jsonProps[p]
-        } else {
+        } else { 
           return this[p]
         }
       } else {
