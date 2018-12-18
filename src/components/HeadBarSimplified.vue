@@ -129,7 +129,7 @@ export default {
       }
     },
     handle_scrollTo: _throttle(function (title, id) {
-      $('html, body').animate({ scrollTop: $('#' + id).offset().top - 85 }, 1333)
+      $('html, body').animate({ scrollTop: $('#' + id).offset().top - 48 }, 1333)
       window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": "headbar",
@@ -190,9 +190,11 @@ export default {
       })
     },
     handle_resize: _debounce(function () {
+      console.log(this.$refs.navigator.scrollWidth)
+      console.log(window.innerWidth / 100 * 76)
       this.isMenuOpen = false
       if (this.anchorMenu.length > 0) {
-        if (this.$refs.navigator.scrollWidth > window.innerWidth && !Utils.detectMob) {
+        if (this.$refs.navigator.scrollWidth > (window.innerWidth / 100 * 76) && !Utils.detectMob) {
           this.canNavScroll = true
         }
       }
@@ -251,7 +253,7 @@ export default {
   },
   updated () {
     if (this.anchorMenu.length > 0) {
-      if (this.$refs.navigator.scrollWidth > window.innerWidth && this.canNavScroll === false && !Utils.detectMob()) {
+      if (this.$refs.navigator.scrollWidth > (window.innerWidth / 100 * 76) && this.canNavScroll === false && !Utils.detectMob()) {
         this.canNavScroll = true
       }
     }
@@ -324,6 +326,9 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+  @media screen and (min-width: 768px) {
+    width: 26%;
+  }
 }
 .other_logo{
   max-width: 220px;
@@ -495,6 +500,13 @@ export default {
   transform: translate3d(0, -200%, 0);
   transition: transform 432ms ease-out;
   padding: 10px 15px;
+  @media screen and (min-width: 768px) {
+    top: 0px;
+    left: 26%;
+    height: 48px;
+    z-index: 50;
+    width: 76%;
+  }
 }
 .nav_show {
   width: 100%;
@@ -503,14 +515,23 @@ export default {
   background-color: #fff;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 8px 6px -6px rgba(#a4a4a4, .3);
+  @media screen and (min-width: 768px) {
+    box-shadow: 0 0 0 0;
+    width: 74%;
+  }
 }
 .nav_list{
   position: relative;
   top: 4px;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
+  @media screen and (min-width: 768px) {
+    width: 100%;
+    overflow-x: hidden;
+  }
 }
 .fix-padding{
   padding-bottom: 0 !important;
@@ -539,13 +560,9 @@ export default {
       content: '';
     }
   }
-  &::after{
-    position: relative;
-    margin-left: 12px;
-    top: -1px;
-    content: '|';
-    color: #a4a4a4;
-    opacity: .6;
+  @media screen and (min-width: 768px) {
+    border-bottom: solid 6px transparent;
+    padding: 5px 23px;
   }
   @media screen and (min-width: 1025px) {
     &:hover {
@@ -555,6 +572,7 @@ export default {
   }
 }
 .nav_list_item-active{
+  border-bottom: solid 6px #a4a4a4;
   font-weight: bold;
   color: #000;
 }

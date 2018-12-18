@@ -10,6 +10,7 @@ import Editor from './components/Editor.vue'
 import FbComment from './components/FbComment.vue'
 import Foot from './components/Foot.vue'
 import HeadBarFull from './components/HeadBarFull.vue'
+import HeadBarSimplified from './components/HeadBarSimplified.vue'
 import Indicator from './components/Indicator.vue'
 import Logo from './components/Logo.vue'
 import Question from './components/Question.vue'
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       FbComment,
       Foot,
       HeadBarFull,
+      HeadBarSimplified,
       Indicator,
       Logo,
       Question,
