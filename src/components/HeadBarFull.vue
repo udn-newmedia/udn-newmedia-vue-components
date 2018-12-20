@@ -497,6 +497,9 @@ export default {
   padding: 10px 15px;
 }
 .nav_show {
+  //向右
+  flex-direction: row-reverse;
+  //
   width: 100%;
   opacity: 1;
   // padding-top: 5px;
