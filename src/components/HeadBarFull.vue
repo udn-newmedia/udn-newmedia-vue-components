@@ -23,16 +23,16 @@
       </div>
     </div>
     <nav v-if="anchorMenu.length > 0" class="scroll_nav" :class="{ 'nav_show': isNavShow }">
-      <div v-if="canNavScroll" class="nav_arrow nav_arrow-left"
-      @click="handle_nav_arrow('left')">
-        <i class="fa fa-chevron-left fa-1x" aria-hidden="true"></i>
+      <div v-if="canNavScroll" class="nav_arrow nav_arrow-right"
+      @click="handle_nav_arrow('right')">
+        <i class="fa fa-chevron-right fa-1x" aria-hidden="true"></i>
       </div>
       <div class="nav_list" ref="navigator" :class="{'fix-padding': canNavScroll && !isIE}">
         <span v-for="(dish) in anchorMenu" :key="dish.id" class="nav_list_item" :class="{ 'nav_list_item-active': dish.isActive }" @click.prevent="handle_scrollTo(dish.title, dish.id)">{{dish.title}}</span>
       </div>
-      <div v-if="canNavScroll" class="nav_arrow nav_arrow-right"
-      @click="handle_nav_arrow('right')">
-        <i class="fa fa-chevron-right fa-1x" aria-hidden="true"></i>
+      <div v-if="canNavScroll" class="nav_arrow nav_arrow-left"
+      @click="handle_nav_arrow('left')">
+        <i class="fa fa-chevron-left fa-1x" aria-hidden="true"></i>
       </div>
     </nav>
     <div class="scrollHint" v-show="showScrollHint" ref="scrollHinter">
