@@ -9,6 +9,7 @@ import Cover from './components/Cover.vue'
 import CoverVideo from './components/CoverVideo.vue'
 import Editor from './components/Editor.vue'
 import FbComment from './components/FbComment.vue'
+import FbQuote from './components/FbQuote.vue'
 import Foot from './components/Foot.vue'
 import HeadBarFull from './components/HeadBarFull.vue'
 import HeadBarSimplified from './components/HeadBarSimplified.vue'
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       CoverVideo,
       Editor,
       FbComment,
+      FbQuote,
       Foot,
       HeadBarFull,
       HeadBarSimplified,
