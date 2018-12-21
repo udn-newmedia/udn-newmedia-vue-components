@@ -11,7 +11,7 @@ import Editor from './components/Editor.vue'
 import FbComment from './components/FbComment.vue'
 import FbQuote from './components/FbQuote.vue'
 import Foot from './components/Foot.vue'
-import HeadBarFull from './components/HeadBarFull.vue'
+import HeadBar from './components/HeadBar.vue'
 import HeadBarSimplified from './components/HeadBarSimplified.vue'
 import Indicator from './components/Indicator.vue'
 import Logo from './components/Logo.vue'
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
       FbComment,
       FbQuote,
       Foot,
-      HeadBarFull,
+      HeadBar,
       HeadBarSimplified,
       Indicator,
       Logo,
