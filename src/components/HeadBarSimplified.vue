@@ -76,15 +76,6 @@ export default {
       showScrollHint: false,
       anchorIndex: 0,
       anchorScroll: 0
-      // pass from anchor by vuex
-      // anchorMenu: [
-      //   {
-      //     "id": this.setId,
-      //     "title": this.setProps('title'),
-      //     "offsetTop": $(this.$el).offset().top,
-      //     "isActive": false
-      //   }
-      // ]
     }
   },
   computed: {
@@ -160,7 +151,7 @@ export default {
     },
     handle_nav_scroll: _debounce(function () {
       // 負責操作內滾List的左右滾動
-      $(this.$refs.navigator).animate({ scrollLeft: this.$refs.navigator.children[this.anchorIndex].offsetLeft - 12 }, 364)
+      $(this.$refs.navigator).animate({ scrollLeft: this.$refs.navigator.children[this.anchorIndex].offsetLeft + 120 }, 364)
     }, 26),
     handle_nav_arrow (type) {
       switch (type) {
