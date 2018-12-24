@@ -6,9 +6,10 @@
         autoplay muted loop style="width:100%;height:100%;" playsinline webkit-playsinline>
       </video>
 
-      <div class="preVideoDivUsePlayButtonStyle" v-if="yesToBoolean(setProps('usePlayButtonStyle'))" key="usePlayButtonStyle">
-        <div class="playButton" @click="playVideo()">
-          <i class="fas fa-play-circle" style="font-size:160px;color:white;opacity:0.9;"></i>
+      <div class="preVideoDivUsePlayButtonStyle" v-if="yesToBoolean(setProps('usePlayButtonStyle'))" key="usePlayButtonStyle"
+        @click="playVideo()">
+        <div class="playButton">
+          <i class="fas fa-play-circle"></i>
         </div>
         <div class="VideoTitle" :style="{color: setProps('VideoTitleColor')}">
           <slot></slot>
@@ -35,13 +36,6 @@
       </video>
     </div>
   </div>
-  <!-- 
-  example:
-  <cover-video pre-src="./static/video/mobvideo.mp4" pre-src-web="./static/video/pcvideo.mp4" src="./static/video/mobvideo.mp4" src-web="./static/video/pcvideo.mp4" poster="./static/cover_mob.jpg" poster-web="./static/cover_pc.jpg" 
-      use-arrow="yes" use-hint="yes" use-animate="yes" arrow-color="#ffffff" hint-color="#ffffff" use-controls="yes" usePlayButtonStyle="yes" position="centerCenter">
-      TEXT
-  </cover-video>
-  -->
 </template>
 
 <script>
@@ -151,6 +145,7 @@
     background-size: cover;
     background-position: center center;
     background-color: #fff;
+    line-height: 0;
   }
 
   .preCoverVideo {
@@ -164,12 +159,22 @@
   }
 
   .preVideoDivUsePlayButtonStyle {
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index: 5100;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:hover .playButton {
+      opacity: 0.9;
+    }
   }
+
 
   .preVideoDivNoUsePlayButtonStyle {
     width: 100%;
@@ -198,12 +203,15 @@
   .playButton {
     position: relative;
     margin: 0 auto;
+    margin-top: -7.3%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 160px;
     height: 160px;
-    cursor: pointer;
+    font-size: 160px;
+    color: white;
+    opacity: 0.6;
   }
 
   // Props Position Class
