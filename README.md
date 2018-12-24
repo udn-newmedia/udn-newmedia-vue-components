@@ -43,3 +43,13 @@ src_3="./static/SectionBg/SectionBg_mob.jpg" src-web_3="./static/SectionBg/Secti
   + [src-web_2] 第二張電腦版圖片
   + [src_3] 第三張手機板圖片
   + [src-web_3] 第三張電腦版圖片
+
+
+
+#### - HeadBarSimplified
+>只有茅點的抬頭 (直接搭配茅點 \<anchor\>\<\\anchor\> 使用即可)
+```js
+<head-bar-simplified></head-bar-simplified>
+```
++ Props
+  + 無
