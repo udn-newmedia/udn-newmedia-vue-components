@@ -91,33 +91,25 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .description {
     margin-top: 5px;
     font-size: 17px;
     color: #808080;
     width: 100%;
-  }
 
-  .description>>>a {
-    color: #808080;
-    border-bottom: 1px solid #808080;
-    text-decoration: none;
-  }
+    & /deep/ a {
+      color: #808080;
+      border-bottom: 1px solid #808080;
+      text-decoration: none;
 
-  .description>>>a:hover {
-    font-weight: 700;
-    border-bottom: none;
-  }
-
-  @media screen and (max-width: 767px) {
-    .description {
-      font-size: 15px;
+      &:hover {
+        color: #000;
+        border-bottom: none;
+      }
     }
   }
-</style>
 
-<style lang="scss" scoped>
   .image-contain {
     position: relative;
     overflow: hidden;
@@ -157,6 +149,12 @@
       transition: all 0.4s ease;
       transform: scale(1.5);
       color: rgba(255, 255, 255, 0.9);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .description {
+      font-size: 15px;
     }
   }
 </style>

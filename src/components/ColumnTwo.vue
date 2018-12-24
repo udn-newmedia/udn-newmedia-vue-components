@@ -136,7 +136,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   img {
     width: 100%;
   }
@@ -146,17 +146,60 @@
     font-size: 17px;
     color: #808080;
     width: 100%;
+
+    & /deep/ a {
+      color: #808080;
+      border-bottom: 1px solid #808080;
+      text-decoration: none;
+
+      &:hover {
+        color: #000;
+        border-bottom: none;
+      }
+    }
   }
 
-  .description>>>a {
-    color: #808080;
-    border-bottom: 1px solid #808080;
-    text-decoration: none;
+  .left,
+  .right {
+    position: relative;
+    overflow: hidden;
+
+    &:hover .fb-share {
+      background: rgba(0, 0, 0, 0.2);
+      transform: translate(50px, 0);
+      transition: all 0.8s ease;
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
-  .description>>>a:hover {
-    font-weight: 700;
-    border-bottom: none;
+  .fb-share {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    opacity: 0;
+    left: -50px;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    transition: all 0.8s ease;
+  }
+
+  .fb-icon {
+    cursor: pointer;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+
+    &:hover {
+      transition: all 0.4s ease;
+      transform: scale(1.5);
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 
   @media screen and (max-width: 767px) {
@@ -206,50 +249,6 @@
     .right {
       padding-left: 0;
       padding-right: 15px;
-    }
-  }
-</style>
-<style lang="scss" scoped>
-  .left,
-  .right {
-    position: relative;
-    overflow: hidden;
-
-    &:hover .fb-share {
-      background: rgba(0, 0, 0, 0.2);
-      transform: translate(50px, 0);
-      transition: all 0.8s ease;
-      opacity: 1;
-    }
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .fb-share {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    opacity: 0;
-    left: -50px;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    transition: all 0.8s ease;
-  }
-
-  .fb-icon {
-    cursor: pointer;
-    font-size: 30px;
-    color: rgba(255, 255, 255, 0.6);
-    transition: all 0.4s ease;
-
-    &:hover {
-      transition: all 0.4s ease;
-      transform: scale(1.5);
-      color: rgba(255, 255, 255, 0.9);
     }
   }
 </style>

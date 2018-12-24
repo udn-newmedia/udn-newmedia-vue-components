@@ -1,5 +1,5 @@
 <template>
-  <div class="coverVideo" :class="setProps('position')">
+  <div class="coverVideo">
 
     <div class="preCoverVideo" v-if="!isShow" key="preCoverVideo">
       <video :src="srcRWD(setProps('preSrc'), setProps('preSrcWeb'))" :poster="srcRWD(setProps('poster'), setProps('posterWeb'))"
@@ -136,7 +136,6 @@
       window.addEventListener('resize', this.handle_resize)
     }
   }
-
 </script>
 
 <style lang='scss' scoped>
@@ -289,5 +288,4 @@
       transform: translate(0, 5px)
     }
   }
-
 </style>
