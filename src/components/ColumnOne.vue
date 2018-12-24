@@ -1,7 +1,7 @@
 <template>
   <div class="column-one">
     <div class="image-contain">
-      <img :src="srcRWD(setProps('src'), setProps('srcWeb'))" :alt="setProps('description')">
+      <img :src="srcRWD(setProps('src'), setProps('srcWeb'))" :alt="setProps('alt')">
       <div class="fb-share">
         <i class="fab fa-facebook fb-icon" ref="btn"></i>
       </div>
@@ -25,6 +25,9 @@
         type: String
       },
       description: {
+        type: String
+      },
+      alt: {
         type: String
       },
       jsonProps: {

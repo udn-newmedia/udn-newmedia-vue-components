@@ -2,13 +2,13 @@
   <div class="contain">
     <div class="image-contain">
       <div class="left">
-        <img :src="srcRWD(setProps('src_1'), setProps('srcWeb_1'))" :alt="setProps('description')">
+        <img :src="srcRWD(setProps('src_1'), setProps('srcWeb_1'))" :alt="setProps('alt_1')">
         <div class="fb-share">
           <i class="fab fa-facebook fb-icon" ref="btn1"></i>
         </div>
       </div>
       <div class="right">
-        <img :src="srcRWD(setProps('src_2'), setProps('srcWeb_2'))" :alt="setProps('description')">
+        <img :src="srcRWD(setProps('src_2'), setProps('srcWeb_2'))" :alt="setProps('alt_2')">
         <div class="fb-share">
           <i class="fab fa-facebook fb-icon" ref="btn2"></i>
         </div>
@@ -39,6 +39,12 @@
         type: String
       },
       description: {
+        type: String
+      },
+      alt_1: {
+        type: String
+      },
+      alt_2: {
         type: String
       },
       jsonProps: {
