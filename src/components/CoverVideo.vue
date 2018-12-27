@@ -11,14 +11,14 @@
         <div class="playButton">
           <i class="fas fa-play-circle"></i>
         </div>
-        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor')}">
+        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor'),'font-size':srcRWD(fontSize,fontSizeWeb)}">
           <slot></slot>
         </div>
       </div>
 
       <div class="preVideoDivNoUsePlayButtonStyle" :class="setProps('position')" v-if="!yesToBoolean(setProps('usePlayButtonStyle'))"
         key="noUsePlayButtonStyle">
-        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor')}" style="position:absolute;">
+        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor'),'font-size':srcRWD(fontSize,fontSizeWeb)}" style="position:absolute;">
           <slot></slot>
         </div>
         <div v-if="yesToBoolean(setProps('useArrow'))" id="arrow" class="arrow" @click='nextPage' :style="{ color: setProps('arrowColor') }">
@@ -102,6 +102,12 @@
       usePlayButtonStyle: {
         type: String,
         default: "no"
+      },
+      fontSize: {
+        type: String
+      },
+      fontSizeWeb: {
+        type: String
       }
     },
     data() {
