@@ -1,11 +1,16 @@
 <template>
   <header class="header" :style="{ transform: 'translate3d(0,' + header_top + 'px, 0)' }" :class="{'header_open': isMenuOpen}">
+    
     <div class="TheBar" :style="{ backgroundColor: bar_color }">
+      
+      <!-- logo 圖案 -->
       <div class="logo_box">
         <a href="https://ubrand.udn.com/ubrand/index" target="_blank" @click="handle_logoGA"><i class="udn-icon udn-icon-logo" :style="{ color: setProps('iconColor') }"></i></a>
         <!-- <a href=""><img class="other_logo" src="../../static/otherlogo.jpg" alt=""></a> -->
         <slot name="logo"></slot>
       </div>
+      
+      <!-- 漢堡圖案 -->
       <div v-if="showMenu" class="menu_box">
         <div class="burger-icon" :class="{ 'burger-open': isMenuOpen }" @click="handle_Burger()">
           <span :style="{ backgroundColor: setProps('iconColor') }"></span>
@@ -14,14 +19,19 @@
           <span :style="{ backgroundColor: setProps('iconColor') }"></span>
         </div>
       </div>
+
     </div>
+
+    <!-- 漢堡展開 -->
     <div class="menu_list" @click="handle_Burger()" :class="{'menu_list-show': showMenuList}">
       <div class="link_box">
         <div class="link_item" :style="{ color: setProps('iconColor') }">
-          <slot></slot>
+          <span v-for="(dish) in anchorMenu" :key="dish.id" class="nav_list_item" :class="{ 'nav_list_item-active': dish.isActive }" @click.prevent="handle_scrollTo(dish.title, dish.id)">{{dish.title}}</span>
         </div>
       </div>
     </div>
+
+    <!-- 手機板 平板導覽列 -->
     <nav v-if="anchorMenu.length > 0" class="scroll_nav" :class="{ 'nav_show': isNavShow }">
       <div v-if="canNavScroll" class="nav_arrow nav_arrow-left"
       @click="handle_nav_arrow('left')">
@@ -35,6 +45,7 @@
         <i class="fa fa-chevron-right fa-1x" aria-hidden="true"></i>
       </div>
     </nav>
+
     <div class="scrollHint" v-show="showScrollHint" ref="scrollHinter">
       <span>Tip: Shift+滾輪滾動</span>
     </div>
@@ -72,7 +83,7 @@ export default {
       bar_color: 'transparent',
       isMenuOpen: false,
       isNavShow: false,
-      showMenuList: false,
+      showMenuList: true,
       showScrollHint: false,
       anchorIndex: 0,
       anchorScroll: 0
@@ -83,11 +94,7 @@ export default {
       'anchorMenu'
     ]),
     showMenu () {
-      if (this.$slots.default === undefined) {
-        return false
-      } else {
-        return true
-      }
+      return this.anchorMenu.length ? true : false
     }
   },
   methods: {
@@ -181,11 +188,9 @@ export default {
       })
     },
     handle_resize: _debounce(function () {
-      console.log(this.$refs.navigator.scrollWidth)
-      console.log(window.innerWidth / 100 * 76)
       this.isMenuOpen = false
       if (this.anchorMenu.length > 0) {
-        if (this.$refs.navigator.scrollWidth > (window.innerWidth / 100 * 76) && !Utils.detectMob) {
+        if (this.$refs.navigator.scrollWidth > (window.innerWidth / 100 * 76) && Utils.detectMob === false) {
           this.canNavScroll = true
         }
       }
@@ -208,39 +213,6 @@ export default {
     const vm = this
     window.addEventListener('scroll', this.handle_scroll)
     window.addEventListener('resize', this.handle_resize)
-    if (this.$slots.default !== undefined) {
-      for (let i = 0; i < this.$slots.default.length; i++) {
-        if (this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a') {
-          this.$slots.default[i].elm.addEventListener('click', function (e) {
-            e.stopPropagation()
-            window.ga("newmedia.send", {
-              "hitType": "event",
-              "eventCategory": "headbar",
-              "eventAction": "click",
-              "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + vm.$slots.default[i].elm.href + "][" + vm.$slots.default[i].elm.innerHTML + "] [HeadBar 外連點擊]"
-            })
-          })
-          this.$slots.default[i].elm.addEventListener('mouseenter', function (e) {
-            if (window.pageYOffset > 2) {
-              this.style.color = vm.setProps('headColor')
-              this.style.backgroundColor = vm.setProps('iconColor')
-            } else {
-              this.style.color = vm.setProps('headColor')
-              this.style.backgroundColor = vm.setProps('iconColor')
-            }
-          })
-          this.$slots.default[i].elm.addEventListener('mouseleave', function (e) {
-            if (window.pageYOffset > 2) {
-              this.style.color = vm.setProps('iconColor')
-              this.style.backgroundColor = vm.setProps('headColor')
-            } else {
-              this.style.color = vm.setProps('iconColor')
-              this.style.backgroundColor = 'transparent'
-            }
-          })
-        }
-      }
-    }
   },
   updated () {
     if (this.anchorMenu.length > 0) {
@@ -253,38 +225,6 @@ export default {
     const vm = this
     window.removeEventListener('scroll', this.handle_scroll)
     window.removeEventListener('resize', this.handle_resize)
-    if (this.$slots.default !== undefined) {
-      for (let i = 0; i < this.$slots.default.length; i++) {
-        if (this.$slots.default[i].elm.innerHTML !== undefined && this.$slots.default[i].tag === 'a') {
-          this.$slots.default[i].elm.removeEventListener('click', function () {
-            window.ga("newmedia.send", {
-              "hitType": "event",
-              "eventCategory": "headbar",
-              "eventAction": "click",
-              "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + vm.$slots.default[i].elm.href + "][" + vm.$slots.default[i].elm.innerHTML + "] [HeadBar 外連點擊]"
-            })
-          })
-          this.$slots.default[i].elm.removeEventListener('mouseenter', function () {
-            if (window.pageYOffset > 2) {
-              this.style.color = vm.setProps('headColor')
-              this.style.backgroundColor = vm.setProps('iconColor')
-            } else {
-              this.style.color = vm.setProps('headColor')
-              this.style.backgroundColor = vm.setProps('iconColor')
-            }
-          })
-          this.$slots.default[i].elm.removeEventListener('mouseleave', function () {
-            if (window.pageYOffset > 2) {
-              this.style.color = vm.setProps('iconColor')
-              this.style.backgroundColor = vm.setProps('headColor')
-            } else {
-              this.style.color = vm.setProps('iconColor')
-              this.style.backgroundColor = 'transparent'
-            }
-          })
-        }
-      }
-    }
   }
 }
 </script>
@@ -299,6 +239,7 @@ export default {
 }
 .header_open{
   height: 100vh;
+  background-color: #fff;
 }
 .TheBar{
   position: relative;
@@ -346,7 +287,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: none;
   }
 }
@@ -417,12 +358,14 @@ export default {
   background-color: #fff;
   transition: height 444ms linear;
   -webkit-overflow-scrolling: auto;
-  @media screen and (min-width: 768px) {
-    left: auto;
-    padding-top: 0;
-    z-index: 51;
-    background-color: transparent;
-    opacity: 0;
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    
+  }
+  @media screen and (min-width: 1024px) {
+    display: none;
   }
 }
 .menu_list-show{
@@ -434,7 +377,7 @@ export default {
   padding: 0;
   display: flex;
   flex-direction: column;
-  @media screen and (min-width: 768px) {
+ @media screen and (min-width: 1024px) {
     border-top: none;
     padding: 0;
     flex-direction: row;
@@ -449,12 +392,13 @@ export default {
   background-color: #fff;
   padding: 0 15px 15px 15px;
   color: #000;
-  @media screen and (min-width: 768px) {
+  
+  @media screen and (min-width: 1024px) {
     flex-direction: row;
     background-color: transparent;
     padding: 0;
   }
-  a{
+  span {
     flex-shrink: 0;
     position: relative;
     list-style: none;
@@ -471,7 +415,8 @@ export default {
     padding: 15px;
     color: inherit;
     text-decoration: none;
-    @media screen and (min-width: 768px) {
+
+    @media screen and (min-width: 1024px) {
       width: auto;
       border-bottom: none;
     }
@@ -491,6 +436,15 @@ export default {
   transform: translate3d(0, -200%, 0);
   transition: transform 432ms ease-out;
   padding: 10px 15px;
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    display: none;
+  }
+  @media screen and (min-width: 1024px) {
+
+  }
   @media screen and (min-width: 768px) {
     top: 0px;
     left: 26%;
@@ -506,7 +460,10 @@ export default {
   background-color: #fff;
   transform: translate3d(0, 0, 0);
   box-shadow: 0 8px 6px -6px rgba(#a4a4a4, .3);
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+  @media screen and (min-width: 768px) { 
     box-shadow: 0 0 0 0;
     width: 74%;
   }
