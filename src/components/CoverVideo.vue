@@ -1,5 +1,5 @@
 <template>
-  <div class="coverVideo" :class="{videoPadding: isVideoPaddingShow}">
+  <div class="coverVideo">
     <div class="preCoverVideo" v-if="!isShow" key="preCoverVideo">
       <video :src="srcRWD(setProps('preSrc'), setProps('preSrcWeb'))" :poster="srcRWD(setProps('poster'), setProps('posterWeb'))"
         autoplay muted loop style="width:100%;height:100%;" playsinline webkit-playsinline>
@@ -115,7 +115,6 @@
         viewWidth: window.innerWidth,
         isShow: false,
         currentH: 0,
-        isVideoPaddingShow: false
       }
     },
     methods: {
@@ -134,17 +133,33 @@
         this.isShow = !this.isShow;
       },
       handle_scroll() {
-        this.currentH = window.pageYOffset;
-        if (this.currentH > 2) {
-          this.isVideoPaddingShow = true;
-        } else {
-          this.isVideoPaddingShow = false;
+        if (window.innerWidth <= 768) {
+          this.currentH = window.pageYOffset;
+          let headZindex = document.querySelector('.header');
+          let coverVideo = document.querySelector('.coverVideo');
+          console.log($(coverVideo).offset().top + $(coverVideo).outerHeight(true));
+          if (this.currentH > $(coverVideo).offset().top + $(coverVideo).outerHeight(true)) {
+            $(headZindex).css({
+              'z-index': '9999',
+              'opacity': '1',
+              'transition': 'all 222ms ease'
+            });
+          } else {
+            $(headZindex).css({
+              'z-index': '0',
+              'opacity': '0',
+              'transition': 'all 222ms ease'
+            });
+          }
         }
       }
     },
     mounted() {
       window.addEventListener('resize', this.handle_resize);
       window.addEventListener('scroll', this.handle_scroll);
+      if (window.innerWidth <= 768) {
+        $('.header').css('z-index', '0');
+      }
     }
   }
 </script>
@@ -163,16 +178,6 @@
     background-position: center center;
     background-color: #fff;
     line-height: 0;
-  }
-
-  .videoPadding {
-    // position: relative;
-    // left: 0;
-    // top: 0;
-    // width: 100%;
-    // height: 50px;
-    padding-top: 50px;
-    transition: all 222ms ease;
   }
 
   .preCoverVideo {
