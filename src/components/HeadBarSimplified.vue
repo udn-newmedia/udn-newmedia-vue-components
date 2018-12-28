@@ -464,8 +464,10 @@ export default {
     display: none;
   }
   @media screen and (min-width: 768px) { 
+    display: flex;
+    justify-content: flex-end;
     box-shadow: 0 0 0 0;
-    width: 74%;
+    max-width: 74%;
   }
 }
 .nav_list{
@@ -473,11 +475,12 @@ export default {
   top: 4px;
   display: flex;
   flex-direction: row;
+  
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
   @media screen and (min-width: 768px) {
-    width: 100%;
+    // width: 100%;
     overflow-x: hidden;
   }
 }
