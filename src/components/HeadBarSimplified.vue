@@ -236,6 +236,7 @@ export default {
   width: 100%;
   height: 48px;
   transition: transform 222ms ease-out, height 444ms linear;
+  box-shadow: 0 8px 6px -6px rgba(#a4a4a4, .3);
 }
 .header_open{
   height: 100vh;
