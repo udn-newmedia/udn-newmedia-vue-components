@@ -158,7 +158,7 @@ export default {
     },
     handle_nav_scroll: _debounce(function () {
       // 負責操作內滾List的左右滾動
-      $(this.$refs.navigator).animate({ scrollLeft: this.$refs.navigator.children[this.anchorIndex].offsetLeft + 120 }, 364)
+      $(this.$refs.navigator).animate({ scrollLeft: this.$refs.navigator.children[this.anchorIndex].offsetLeft + 15 }, 364)
     }, 26),
     handle_nav_arrow (type) {
       switch (type) {
@@ -472,7 +472,7 @@ export default {
   position: relative;
   top: 4px;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   overflow-x: auto;
   overflow-y: hidden;
