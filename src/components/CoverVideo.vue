@@ -1,6 +1,5 @@
 <template>
-  <div class="coverVideo">
-
+  <div class="coverVideo" :class="{videoPadding: isVideoPaddingShow}">
     <div class="preCoverVideo" v-if="!isShow" key="preCoverVideo">
       <video :src="srcRWD(setProps('preSrc'), setProps('preSrcWeb'))" :poster="srcRWD(setProps('poster'), setProps('posterWeb'))"
         autoplay muted loop style="width:100%;height:100%;" playsinline webkit-playsinline>
@@ -18,7 +17,8 @@
 
       <div class="preVideoDivNoUsePlayButtonStyle" :class="setProps('position')" v-if="!yesToBoolean(setProps('usePlayButtonStyle'))"
         key="noUsePlayButtonStyle">
-        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor'),'font-size':srcRWD(fontSize,fontSizeWeb)}" style="position:absolute;">
+        <div class="VideoTitle" :style="{color: setProps('VideoTitleColor'),'font-size':srcRWD(fontSize,fontSizeWeb)}"
+          style="position:absolute;">
           <slot></slot>
         </div>
         <div v-if="yesToBoolean(setProps('useArrow'))" id="arrow" class="arrow" @click='nextPage' :style="{ color: setProps('arrowColor') }">
@@ -113,7 +113,9 @@
     data() {
       return {
         viewWidth: window.innerWidth,
-        isShow: false
+        isShow: false,
+        currentH: 0,
+        isVideoPaddingShow: false
       }
     },
     methods: {
@@ -130,10 +132,19 @@
       }, 133),
       playVideo: function () {
         this.isShow = !this.isShow;
+      },
+      handle_scroll() {
+        this.currentH = window.pageYOffset;
+        if (this.currentH > 2) {
+          this.isVideoPaddingShow = true;
+        } else {
+          this.isVideoPaddingShow = false;
+        }
       }
     },
     mounted() {
-      window.addEventListener('resize', this.handle_resize)
+      window.addEventListener('resize', this.handle_resize);
+      window.addEventListener('scroll', this.handle_scroll);
     }
   }
 </script>
@@ -152,6 +163,16 @@
     background-position: center center;
     background-color: #fff;
     line-height: 0;
+  }
+
+  .videoPadding {
+    // position: relative;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // height: 50px;
+    padding-top: 50px;
+    transition: all 222ms ease;
   }
 
   .preCoverVideo {
