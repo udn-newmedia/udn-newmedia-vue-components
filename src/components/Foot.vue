@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'foot'
+  name: 'Foot',
 }
 </script>
 
@@ -57,6 +57,7 @@ export default {
   .footer-link-container {
     width: 100%;
     padding: 0 10px;
+    text-align: start;
     a{
       text-decoration: none;
       color: #2d2d2d;
@@ -67,9 +68,9 @@ export default {
     .footer-link{
       line-height: 1;
       font-size: 16px;
-      padding: 0 8px 0 4px;
+      padding: 0 8px 0 8px;
       @media screen and (min-width: 1024px){
-        padding: 0 10px 0 5px;
+        padding: 0 10px 0 10px;
       }
     }
     .footer-right-board{
@@ -91,6 +92,7 @@ export default {
       font-size: 16px;
       color: #7c7b7a;
       margin: 0 5px;
+      padding-left: 2px;
     }
     .fan-group-icon {
       font-size: 24px;
