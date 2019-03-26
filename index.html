@@ -54,6 +54,8 @@
     ga('udn.send', 'pageview');
     ga('theme.send', 'pageview');
 
+    // ga('udn.send', 'event', '圖表看時事', 'view', '圖解新聞');
+    
     // 聯合報新聞部用GA，請將下面註解消除
     // ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
     // ga('nightPaper.send', 'pageview');</script>
@@ -148,6 +150,37 @@
     https://www.facebook.com/tr?id=1624500254526892&ev=PageView&noscript=1
     " /></noscript>
   <!-- End Facebook Pixel Code -->
+
+  <!-- Google 廣告 20190326 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-822574200"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-822574200');
+    </script>
+
+    請將下方程式碼片段複製並貼在待追蹤網頁的 <head></head> 代碼之間，緊接在全域網站代碼之後。如此一來，有人按下所選連結或按鈕時就會呼叫 gtag_report_conversion。
+
+    <!-- Event snippet for 點擊專題廣告 conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+    function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-822574200/Q6zJCKGTxJcBEPj4nYgD',
+        'event_callback': callback
+    });
+    return false;
+    }
+    </script>
+    <!-- Google 廣告 End 20190326 -->
+
 </head>
 <body>
   <div id="fb-root"></div>
