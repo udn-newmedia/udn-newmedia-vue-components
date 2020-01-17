@@ -1,5 +1,29 @@
+# unvc-v4
 
-# udn-newmedia-vue-components
-聯合報新媒體中心 vue.js 組件
+## Project setup
+```
+npm install
+```
 
-> v4.0 dev
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
