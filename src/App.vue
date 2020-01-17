@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CopyRight from '@/components/Footer/CopyRight';
+import CopyRight from '@/components/footer/CopyRight';
 
 export default {
   name: 'app',
