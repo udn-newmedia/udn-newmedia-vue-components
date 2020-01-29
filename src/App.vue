@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import CopyRight from '@/components/footer/CopyRight';
+import CopyRight from '@/components/Footer/CopyRight.vue';
 
 export default {
   name: 'app',
