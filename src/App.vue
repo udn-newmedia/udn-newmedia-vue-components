@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import LoadingAnim from '@/components/LoadingAnim.vue';
+import LoadingAnim from '@/components/_layout/LoadingAnim.vue';
 
 export default {
   name: 'app',

@@ -1,9 +1,7 @@
 import Vue from 'vue';
 import '~/style/main.scss';
-import Utils from 'udn-newmedia-utils';
 
 Vue.config.productionTip = false;
-window.Utils = Utils;
 
 /*
   For ENG.

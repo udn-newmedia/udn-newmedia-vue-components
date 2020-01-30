@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import detectPlatform from "@/mixins/detectPlatform.js";
+
 export default {
   name: 'ShareLine',
+  mixins: [detectPlatform],
   props: {
     href: {
       type: String,
@@ -42,7 +45,7 @@ export default {
         "hitType": "event",
         "eventCategory": "share",
         "eventAction": "click",
-        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [ headbar Line分享]"
+        "eventLabel": "[" + this.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [ headbar Line分享]"
       });
     },
   },

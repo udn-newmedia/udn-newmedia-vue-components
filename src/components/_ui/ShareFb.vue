@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import detectPlatform from "@/mixins/detectPlatform.js";
+
 export default {
   name: 'ShareFB',
+  mixins: [detectPlatform],
   props: {
     href: {
       type: String,
@@ -35,7 +38,7 @@ export default {
         "hitType": "event",
         "eventCategory": "Share",
         "eventAction": "click",
-        "eventLabel": "[" + Utils.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [headbar FB分享]"
+        "eventLabel": "[" + this.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [headbar FB分享]"
       });
     },
   },
