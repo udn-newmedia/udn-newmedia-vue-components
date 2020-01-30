@@ -1,15 +1,15 @@
 <template>
-  <div class="copy-right">
+  <div class="page-footer">
     a
     <img :src="cortana" alt="">
   </div>
 </template>
 
 <script>
-import cortana from '~/cortana.jpg';
+import cortana from '~/images/cortana.jpg';
 
 export default {
-  name: 'CopyRight',
+  name: 'PageFooter',
   data() {
     return {
       cortana: cortana,

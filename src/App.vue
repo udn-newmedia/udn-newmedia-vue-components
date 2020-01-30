@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <CopyRight />
+    <LoadingAnim />
   </div>
 </template>
 
 <script>
-import CopyRight from '@/components/Footer/CopyRight.vue';
+import LoadingAnim from '@/components/LoadingAnim.vue';
 
 export default {
   name: 'app',
   components: {
-    CopyRight,
+    LoadingAnim,
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

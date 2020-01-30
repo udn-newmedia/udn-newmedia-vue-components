@@ -1,5 +1,9 @@
 import Vue from 'vue';
+import '~/style/main.scss';
+import Utils from 'udn-newmedia-utils';
+
 Vue.config.productionTip = false;
+window.Utils = Utils;
 
 /*
   For ENG.
@@ -15,30 +19,72 @@ Vue.config.productionTip = false;
 //   }
 // });
 
+
+
+
+
+
+
+
 /*
   For Customers.
   To bundle a components lib, 
 */
 
-import AuthorTeam from './components/footer/AuthorTeam.vue';
-import CopyRight from './components/footer/CopyRight.vue';
-import UnitLogo from './components/footer/UnitLogo.vue';
-import HeaderBar from './components/header/HeaderBar.vue';
-import Indicator from './components/header/Indicator.vue';
-import NavMenu from './components/header/NavMenu.vue';
-import ShareFB from './components/header/ShareFB.vue';
-import ShareLine from './components/header/ShareLine.vue';
+// header
+import HeaderBar from './components/_header/HeaderBar.vue';
+import HeaderIndicator from './components/_header/HeaderIndicator.vue';
+import HeaderMenu from './components/_header/HeaderMenu.vue';
+
+// footer
+import AuthorTeam from './components/_footer/AuthorTeam.vue';
+import FbComment from './components/_footer/FbComment.vue';
+import NextArticle from './components/_footer/NextArticle.vue';
+import PageFooter from './components/_footer/PageFooter.vue';
+import Questionnaire from './components/_footer/Questionnaire.vue';
+import RelatedArticle from './components/_footer/RelatedArticle.vue';
+
+// anchor
+import SideAnchor from './components/_anchor/SideAnchor.vue';
+
+// layout
+import ColumnOne from './components/_layout/ColumnOne.vue';
+import ColumnThree from './components/_layout/ColumnThree.vue';
+import ColumnTwo from './components/_layout/ColumnTwo.vue';
+import LoadingAnim from './components/_layout/LoadingAnim.vue';
+import PageCover from './components/_layout/PageCover.vue';
+import ParallaxSection from './components/_layout/ParallaxSection.vue';
+import Quote from './components/_layout/Quote.vue';
+import Youtube from './components/_layout/Youtube.vue';
+
+// ui
+// import ShareFb from './components/_ui/ShareFb.vue';
+// import ShareLine from './components/_ui/ShareLine.vue';
+// import UnitLogo from './components/_ui/UnitLogo.vue';
 
 new Vue({
   el: '#app',
   components:{
-    AuthorTeam,
-    CopyRight,
-    UnitLogo,
     HeaderBar,
-    Indicator,
-    NavMenu,
-    ShareFB,
-    ShareLine,
+    HeaderIndicator,
+    HeaderMenu,
+
+    AuthorTeam,
+    FbComment,
+    NextArticle,
+    PageFooter,
+    Questionnaire,
+    RelatedArticle,
+
+    SideAnchor,
+
+    ColumnOne,
+    ColumnThree,
+    ColumnTwo,
+    LoadingAnim,
+    PageCover,
+    ParallaxSection,
+    Quote,
+    Youtube,
   }
 });
