@@ -51,14 +51,9 @@
     <link rel="stylesheet" href="https://s.udn.com.tw/static/font-icons/css/fontello.css">
     <link rel="stylesheet" href="https://udn.com/upf/newmedia/css/udn-font.css?v=1">
     
-
     <!-- SEO 添加獨立網址，電腦版和行動版網址的註解 -->
     <link rel="alternate" media="only screen and (max-width: 640px)" href="專題頁面正式網址(RWD) 或是 手機版網址">
     <link rel="canonical" href="專題頁面正式網址(RWD) 或是 電腦版網址">
-    
-    <!-- 視情況使用工具 -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/4.1.1/es6-promise.auto.min.js" integrity="sha256-OI3N9zCKabDov2rZFzl8lJUXCcP7EmsGcGoP6DMXQCo=" crossorigin="anonymous"></script> -->
 
     <!-- 請確認是否使用程式檔案來源-->
     <!-- 本地資源 -->
@@ -87,7 +82,6 @@
       //theme 時事話題
       ga('create', 'UA-44955675-22', 'auto', {'name' : 'theme'});
       ga('theme.send', 'pageview');
-
 
       // 聯合報新聞部用GA，請將下面註解消除
       // ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
@@ -187,59 +181,26 @@
         fbq('init', '1624500254526892');
         fbq('track', 'PageView');
       </script>
-
-      
-
       <noscript>
         <img height="1" width="1" style="display:none"
              src="https://www.facebook.com/tr?id=1624500254526892&ev=PageView&noscript=1"/>
       </noscript>
-
     <!-- End Facebook Pixel Code -->
-
-    <style>
-      [v-cloak] {
-        display: none;
-      }
-    </style>
-
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but urban_heat_island_effect_solutions_taiwan doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but it doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '1010324812347164',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v3.2'
-        });
-      };
-    </script>
-    <script async defer src="https://connect.facebook.net/zh_TW/sdk.js"></script>
-    <div id="app" v-cloak>
-      <div slot>
-        <!-- 開始編輯頁面內容，必須讓搜尋爬的到文字內容 -->
-
-        <!-- H1 封面大標，一個網頁裡只能有一個H1，標題帶入主要關鍵字 -->
-        <!-- H2 副標題或前言，入次要關鍵字 -->
-        <!-- 圖片加上 alt="圖片說明"，跟GOOGLE說這圖片說明 -->
-        <!-- 文字連結，使用 title 或 aria-label 來標注連結文案，跟GOOGLE說這連結的用途 -->
-
-
-      </div>
+    <div id="app">
+      <copy-right></copy-right>
     </div>
 
-
-             <!-- schema欄位定義-Google結構化資料標記 -->
-             <!-- datePublished 發佈時間 -->
-             <!-- dateModified 更新時間 -->
-             <!-- 關鍵字建議放5或6個 -->
-             <!-- author 製作團隊 -->
-
     <!-- built files will be auto injected -->
+    <!-- schema欄位定義-Google結構化資料標記 -->
+    <!-- datePublished 發佈時間 -->
+    <!-- dateModified 更新時間 -->
+    <!-- 關鍵字建議放5或6個 -->
+    <!-- author 製作團隊 -->
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -270,5 +231,5 @@
         "mainEntityOfPage": "專題頁面正式網址"
       } 
     </script>
-  </body>
+  <script type="text/javascript" src="./udn-newmedia-vue-components.min.js"></script></body>
 </html>
