@@ -1,7 +1,7 @@
 <template>
   <div class="page-cover"
     :style="{
-      backgroundImage: 'url(' + (isMob ? src : srcPc) + ')'
+      backgroundImage: 'url(' + selectSrc_3 + ')'
     }"
   >
     page
@@ -9,13 +9,17 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize.js';
+import autoResize from '@/mixins/autoResize_3.js';
+import selectSrcMethods from '@/mixins/selectSrcMethods.js';
 
 export default {
   name: 'PageCover',
-  mixins: [autoResize],
+  mixins: [autoResize, selectSrcMethods],
   props: {
     src: {
+      type: String,
+    },
+    srcPad: {
       type: String
     },
     srcPc: {

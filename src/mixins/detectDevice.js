@@ -9,7 +9,18 @@ const _detectDevice = {
       return this.windowWidth < 768 ? true : false;
     },
     deviceType: function() {
-
+      const w = this.windowWidth;
+      switch (true) {
+        case (w < 768):
+          return 'mob';          
+          break;
+        case (769 <= w <= 1024):
+          return'pad';
+          break;
+        default:
+          return 'pc';
+          break;
+      }
     }
   },
   methods: {
