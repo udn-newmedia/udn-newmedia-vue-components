@@ -3,7 +3,7 @@
     <a
       :href="shareUrl"
       target="_blank"
-      @click.prevent="sendGA()"
+      @click.prevent="sendGA(formatGA('ShareLine'))"
     >
       <button>Line</button>
     </a>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import detectPlatform from "@/mixins/detectPlatform.js";
+import sendGaMethods from "@/mixins/sendGaMethods.js";
 
 export default {
   name: 'ShareLine',
-  mixins: [detectPlatform],
+  mixins: [sendGaMethods],
   props: {
     href: {
       type: String,
@@ -37,16 +37,6 @@ export default {
       }
       // mobile in-app webview
       return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
-    },
-  },
-  methods: {
-    sendGA() {
-      window.ga("newmedia.send", {
-        "hitType": "event",
-        "eventCategory": "share",
-        "eventAction": "click",
-        "eventLabel": "[" + this.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [ headbar Line分享]"
-      });
     },
   },
 }

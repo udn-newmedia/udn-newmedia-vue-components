@@ -55,9 +55,7 @@ module.exports = {
     alias: {
       "vue$": "vue/dist/vue.esm.js",
       "@": path.resolve(__dirname, "src"),
-      "~": path.resolve(__dirname, "src/assets"),
-      'ScrollMagic': 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
-      'debug.addIndicators': 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
+      "~": path.resolve(__dirname, "assets"),
     }
   },
   plugins: [

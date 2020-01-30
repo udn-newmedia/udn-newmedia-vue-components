@@ -3,6 +3,7 @@
     <div
       class="header-indicator__progress"
       :style="{
+        width: progressWidth,
         backgroundColor: color
       }"
     />
@@ -10,23 +11,51 @@
 </template>
 
 <script>
+import _debounce from 'lodash.debounce';
+import sendGaMethods from "@/mixins/sendGaMethods.js";
+
 export default {
   name: 'HeaderIndicator',
+  mixins: [sendGaMethods],
   props: {
     color: {
       type: String,
       default: '#bf2923'
     },
   },
+  data() {
+    return {
+      readProgress: 0,
+      currentStage: 0,
+    };
+  },
+  computed: {
+    progressWidth() {
+      return this.readProgress + '%';
+    }
+  },
+  methods: {
+    handleScroll: _debounce(function() {
+      let currentHeight = window.pageYOffset;
+      let totalHeight = document.body.scrollHeight - window.innerHeight;
+      this.readProgress = ((currentHeight / totalHeight) * 100).toFixed(2);
+
+      const progress = Math.floor(this.readProgress / 10);
+      if (progress > this.currentStage) {
+        this.currentStage = progress;
+        this.sendGA({
+          category: 'read',
+          action: 'scroll',
+          label: 'page read: ' + (this.currentStage * 10) + '%'
+        });
+      }
+    }, 10),
+  },
   mounted() {
-    // console.log(sm)
-    // const controller = new sm.Controller();
-    // new sm.Scene({
-    //   duration: 100,
-    //   offset: 50
-    // })
-    // .setPin('#my-sticky-element')
-    // .addTo(controller);
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll, { passive: true });
   },
 }
 </script>
@@ -42,8 +71,9 @@ export default {
 
   .header-indicator__progress {
     position: relative;
-    width: 50%;
+    width: 0;
     height: 100%;
+    transition: width .666s ease-out;
   }
 }
 </style>

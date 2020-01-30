@@ -1,6 +1,6 @@
-import { detectPlatform } from 'udn-newmedia-utils';
+import { detectPlatform } from '@/utils/udn-newmedia-utils';
 
-var _detectPlatform = {
+const _detectPlatform = {
   methods: {
     detectPlatform: function() {
       return detectPlatform();

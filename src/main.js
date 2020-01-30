@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import '~/style/main.scss';
 import VueScrollTo from 'vue-scrollto';
-import ScrollMagic from 'scrollmagic';
-import 'debug.addIndicators';
+import detectDevice from '@/mixins/detectDevice.js';
 
 Vue.config.productionTip = false;
 Vue.use(VueScrollTo, {
@@ -18,7 +17,6 @@ Vue.use(VueScrollTo, {
   x: false,
   y: true
 });
-window.sm = ScrollMagic;
 
 /*
   For ENG.
@@ -73,6 +71,9 @@ import ParallaxSection from './components/layout/ParallaxSection.vue';
 import Quote from './components/layout/Quote.vue';
 import Youtube from './components/layout/Youtube.vue';
 
+import ShareFb from './components/ui/ShareFb.vue';
+
+
 new Vue({
   el: '#app',
   components:{
@@ -98,5 +99,8 @@ new Vue({
     ParallaxSection,
     Quote,
     Youtube,
-  }
+
+    ShareFb
+  },
+  mixins: [detectDevice],
 });

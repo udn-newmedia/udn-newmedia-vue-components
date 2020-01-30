@@ -3,7 +3,7 @@
     <a
       :href="shareUrl"
       target="_blank"
-      @click.prevent="sendGA()"
+      @click.prevent="sendGA(formatGA('ShareFb'))"
     >
       <button>Facebook</button>
     </a>
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import detectPlatform from "@/mixins/detectPlatform.js";
+import sendGaMethods from "@/mixins/sendGaMethods.js";
 
 export default {
-  name: 'ShareFB',
-  mixins: [detectPlatform],
+  name: 'ShareFb',
+  mixins: [sendGaMethods],
   props: {
     href: {
       type: String,
@@ -30,16 +30,6 @@ export default {
       + url
       + '&redirect_uri='
       + url;
-    },
-  },
-  methods: {
-    sendGA() {
-      window.ga("newmedia.send", {
-        "hitType": "event",
-        "eventCategory": "Share",
-        "eventAction": "click",
-        "eventLabel": "[" + this.detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [headbar FB分享]"
-      });
     },
   },
 };

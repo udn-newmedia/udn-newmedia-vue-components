@@ -8,9 +8,8 @@
     "dev": "webpack-dev-server --inline --progress --hot"
   },
   "dependencies": {
-    "gsap": "^3.1.1",
     "jquery": "^3.4.1",
-    "scrollmagic": "^2.0.7",
+    "lodash.debounce": "^4.0.8",
     "vue": "^2.6.11",
     "vue-scrollto": "^2.17.1"
   },
