@@ -1,7 +1,24 @@
 import Vue from 'vue';
 import '~/style/main.scss';
+import VueScrollTo from 'vue-scrollto';
+import ScrollMagic from 'scrollmagic';
+import 'debug.addIndicators';
 
 Vue.config.productionTip = false;
+Vue.use(VueScrollTo, {
+  container: "body",
+  duration: 800,
+  easing: "ease",
+  offset: 0,
+  force: true,
+  cancelable: true,
+  onStart: false,
+  onDone: false,
+  onCancel: false,
+  x: false,
+  y: true
+});
+window.sm = ScrollMagic;
 
 /*
   For ENG.
@@ -30,35 +47,31 @@ Vue.config.productionTip = false;
 */
 
 // header
-import HeaderBar from './components/_header/HeaderBar.vue';
-import HeaderIndicator from './components/_header/HeaderIndicator.vue';
-import HeaderMenu from './components/_header/HeaderMenu.vue';
+import HeaderBar from './components/header/HeaderBar.vue';
+import HeaderIndicator from './components/header/HeaderIndicator.vue';
+import HeaderMenu from './components/header/HeaderMenu.vue';
 
 // footer
-import AuthorTeam from './components/_footer/AuthorTeam.vue';
-import FbComment from './components/_footer/FbComment.vue';
-import NextArticle from './components/_footer/NextArticle.vue';
-import PageFooter from './components/_footer/PageFooter.vue';
-import Questionnaire from './components/_footer/Questionnaire.vue';
-import RelatedArticle from './components/_footer/RelatedArticle.vue';
+import AuthorTeam from './components/footer/AuthorTeam.vue';
+import FbComment from './components/footer/FbComment.vue';
+import NextArticle from './components/footer/NextArticle.vue';
+import PageFooter from './components/footer/PageFooter.vue';
+import Questionnaire from './components/footer/Questionnaire.vue';
+import RelatedArticle from './components/footer/RelatedArticle.vue';
 
 // anchor
-import SideAnchor from './components/_anchor/SideAnchor.vue';
+import SideAnchor from './components/anchor/SideAnchor.vue';
 
 // layout
-import ColumnOne from './components/_layout/ColumnOne.vue';
-import ColumnThree from './components/_layout/ColumnThree.vue';
-import ColumnTwo from './components/_layout/ColumnTwo.vue';
-import LoadingAnim from './components/_layout/LoadingAnim.vue';
-import PageCover from './components/_layout/PageCover.vue';
-import ParallaxSection from './components/_layout/ParallaxSection.vue';
-import Quote from './components/_layout/Quote.vue';
-import Youtube from './components/_layout/Youtube.vue';
-
-// ui
-// import ShareFb from './components/_ui/ShareFb.vue';
-// import ShareLine from './components/_ui/ShareLine.vue';
-// import UnitLogo from './components/_ui/UnitLogo.vue';
+import BackTop from './components/layout/BackTop.vue';
+import ColumnOne from './components/layout/ColumnOne.vue';
+import ColumnThree from './components/layout/ColumnThree.vue';
+import ColumnTwo from './components/layout/ColumnTwo.vue';
+import LoadingAnim from './components/layout/LoadingAnim.vue';
+import PageCover from './components/layout/PageCover.vue';
+import ParallaxSection from './components/layout/ParallaxSection.vue';
+import Quote from './components/layout/Quote.vue';
+import Youtube from './components/layout/Youtube.vue';
 
 new Vue({
   el: '#app',
@@ -76,6 +89,7 @@ new Vue({
 
     SideAnchor,
 
+    BackTop,
     ColumnOne,
     ColumnThree,
     ColumnTwo,

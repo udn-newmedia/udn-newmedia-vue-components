@@ -41,7 +41,7 @@ module.exports = {
         loader: "file-loader",
         options: {
           name: "[name].[ext]?[hash]",
-          outputPath: 'assets'
+          outputPath: 'assets/img'
         }
       },
       {
@@ -55,7 +55,9 @@ module.exports = {
     alias: {
       "vue$": "vue/dist/vue.esm.js",
       "@": path.resolve(__dirname, "src"),
-      "~": path.resolve(__dirname, "src/assets")
+      "~": path.resolve(__dirname, "src/assets"),
+      'ScrollMagic': 'scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+      'debug.addIndicators': 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'
     }
   },
   plugins: [
@@ -75,6 +77,10 @@ module.exports = {
     port: 8080,
     open: true,
     // noInfo: true,
-    overlay: true
+    overlay: {
+      // warn: true,
+      // warning: true,
+      error: true
+    }
   },
 };

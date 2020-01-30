@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import cortana from '~/images/cortana.jpg';
+import cortana from '~/img/cortana.jpg';
 
 export default {
   name: 'PageFooter',

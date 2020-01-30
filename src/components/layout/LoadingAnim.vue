@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import UdnLogo from '@/components/_ui/UdnLogo.vue';
+import UdnLogo from '@/components/ui/UdnLogo.vue';
 
 export default {
   name: 'LoadingAnim.vue',
@@ -49,15 +49,20 @@ export default {
 <style lang="scss" scoped>
 .loading-anim {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 50px;
-  transition: opacity 1s ease-in-out;
+  background-color: #ffffffee;
   .loading-anim__icon {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 35px;
+    height: 35px;
     animation: bounce 1.25s ease-in-out 2;
     &.loading-anim__icon--loading {
       animation: bounce 1.25s ease-in-out infinite;
@@ -75,10 +80,11 @@ export default {
     }
   }
   .loading-anim__shadow {
-    position: absolute;
-    bottom: 0;
-    left: calc(50% - 25px);
-    width: 50px;
+    position: relative;
+    // position: absolute;
+    // bottom: 0;
+    // left: calc(50% - 25px);
+    width: 37px;
     height: 8px;
     border-radius: 50%;
     background-color: #00000088;
@@ -105,7 +111,20 @@ export default {
   &.loading-anim--ready {
     top: 0;
     left: 0;
-    opacity: 0;
+    animation: fade-out 1s linear forwards;
+    @keyframes fade-out {
+      0% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+      }
+    }
   }
 }
 </style>
