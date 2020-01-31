@@ -5,7 +5,7 @@
     }"
   >
     page
-  </div>  
+  </div>
 </template>
 
 <script>

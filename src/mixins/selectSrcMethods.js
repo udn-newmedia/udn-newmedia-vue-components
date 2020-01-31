@@ -1,13 +1,18 @@
+/**
+* Select src from props according to "isMob" / "deviceType"
+*/
+
+
 const _selectSrcMethods = {
   computed: {
     selectSrc_2: function() {
-      if (this.isMob) return this.src;
-      else return this.pc;
+      return this.isMob ? this.src : this.srcPc
     },
     selectSrc_3: function() {
       const deviceType = this.deviceType;
+      
       switch (deviceType) {
-        case 'mod':
+        case 'mob':
           return this.src;
           break;
 
@@ -16,7 +21,7 @@ const _selectSrcMethods = {
           break;
       
         default:
-          return this.pc;
+          return this.srcPc;
           break;
       }
     },

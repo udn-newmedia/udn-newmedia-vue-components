@@ -18,18 +18,19 @@ Vue.use(VueScrollTo, {
   y: true
 });
 
-/*
-  For ENG.
-  Create a vue spa
+/**
+*  For ENG.
+*  Create a vue spa
 */
 
 // import App from './App.vue';
 
 // new Vue({
 //   el: '#app',
-//   components:{
+//   components: {
 //     App
-//   }
+//   },
+//   mixins: [detectDevice]
 // });
 
 
@@ -39,15 +40,13 @@ Vue.use(VueScrollTo, {
 
 
 
-/*
-  For Customers.
-  To bundle a components lib, 
+/**
+*  For Customers.
+*  To bundle a components lib, 
 */
 
 // header
 import HeaderBar from './components/header/HeaderBar.vue';
-import HeaderIndicator from './components/header/HeaderIndicator.vue';
-import HeaderMenu from './components/header/HeaderMenu.vue';
 
 // footer
 import AuthorTeam from './components/footer/AuthorTeam.vue';
@@ -61,25 +60,21 @@ import RelatedArticle from './components/footer/RelatedArticle.vue';
 import SideAnchor from './components/anchor/SideAnchor.vue';
 
 // layout
-import BackTop from './components/layout/BackTop.vue';
+import ArticleParallax from './components/layout/ArticleParallax.vue';
+import ArticleQuote from './components/layout/ArticleQuote.vue';
+import ArticleYoutube from './components/layout/ArticleYoutube.vue';
 import ColumnOne from './components/layout/ColumnOne.vue';
 import ColumnThree from './components/layout/ColumnThree.vue';
 import ColumnTwo from './components/layout/ColumnTwo.vue';
 import LoadingAnim from './components/layout/LoadingAnim.vue';
+import PageBackTop from './components/layout/PageBackTop.vue';
 import PageCover from './components/layout/PageCover.vue';
-import ParallaxSection from './components/layout/ParallaxSection.vue';
-import Quote from './components/layout/Quote.vue';
-import Youtube from './components/layout/Youtube.vue';
-
-import ShareFb from './components/ui/ShareFb.vue';
-
+import PageIndicator from '@/components/layout/PageIndicator.vue';
 
 new Vue({
   el: '#app',
-  components:{
+  components: {
     HeaderBar,
-    HeaderIndicator,
-    HeaderMenu,
 
     AuthorTeam,
     FbComment,
@@ -90,17 +85,16 @@ new Vue({
 
     SideAnchor,
 
-    BackTop,
+    ArticleParallax,
+    ArticleQuote,
+    ArticleYoutube,
     ColumnOne,
     ColumnThree,
     ColumnTwo,
     LoadingAnim,
+    PageBackTop,
     PageCover,
-    ParallaxSection,
-    Quote,
-    Youtube,
-
-    ShareFb
+    PageIndicator,
   },
   mixins: [detectDevice],
 });

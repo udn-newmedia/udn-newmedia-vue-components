@@ -1,3 +1,8 @@
+/**
+* In the case of 2 types src,
+* when view changed, executing $forceUpdate.
+*/
+
 const _detectDevice = {
   computed: {
     isMob() {

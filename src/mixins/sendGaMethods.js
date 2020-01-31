@@ -4,13 +4,13 @@ import table from '@/utils/gaFormator';
 const _sendGaMethods = {
   methods: {
     sendGA: function(item) {
-      /*
-        item = {
-         category: ... 
-         action: ... 
-         label: ... 
-        }
-       */
+      /**
+      * item = {
+      *   category: ... 
+      *   action: ... 
+      *   label: ... 
+      * }
+      */
       window.ga("newmedia.send", {
         "hitType": "event",
         "eventCategory": item.category,

@@ -1,7 +1,7 @@
 <template>
-  <div class="header-indicator">
+  <div class="page-indicator">
     <div
-      class="header-indicator__progress"
+      class="page-indicator__progress"
       :style="{
         width: progressWidth,
         backgroundColor: color
@@ -15,7 +15,7 @@ import _debounce from 'lodash.debounce';
 import sendGaMethods from "@/mixins/sendGaMethods.js";
 
 export default {
-  name: 'HeaderIndicator',
+  name: 'PageIndicator',
   mixins: [sendGaMethods],
   props: {
     color: {
@@ -26,7 +26,8 @@ export default {
   data() {
     return {
       readProgress: 0,
-      currentStage: 0,
+      lastStage: 0,
+      ticking: false,
     };
   },
   computed: {
@@ -36,20 +37,26 @@ export default {
   },
   methods: {
     handleScroll: _debounce(function() {
-      let currentHeight = window.pageYOffset;
-      let totalHeight = document.body.scrollHeight - window.innerHeight;
-      this.readProgress = ((currentHeight / totalHeight) * 100).toFixed(2);
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          let currentHeight = window.pageYOffset;
+          let totalHeight = document.body.scrollHeight - window.innerHeight;
+          this.readProgress = ((currentHeight / totalHeight) * 100).toFixed(2);
+          this.ticking = false;
 
-      const progress = Math.floor(this.readProgress / 10);
-      if (progress > this.currentStage) {
-        this.currentStage = progress;
-        this.sendGA({
-          category: 'read',
-          action: 'scroll',
-          label: 'page read: ' + (this.currentStage * 10) + '%'
+          const progress = Math.floor(this.readProgress / 10);
+          if (progress > this.lastStage) {
+            this.lastStage = progress;
+            this.sendGA({
+              category: 'read',
+              action: 'scroll',
+              label: 'page read: ' + (this.lastStage * 10) + '%'
+            });
+          }
         });
       }
-    }, 10),
+      this.ticking = true;
+    }, 100),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, { passive: true });
@@ -61,15 +68,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header-indicator {
+.page-indicator {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 3px;
   z-index: 5000;
 
-  .header-indicator__progress {
+  .page-indicator__progress {
     position: relative;
     width: 0;
     height: 100%;
