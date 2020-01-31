@@ -43,5 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.share-line {
+  position: relative;
+}
 </style>

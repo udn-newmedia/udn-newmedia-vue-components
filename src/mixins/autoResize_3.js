@@ -6,7 +6,7 @@
 const _detectDevice = {
   computed: {
     deviceType() {
-      return this.$root.deviceType;
+      return this.$store.getters.deviceType;
     }
   },
   watch: {

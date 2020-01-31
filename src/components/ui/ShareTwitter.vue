@@ -3,9 +3,9 @@
     <a
       :href="shareUrl"
       target="_blank"
-      @click.prevent="sendGA(formatGA('ShareFb'))"
+      @click.prevent="sendGA(formatGA('ShareTwitter'))"
     >
-      <button>Facebook</button>
+      <button>Twitter</button>
     </a>
   </div>
 </template>
@@ -14,7 +14,7 @@
 import sendGaMethods from "@/mixins/sendGaMethods.js";
 
 export default {
-  name: 'ShareFb',
+  name: 'ShareTwitter',
   mixins: [sendGaMethods],
   props: {
     href: {
@@ -24,12 +24,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      const url = encodeURIComponent(this.href);
       return
-      'https://www.facebook.com/dialog/share?app_id=1010324812347164&display=popup&href='
-      + url
-      + '&redirect_uri='
-      + url;
     },
   },
 };

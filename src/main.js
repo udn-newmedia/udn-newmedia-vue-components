@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import store from './store';
 import '~/style/main.scss';
 import VueScrollTo from 'vue-scrollto';
 import detectDevice from '@/mixins/detectDevice.js';
@@ -27,6 +28,7 @@ Vue.use(VueScrollTo, {
 
 // new Vue({
 //   el: '#app',
+//   store,
 //   components: {
 //     App
 //   },
@@ -63,6 +65,7 @@ import SideAnchor from './components/anchor/SideAnchor.vue';
 import ArticleParallax from './components/layout/ArticleParallax.vue';
 import ArticleQuote from './components/layout/ArticleQuote.vue';
 import ArticleYoutube from './components/layout/ArticleYoutube.vue';
+import CastAnchor from './components/layout/CastAnchor.vue';
 import ColumnOne from './components/layout/ColumnOne.vue';
 import ColumnThree from './components/layout/ColumnThree.vue';
 import ColumnTwo from './components/layout/ColumnTwo.vue';
@@ -73,6 +76,7 @@ import PageIndicator from '@/components/layout/PageIndicator.vue';
 
 new Vue({
   el: '#app',
+  store,
   components: {
     HeaderBar,
 
@@ -88,6 +92,7 @@ new Vue({
     ArticleParallax,
     ArticleQuote,
     ArticleYoutube,
+    CastAnchor,
     ColumnOne,
     ColumnThree,
     ColumnTwo,

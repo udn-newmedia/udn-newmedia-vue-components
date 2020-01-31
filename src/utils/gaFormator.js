@@ -8,6 +8,16 @@ const table = {
     category: 'share',
     action: 'click',
     label: 'headbar Line分享'
+  },
+  ShareTwitter: {
+    category: 'share',
+    action: 'click',
+    label: 'headbar Twitter分享'
+  },
+  HeaderHamburger: {
+    category: '',
+    action: '',
+    label: ''
   }
 }
 

@@ -10,7 +10,7 @@ html, body {
 
 h1, h2, h3, p {
   color: #121212;
-  &.--white {
+  &.white {
     color: #f6f6f6;
   }
 }
@@ -47,10 +47,9 @@ p {
     font-size: 1.25rem;
   }
 
-  &.--editor {
+  &.small {
     font-size: 0.875rem;
     line-height: 1.5;
-    color: #999999;
     @include pc {
       font-size: 1rem;
     }

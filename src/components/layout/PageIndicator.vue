@@ -20,7 +20,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: '#bf2923'
+      default: '#cf0606'
     },
   },
   data() {
@@ -73,7 +73,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 3px;
+  height: 1px;
   z-index: 5000;
 
   .page-indicator__progress {
