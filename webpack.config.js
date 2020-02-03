@@ -60,7 +60,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({ dry: true, protectWebpackAssets: false }),
     new HtmlWebpackPlugin({
       template: "./index.html"
     }),

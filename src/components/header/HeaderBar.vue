@@ -111,7 +111,7 @@ export default {
         });
       }
       this.ticking = true;
-    }, 100),
+    }, 100,  {'leading': true, 'trailing': false, 'maxWait': 100}),
     handleUpdateAnchor(index, status) {
       this.$store.dispatch('updateAnchorStatus', {index: index, status: status});
     },
@@ -132,7 +132,7 @@ export default {
   width: 100%;
   height: 90px;
   z-index: 4999;
-  transition: .333s ease-in;
+  transition: .333s linear;
   @include pc {
     height: 50px;
   }

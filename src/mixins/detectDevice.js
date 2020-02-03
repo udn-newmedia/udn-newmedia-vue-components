@@ -8,7 +8,7 @@ const _detectDevice = {
   methods: {
     handleResize: _debounce(function() {
       this.$store.dispatch('updateWindowWidth', window.innerWidth);
-    }, 100)
+    }, 100),
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);

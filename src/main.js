@@ -74,6 +74,10 @@ import PageBackTop from './components/layout/PageBackTop.vue';
 import PageCover from './components/layout/PageCover.vue';
 import PageIndicator from '@/components/layout/PageIndicator.vue';
 
+// ui
+import NmdButton from './components/ui/NmdButton.vue';
+import NmdSelector from './components/ui/NmdSelector.vue';
+
 new Vue({
   el: '#app',
   store,
@@ -100,6 +104,9 @@ new Vue({
     PageBackTop,
     PageCover,
     PageIndicator,
+
+    NmdButton,
+    NmdSelector
   },
   mixins: [detectDevice],
 });
