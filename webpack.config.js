@@ -28,7 +28,7 @@ module.exports = {
         exclude: file => (
           /node_modules/.test(file) &&
           !/\.vue\.js/.test(file)
-          ),
+        ),
         use: {
           loader: "babel-loader",
           options: {
@@ -66,7 +66,7 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin()],
+    minimizer: [new UglifyJsPlugin()]
   },
   devServer: {
     index: "./index.html",

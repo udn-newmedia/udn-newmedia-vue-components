@@ -4,7 +4,7 @@
   "description": "Components for udn newmedia",
   "main": "dist/udn-newmedia-vue-components.min.js",
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack",
     "dev": "webpack-dev-server --inline --progress --hot"
   },
   "dependencies": {

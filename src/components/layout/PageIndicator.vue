@@ -56,7 +56,7 @@ export default {
         });
       }
       this.ticking = true;
-    }, 100, {'leading': true, 'trailing': false, 'maxWait': 100}),
+    }, 100),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, { passive: true });

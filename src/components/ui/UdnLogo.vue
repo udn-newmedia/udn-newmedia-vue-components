@@ -32,5 +32,7 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 35px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: #ffffff00;
 }
 </style>

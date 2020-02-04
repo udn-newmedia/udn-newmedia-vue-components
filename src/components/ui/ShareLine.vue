@@ -1,11 +1,11 @@
 <template>
-  <div class="share-line">
+  <div class="share-line share-button">
     <a
       :href="shareUrl"
       target="_blank"
       @click.prevent="sendGA(formatGA('ShareLine'))"
     >
-      <button>Line</button>
+      <button class="custom-button">L</button>
     </a>
   </div>
 </template>
@@ -43,7 +43,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.share-line {
-  position: relative;
-}
+.share-line {}
 </style>

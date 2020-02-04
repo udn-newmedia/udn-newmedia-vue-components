@@ -63,6 +63,8 @@ export default {
   justify-content: space-between;
   align-items: flex-end;
   padding: 17px 14px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: #ffffff00;
   cursor: pointer;
 
   .header-hamburger__line {

@@ -1,23 +1,9 @@
 import Vue from 'vue';
 import store from './store';
 import '~/style/main.scss';
-import VueScrollTo from 'vue-scrollto';
 import detectDevice from '@/mixins/detectDevice.js';
 
 Vue.config.productionTip = false;
-Vue.use(VueScrollTo, {
-  container: "body",
-  duration: 800,
-  easing: "ease",
-  offset: 0,
-  force: true,
-  cancelable: true,
-  onStart: false,
-  onDone: false,
-  onCancel: false,
-  x: false,
-  y: true
-});
 
 /**
 *  For ENG.

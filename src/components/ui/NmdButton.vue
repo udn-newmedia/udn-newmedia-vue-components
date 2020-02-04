@@ -1,5 +1,5 @@
 <template>
-  <button class="nmd-button"
+  <button class="nmd-button custom-button"
     :class="{
       'nmd-button--outlined': theme === 'outlined',
       'nmd-button--contained': theme === 'contained',
@@ -14,6 +14,7 @@
       'border-color': theme === 'contained' ?  'transparent' : bgColor,
       'background-color': theme === 'contained' ? bgColor : 'transparent',
     }"
+    :alt="altText"
     @mouseenter="handleHover(true)"
     @mouseleave="handleHover(false)"
   >
@@ -53,6 +54,10 @@ export default {
     size: {
       type: String,
       default: 'm' /* s, m, l */
+    },
+    altText: {
+      type: String,
+      default: 'button'
     }
   },
   data() {
@@ -76,9 +81,6 @@ export default {
   height: 35px;
   border-style: solid;
   border-width: 1px;
-  outline: none;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: #ffffff00;
   background-color: #ffffff;
   cursor: pointer;
 

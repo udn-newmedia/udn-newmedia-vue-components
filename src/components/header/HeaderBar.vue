@@ -23,10 +23,9 @@
         </div>
       </div>
       <div class="header-bar__nav__section">
-        <HeaderShare />
+        <HeaderShare :headerActiveFlag="headerActiveFlag" />
         <HeaderHamburger :theme="theme" />
       </div>
-
     </nav>
     <nav class="header-bar__anchor">
       <HeaderAnchor :theme="theme" />
@@ -96,7 +95,7 @@ export default {
                 break;
             
               case (+i === list.length - 1):
-                if (pageYOffset > list[list.length - 1].position) this.$store.dispatch('updateAnchorStatus', {index: i, status: true});
+                if (pageYOffset >= list[list.length - 1].position) this.$store.dispatch('updateAnchorStatus', {index: i, status: true});
                 else this.handleUpdateAnchor(i, false);
                 break;
 
@@ -130,13 +129,14 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 85px;
   z-index: 4999;
   transition: .333s linear;
   @include pc {
     height: 50px;
   }
   &.header-bar--hide {
+    transition: .333s 1s linear;
     transform: translateY(-100%);
   }
   &.header-bar--theme-dark {
@@ -173,7 +173,7 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px;
+    height: 35px;
     transform: translateY(50px);
   }
   .header-bar__logo {
@@ -184,6 +184,8 @@ export default {
     justify-content: center;
     align-items: center;
     transition: .333s ease-in;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: #ffffff00;
     cursor: pointer;
     &:hover {
       transform: rotate(20deg);

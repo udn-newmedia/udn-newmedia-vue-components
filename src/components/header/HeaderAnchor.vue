@@ -1,6 +1,6 @@
 <template>
-  <div class="header-anchor">
-    <li class="header-anchor__list">
+  <div id="header-anchor" class="header-anchor">
+    <li id="header-anchor-list" class="header-anchor__list">
       <ul
         :class="{
           'header-anchor__list__item': true,
@@ -8,6 +8,8 @@
         }"
         v-for="(item, index) in anchorList"
         :key="index"
+        :id="'header-anchor-' + item.title"
+        @click="handleScrollVert(item.title)"
       >
         <p
           :class="{
@@ -23,16 +25,52 @@
 </template>
 
 <script>
+import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { scroller } from 'vue-scrollto/src/scrollTo';
+const ScrollToVert = scroller();
+const ScrollToHorz = scroller();
+
 export default {
   name: 'HeaderAnchor',
+  mixins: [sendGaMethods],
   props: {
     theme: {
       type: String,
     },
   },
+  data() {
+    return {
+      scrollToVertOption: {
+        container: 'body',
+        duration: 800,
+        x: false,
+        y: true
+      },
+      scrollToHorzOption: {
+        el: '#header-anchor-list',
+        container: '#header-anchor',
+        duration: 333,
+        x: true,
+        y: false
+      },
+    }
+  },
+  methods: {
+    handleScrollVert(index) {
+      ScrollToVert('#anchor-' + index, this.scrollToVertOption);
+    },
+    handleScrollHorz(index) {
+      ScrollToHorz('#header-anchor-' + index, this.scrollToHorzOption);
+    }
+  },
   computed: {
     anchorList() {
-      return this.$store.state.anchorList;
+      const list = this.$store.state.anchorList;
+      list.forEach((e, i) => {
+        if (e.active) this.handleScrollHorz(e.title);
+      });
+      
+      return list;
     }
   },
 }
@@ -41,7 +79,7 @@ export default {
 <style lang="scss" scoped>
 .header-anchor {
   position: relative;
-  overflow: scroll;
+  overflow-x: auto;
   width: calc(100% - 100px);
   height: 100%;
   margin: 0 auto;
@@ -66,7 +104,7 @@ li, ul {
     transition: .333s ease-in-out;
     cursor: pointer;
     &.header-anchor__list__item--active {
-      font-weight: bold;
+      // font-weight: bold;
       border-bottom: solid 2px #cf0606;
     }
   }

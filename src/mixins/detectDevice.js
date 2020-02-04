@@ -11,10 +11,10 @@ const _detectDevice = {
     }, 100),
   },
   mounted() {
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener('resize', this.handleResize, true);
   },
   destroyed() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize, true);
   },
 }
 
