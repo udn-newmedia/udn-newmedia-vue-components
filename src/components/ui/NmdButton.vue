@@ -74,6 +74,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .nmd-button {
   position: relative;
   overflow: hidden;
@@ -83,6 +84,7 @@ export default {
   border-width: 1px;
   background-color: #ffffff;
   cursor: pointer;
+  @include clean-tap;
 
   &.nmd-button--outlined {
 

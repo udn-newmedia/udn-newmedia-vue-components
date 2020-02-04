@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import autoResize from '@/mixins/autoResize_2.js';
 import sendGaMethods from "@/mixins/sendGaMethods.js";
 import { scroller } from 'vue-scrollto/src/scrollTo';
 const ScrollToVert = scroller();
@@ -32,7 +33,7 @@ const ScrollToHorz = scroller();
 
 export default {
   name: 'HeaderAnchor',
-  mixins: [sendGaMethods],
+  mixins: [autoResize, sendGaMethods],
   props: {
     theme: {
       type: String,
@@ -66,9 +67,11 @@ export default {
   computed: {
     anchorList() {
       const list = this.$store.state.anchorList;
-      list.forEach((e, i) => {
-        if (e.active) this.handleScrollHorz(e.title);
-      });
+      if (this.isMob) {
+        list.forEach((e, i) => {
+          if (e.active) this.handleScrollHorz(e.title);
+        });
+      }
       
       return list;
     }
@@ -77,10 +80,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .header-anchor {
   position: relative;
   overflow-x: auto;
-  width: calc(100% - 100px);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
 }
@@ -92,7 +96,6 @@ li, ul {
   display: flex;
   justify-content: flex-start;
   height: 100%;
-  padding-right: 50px;
   .header-anchor__list__item {
     display: flex;
     justify-content: center;
@@ -103,6 +106,9 @@ li, ul {
     border-bottom: solid 2px #cf060600;
     transition: .333s ease-in-out;
     cursor: pointer;
+
+    @include clean-tap;
+
     &.header-anchor__list__item--active {
       // font-weight: bold;
       border-bottom: solid 2px #cf0606;

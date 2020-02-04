@@ -1,12 +1,12 @@
 <template>
-  <div class="side-anchor">
+  <div class="header-manu-simplified">
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SideAnchor',
+  name: 'HeaderMenuSimplified',
 }
 </script>
 

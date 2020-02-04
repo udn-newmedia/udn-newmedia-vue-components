@@ -24,6 +24,7 @@ export default {
 <style lang="scss" scoped>
 @import "https://s.udn.com.tw/static/font-icons/css/fontello.css";
 @import "https://udn.com/upf/newmedia/css/udn-font.css";
+@import '~/style/_mixins.scss';
 .udn-logo {
   position: relative;
   width: 35px;
@@ -32,7 +33,6 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 35px;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: #ffffff00;
+  @include clean-tap;
 }
 </style>

@@ -31,26 +31,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.share-fb {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border: solid 1px black;
-  a {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-  }
-  button {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-  }
-}
+.share-twitter {}
 </style>

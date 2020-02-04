@@ -44,9 +44,6 @@ import PageFooter from './components/footer/PageFooter.vue';
 import Questionnaire from './components/footer/Questionnaire.vue';
 import RelatedArticle from './components/footer/RelatedArticle.vue';
 
-// anchor
-import SideAnchor from './components/anchor/SideAnchor.vue';
-
 // layout
 import ArticleParallax from './components/layout/ArticleParallax.vue';
 import ArticleQuote from './components/layout/ArticleQuote.vue';
@@ -76,8 +73,6 @@ new Vue({
     PageFooter,
     Questionnaire,
     RelatedArticle,
-
-    SideAnchor,
 
     ArticleParallax,
     ArticleQuote,

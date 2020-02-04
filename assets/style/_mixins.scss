@@ -12,6 +12,11 @@
 
 @mixin pc {
   @media screen and (min-width: 1025px) {
-    @content
+    @content;
   }
+}
+
+@mixin clean-tap {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: #ffffff00;
 }
