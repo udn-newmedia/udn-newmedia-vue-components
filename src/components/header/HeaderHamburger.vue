@@ -1,11 +1,11 @@
 <template>
-  <div class="header-hamburger" @click="handleClick()">
+  <div class="header-hamburger">
     <span
       :class="{
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-1': true,
-        'header-hamburger__line-1--active': activeFlag,
+        'header-hamburger__line-1--active': menuActiveFlag,
       }"
     />
     <span
@@ -13,7 +13,7 @@
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-2': true,
-        'header-hamburger__line-2--active': activeFlag,
+        'header-hamburger__line-2--active': menuActiveFlag,
       }"
     />
     <span
@@ -21,32 +21,23 @@
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-3': true,
-        'header-hamburger__line-3--active': activeFlag,
+        'header-hamburger__line-3--active': menuActiveFlag,
       }"
     />
   </div>
 </template>
 
 <script>
-import sendGaMethods from "@/mixins/sendGaMethods.js";
 
 export default {
   name: 'HeaderHamburger',
-  mixins: [sendGaMethods],
   props: {
     theme: {
       type: String,
     },
-  },
-  data() {
-    return {
-      activeFlag: false,  
-    }
-  },
-  methods: {
-    handleClick() {
-      this.activeFlag = !this.activeFlag;
-      this.sendGA(this.formatGA('HeaderHamburger'));
+    menuActiveFlag: {
+      type: Boolean,
+      default: false,
     },
   },
 };

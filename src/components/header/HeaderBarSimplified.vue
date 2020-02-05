@@ -5,24 +5,27 @@
       'header-bar-simplified--hide': !activeFlag,
     }"
   >
+    <HeaderMenuSimplified :menuActiveFlag="menuActiveFlag"><slot /></HeaderMenuSimplified>
     <nav class="header-bar-simplified__nav">
-      <div class="header-bar__logo">
+      <div class="header-bar-simplified__logo">
         <UdnLogo :theme="theme" />
       </div>
     </nav>
     <nav class="header-bar-simplified__nav">
-      <div class="header-share__container">
-        <div class="header-share__share-icon custom-button">
+      <div class="header-bar-simplified-share__container">
+        <div class="header-bar-simplified-share__share-icon custom-button">
           <ShareTwitter />
         </div>
-        <div class="header-share__share-icon custom-button">
+        <div class="header-bar-simplified-share__share-icon custom-button">
           <ShareFb />
         </div>
-        <div class="header-share__share-icon custom-button">
+        <div class="header-bar-simplified-share__share-icon custom-button">
           <ShareLine />
         </div>
       </div>
-      <HeaderHamburger :theme="theme" />
+      <div class="header-bar-simplified__hamburder-container" @click="handleHamburgerClick">
+        <HeaderHamburger :theme="theme" :menuActiveFlag="menuActiveFlag" />
+      </div>
     </nav>
   </header>
 </template>
@@ -40,6 +43,7 @@ import ShareTwitter from '@/components/ui/ShareTwitter.vue';
 
 export default {
   name: 'HeaderBarSimplified',
+  mixins: [sendGaMethods],
   props: {
     theme: {
       type: String,
@@ -61,11 +65,16 @@ export default {
   data() {
     return {
       activeFlag: true,
+      menuActiveFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
     }
   },
   methods: {
+    handleHamburgerClick() {
+      this.menuActiveFlag = !this.menuActiveFlag;
+      this.sendGA(this.formatGA('HeaderHamburger'));
+    },
     handleScroll: _debounce(function() {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
@@ -115,7 +124,7 @@ export default {
     align-items: center;
   }
 
-  .header-bar__logo {
+  .header-bar-simplified__logo {
     position: relative;
     width: 50px;
     height: 100%;
@@ -131,7 +140,7 @@ export default {
     }
   }
 
-  .header-share__container {
+  .header-bar-simplified-share__container {
     position: relative;
     width: 100px;
     display: flex;
@@ -139,7 +148,7 @@ export default {
     align-items: center;
     transition: .333s ease-in-out;
 
-    .header-share__share-icon {
+    .header-bar-simplified-share__share-icon {
       flex-shrink: 0;
       position: relative;
       width: 35px;
@@ -149,6 +158,10 @@ export default {
       align-items: center;
       cursor: pointer;
     }
+  }
+
+  .header-bar-simplified__hamburder-container {
+    position: relative;
   }
 }
 </style>

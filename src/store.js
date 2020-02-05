@@ -18,7 +18,7 @@ export default new Vuex.Store({
         case (w < 768):
           return 'mob';          
           break;
-        case (769 <= w && w <= 1024):
+        case (768 <= w && w <= 1024):
           return 'pad';
           break;
         default:
