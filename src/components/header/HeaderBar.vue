@@ -7,7 +7,13 @@
       'header-bar--theme-light': theme === 'light'
     }"
   >
-    <HeaderMenu :menuActiveFlag="menuActiveFlag" :theme="theme"><slot /></HeaderMenu>
+    <HeaderMenu
+      v-if="useMenu === 'true'"
+      :menuActiveFlag="menuActiveFlag"
+      :theme="theme"
+    >
+      <slot />
+    </HeaderMenu>
     <nav
       :class="{
         'header-bar__nav': true,
@@ -17,11 +23,15 @@
     >
       <div class="header-bar__nav__section">
         <div class="header-bar__logo">
-          <UdnLogo :color="logoColor" />
+          <UdnLogo :theme="theme" />
         </div>
         <div class="haeder-bar__menu-button-container">
           <button
-            class="haeder-bar__menu-button custom-button"
+            :class="{
+              'haeder-bar__menu-button': true,
+              'haeder-bar__menu-button--disabled': useMenu === 'false',
+              'custom-button': true,
+            }"
             @click="handleMenuButtonClick()"
             name="menu-toggle-button"
           >
@@ -32,14 +42,14 @@
             >
               {{pageTitle}}
               <i
-                v-if="isMob"
+                v-if="isMob && useMenu === 'true'"
                 :class="{
                   'haeder-bar__menu-button__arrow': true,
                   'haeder-bar__menu-button__arrow--up': menuActiveFlag,
                   'haeder-bar__menu-button__arrow--down': !menuActiveFlag,
                 }"
               />
-              <span class="haeder-bar__menu-button__split" v-else>｜</span>
+              <span v-if="!isMob" class="haeder-bar__menu-button__split">｜</span>
             </p>
           </button> 
         </div>
@@ -92,14 +102,14 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'white'
+      default: 'light'
     },
     pageTitle: {
       type: String,
     },
     useMenu: {
-      type: Boolean,
-      default: true
+      type: String,
+      default: 'true'
     }
   },
   data() {
@@ -109,12 +119,6 @@ export default {
       lastPosition: window.pageYOffset,
       ticking: false,
     }
-  },
-  computed: {
-    logoColor() {
-      if (this.theme === 'dark') return '#ffffff';
-      if (this.theme === 'light') return '#000000';
-    },
   },
   methods: {
     handleScroll: _debounce(function() {
@@ -168,7 +172,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/style/_mixins.scss';
-
 .header-bar {
   position: fixed;
   top: 0;
@@ -181,7 +184,7 @@ export default {
     height: 50px;
   }
   &.header-bar--hide {
-    transition: .333s 1s linear;
+    transition: .333s .333s linear;
     transform: translateY(-100%);
   }
   &.header-bar--theme-dark {
@@ -276,6 +279,10 @@ export default {
     .haeder-bar__menu-button {
       cursor: pointer;
       @include clean-tap;
+
+      &.haeder-bar__menu-button--disabled {
+        pointer-events: none;
+      }
 
       .haeder-bar__menu-button__arrow {
         border: solid black;

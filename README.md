@@ -36,9 +36,13 @@ version: v4.0
 ```html=
 <header-bar-simplified
   theme="light"
-  page-title="這一頁的標題"
+  useMenu="false"
 /><header-bar-simplified>
 ```
++ props:
+    1. theme
+    2. useMenu
++ slot:
 
 ### Footer
 ### Layout

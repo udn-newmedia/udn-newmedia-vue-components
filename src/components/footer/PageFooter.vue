@@ -1,7 +1,6 @@
 <template>
   <div class="page-footer">
-    a
-    <img :src="cortana" alt="">
+    This is a footer.
   </div>
 </template>
 

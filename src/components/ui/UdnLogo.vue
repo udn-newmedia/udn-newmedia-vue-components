@@ -1,9 +1,10 @@
 <template>
   <div class="udn-logo">
     <i
-      class="udn-icon udn-icon-logo"
-      :style="{
-        color: color
+      :class="{
+        'udn-icon udn-icon-logo': true,
+        'theme-light': theme === 'light',
+        'theme-dark': theme === 'dark',
       }"
     />
   </div>
@@ -13,10 +14,10 @@
 export default {
   name: 'UdnLogo',
   props: {
-    color: {
+    theme: {
       type: String,
-      default: '#000000'
-    }
+      default: 'light'
+    },
   }
 }
 </script>
@@ -34,5 +35,12 @@ export default {
   align-items: center;
   font-size: 35px;
   @include clean-tap;
+
+}
+.theme-light {
+  color: #000000;
+}
+.theme-dark {
+  color: #ffffff;
 }
 </style>

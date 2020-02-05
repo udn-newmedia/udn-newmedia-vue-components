@@ -35,6 +35,7 @@ Vue.config.productionTip = false;
 
 // header
 import HeaderBar from './components/header/HeaderBar.vue';
+import HeaderBarSimplified from './components/header/HeaderBarSimplified.vue';
 
 // footer
 import AuthorTeam from './components/footer/AuthorTeam.vue';
@@ -66,7 +67,8 @@ new Vue({
   store,
   components: {
     HeaderBar,
-
+    HeaderBarSimplified,
+    
     AuthorTeam,
     FbComment,
     NextArticle,
