@@ -81,9 +81,6 @@ export default {
   }
   .loading-anim__shadow {
     position: relative;
-    // position: absolute;
-    // bottom: 0;
-    // left: calc(50% - 25px);
     width: 37px;
     height: 8px;
     border-radius: 50%;

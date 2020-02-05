@@ -64,7 +64,9 @@
         </div>
       </div>
       <div class="header-bar__nav__section">
-        <HeaderShare :headerActiveFlag="activeFlag" :theme="theme" />
+        <div class="header-bar__share-container">
+          <HeaderShare :headerActiveFlag="activeFlag" :theme="theme" />
+        </div>
       </div>
     </nav>
     <nav
@@ -187,19 +189,9 @@ export default {
     transition: .333s .333s linear;
     transform: translateY(-100%);
   }
-  &.header-bar--theme-dark {
-    // @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    //   backdrop-filter: blur(23px);
-    //   background-color: rgba(#000000, 0.6);
-    // }
-  }
+  &.header-bar--theme-dark {}
   &.header-bar--theme-light {
     background-color: #ffffff;
-    // @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    //   backdrop-filter: blur(8px);
-    //   box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
-    //   background-color: rgba(#ffffff, 0.8);
-    // }
   }
 
   .header-bar__nav {
@@ -221,6 +213,12 @@ export default {
       height: 100%;
       display: flex;
     }
+  }
+
+  .header-bar__share-container {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
   .header-bar__anchor-mob {

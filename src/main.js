@@ -4,7 +4,7 @@ import '~/style/main.scss';
 import detectDevice from '@/mixins/detectDevice.js';
 
 Vue.config.productionTip = false;
-
+// Vue.use(loadingAnimation);
 /**
 *  For ENG.
 *  Create a vue spa
@@ -53,7 +53,6 @@ import CastAnchor from './components/layout/CastAnchor.vue';
 import ColumnOne from './components/layout/ColumnOne.vue';
 import ColumnThree from './components/layout/ColumnThree.vue';
 import ColumnTwo from './components/layout/ColumnTwo.vue';
-import LoadingAnim from './components/layout/LoadingAnim.vue';
 import PageBackTop from './components/layout/PageBackTop.vue';
 import PageCover from './components/layout/PageCover.vue';
 import PageIndicator from '@/components/layout/PageIndicator.vue';
@@ -83,7 +82,6 @@ new Vue({
     ColumnOne,
     ColumnThree,
     ColumnTwo,
-    LoadingAnim,
     PageBackTop,
     PageCover,
     PageIndicator,

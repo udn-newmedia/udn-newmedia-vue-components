@@ -23,8 +23,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "https://s.udn.com.tw/static/font-icons/css/fontello.css";
-@import "https://udn.com/upf/newmedia/css/udn-font.css";
+// @import "https://s.udn.com.tw/static/font-icons/css/fontello.css";
+// @import "https://udn.com/upf/newmedia/css/udn-font.css";
 @import '~/style/_mixins.scss';
 .udn-logo {
   position: relative;

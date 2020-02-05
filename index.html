@@ -47,7 +47,9 @@
     <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
 
-    <link rel="icon" type="image/ico" href="https://udn.com/upf/newmedia/image/udn-icon.ico"/>   
+    <link rel="icon" type="image/ico" href="https://udn.com/upf/newmedia/image/udn-icon.ico"/>
+    <link rel="stylesheet" href="https://s.udn.com.tw/static/font-icons/css/fontello.css">
+    <link rel="stylesheet" href="https://udn.com/upf/newmedia/css/udn-font.css">
     
     <!-- SEO 添加獨立網址，電腦版和行動版網址的註解 -->
     <link rel="alternate" media="only screen and (max-width: 640px)" href="專題頁面正式網址(RWD) 或是 手機版網址">
@@ -72,10 +74,6 @@
       //udn 聯合新聞網
       ga('create', 'UA-19660006-1', 'auto', {'name' : 'udn'});
       ga('udn.send', 'pageview');
-
-      //udn 聯合新聞網
-      ga('create', 'UA-109046852-1', 'auto', {'name': 'nightPaper'});
-      ga('nightPaper.send', 'pageview');
 
       //theme 時事話題
       ga('create', 'UA-44955675-22', 'auto', {'name' : 'theme'});
@@ -189,9 +187,10 @@
     <noscript>
       <strong>We're sorry but it doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
+    <link rel="stylesheet" href="assets/style/loading.css">
     <div id="app">
       <page-indicator></page-indicator>
-      <!-- <header-bar
+      <header-bar
         theme="light"
         page-title="這一頁的標題"
         use-menu="true"
@@ -199,15 +198,14 @@
         <a href="http://" target="_blank">外連1</a>
         <a href="http://" target="_blank">外連2</a>
         <a class="active">外連3</a>
-      </header-bar> -->
-      <header-bar-simplified
+      </header-bar>
+      <!-- <header-bar-simplified
         use-menu="true"
       >
         <a href="http://" target="_blank">外連1</a>
         <a href="http://" target="_blank">外連2</a>
         <a class="active">外連3</a>
-      </header-bar-simplified
-      >
+      </header-bar-simplified> -->
       <page-cover
         src="./assets/img/1.jpg"
         src-pad="./assets/img/2.jpg"
@@ -269,7 +267,6 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iure distinctio magnam provident sequi ex, expedita dolorem enim culpa necessitatibus. Voluptate veniam accusantium nesciunt placeat dolorum quos. Illo, delectus ipsam?</p>        
       </div>
       <page-footer></page-footer>
-      <loading-anim></loading-anim>
     </div>
 
     <!-- built files will be auto injected -->

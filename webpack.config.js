@@ -7,9 +7,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: {
+    app: "./src/main.js",
+    loading: "./src/utils/loading.js"
+  },
   output: {
-    filename: "udn-newmedia-vue-components.min.js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./"
   },
@@ -32,7 +35,7 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ["@babel/preset-env"],
           }
         }
       },
