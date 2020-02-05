@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   getters: {
     isMob(state) {
-      return state.windowWidth < 768 ? true : false;
+      return state.windowWidth <= 1024 ? true : false;
     },
     deviceType(state) {
       const w = state.windowWidth;

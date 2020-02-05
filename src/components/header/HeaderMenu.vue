@@ -2,6 +2,8 @@
   <div
     :class="{
       'header-menu': true,
+      'header-menu--theme-dark': theme === 'dark',
+      'header-menu--theme-light': theme === 'light',
       'header-menu--active': menuActiveFlag,
     }"
   >
@@ -20,18 +22,24 @@ export default {
     menuActiveFlag: {
       type: Boolean,
       default: false
-    }
+    },
+    theme: {
+      type: String,
+    },
   },
   watch: {
     menuActiveFlag: function(value) {
-      if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-      else document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      if (this.isMob) {
+        if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+        else document.getElementsByTagName('body')[0].style.overflow = 'auto';
+      }
     }
   },
 }
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .header-menu {
   position: absolute;
   overflow: hidden;
@@ -43,20 +51,52 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
   transform: translateY(-100vh);
   transition: .666s ease-in-out;
   &.header-menu--active {
+    z-index: 1;
     transform: translateY(0);
+    @include pc {
+      transform: translateY(40px);
+    }
   }
+  &.header-menu--theme-dark {
+    background-color: #000000;
+    a {
+      color: #ffffff;
+      &.active {
+        color: rgb(31, 31, 58);
+        border-bottom: solid 1px #000000;
+      }
+    }
+  }
+  &.header-menu--theme-light {
+    background-color: #ffffff;
+    a {
+      color: #000000;
+      &.active {
+        color: #787878;
+        border-bottom: solid 1px #000000;
+      }
+    }
+  }
+
+  @include pc {
+    height: 60px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 65px;
+    transform: translateY(-50px);
+  }
+
   a {
     display: block;
     outline: none;
     text-decoration: none;
-    color: #000000;
+    color: inherit;
+    margin-right: 25px;
     cursor: pointer;
     &.active {
-      color: blue;
       border-bottom: solid 1px #000000;
     }
   }

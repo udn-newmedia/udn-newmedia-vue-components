@@ -7,8 +7,14 @@
       'header-bar--theme-light': theme === 'light'
     }"
   >
-    <HeaderMenu :menuActiveFlag="menuActiveFlag"><slot /></HeaderMenu>
-    <nav class="header-bar__nav">
+    <HeaderMenu :menuActiveFlag="menuActiveFlag" :theme="theme"><slot /></HeaderMenu>
+    <nav
+      :class="{
+        'header-bar__nav': true,
+        'header-bar__nav--theme-dark': theme === 'dark',
+        'header-bar__nav--theme-light': theme === 'light'
+      }"
+    >
       <div class="header-bar__nav__section">
         <div class="header-bar__logo">
           <UdnLogo :color="logoColor" />
@@ -26,12 +32,14 @@
             >
               {{pageTitle}}
               <i
+                v-if="isMob"
                 :class="{
                   'haeder-bar__menu-button__arrow': true,
                   'haeder-bar__menu-button__arrow--up': menuActiveFlag,
                   'haeder-bar__menu-button__arrow--down': !menuActiveFlag,
                 }"
               />
+              <span class="haeder-bar__menu-button__split" v-else>｜</span>
             </p>
           </button> 
         </div>
@@ -53,6 +61,8 @@
       v-if="isMob"
       :class="{
         'header-bar__anchor-mob': true,
+        'header-bar__anchor-mob--theme-dark': theme === 'dark',
+        'header-bar__anchor-mob--theme-light': theme === 'light',
         'header-bar__anchor--disabled': menuActiveFlag,      
       }"
     >
@@ -175,27 +185,34 @@ export default {
     transform: translateY(-100%);
   }
   &.header-bar--theme-dark {
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      backdrop-filter: blur(23px);
-      background-color: rgba(#000000, 0.6);
-    }
+    // @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    //   backdrop-filter: blur(23px);
+    //   background-color: rgba(#000000, 0.6);
+    // }
   }
   &.header-bar--theme-light {
     background-color: #ffffff;
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
-      background-color: rgba(#ffffff, 0.8);
-    }
+    // @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    //   backdrop-filter: blur(8px);
+    //   box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
+    //   background-color: rgba(#ffffff, 0.8);
+    // }
   }
 
   .header-bar__nav {
     position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: 50px;
+    &.header-bar__nav--theme-dark {
+      background-color: #000000;
+    } 
+    &.header-bar__nav--theme-light {
+      background-color: #ffffff;
+    }
     .header-bar__nav__section {
       position: relative;
       height: 100%;
@@ -212,6 +229,12 @@ export default {
     padding: 0 20px 0 55px;
     transform: translateY(50px);
     transition: .333s ease-in-out;
+    &.header-bar__anchor-mob--theme-dark {
+      background-color: #000000;
+    }
+    &.header-bar__anchor-mob--theme-light {
+      background-color: #ffffff;
+    }
   }
   .header-bar__anchor-pc {
     position: relative;
@@ -246,6 +269,9 @@ export default {
     justify-content: center;
     align-items: center;
     margin: 0 15px 0 5px;
+    @include pc {
+      margin: 0 0 0 15px;
+    }
 
     .haeder-bar__menu-button {
       cursor: pointer;
@@ -265,8 +291,10 @@ export default {
           transform: translateY(-2px) rotate(45deg);
         }
       }
+      .haeder-bar__menu-button__split {
+        margin-left: 15px;
+      }
     }
-
   }
 }
 </style>

@@ -5,6 +5,8 @@
       v-if="isMob"
       :class="{
         'header-share__container': true,
+        'header-share__container--theme-dark': theme === 'dark',
+        'header-share__container--theme-light': theme === 'light',
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
@@ -111,8 +113,14 @@ export default {
       border-radius: initial;
     }
 
+
     &.header-share__container--active {
-      background-color: #434343;
+      &.header-share__container--theme-dark {
+        background-color: #ffffff;
+      }
+      &.header-share__container--theme-light {
+        background-color: #434343;
+      }
       width: 100%;
     }
   }
