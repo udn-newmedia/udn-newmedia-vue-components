@@ -1,10 +1,10 @@
 <template>
-  <div class="cast-anchor" :id="'anchor-' + title" />
+  <div :id="'anchor-' + title" />
 </template>
 
 <script>
 export default {
-  name: 'CastAnchor',
+  name: 'ArticleCastAnchor',
   props: {
     title: String,
   },

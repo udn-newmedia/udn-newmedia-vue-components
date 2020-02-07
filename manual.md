@@ -10,7 +10,7 @@ version: v4.0
 |—dist
   |—assets
   |—index.html
-  |—udn-newmedia-vue-components.min.js
+  |—nmd-components.min.js
 |—assets
   |—img
   |—style
@@ -26,10 +26,11 @@ version: v4.0
   |—store.js
   |—main.js
 |—index.html
-|—template.html
 |—package-lock.json
 |—package.json
-|—webpack.config.js
+|—webpack.common.js
+|—webpack.dev.js
+|—webpack.prod.js
 |—manual.md
 |—README.md
 ```

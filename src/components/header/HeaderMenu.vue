@@ -57,7 +57,7 @@ export default {
     z-index: 1;
     transform: translateY(0);
     @include pc {
-      transform: translateY(40px);
+      transform: translateY(0);
     }
   }
   &.header-menu--theme-dark {
@@ -82,11 +82,10 @@ export default {
   }
 
   @include pc {
-    height: 60px;
-    flex-direction: row;
+    width: 475px;
     justify-content: flex-start;
-    padding-left: 65px;
-    transform: translateY(-50px);
+    align-items: flex-start;
+    padding: 150px 0 0 50px;
   }
 
   a {

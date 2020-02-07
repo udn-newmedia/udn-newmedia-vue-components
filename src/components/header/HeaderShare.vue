@@ -102,7 +102,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 51px;
+    padding-right: 42px;
     border-radius: 17.5px;
     transition: .333s ease-in-out;
     @include pc {

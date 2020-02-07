@@ -3,6 +3,7 @@
     <a
       :href="shareUrl"
       target="_blank"
+      rel="noopener"
       @click.prevent="sendGA(formatGA('ShareFb'))"
     >
       <button class="custom-button">F</button>

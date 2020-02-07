@@ -1,17 +1,17 @@
 <template>
-  <div class="article-youtube">
-    ArticleYoutube
+  <div class="article-column-two">
+    ArticleColumnTwo
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ArticleYoutube',
+  name: 'ArticleColumnTwo',
 }
 </script>
 
 <style lang="scss" scoped>
-.article-youtube {
-
+.article-column-two {
+  
 }
 </style>

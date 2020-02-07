@@ -11,9 +11,12 @@ version: v4.0
 ```
   |—assets
   |—index.html
-  |—udn-newmedia-vue-components.min.js
+  |—nmd-components.min.js
 ```
 4. 編輯index.html，使用到的圖片、影片放assets裡
+
+## Demo
+[demo]()
 
 ## Components
 ### Header頁首

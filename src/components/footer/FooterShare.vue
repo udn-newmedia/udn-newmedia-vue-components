@@ -1,15 +1,17 @@
 <template>
-  <div class="author-team">
-
+  <div class="footer-share">
+    FooterShare
   </div>
 </template>
 
 <script>
 export default {
-  name: 'AuthorTeam',
+  name: 'FooterShare',
 }
 </script>
 
 <style lang="scss" scoped>
+.footer-share {
 
+}
 </style>

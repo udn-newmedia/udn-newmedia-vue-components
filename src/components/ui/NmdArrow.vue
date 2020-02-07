@@ -1,5 +1,7 @@
 <template>
-  
+  <div class="nmd-arrow">
+    NmdArrow
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.nmd-arrow {
+  
+}
 </style>

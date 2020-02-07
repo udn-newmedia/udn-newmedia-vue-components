@@ -3,6 +3,7 @@
     <a
       :href="shareUrl"
       target="_blank"
+      rel="noopener"
       @click.prevent="sendGA(formatGA('ShareTwitter'))"
     >
       <button class="custom-button">T</button>
@@ -24,7 +25,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return
+      return this.href;
     },
   },
 };

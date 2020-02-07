@@ -1,17 +1,17 @@
 <template>
-  <div class="article-youtube">
-    ArticleYoutube
+  <div class="footer-next-article">
+    FooterNextArticle
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ArticleYoutube',
+  name: 'FooterNextArticle',
 }
 </script>
 
 <style lang="scss" scoped>
-.article-youtube {
+.footer-next-article {
 
 }
 </style>

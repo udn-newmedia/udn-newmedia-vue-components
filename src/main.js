@@ -4,14 +4,14 @@ import '~/style/main.scss';
 import detectDevice from '@/mixins/detectDevice.js';
 
 Vue.config.productionTip = false;
-// Vue.use(loadingAnimation);
+Window.Promise = Promise;
+
 /**
 *  For ENG.
 *  Create a vue spa
 */
 
 // import App from './App.vue';
-
 // new Vue({
 //   el: '#app',
 //   store,
@@ -20,11 +20,6 @@ Vue.config.productionTip = false;
 //   },
 //   mixins: [detectDevice]
 // });
-
-
-
-
-
 
 
 
@@ -38,27 +33,31 @@ import HeaderBar from './components/header/HeaderBar.vue';
 import HeaderBarSimplified from './components/header/HeaderBarSimplified.vue';
 
 // footer
-import AuthorTeam from './components/footer/AuthorTeam.vue';
-import FbComment from './components/footer/FbComment.vue';
-import NextArticle from './components/footer/NextArticle.vue';
+import FooterEditor from './components/footer/FooterEditor.vue';
+import FooterFbComment from './components/footer/FooterFbComment.vue';
+import FooterLogo from './components/footer/FooterLogo.vue';
+import FooterNextArticle from './components/footer/FooterNextArticle.vue';
+import FooterQuestionnaire from './components/footer/FooterQuestionnaire.vue';
+import FooterRelatedArticle from './components/footer/FooterRelatedArticle.vue';
+import FooterShare from './components/footer/FooterShare.vue';
 import PageFooter from './components/footer/PageFooter.vue';
-import Questionnaire from './components/footer/Questionnaire.vue';
-import RelatedArticle from './components/footer/RelatedArticle.vue';
 
 // layout
+import ArticleCastAnchor from './components/layout/ArticleCastAnchor.vue';
+import ArticleColumnOne from './components/layout/ArticleColumnOne.vue';
+import ArticleColumnThree from './components/layout/ArticleColumnThree.vue';
+import ArticleColumnTwo from './components/layout/ArticleColumnTwo.vue';
 import ArticleParallax from './components/layout/ArticleParallax.vue';
 import ArticleQuote from './components/layout/ArticleQuote.vue';
 import ArticleYoutube from './components/layout/ArticleYoutube.vue';
-import CastAnchor from './components/layout/CastAnchor.vue';
-import ColumnOne from './components/layout/ColumnOne.vue';
-import ColumnThree from './components/layout/ColumnThree.vue';
-import ColumnTwo from './components/layout/ColumnTwo.vue';
 import PageBackTop from './components/layout/PageBackTop.vue';
 import PageCover from './components/layout/PageCover.vue';
 import PageIndicator from '@/components/layout/PageIndicator.vue';
+import PageSideAnchor from '@/components/layout/PageSideAnchor.vue';
 
 // ui
 import NmdButton from './components/ui/NmdButton.vue';
+import NmdDictionary from './components/ui/NmdDictionary.vue';
 import NmdSelector from './components/ui/NmdSelector.vue';
 
 new Vue({
@@ -68,25 +67,29 @@ new Vue({
     HeaderBar,
     HeaderBarSimplified,
     
-    AuthorTeam,
-    FbComment,
-    NextArticle,
+    FooterEditor,
+    FooterFbComment,
+    FooterLogo,
+    FooterNextArticle,
+    FooterQuestionnaire,
+    FooterRelatedArticle,
+    FooterShare,
     PageFooter,
-    Questionnaire,
-    RelatedArticle,
 
+    ArticleCastAnchor,
+    ArticleColumnOne,
+    ArticleColumnThree,
+    ArticleColumnTwo,
     ArticleParallax,
     ArticleQuote,
     ArticleYoutube,
-    CastAnchor,
-    ColumnOne,
-    ColumnThree,
-    ColumnTwo,
     PageBackTop,
     PageCover,
     PageIndicator,
+    PageSideAnchor,
 
     NmdButton,
+    NmdDictionary,
     NmdSelector
   },
   mixins: [detectDevice],

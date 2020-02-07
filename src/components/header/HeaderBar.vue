@@ -42,23 +42,19 @@
             >
               {{pageTitle}}
               <i
-                v-if="isMob && useMenu === 'true'"
+                v-if="useMenu === 'true'"
                 :class="{
                   'haeder-bar__menu-button__arrow': true,
                   'haeder-bar__menu-button__arrow--up': menuActiveFlag,
                   'haeder-bar__menu-button__arrow--down': !menuActiveFlag,
                 }"
               />
-              <span v-if="!isMob" class="haeder-bar__menu-button__split">｜</span>
             </p>
           </button> 
         </div>
         <div
           v-if="!isMob"
-          :class="{
-            'header-bar__anchor-pc': true,
-            'header-bar__anchor--disabled': menuActiveFlag,          
-          }"
+          class="header-bar__anchor-pc"
         >
           <HeaderAnchor :theme="theme" />
         </div>
@@ -245,10 +241,6 @@ export default {
     margin: 0 15px;
     transition: .333s ease-in-out;
   }
-  .header-bar__anchor--disabled {
-    opacity: 0;
-    pointer-events: none;
-  }
   .header-bar__logo {
     position: relative;
     width: 50px;
@@ -271,7 +263,7 @@ export default {
     align-items: center;
     margin: 0 15px 0 5px;
     @include pc {
-      margin: 0 0 0 15px;
+      margin: 0 30px 0 15px;
     }
 
     .haeder-bar__menu-button {

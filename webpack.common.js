@@ -1,22 +1,18 @@
 "use strict";
+
 const webpack = require("webpack");
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
 module.exports = {
-  entry: {
-    app: "./src/main.js",
-    loading: "./src/utils/loading.js"
-  },
+  entry: "./src/main.js",
   output: {
-    filename: "[name].js",
+    filename: "nmd-components.min.js",
     path: path.resolve(__dirname, "dist"),
     publicPath: "./"
   },
-  mode: "development",
   module: {
     rules: [{
         test: /\.scss$/,
@@ -28,10 +24,6 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: file => (
-          /node_modules/.test(file) &&
-          !/\.vue\.js/.test(file)
-        ),
         use: {
           loader: "babel-loader",
           options: {
@@ -68,20 +60,4 @@ module.exports = {
       template: "./index.html"
     }),
   ],
-  optimization: {
-    minimizer: [new UglifyJsPlugin()]
-  },
-  devServer: {
-    index: "./index.html",
-    publicPath: "/",
-    hot: true,
-    port: 8080,
-    open: true,
-    // noInfo: true,
-    overlay: {
-      // warn: true,
-      // warning: true,
-      error: true
-    }
-  },
 };

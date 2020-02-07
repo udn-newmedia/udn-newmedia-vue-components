@@ -187,7 +187,23 @@
     <noscript>
       <strong>We're sorry but it doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <link rel="stylesheet" href="assets/style/loading.css">
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '1010324812347164',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v5.0'
+        });
+      };
+    </script>
+    <script async defer src="https://connect.facebook.net/zh_TW/sdk.js"></script>
+
+    <!-- loading -->
+    <script src="https://nmdap.udn.com.tw/test/cmsjs/longform_v4/nmd-loading.min.js"></script>
+    <link rel="stylesheet" href="https://nmdap.udn.com.tw/test/cmsjs/longform_v4/nmd-loading.css">
+
+    <!-- content -->
     <div id="app">
       <page-indicator></page-indicator>
       <header-bar
@@ -195,15 +211,15 @@
         page-title="這一頁的標題"
         use-menu="true"
       >
-        <a href="http://" target="_blank">外連1</a>
-        <a href="http://" target="_blank">外連2</a>
+        <a href="https://udn.com" target="_blank" rel="noopener">外連1</a>
+        <a href="https://udn.com" target="_blank" rel="noopener">外連2</a>
         <a class="active">外連3</a>
       </header-bar>
       <!-- <header-bar-simplified
         use-menu="true"
       >
-        <a href="http://" target="_blank">外連1</a>
-        <a href="http://" target="_blank">外連2</a>
+        <a href="http://udn.com" target="_blank">外連1</a>
+        <a href="http://udn.com" target="_blank">外連2</a>
         <a class="active">外連3</a>
       </header-bar-simplified> -->
       <page-cover
@@ -220,7 +236,7 @@
         <h2>這是副標題</h2>
       </page-cover>
       <div class="article">
-        <nmd-button bg-color="lightgreen" text-color="white" theme="contained" border="l" size="m">按鈕</nmd-button>
+        <!-- <nmd-button bg-color="lightgreen" text-color="white" theme="contained" border="l" size="m">按鈕</nmd-button>
         <nmd-selector>
           <option value="0">Select car:</option>
           <option value="1">Audi</option>
@@ -235,14 +251,22 @@
           <option value="10">Nissan</option>
           <option value="11">Toyota</option>
           <option value="12">Volvo</option>
-        </nmd-selector>
-        <cast-anchor title="anchor-1"></cast-anchor>
+        </nmd-selector> -->
+        <article-cast-anchor title="anchor-1"></article-cast-anchor>
         <h3>anchor 1</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, soluta et. Cupiditate voluptas nobis eveniet adipisci tenetur temporibus architecto nostrum, facere aliquam suscipit impedit voluptatibus at numquam sint laboriosam? Harum.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt explicabo debitis, quidem architecto nam. Blanditiis unde ducimus, magni assumenda quaerat, dolor architecto quia veritatis accusamus molestiae quas, sint hic!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, corrupti error, ea dignissimos corporis unde alias porro facere quae iure delectus numquam consectetur, accusantium dolorem obcaecati natus ratione commodi laboriosam!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit illo accusantium fugit modi commodi inventore, laudantium animi tempore voluptatum eveniet aperiam eius quidem ad ea dolor, nam iste maxime eaque.</p>
-        <cast-anchor title="anchor-2"></cast-anchor>
+
+        <article-column-one></article-column-one>
+        <article-column-two></article-column-two>
+        <article-column-three></article-column-three>
+        <article-parallax></article-parallax>
+        <article-quote></article-quote>
+        <article-youtube></article-youtube>
+
+        <article-cast-anchor title="anchor-2"></article-cast-anchor>
         <h3>anchor 2</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque perferendis maiores minus omnis asperiores nobis quasi, sit officiis velit aut veritatis facilis incidunt consequuntur quibusdam, exercitationem vero in? Vitae, non?</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A reiciendis cum totam, nobis magnam ab? Quam, accusamus eaque. A suscipit quos ut hic dolores sapiente nulla placeat ex, deleniti culpa.</p>
@@ -250,23 +274,75 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptate nostrum doloremque praesentium dolorem illo maxime delectus, fugiat deleniti. Alias voluptates rerum tempore architecto laboriosam neque inventore et deserunt doloribus!</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil minus quod accusamus earum laudantium tempore perferendis impedit aliquam. Nobis nesciunt doloremque animi sit facere modi commodi ullam voluptatem iste iusto.</p>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem dolorem nulla aliquid nihil ratione corrupti, totam eos minus vitae aspernatur vero suscipit? Dolorem dolores quidem dicta! Reiciendis illo sint eaque.</p>
-        <cast-anchor title="anchor-3"></cast-anchor>
+        <article-cast-anchor title="anchor-3"></article-cast-anchor>
         <h3>anchor 3</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat magni ut expedita, deserunt dicta hic atque et aperiam adipisci repellendus laudantium. Est quibusdam similique perspiciatis expedita unde at perferendis voluptatem.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit unde asperiores voluptas vero quo maxime aspernatur a nulla, nihil voluptatum debitis delectus ex magnam, rerum ratione praesentium explicabo nesciunt iusto.</p>
-        <cast-anchor title="anchor-4"></cast-anchor>
+        <article-cast-anchor title="anchor-4"></article-cast-anchor>
         <h3>anchor 4</h3>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est ex molestiae soluta eius modi earum adipisci eos exercitationem nulla ea. Dolor nam ipsum soluta, officia minus molestiae incidunt veniam rem.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, quam sunt quos asperiores neque, autem odio, iste atque magni a natus? Voluptas quod nostrum aliquid debitis reiciendis incidunt labore numquam.</p>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus voluptate nemo nobis maiores nam obcaecati dolor vitae enim dolorem! Eaque, nemo amet. Sit, maxime. Necessitatibus debitis impedit consequuntur! Magni, ipsum.</p>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum cupiditate cumque nesciunt dicta nihil hic, est veniam reiciendis libero obcaecati deleniti quo qui. Deleniti nemo, animi molestiae dolor nostrum fugit.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde aut natus vero, consequatur consectetur officia repudiandae quos, nemo ex dolorem asperiores numquam molestias architecto aspernatur, laudantium in fuga omnis blanditiis!</p>
-        <cast-anchor title="anchor-5"></cast-anchor>
+        <article-cast-anchor title="anchor-5"></article-cast-anchor>
         <h3>anchor 5</h3>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi explicabo tenetur et aliquid enim accusamus delectus dolor minima quo, aliquam porro incidunt ipsam numquam voluptatum error! Itaque repudiandae quod eveniet?</p>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iure distinctio magnam provident sequi ex, expedita dolorem enim culpa necessitatibus. Voluptate veniam accusantium nesciunt placeat dolorum quos. Illo, delectus ipsam?</p>        
       </div>
-      <page-footer></page-footer>
+      <page-footer>
+        <footer-next-article></footer-next-article>
+        <footer-editor>
+          <div>
+            <p>製作人</p>
+            <p>洪欣慈</p>
+          </div>
+          <div>
+            <p>採訪團隊</p>
+            <p>洪敬浤、郭政芬、黃瑞典、張裕珍、吳淑君</p>
+          </div>
+          <div>
+            <p>視覺設計</p>
+            <p>張心慈</p>
+          </div>
+          <div>
+            <p>網頁製作</p>
+            <p>胡凈悟</p>
+          </div>
+          <div>
+            <p>製作單位</p>
+            <p>聯合報新媒體中心、<br>視覺設計中心</p>
+          </div>
+          <div>
+            <p>監製</p>
+            <p>聯合報新聞部</p>
+          </div>
+          <div>
+            <p></p>
+            <p>2019.11.26</p>
+          </div>
+        </footer-editor>
+        <footer-share></footer-share>
+        <footer-related-article
+          title="系列報導"
+          img1="/"
+          text1="報導-1"
+          href1="/"
+          img2="/"
+          text2="報導-2"
+          href2="/"
+          img3="/"
+          text3="報導-3"
+          href3="/"
+          img4="/"
+          text4="報導-4"
+          href4="/"
+        >
+        </footer-related-article>
+        <footer-questionnaire></footer-questionnaire>
+        <footer-fb-comment></footer-fb-comment>
+        <footer-logo></footer-logo>
+      </page-footer>
     </div>
 
     <!-- built files will be auto injected -->

@@ -40,6 +40,12 @@ h3 {
   font-weight: bold;
 }
 
+h4 {
+  font-size: 1.315rem;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
 p {
   font-size: 1.125rem;
   line-height: 1.7;
@@ -63,7 +69,12 @@ p {
   @include pc {
     max-width: 880px;
   }
-  h1, h2, h3 {
+  &.article--full {
+    @include pc {
+    
+    }
+  }
+  h1, h2, h3, h4 {
     margin-bottom: 20px;
   }
 
@@ -72,3 +83,4 @@ p {
     margin-bottom: 15px;
   }
 }
+
