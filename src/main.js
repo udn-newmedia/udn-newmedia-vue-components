@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import store from './store';
 import '~/style/main.scss';
-import { _rwdMethods } from '@/mixins/masterBuilder.js';
+import { rwdMethods } from '@/mixins/masterBuilder.js';
 
 Vue.config.productionTip = false;
 Window.Promise = Promise;
@@ -92,5 +92,5 @@ new Vue({
     NmdDictionary,
     NmdSelector
   },
-  mixins: [_rwdMethods],
+  mixins: [rwdMethods],
 });

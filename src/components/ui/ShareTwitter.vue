@@ -1,5 +1,5 @@
 <template>
-  <div class="share-fb share-button">
+  <div class="share-twitter share-button">
     <a
       :href="shareUrl"
       target="_blank"
@@ -7,7 +7,13 @@
       @click.prevent="sendGA(formatGA('ShareTwitter'))"
     >
       <button class="custom-button">
-        <i class="icon-twitter-brands" />
+        <i
+          :class="{
+            'icon-twitter-brands': true,
+            'icon-theme-light': theme === 'light',
+            'icon-theme-dark': theme === 'dark',
+          }"
+        />
       </button>
     </a>
   </div>
@@ -23,6 +29,10 @@ export default {
     href: {
       type: String,
       default: window.location.href,
+    },    
+    theme: {
+      type: String,
+      default: 'light'
     },
   },
   computed: {
@@ -34,5 +44,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.share-twitter {}
+.share-twitter {
+  i {
+    font-size: 22px;
+  }
+}
 </style>

@@ -10,7 +10,13 @@
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
-      <div class="header-share__share-icon header-share__share-icon__toggle custom-button" 
+      <div
+        :class="{
+          'header-share__share-icon': true,
+          'header-share__share-icon__toggle': true,
+          'header-share__share-icon__toggle--active': toggleFlag && headerActiveFlag,
+          'custom-button': true,
+        }" 
         @click="toggle()"
       >
         <i class="icon-share-alt-solid" />
@@ -29,13 +35,13 @@
     <!-- pc -->
     <div v-else class="header-share__container">
       <div class="header-share__share-icon custom-button">
-        <ShareTwitter />
+        <ShareTwitter :theme="theme" />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareFb />
+        <ShareFb :theme="theme" />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareLine />
+        <ShareLine :theme="theme" />
       </div>
     </div>
   </div>
@@ -139,7 +145,14 @@ export default {
       z-index: 5;
       top: 0;
       right: 0;
-      background-color: #ffffff;
+      color: #ffffff;
+      transition: .333s ease-in-out;
+      &.header-share__share-icon__toggle--active {
+        color: #000000;
+      }
+      i {
+        font-size: 25px; 
+      }
     }
   }
 }

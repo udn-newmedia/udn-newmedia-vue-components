@@ -2,7 +2,21 @@ import _debounce from 'lodash.debounce';
 import { detectPlatform } from '@/utils/udn-newmedia-utils';
 import table from '@/utils/gaFormator';
 
-const _rwdMethods = {
+function detectDevice(w) {
+  switch (true) {
+    case (w < 768):
+      return 'mob';          
+      break;
+    case (768 <= w && w <= 1024):
+      return 'pad';
+      break;
+    default:
+      return 'pc';
+      break;
+  }
+}
+
+const rwdMethods = {
   data() {
     return {
       windowWidth: window.innerWidth,
@@ -14,18 +28,7 @@ const _rwdMethods = {
     },
     deviceType() {
       const w = this.windowWidth;
-      
-      switch (true) {
-        case (w < 768):
-          return 'mob';          
-          break;
-        case (768 <= w && w <= 1024):
-          return 'pad';
-          break;
-        default:
-          return 'pc';
-          break;
-      }
+      return detectDevice(w);
     }
   },
   methods: {
@@ -48,7 +51,7 @@ const autoResize_2 = {
     }
   },
   watch: {
-    isMob: function(value) {
+    isMob: function() {
       this.$forceUpdate();
     }
   }
@@ -61,7 +64,7 @@ const autoResize_3 = {
     }
   },
   watch: {
-    deviceType: function(value) {
+    deviceType: function() {
       this.$forceUpdate();
     }
   }
@@ -70,17 +73,17 @@ const autoResize_3 = {
 const selectSrcMethod_2 = {
   methods: {
     selectSrc_2: function(mob, pc) {
-      return this.isMob ? mob : pc;
+      const isMob = window.innerWidthwidth <= 1024 ? true : false;;
+      return isMob ? mob : pc;
     },
   },
 }
 
-
 const selectSrcMethod_3 = {
   methods: {
     selectSrc_3: function(mob, pad, pc) {
-      const deviceType = this.deviceType;
-      
+      const w = window.innerWidth;
+      const deviceType = detectDevice(w);
       switch (deviceType) {
         case 'mob':
           return mob;
@@ -122,7 +125,7 @@ const sendGaMethods = {
 }
 
 export {
-  _rwdMethods,
+  rwdMethods,
   autoResize_2,
   autoResize_3,
   selectSrcMethod_2,

@@ -7,7 +7,13 @@
       @click.prevent="sendGA(formatGA('ShareLine'))"
     >
       <button class="custom-button">
-        <i class="icon-line-brands" />
+        <i
+          :class="{
+            'icon-line-brands': true,
+            'icon-theme-light': theme === 'light',
+            'icon-theme-dark': theme === 'dark',
+          }"
+        />
       </button>
     </a>
   </div>
@@ -23,6 +29,10 @@ export default {
     href: {
       type: String,
       default: window.location.href,
+    },    
+    theme: {
+      type: String,
+      default: 'light'
     },
   },
   computed: {
@@ -46,5 +56,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.share-line {}
+.share-line {
+  i {
+    font-size: 25px;
+  }
+}
 </style>

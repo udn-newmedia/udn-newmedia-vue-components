@@ -7,7 +7,13 @@
       @click.prevent="sendGA(formatGA('ShareFb'))"
     >
       <button class="custom-button">
-        <i class="icon-facebook-f-brands" />
+        <i
+          :class="{
+            'icon-facebook-f-brands': true,
+            'icon-theme-light': theme === 'light',
+            'icon-theme-dark': theme === 'dark',
+          }"
+        />
       </button>
     </a>
   </div>
@@ -24,6 +30,10 @@ export default {
       type: String,
       default: window.location.href,
     },
+    theme: {
+      type: String,
+      default: 'light'
+    },
   },
   computed: {
     shareUrl() {
@@ -39,5 +49,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.share-fb {}
+.share-fb {
+  i {
+    font-size: 25px;
+  }
+}
 </style>
