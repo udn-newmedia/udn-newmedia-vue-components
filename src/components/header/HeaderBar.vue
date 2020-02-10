@@ -81,8 +81,7 @@
 
 <script>
 import _debounce from 'lodash.debounce';
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderAnchor from '@/components/header/HeaderAnchor.vue';
 import HeaderShare from '@/components/header/HeaderShare.vue';
 import HeaderMenu from '@/components/header/HeaderMenu.vue';
@@ -90,7 +89,7 @@ import UdnLogo from '@/components/ui/UdnLogo.vue';
 
 export default {
   name: 'HeaderBar',
-  mixins: [autoResize, sendGaMethods],
+  mixins: [autoResize_2, sendGaMethods],
   components: {
     HeaderAnchor,
     HeaderShare,

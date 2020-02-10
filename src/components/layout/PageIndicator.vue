@@ -12,7 +12,7 @@
 
 <script>
 import _debounce from 'lodash.debounce';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
   name: 'PageIndicator',

@@ -14,10 +14,12 @@ export default {
 @import '~/style/_mixins.scss';
 .footer-editor {
   width: 325px;
-  @include smob {}
-  @include pad {}
+  @include smob {
+    width: 300px;
+  }
+  // @include pad {}
   @include pc {
-    width: 500px;
+    width: 720px;
   }
 
   div {
@@ -29,7 +31,11 @@ export default {
       flex-shrink: 0;
       margin-bottom: 0;
       color: #7b7a7a;
-      white-space: nowrap;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      @include pc {
+        font-size: 1rem;
+      }
       &:first-child {
         width: 45%;
         text-align: right;
@@ -45,6 +51,12 @@ export default {
         @include pc {
           width: 50%;
         }
+      }
+    }
+
+    br {
+      @include pc {
+        display: none;
       }
     }
   }

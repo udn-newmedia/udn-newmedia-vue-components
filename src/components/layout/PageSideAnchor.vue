@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
+
 export default {
   name: 'PageSideAnchor',
-  mixins: [autoResize, sendGaMethods],
+  mixins: [autoResize_2, sendGaMethods],
 }
 </script>
 

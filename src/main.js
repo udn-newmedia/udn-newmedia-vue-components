@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import store from './store';
 import '~/style/main.scss';
-import detectDevice from '@/mixins/detectDevice.js';
+import { _rwdMethods } from '@/mixins/masterBuilder.js';
 
 Vue.config.productionTip = false;
 Window.Promise = Promise;
@@ -92,5 +92,5 @@ new Vue({
     NmdDictionary,
     NmdSelector
   },
-  mixins: [detectDevice],
+  mixins: [_rwdMethods],
 });

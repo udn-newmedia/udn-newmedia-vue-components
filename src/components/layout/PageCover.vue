@@ -1,7 +1,7 @@
 <template>
   <div class="page-cover"
     :style="{
-      backgroundImage: 'url(' + selectSrc_3 + ')'
+      backgroundImage: 'url(' + selectSrc_3(src, srcPad, srcPc) + ')'
     }"
   >
     <div
@@ -20,12 +20,11 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_3.js';
-import selectSrcMethods from '@/mixins/selectSrcMethods.js';
+import { autoResize_3, selectSrcMethod_3 } from '@/mixins/masterBuilder.js';
 
 export default {
   name: 'PageCover',
-  mixins: [autoResize, selectSrcMethods],
+  mixins: [autoResize_3, selectSrcMethod_3],
   props: {
     src: {
       type: String,

@@ -32,8 +32,7 @@
 
 <script>
 import _debounce from 'lodash.debounce';
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderHamburger from '@/components/header/HeaderHamburger.vue';
 import HeaderMenuSimplified from '@/components/header/HeaderMenuSimplified.vue';
 import UdnLogo from '@/components/ui/UdnLogo.vue';

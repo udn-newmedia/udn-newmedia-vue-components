@@ -2,7 +2,7 @@
   <div class="udn-logo">
     <i
       :class="{
-        'udn-icon udn-icon-logo': true,
+        'icon-round_logo': true,
         'theme-light': theme === 'light',
         'theme-dark': theme === 'dark',
       }"
@@ -23,8 +23,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// @import "https://s.udn.com.tw/static/font-icons/css/fontello.css";
-// @import "https://udn.com/upf/newmedia/css/udn-font.css";
 @import '~/style/_mixins.scss';
 .udn-logo {
   position: relative;

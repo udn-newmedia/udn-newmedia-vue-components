@@ -13,7 +13,7 @@
       <div class="header-share__share-icon header-share__share-icon__toggle custom-button" 
         @click="toggle()"
       >
-        S
+        <i class="icon-share-alt-solid" />
       </div>
       <div class="header-share__share-icon custom-button">
         <ShareTwitter />
@@ -42,15 +42,14 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
 import ShareFb from '@/components/ui/ShareFb.vue';
 import ShareLine from '@/components/ui/ShareLine.vue';
 import ShareTwitter from '@/components/ui/ShareTwitter.vue';
 
 export default {
   name: 'HeaderShare',
-  mixins: [autoResize, sendGaMethods],
+  mixins: [autoResize_2, sendGaMethods],
   components: {
     ShareFb,
     ShareLine,
@@ -140,12 +139,7 @@ export default {
       z-index: 5;
       top: 0;
       right: 0;
-
-
-
       background-color: #ffffff;
-      border: solid 1px black;
-
     }
   }
 }

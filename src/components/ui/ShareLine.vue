@@ -6,13 +6,15 @@
       rel="noopener"
       @click.prevent="sendGA(formatGA('ShareLine'))"
     >
-      <button class="custom-button">L</button>
+      <button class="custom-button">
+        <i class="icon-line-brands" />
+      </button>
     </a>
   </div>
 </template>
 
 <script>
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
   name: 'ShareLine',

@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_2.js';
+import { autoResize_2 } from '@/mixins/masterBuilder.js';
 export default {
   name: 'PageFooter',
-  mixins: [autoResize],
+  mixins: [autoResize_2],
   data() {
     return {
 
@@ -24,7 +24,7 @@ export default {
 .page-footer {
   position: relative;
   width: 100%;
-  height: 100vh;
+  margin-bottom: 50px;
   .page-footer__copyright {
     position: relative;
     width: 100%;

@@ -7,15 +7,14 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
 
 import dotCom from '~/img/logo/dot_com.jpg';
 import nmd from '~/img/logo/nmd.jpg';
 import vision from '~/img/logo/vision.jpg';
 export default {
   name: 'FooterLogo',
-  mixins: [autoResize, sendGaMethods],
+  mixins: [sendGaMethods],
   data() {
     return {
       img: {

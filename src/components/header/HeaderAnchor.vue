@@ -25,15 +25,14 @@
 </template>
 
 <script>
-import autoResize from '@/mixins/autoResize_2.js';
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
 import { scroller } from 'vue-scrollto/src/scrollTo';
 const ScrollToVert = scroller();
 const ScrollToHorz = scroller();
 
 export default {
   name: 'HeaderAnchor',
-  mixins: [autoResize, sendGaMethods],
+  mixins: [autoResize_2, sendGaMethods],
   props: {
     theme: {
       type: String,

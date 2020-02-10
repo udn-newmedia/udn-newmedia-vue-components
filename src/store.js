@@ -6,33 +6,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    windowWidth: window.innerWidth,
     anchorList: [],
   },
-  getters: {
-    isMob(state) {
-      return state.windowWidth <= 1024 ? true : false;
-    },
-    deviceType(state) {
-      const w = state.windowWidth;
-      
-      switch (true) {
-        case (w < 768):
-          return 'mob';          
-          break;
-        case (768 <= w && w <= 1024):
-          return 'pad';
-          break;
-        default:
-          return 'pc';
-          break;
-      }
-    }
-  },
+  getters: {},
   mutations: {
-    updateWindowWidth (state, width) {
-      state.windowWidth = width;
-    },
     addAnchor (state, anchor) {
       /**
        * anchor = {
@@ -48,9 +25,6 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    updateWindowWidth (context, width) {
-      context.commit('updateWindowWidth', width);
-    },
     addAnchor (context, anchor) {
       context.commit('addAnchor', anchor);
     },

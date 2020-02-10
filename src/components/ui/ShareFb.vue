@@ -6,13 +6,15 @@
       rel="noopener"
       @click.prevent="sendGA(formatGA('ShareFb'))"
     >
-      <button class="custom-button">F</button>
+      <button class="custom-button">
+        <i class="icon-facebook-f-brands" />
+      </button>
     </a>
   </div>
 </template>
 
 <script>
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
   name: 'ShareFb',

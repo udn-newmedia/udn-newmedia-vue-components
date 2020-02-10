@@ -6,13 +6,15 @@
       rel="noopener"
       @click.prevent="sendGA(formatGA('ShareTwitter'))"
     >
-      <button class="custom-button">T</button>
+      <button class="custom-button">
+        <i class="icon-twitter-brands" />
+      </button>
     </a>
   </div>
 </template>
 
 <script>
-import sendGaMethods from "@/mixins/sendGaMethods.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
   name: 'ShareTwitter',
