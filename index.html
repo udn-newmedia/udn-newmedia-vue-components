@@ -181,6 +181,19 @@
              src="https://www.facebook.com/tr?id=1624500254526892&ev=PageView&noscript=1"/>
       </noscript>
     <!-- End Facebook Pixel Code -->
+
+    <!-- typekit -->
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'ogi8kae',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    <!-- end typekit -->
   </head>
   <body>
     <noscript>
@@ -205,7 +218,7 @@
     <!-- content -->
     <div id="app">
       <page-indicator></page-indicator>
-      <header-bar
+      <!-- <header-bar
         theme="dark"
         page-title="這一頁的標題"
         use-menu="true"
@@ -213,14 +226,14 @@
         <a href="https://udn.com" target="_blank" rel="noopener">外連1</a>
         <a href="https://udn.com" target="_blank" rel="noopener">外連2</a>
         <a class="active">外連3</a>
-      </header-bar>
-      <!-- <header-bar-simplified
+      </header-bar> -->
+      <header-bar-simplified
         use-menu="true"
       >
         <a href="http://udn.com" target="_blank">外連1</a>
         <a href="http://udn.com" target="_blank">外連2</a>
         <a class="active">外連3</a>
-      </header-bar-simplified> -->
+      </header-bar-simplified>
       <page-cover
         src="./assets/img/1.jpg"
         src-pad="./assets/img/2.jpg"
@@ -290,7 +303,12 @@
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio iure distinctio magnam provident sequi ex, expedita dolorem enim culpa necessitatibus. Voluptate veniam accusantium nesciunt placeat dolorum quos. Illo, delectus ipsam?</p>        
       </div>
       <page-footer>
-        <footer-next-article></footer-next-article>
+        <footer-next-article
+          type="1"
+          title="空服人生"
+          text="全台有7000多間養豬場，據保守估計，轉型為動物福利飼養的可能不超過5間。為什麼這麼少？"
+          img="./assets/img/1.jpg"
+        ></footer-next-article>
         <footer-editor>
           <div>
             <p>製作人</p>
@@ -325,22 +343,22 @@
         <footer-related-article
           title="系列報導"
 
-          img1="./assets/img/r1.png"
+          img1="./assets/img/r1.jpg"
           title1="報導-1"
           text1="地震後成為父母雙亡的孤兒如今都已長大，走過成長過程裡的淚水。"
           href1="https://udn.com"
 
-          img2="./assets/img/r2.png"
+          img2="./assets/img/r2.jpg"
           title2="報導-2"
           text2="地震後成為父母雙亡的孤兒如今都已長大，走過成長過程裡的淚水。"
           href2="https://udn.com"
 
-          img3="./assets/img/r3.png"
+          img3="./assets/img/r3.jpg"
           title3="報導-3"
           text3="地震後成為父母雙亡的孤兒如今都已長大，走過成長過程裡的淚水。"
           href3="https://udn.com"
 
-          img4="./assets/img/r4.png"
+          img4="./assets/img/r4.jpg"
           title4="報導-4"
           text4="地震後成為父母雙亡的孤兒如今都已長大，走過成長過程裡的淚水。"
           href4="https://udn.com"

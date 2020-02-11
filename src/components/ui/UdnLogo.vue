@@ -33,5 +33,8 @@ export default {
   align-items: center;
   font-size: 35px;
   @include clean-tap;
+  i {
+    font-family: Arial, 微軟正黑體, sans-serif;
+  }
 }
 </style>

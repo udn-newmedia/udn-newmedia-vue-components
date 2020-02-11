@@ -24,7 +24,7 @@ export default {
 .page-footer {
   position: relative;
   width: 100%;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
   .page-footer__copyright {
     position: relative;
     width: 100%;

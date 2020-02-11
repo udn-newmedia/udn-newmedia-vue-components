@@ -20,6 +20,7 @@ export default {
   // @include pad {}
   @include pc {
     width: 720px;
+    padding: 72px 0 16px 0;
   }
 
   div {

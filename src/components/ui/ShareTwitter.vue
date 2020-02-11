@@ -47,6 +47,7 @@ export default {
 .share-twitter {
   i {
     font-size: 22px;
+    font-family: Arial, 微軟正黑體, sans-serif;
   }
 }
 </style>

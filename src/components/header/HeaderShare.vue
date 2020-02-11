@@ -146,6 +146,7 @@ export default {
       top: 0;
       right: 0;
       color: #ffffff;
+      font-family: Arial, 微軟正黑體, sans-serif;
       transition: .333s ease-in-out;
       &.header-share__share-icon__toggle--active {
         color: #000000;

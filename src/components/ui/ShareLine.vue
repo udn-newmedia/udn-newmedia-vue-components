@@ -59,6 +59,7 @@ export default {
 .share-line {
   i {
     font-size: 25px;
+    font-family: Arial, 微軟正黑體, sans-serif;
   }
 }
 </style>

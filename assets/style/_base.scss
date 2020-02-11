@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -5,10 +7,10 @@
 }
 
 html, body {
-  font-family: Arial, 微軟正黑體, sans-serif;
+  font-family: source-han-sans-cjk-tc, "Noto Sans TC", "Microsoft JhengHei", Roboto, sans-serif;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   color: #121212;
   &.white {
     color: #f6f6f6;

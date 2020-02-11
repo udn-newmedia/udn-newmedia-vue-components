@@ -1,24 +1,30 @@
 <template>
-  <button class="nmd-button custom-button"
+  <div class="nmd-button"
     :class="{
       'nmd-button--outlined': theme === 'outlined',
       'nmd-button--contained': theme === 'contained',
       'nmd-button--border-s': border === 's',
       'nmd-button--border-m': border === 'm',
       'nmd-button--border-l': border === 'l',
+      'nmd-button--size-xs': size === 'xs',
       'nmd-button--size-s': size === 's',
       'nmd-button--size-m': size === 'm',
       'nmd-button--size-l': size === 'l',
+      'nmd-button--size-xl': size === 'xl',
     }"
     :style="{
       'border-color': theme === 'contained' ?  'transparent' : bgColor,
       'background-color': theme === 'contained' ? bgColor : 'transparent',
     }"
-    :alt="altText"
     @mouseenter="handleHover(true)"
     @mouseleave="handleHover(false)"
   >
-    <div :class="{'nmd-button__ripple': true, 'nmd-button__ripple--hover': hoverFlag}" />
+    <div
+      :class="{
+        'nmd-button__ripple': true,
+        'nmd-button__ripple--hover': hoverFlag
+      }"
+    />
     <div class="nmd-button__text">
       <p class="small"
         :style="{
@@ -28,7 +34,7 @@
         <slot />
       </p>
     </div>
-  </button>
+  </div>
 </template>
 
 <script>
@@ -53,12 +59,8 @@ export default {
     },
     size: {
       type: String,
-      default: 'm' /* s, m, l */
+      default: 'm' /* xs, x, m, l, xl */
     },
-    altText: {
-      type: String,
-      default: 'button'
-    }
   },
   data() {
     return {
@@ -78,17 +80,18 @@ export default {
 .nmd-button {
   position: relative;
   overflow: hidden;
-  width: 100px;
+  width: 100%;
   height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-style: solid;
   border-width: 1px;
   background-color: #ffffff;
   cursor: pointer;
   @include clean-tap;
 
-  &.nmd-button--outlined {
-
-  }
+  // &.nmd-button--outlined {}
   &.nmd-button--contained {
     border: none;
   }
@@ -101,21 +104,40 @@ export default {
   &.nmd-button--border-l {
     border-radius: 100px;
   }
+
+  &.nmd-button--size-xs {
+    height: 25px;
+    p {
+      font-size: 10px;
+    }
+  }
   &.nmd-button--size-s {
-    width: 50px;
+    height: 40px;    
+    p {
+      font-size: 10px;
+    }
   }
   &.nmd-button--size-m {
-    width: 75px;
+    height: 56px;
+    p {
+      font-size: 15px;
+    }
   }
   &.nmd-button--size-l {
-    width: 100px;
+    height: 64px;
+    p {
+      font-size: 20px;
+    }
+  }
+  &.nmd-button--size-xl {
+    height: 72px;
+    p {
+      font-size: 20px;
+    }
   }
 
   .nmd-button__text {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 2;
     background-color: transparent;
     p {
@@ -139,7 +161,7 @@ export default {
     transition: .333s ease-in-out;
     &.nmd-button__ripple--hover {
       opacity: 0.7;
-      transform: translate(-50%, -50%) scale(1);
+      transform: translate(-50%, -50%) scale(5);
     }
   }
 }

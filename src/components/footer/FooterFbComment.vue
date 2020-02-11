@@ -25,5 +25,6 @@ export default {
 <style lang="scss" scoped>
 .fb-comment-block {
   position: relative;
+  padding: 104px 0 72px 0;
 }
 </style>
