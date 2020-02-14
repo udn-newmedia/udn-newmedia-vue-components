@@ -71,7 +71,6 @@
         'header-bar__anchor-mob': true,
         'header-bar__anchor-mob--theme-dark': theme === 'dark',
         'header-bar__anchor-mob--theme-light': theme === 'light',
-        'header-bar__anchor--disabled': menuActiveFlag,      
       }"
     >
       <HeaderAnchor :theme="theme" />
@@ -85,7 +84,7 @@ import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderAnchor from '@/components/header/HeaderAnchor.vue';
 import HeaderShare from '@/components/header/HeaderShare.vue';
 import HeaderMenu from '@/components/header/HeaderMenu.vue';
-import UdnLogo from '@/components/ui/UdnLogo.vue';
+import UdnLogo from '@/components/pinhead/UdnLogo.vue';
 
 export default {
   name: 'HeaderBar',
@@ -162,7 +161,10 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, false);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll, false);
   },
 };
 </script>
@@ -205,6 +207,7 @@ export default {
     }
     .header-bar__nav__section {
       position: relative;
+      min-width: 50px;
       height: 100%;
       display: flex;
     }

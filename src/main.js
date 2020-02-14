@@ -55,10 +55,10 @@ import PageCover from './components/layout/PageCover.vue';
 import PageIndicator from '@/components/layout/PageIndicator.vue';
 import PageSideAnchor from '@/components/layout/PageSideAnchor.vue';
 
-// ui
-import NmdButton from './components/ui/NmdButton.vue';
-import NmdDictionary from './components/ui/NmdDictionary.vue';
-import NmdSelector from './components/ui/NmdSelector.vue';
+// pinhead
+import NmdButton from './components/pinhead/NmdButton.vue';
+import NmdDictionary from './components/pinhead/NmdDictionary.vue';
+import NmdSelector from './components/pinhead/NmdSelector.vue';
 
 new Vue({
   el: '#app',

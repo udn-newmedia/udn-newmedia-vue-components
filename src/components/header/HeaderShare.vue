@@ -49,9 +49,9 @@
 
 <script>
 import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
-import ShareFb from '@/components/ui/ShareFb.vue';
-import ShareLine from '@/components/ui/ShareLine.vue';
-import ShareTwitter from '@/components/ui/ShareTwitter.vue';
+import ShareFb from '@/components/pinhead/ShareFb.vue';
+import ShareLine from '@/components/pinhead/ShareLine.vue';
+import ShareTwitter from '@/components/pinhead/ShareTwitter.vue';
 
 export default {
   name: 'HeaderShare',

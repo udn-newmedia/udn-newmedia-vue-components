@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import NmdButton from '@/components/ui/NmdButton.vue';
+import NmdButton from '@/components/pinhead/NmdButton.vue';
 
 export default {
   name: 'FooterNextArticle',

@@ -5,6 +5,8 @@
         :class="{
           'header-anchor__list__item': true,
           'header-anchor__list__item--active': item.active,
+          'header-anchor__list__item--dark': theme === 'dark',
+          'header-anchor__list__item--light': theme === 'light',
         }"
         v-for="(item, index) in anchorList"
         :key="index"
@@ -49,27 +51,38 @@ export default {
       scrollToHorzOption: {
         el: '#header-anchor-list',
         container: '#header-anchor',
-        duration: 333,
+        duration: 666,
         x: true,
         y: false
       },
+      onScollingFlag: false,
     }
   },
   methods: {
     handleScrollVert(index) {
+      this.onScollingFlag = false;
       ScrollToVert('#anchor-' + index, this.scrollToVertOption);
     },
     handleScrollHorz(index) {
+      this.onScollingFlag = true;
       ScrollToHorz('#header-anchor-' + index, this.scrollToHorzOption);
+
+      setTimeout(() => {
+        this.onScollingFlag = false;
+      }, 666);
     }
   },
   computed: {
     anchorList() {
       const list = this.$store.state.anchorList;
       if (this.isMob) {
-        list.forEach((e, i) => {
-          if (e.active) this.handleScrollHorz(e.title);
-        });
+        if (!this.onScollingFlag) {
+          list.forEach((e) => {
+            if (e.active) {
+              this.handleScrollHorz(e.title);
+            }
+          });
+        }
       }
       
       return list;
@@ -110,7 +123,13 @@ li, ul {
 
     &.header-anchor__list__item--active {
       // font-weight: bold;
-      border-bottom: solid 2px #cf0606;
+      border-bottom: solid 2px;
+      &.header-anchor__list__item--dark {
+        border-color: #cf0606
+      }
+      &.header-anchor__list__item--light {
+        border-color: #121212
+      }
     }
   }
 }

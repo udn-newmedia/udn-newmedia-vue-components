@@ -35,10 +35,10 @@ import _debounce from 'lodash.debounce';
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderHamburger from '@/components/header/HeaderHamburger.vue';
 import HeaderMenuSimplified from '@/components/header/HeaderMenuSimplified.vue';
-import UdnLogo from '@/components/ui/UdnLogo.vue';
-import ShareFb from '@/components/ui/ShareFb.vue';
-import ShareLine from '@/components/ui/ShareLine.vue';
-import ShareTwitter from '@/components/ui/ShareTwitter.vue';
+import UdnLogo from '@/components/pinhead/UdnLogo.vue';
+import ShareFb from '@/components/pinhead/ShareFb.vue';
+import ShareLine from '@/components/pinhead/ShareLine.vue';
+import ShareTwitter from '@/components/pinhead/ShareTwitter.vue';
 
 export default {
   name: 'HeaderBarSimplified',
