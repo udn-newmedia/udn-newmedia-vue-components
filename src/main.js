@@ -29,8 +29,9 @@ Window.Promise = Promise;
 */
 
 // header
-import HeaderBar from './components/header/HeaderBar.vue';
-import HeaderBarSimplified from './components/header/HeaderBarSimplified.vue';
+import HeaderTypeA from './components/header/HeaderTypeA.vue';
+import HeaderTypeB from './components/header/HeaderTypeB.vue';
+import HeaderTypeC from './components/header/HeaderTypeC.vue';
 
 // footer
 import FooterEditor from './components/footer/FooterEditor.vue';
@@ -64,8 +65,9 @@ new Vue({
   el: '#app',
   store,
   components: {
-    HeaderBar,
-    HeaderBarSimplified,
+    HeaderTypeA,
+    HeaderTypeB,
+    HeaderTypeC,
     
     FooterEditor,
     FooterFbComment,

@@ -1,0 +1,219 @@
+<template>
+  <header class="header-bar-container">
+    <div
+      :class="{
+        'header-bar__logo': true,
+        'header-bar__logo--active': activeFlag,
+      }"
+      @click="sendGA(formatGA('LogoUnited'))"
+    >
+      <a :href="href">
+        <UdnLogo :theme="theme" />
+      </a>
+    </div>
+    <nav
+      :class="{
+        'header-bar': true,
+        'header-bar--hide': !activeFlag,
+        'header-bar--theme-dark': theme === 'dark',
+        'header-bar--theme-light': theme === 'light'
+      }"
+    >
+      <div class="header-bar__nav">
+        <div class="header-bar__nav__section">
+          <div class="header-bar__logo-site">
+            <!-- <UdnLogo :theme="theme" /> -->
+          </div>
+          <div class="header-bar__anchor">
+            <HeaderAnchor :theme="theme" />
+          </div>
+        </div>
+        <div class="header-bar__nav__section">
+          <div class="header-bar__share-container">
+            <HeaderShare :headerActiveFlag="activeFlag" :theme="theme" />
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</template>
+
+<script>
+import _debounce from 'lodash.debounce';
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
+import HeaderAnchor from '@/components/header/HeaderAnchor.vue';
+import HeaderShare from '@/components/header/HeaderShare.vue';
+import UdnLogo from '@/components/pinhead/UdnLogo.vue';
+export default {
+  name: 'HeaderTypeB',
+  mixins: [autoResize_2, sendGaMethods],
+  components: {
+    HeaderAnchor,
+    HeaderShare,
+    UdnLogo
+  },
+  props: {
+    theme: {
+      type: String,
+      default: 'light'
+    },
+    href: {
+      type: String,
+      default: window.location.href,
+    },
+  },
+  data() {
+    return {
+      activeFlag: false,
+      lastPosition: window.pageYOffset,
+      ticking: false,
+    }
+  },
+  methods: {
+    handleScroll: _debounce(function() {
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          // activeFlag
+          if (this.lastPosition > window.pageYOffset) this.activeFlag = true;
+          else this.activeFlag = false;
+          this.lastPosition = window.pageYOffset;
+          // anchor
+          const list = this.$store.state.anchorList;
+          const pageYOffset = window.pageYOffset;
+          
+          list.forEach((e, i) => {
+            switch (true) {
+              case (+i === 0):
+                if (pageYOffset >= 0 && pageYOffset < list[1].position) this.handleUpdateAnchor(i, true);
+                else this.handleUpdateAnchor(i, false);
+                break;
+            
+              case (+i === list.length - 1):
+                if (pageYOffset >= list[list.length - 1].position) this.$store.dispatch('updateAnchorStatus', {index: i, status: true});
+                else this.handleUpdateAnchor(i, false);
+                break;
+              default:
+                if (pageYOffset >= list[i].position && pageYOffset < list[i + 1].position) this.handleUpdateAnchor(i, true);
+                else this.handleUpdateAnchor(i, false);
+                break;
+            }
+          });
+          this.ticking = false;
+        });
+      }
+      this.ticking = true;
+    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
+    handleUpdateAnchor(index, status) {
+      this.$store.dispatch('updateAnchorStatus', {index: index, status: status});
+    },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, false);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll, false);
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@import '~/style/_mixins.scss';
+.header-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 4999;
+}
+.header-bar {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .333s linear;
+  &.header-bar--hide {
+    transition: .333s .333s linear;
+    transform: translateY(-100%);
+  }
+  &.header-bar--theme-light {
+    background-color: #ffffff;
+  }
+  &.header-bar--theme-dark {
+    background-color: #000000;
+  }
+  .header-bar__nav {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    // &.header-bar__nav--theme-dark {
+    //   background-color: #000000;
+    // } 
+    // &.header-bar__nav--theme-light {
+    //   background-color: #ffffff;
+    // }
+    .header-bar__nav__section {
+      position: relative;
+      min-width: 50px;
+      height: 100%;
+      display: flex;
+    }
+  }
+  .header-bar__share-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .header-bar__anchor {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 15px;
+    transition: .333s ease-in-out;
+    @include pc {
+      margin: 0 15px;
+    }
+  }
+  .header-bar__logo-site {
+    flex-shrink: 0;
+    position: relative;
+    width: 50px;
+    height: 100%;
+    
+  }
+}
+.header-bar__logo {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  transform: scale(0.75);
+  transition: .333s ease-in;
+  cursor: pointer;
+  @include clean-tap;
+  &:hover {
+    transform: rotate(20deg);
+  }
+  &.header-bar__logo--active {
+    opacity: 1;
+    transform: scale(1.1);
+    &:hover {
+      transform: rotate(20deg) scale(1.1);
+    }
+  }
+}
+</style>

@@ -53,7 +53,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 17px 14px;
+  padding: 16px 14px;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: #ffffff00;
   cursor: pointer;
@@ -70,7 +70,7 @@ export default {
   }
 
   .header-hamburger__line-1 {
-    transform-origin: 5% 70%;
+    transform-origin: 0% 100%;
     &.header-hamburger__line-1--active {
       transform: rotate(45deg);
     }
@@ -84,7 +84,7 @@ export default {
   }
 
   .header-hamburger__line-3 {
-    transform-origin: 5% 30%;
+    transform-origin: 0% 30%;
     &.header-hamburger__line-3--active {
       transform: rotate(-45deg);
     }

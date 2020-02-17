@@ -29,10 +29,8 @@ export default {
   },
   watch: {
     menuActiveFlag: function(value) {
-      if (this.isMob) {
-        if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-        else document.getElementsByTagName('body')[0].style.overflow = 'auto';
-      }
+      if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      else document.getElementsByTagName('body')[0].style.overflow = 'auto';
     }
   },
 }
@@ -43,7 +41,7 @@ export default {
 .header-manu-simplified {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -55,6 +53,7 @@ export default {
   transition: .333s ease-out;
   pointer-events: none;
   @include pc {
+    width: 450px;
     transform: translateX(100%);
     transition: .666s ease-out;
   }

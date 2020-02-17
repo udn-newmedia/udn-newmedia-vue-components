@@ -1,29 +1,29 @@
 <template>
   <header
     :class="{
-      'header-bar-simplified': true,
-      'header-bar-simplified--hide': !activeFlag,
+      'header-bar': true,
+      'header-bar--hide': !activeFlag,
     }"
   >
     <HeaderMenuSimplified :menuActiveFlag="menuActiveFlag"><slot /></HeaderMenuSimplified>
-    <nav class="header-bar-simplified__nav">
-      <div class="header-bar-simplified__logo">
+    <nav class="header-bar__nav">
+      <div class="header-bar__logo">
         <UdnLogo :theme="theme" />
       </div>
     </nav>
-    <nav class="header-bar-simplified__nav">
-      <div class="header-bar-simplified-share__container">
-        <div class="header-bar-simplified-share__share-icon custom-button">
-          <ShareTwitter />
+    <nav class="header-bar__nav">
+      <div class="header-bar-share__container">
+        <div class="header-bar-share__share-icon custom-button">
+          <ShareTwitter :theme="theme" />
         </div>
-        <div class="header-bar-simplified-share__share-icon custom-button">
-          <ShareFb />
+        <div class="header-bar-share__share-icon custom-button">
+          <ShareFb :theme="theme" />
         </div>
-        <div class="header-bar-simplified-share__share-icon custom-button">
-          <ShareLine />
+        <div class="header-bar-share__share-icon custom-button">
+          <ShareLine :theme="theme" />
         </div>
       </div>
-      <div class="header-bar-simplified__hamburder-container" @click="handleHamburgerClick">
+      <div class="header-bar__hamburder-container" @click="handleHamburgerClick">
         <HeaderHamburger :theme="theme" :menuActiveFlag="menuActiveFlag" />
       </div>
     </nav>
@@ -95,7 +95,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/style/_mixins.scss';
-.header-bar-simplified {
+.header-bar {
   position: fixed;
   z-index: 4999;
   top: 0;
@@ -111,19 +111,19 @@ export default {
   //   height: 80px;
   // }
 
-  &.header-bar-simplified--hide {
+  &.header-bar--hide {
     transition: .333s .333s linear;
     transform: translateY(-100%);
   }
 
-  .header-bar-simplified__nav {
+  .header-bar__nav {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .header-bar-simplified__logo {
+  .header-bar__logo {
     position: relative;
     width: 50px;
     height: 100%;
@@ -139,7 +139,7 @@ export default {
     }
   }
 
-  .header-bar-simplified-share__container {
+  .header-bar-share__container {
     position: relative;
     width: 100px;
     display: flex;
@@ -147,7 +147,7 @@ export default {
     align-items: center;
     transition: .333s ease-in-out;
 
-    .header-bar-simplified-share__share-icon {
+    .header-bar-share__share-icon {
       flex-shrink: 0;
       position: relative;
       width: 35px;
@@ -159,7 +159,7 @@ export default {
     }
   }
 
-  .header-bar-simplified__hamburder-container {
+  .header-bar__hamburder-container {
     position: relative;
   }
 }

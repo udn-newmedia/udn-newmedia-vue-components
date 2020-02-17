@@ -22,13 +22,13 @@
         <i class="icon-share-alt-solid" />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareTwitter />
+        <ShareTwitter :theme="theme" />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareFb />
+        <ShareFb :theme="theme" />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareLine />
+        <ShareLine :theme="theme" />
       </div>
     </div>
     
