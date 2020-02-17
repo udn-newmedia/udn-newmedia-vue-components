@@ -34,6 +34,9 @@ export default {
   width: 250px;
   margin: 0 auto;
   text-align: center;
+  @include pad {
+    width: 420px;
+  }
   @include pc {
     width: 420px;
   }

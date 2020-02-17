@@ -4,10 +4,10 @@ import table from '@/utils/gaFormator';
 
 function detectDevice(w) {
   switch (true) {
-    case (w < 768):
+    case (w < 767.98):
       return 'mob';          
       break;
-    case (768 <= w && w <= 1024):
+    case (768 <= w && w <= 1023.98):
       return 'pad';
       break;
     default:
@@ -124,11 +124,31 @@ const sendGaMethods = {
   },
 }
 
+const _setProps = {
+  methods: {
+    // p = 傳入的props
+    // 優先使用jsonProps的資料
+    // 有jsonProps 不能有其他props
+    setProps (p) {
+      if (this.jsonProps !== null) {
+        if (this.jsonProps[p] !== undefined) {
+          return this.jsonProps[p]
+        } else { 
+          return this[p]
+        }
+      } else {
+        return this[p]
+      }
+    }
+  }
+}
+
 export {
   rwdMethods,
   autoResize_2,
   autoResize_3,
   selectSrcMethod_2,
   selectSrcMethod_3,
-  sendGaMethods
+  sendGaMethods,
+  _setProps
 };

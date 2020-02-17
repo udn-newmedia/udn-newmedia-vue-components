@@ -4,7 +4,7 @@
       :href="shareUrl"
       target="_blank"
       rel="noopener"
-      @click.prevent="sendGA(formatGA('ShareFb'))"
+      @click="sendGA(formatGA('ShareFb'))"
     >
       <button class="custom-button">
         <i
@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .share-fb {
   i {
-    font-size: 25px;
+    font-size: 23px;
     font-family: Arial, 微軟正黑體, sans-serif;
   }
 }

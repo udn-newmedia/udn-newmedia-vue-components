@@ -5,43 +5,43 @@
       v-if="isMob"
       :class="{
         'header-share__container': true,
-        'header-share__container--theme-dark': theme === 'dark',
-        'header-share__container--theme-light': theme === 'light',
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
-      <div
-        :class="{
-          'header-share__share-icon': true,
-          'header-share__share-icon__toggle': true,
-          'header-share__share-icon__toggle--active': toggleFlag && headerActiveFlag,
-          'custom-button': true,
-        }" 
-        @click="toggle()"
-      >
-        <i class="icon-share-alt-solid" />
+      <div class="header-share__share-icon custom-button header-share__share-text">分享</div>
+      <div class="header-share__share-icon custom-button">
+        <ShareFb />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareTwitter :theme="theme" />
+        <ShareLine />
       </div>
       <div class="header-share__share-icon custom-button">
-        <ShareFb :theme="theme" />
-      </div>
-      <div class="header-share__share-icon custom-button">
-        <ShareLine :theme="theme" />
+        <ShareTwitter />
       </div>
     </div>
-    
+    <div
+      v-if="isMob"
+      :class="{
+        'header-share__share-icon': true,
+        'header-share__share-icon__toggle': true,
+        'header-share__share-icon__toggle--active': toggleFlag && headerActiveFlag,
+        'custom-button': true,
+      }" 
+      @click="toggle()"
+    >
+      <i class="icon-share-alt-solid" />
+    </div>
+
     <!-- pc -->
-    <div v-else class="header-share__container">
-      <div class="header-share__share-icon custom-button">
-        <ShareTwitter :theme="theme" />
-      </div>
+    <div v-if="!isMob" class="header-share__container">
       <div class="header-share__share-icon custom-button">
         <ShareFb :theme="theme" />
       </div>
       <div class="header-share__share-icon custom-button">
         <ShareLine :theme="theme" />
+      </div>
+      <div class="header-share__share-icon custom-button">
+        <ShareTwitter :theme="theme" />
       </div>
     </div>
   </div>
@@ -100,33 +100,51 @@ export default {
     width: auto;
   }
   .header-share__container {
-    position: relative;
+    pointer-events: none;
     overflow: hidden;
-    width: 35px;
+    box-sizing: content-box;
+    display: none;
+
+    position: relative;
+    width: 0;
     height: 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 42px;
+    padding: 0 37px 0 8px;
     border-radius: 17.5px;
+    opacity: 0;
+    transform: translateX(100%);
     transition: .333s ease-in-out;
     @include pc {
-      width: auto;
+      pointer-events: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       justify-content: flex-end;
       padding-right: 0;
       background-color: initial;
       border-radius: initial;
+      opacity: 1;
+      transform: translateX(0);
     }
 
 
     &.header-share__container--active {
-      &.header-share__container--theme-dark {
-        background-color: #ffffff;
+      pointer-events: auto;      
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f6f6f6;
+      transform: translateX(0);
+      animation: slide-out .333s ease-in-out forwards;
+      @keyframes slide-out {
+        30% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+          width: 100%;
+        }
       }
-      &.header-share__container--theme-light {
-        background-color: #434343;
-      }
-      width: 100%;
     }
   }
   .header-share__share-icon {
@@ -134,7 +152,7 @@ export default {
     position: relative;
     width: 35px;
     height: 35px;
-    margin: 0 8px;
+    margin: 0 2px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,17 +161,25 @@ export default {
     &.header-share__share-icon__toggle {
       position: absolute;
       z-index: 5;
-      top: 0;
+      top: 50%;
       right: 0;
-      color: #ffffff;
-      font-family: Arial, 微軟正黑體, sans-serif;
+      color: #aaaaaa;
+      line-height: 0.5;
+      transform: translateY(-52%);
       transition: .333s ease-in-out;
+
       &.header-share__share-icon__toggle--active {
         color: #000000;
       }
       i {
-        font-size: 25px; 
+        font-size: 22px; 
       }
+    }
+    &.header-share__share-text {
+      width: 30px;
+      line-height: 1;
+      font-size: 10px;
+      cursor: initial;
     }
   }
 }

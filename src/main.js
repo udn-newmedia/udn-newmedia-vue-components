@@ -48,6 +48,7 @@ import ArticleCastAnchor from './components/layout/ArticleCastAnchor.vue';
 import ArticleColumnOne from './components/layout/ArticleColumnOne.vue';
 import ArticleColumnThree from './components/layout/ArticleColumnThree.vue';
 import ArticleColumnTwo from './components/layout/ArticleColumnTwo.vue';
+import ArticleDictionary from './components/layout/ArticleDictionary.vue';
 import ArticleParallax from './components/layout/ArticleParallax.vue';
 import ArticleQuote from './components/layout/ArticleQuote.vue';
 import ArticleYoutube from './components/layout/ArticleYoutube.vue';
@@ -82,6 +83,7 @@ new Vue({
     ArticleColumnOne,
     ArticleColumnThree,
     ArticleColumnTwo,
+    ArticleDictionary,
     ArticleParallax,
     ArticleQuote,
     ArticleYoutube,

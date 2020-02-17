@@ -2,9 +2,9 @@
   <div class="share-line share-button">
     <a
       :href="shareUrl"
-      target="_blank"
+      :target="target"
       rel="noopener"
-      @click.prevent="sendGA(formatGA('ShareLine'))"
+      @click="sendGA(formatGA('ShareLine'))"
     >
       <button class="custom-button">
         <i
@@ -20,7 +20,11 @@
 </template>
 
 <script>
+import Utils from '@/utils/udn-newmedia-utils'
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
+
+const isMobile = Utils.detectMob();
+const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp();
 
 export default {
   name: 'ShareLine',
@@ -50,6 +54,10 @@ export default {
       }
       // mobile in-app webview
       return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
+    },
+    target() {
+      if (!this.isMobile) return '_blank';
+      return '_self';
     },
   },
 }

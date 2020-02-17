@@ -16,7 +16,6 @@ export default {
   props: {
     theme: {
       type: String,
-      default: 'light'
     },
   }
 }
@@ -35,6 +34,13 @@ export default {
   @include clean-tap;
   i {
     font-family: Arial, 微軟正黑體, sans-serif;
+    color: #000000;
+    &.icon-theme-light {
+      color: #aaaaaa;
+    }
+    &.icon-theme-dark {
+      color: #ffffff;
+    }
   }
 }
 </style>

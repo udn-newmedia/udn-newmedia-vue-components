@@ -4,7 +4,7 @@
       :href="shareUrl"
       target="_blank"
       rel="noopener"
-      @click.prevent="sendGA(formatGA('ShareTwitter'))"
+      @click="sendGA(formatGA('ShareTwitter'))"
     >
       <button class="custom-button">
         <i
@@ -37,7 +37,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return this.href;
+      return 'https://twitter.com/intent/tweet?url=' + this.href;
     },
   },
 };
@@ -45,6 +45,7 @@ export default {
 
 <style lang="scss" scoped>
 .share-twitter {
+  padding-top: 2px;
   i {
     font-size: 22px;
     font-family: Arial, 微軟正黑體, sans-serif;

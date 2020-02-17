@@ -21,7 +21,7 @@
     >
       <div class="header-bar__nav">
         <div class="header-bar__nav__section">
-          <div class="header-bar__logo-site">
+          <div class="header-bar__logo-seat">
             <!-- <UdnLogo :theme="theme" /> -->
           </div>
           <div class="header-bar__anchor">
@@ -152,12 +152,6 @@ export default {
     align-items: center;
     width: 100%;
     height: 50px;
-    // &.header-bar__nav--theme-dark {
-    //   background-color: #000000;
-    // } 
-    // &.header-bar__nav--theme-light {
-    //   background-color: #ffffff;
-    // }
     .header-bar__nav__section {
       position: relative;
       min-width: 50px;
@@ -172,22 +166,21 @@ export default {
   }
   .header-bar__anchor {
     position: relative;
-    width: 100%;
+    width: calc(100% - 60px);
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-right: 15px;
+    margin: 0 5px;
     transition: .333s ease-in-out;
     @include pc {
       margin: 0 15px;
     }
   }
-  .header-bar__logo-site {
+  .header-bar__logo-seat {
     flex-shrink: 0;
     position: relative;
     width: 50px;
     height: 100%;
-    
   }
 }
 .header-bar__logo {
@@ -210,9 +203,9 @@ export default {
   }
   &.header-bar__logo--active {
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1);
     &:hover {
-      transform: rotate(20deg) scale(1.1);
+      transform: rotate(20deg) scale(1.05);
     }
   }
 }

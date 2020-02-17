@@ -16,6 +16,7 @@
         <p
           :class="{
             'small': true,
+            'white': theme === 'dark',
           }"
         >
           {{item.title}}
@@ -27,7 +28,9 @@
 
 <script>
 import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
-import vueScrollTo from 'vue-scrollto';
+import { scroller } from 'vue-scrollto/src/scrollTo';
+const ScrollToVert = scroller();
+const ScrollToHorz = scroller();
 
 export default {
   name: 'HeaderAnchor',
@@ -39,27 +42,31 @@ export default {
   },
   data() {
     return {
+      scrollToVertOption: {
+        container: 'body',
+        duration: 800,
+        x: false,
+        y: true
+      },
+      scrollToHorzOption: {
+        el: '#header-anchor-list',
+        container: '#header-anchor',
+        duration: 666,
+        x: true,
+        y: false
+      },
       onScollingFlag: false,
     }
   },
   methods: {
     handleScrollVert(index) {
       this.onScollingFlag = false;
-      vueScrollTo.scrollTo('#anchor-' + index);
-      this.sendGA({
-        category: 'anchor',
-        action: 'click',
-        label: index
-      })
+      ScrollToVert('#anchor-' + index, this.scrollToVertOption);
     },
     handleScrollHorz(index) {
-      const anchorList = document.getElementById('header-anchor');
-      const anchor = document.getElementById('header-anchor-' + index);
-      anchorList.scrollTo({
-        left: anchor.offsetLeft,
-        behavior: 'smooth',
-      });
       this.onScollingFlag = true;
+      ScrollToHorz('#header-anchor-' + index, this.scrollToHorzOption);
+
       setTimeout(() => {
         this.onScollingFlag = false;
       }, 666);
@@ -67,24 +74,19 @@ export default {
   },
   computed: {
     anchorList() {
-      return this.$store.state.anchorList;
-    }
-  },
-  watch: {
-    anchorList: {
-      handler(list) {
-        if (this.isMob) {
-          if (!this.onScollingFlag) {
-            list.forEach((e) => {
-              if (e.active) {
-                this.handleScrollHorz(e.title);
-              }
-            });
-          }
+      const list = this.$store.state.anchorList;
+      if (this.isMob) {
+        if (!this.onScollingFlag) {
+          list.forEach((e) => {
+            if (e.active) {
+              this.handleScrollHorz(e.title);
+            }
+          });
         }
-      },
-      deep: true,
-    },
+      }
+      
+      return list;
+    }
   },
 }
 </script>
@@ -97,10 +99,6 @@ export default {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  -ms-overflow-style: none;
-  &.header-anchor::-webkit-scrollbar {
-    display: none;
-  }
 }
 li, ul {
   list-style: none;
@@ -122,31 +120,15 @@ li, ul {
     cursor: pointer;
 
     @include clean-tap;
-    &.header-anchor__list__item--dark {
-      p {
-        color: #999999;
-      }
-    }
-    &.header-anchor__list__item--light {
-      p {
-        color: #c4c4c4;
-      }
-    }
 
     &.header-anchor__list__item--active {
       // font-weight: bold;
       border-bottom: solid 2px;
       &.header-anchor__list__item--dark {
-        border-color: #cf0606;
-        p {
-          color: #ffffff;
-        }
+        border-color: #cf0606
       }
       &.header-anchor__list__item--light {
-        border-color: #121212;
-        p {
-          color: #121212;
-        }
+        border-color: #121212
       }
     }
   }

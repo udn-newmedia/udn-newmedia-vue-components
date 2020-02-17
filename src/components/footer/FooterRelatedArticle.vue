@@ -77,9 +77,9 @@
         </div>
       </a>
     </div>
-
-
-    <FooterQuestionnaire />
+    <div class="footer-relate-article__questionnaire">
+      <FooterQuestionnaire href="https://www.surveycake.com/s/KpQKN" />
+    </div>
   </div>
 </template>
 
@@ -179,6 +179,10 @@ export default {
   background-color: #f5f7f9;
   padding: 64px 15px 64px 15px;
   text-align: left;
+  @include pad {
+    text-align: center;
+    padding: 72px 96px 72px 96px;
+  }
   @include pc {
     text-align: center;
     padding: 72px 15px 72px 15px;
@@ -200,6 +204,11 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
+  @include pad {
+    overflow: hidden;
+    display: block;
+    width: 100%;;
+  }
   @include pc {
     flex-direction: row;
   }
@@ -213,6 +222,12 @@ export default {
   outline: none;
   text-decoration: none;
   cursor: pointer;
+  @include pad {
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 8px;
+  }
   @include pc {
     width: 230px;
     margin: 8px;
@@ -230,6 +245,10 @@ export default {
     }
     img {
       height: 100%;
+      @include pad {
+        width: 100%;
+        height: auto;
+      }
     }
   }
   .footer-relate-article__article__body {
@@ -246,15 +265,28 @@ export default {
       @include pc {
         margin-bottom: 0;
       }
+      p {
+        color: #131313;
+      }
     }
     .footer-relate-article__article__body__text {
+      @include pad {
+        display: none;
+      }
       @include pc {
         display: none;
       }
       p {
-        color: #a6adb4;
+        color: #131313;
       }
     }
+  }
+
+  .footer-relate-article__questionnaire {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: 24px;
   }
 }
 </style>

@@ -5,10 +5,10 @@
       'header-bar--hide': !activeFlag,
     }"
   >
-    <HeaderMenuSimplified :menuActiveFlag="menuActiveFlag"><slot /></HeaderMenuSimplified>
+    <HeaderMenu :menuActiveFlag="menuActiveFlag" :theme="theme" :simplified="true" ><slot /></HeaderMenu>
     <nav class="header-bar__nav">
       <div class="header-bar__logo">
-        <UdnLogo :theme="theme" />
+        <UdnLogo />
       </div>
     </nav>
     <nav class="header-bar__nav">
@@ -34,14 +34,14 @@
 import _debounce from 'lodash.debounce';
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderHamburger from '@/components/header/HeaderHamburger.vue';
-import HeaderMenuSimplified from '@/components/header/HeaderMenuSimplified.vue';
+import HeaderMenu from '@/components/header/HeaderMenu.vue';
 import UdnLogo from '@/components/pinhead/UdnLogo.vue';
 import ShareFb from '@/components/pinhead/ShareFb.vue';
 import ShareLine from '@/components/pinhead/ShareLine.vue';
 import ShareTwitter from '@/components/pinhead/ShareTwitter.vue';
 
 export default {
-  name: 'HeaderBarSimplified',
+  name: 'HeaderTypeA',
   mixins: [sendGaMethods],
   props: {
     theme: {
@@ -55,7 +55,7 @@ export default {
   },
   components: {
     HeaderHamburger,
-    HeaderMenuSimplified,
+    HeaderMenu,
     UdnLogo,
     ShareFb,
     ShareLine,
@@ -78,10 +78,11 @@ export default {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
           // activeFlag
-          if (this.lastPosition >= window.pageYOffset) this.activeFlag = true;
-          else this.activeFlag = false;
-          this.lastPosition = window.pageYOffset;
-
+          if (!this.menuActiveFlag) {
+            if (this.lastPosition >= window.pageYOffset) this.activeFlag = true;
+            else this.activeFlag = false;
+            this.lastPosition = window.pageYOffset;            
+          }
           this.ticking = false;
         });
       }

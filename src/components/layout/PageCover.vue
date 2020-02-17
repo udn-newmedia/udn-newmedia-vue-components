@@ -1,7 +1,7 @@
 <template>
   <div class="page-cover"
     :style="{
-      backgroundImage: 'url(' + selectSrc_3(src, srcPad, srcPc) + ')'
+      backgroundImage: 'url(' + selectSrc_3(srcMob, srcPad, srcPc) + ')'
     }"
   >
     <div
@@ -16,17 +16,26 @@
     >
       <slot />
     </div>
+    <div class="page-cover__arrow" @click="handleScroll">
+      <NmdArrow />
+    </div>
+    <div class="page-cover__enter-anchor" id="enter-anchor" />
   </div>
 </template>
 
 <script>
 import { autoResize_3, selectSrcMethod_3 } from '@/mixins/masterBuilder.js';
+import NmdArrow from '@/components/pinhead/NmdArrow.vue';
+import vueScrollTo from 'vue-scrollto';
 
 export default {
   name: 'PageCover',
   mixins: [autoResize_3, selectSrcMethod_3],
+  components: {
+    NmdArrow,
+  },
   props: {
-    src: {
+    srcMob: {
       type: String,
     },
     srcPad: {
@@ -86,6 +95,11 @@ export default {
       if (this.writingMode === 'vlr') return 'vertical-lr'
       return 'horizontal-tb'
     }
+  },
+  methods: {
+    handleScroll() {
+      vueScrollTo.scrollTo('#enter-anchor');
+    }
   }
 };
 </script>
@@ -93,6 +107,7 @@ export default {
 <style lang="scss" scoped>
 .page-cover {
   position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -104,6 +119,16 @@ export default {
     p, h1, h2, h3, h4, h5 {
       color: inherit;
     }
+  }
+  .page-cover__arrow {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .page-cover__enter-anchor {
+    position: absolute;
+    bottom: 0;
   }
 }
 </style>
