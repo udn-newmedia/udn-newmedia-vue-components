@@ -18,6 +18,19 @@ version: v4.0
 ## Demo
 [demo]()
 
+## Loading
+```html=
+<script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
+<link rel="stylesheet" href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css">
+```
+## Class
+```html=
+<div class="article">
+  <p>正常字</p>
+  <p class="small">小字</p>
+</div>
+```
+
 ## Components
 ### Header頁首
 + header-bar
