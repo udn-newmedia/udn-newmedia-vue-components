@@ -4,9 +4,14 @@
       :href="shareUrl"
       target="_blank"
       rel="noopener"
+      aria-label="share-fb"
+      title="share-fb"
       @click="sendGA(formatGA('ShareFb'))"
     >
-      <button class="custom-button">
+      <button
+        aria-label="share"
+        name="share-fb"
+      >
         <i
           :class="{
             'icon-facebook-f-brands': true,

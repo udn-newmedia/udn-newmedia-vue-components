@@ -1,6 +1,11 @@
 <template>
   <span class="article-dictionary">
-    <button class="article-dictionary__button custom-button" @click="handleClick()">
+    <button
+      class="article-dictionary__button"
+      @click="handleClick()"
+      aria-label="explanation"
+      name="explanation"
+    >
       {{name}}
     </button>
     <div
@@ -48,7 +53,7 @@ export default {
   background-color: #f3f3f3;
   color: #959595;
   cursor: pointer;
-  @include clean-tap;
+  @include clean-btn;
 }
 .article-dictionary__description {
   display: none;

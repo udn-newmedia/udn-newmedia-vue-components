@@ -20,3 +20,11 @@
   -webkit-appearance: none;
   -webkit-tap-highlight-color: #ffffff00;
 }
+
+@mixin clean-btn {
+  outline: none;
+  border: none;
+  background-color: initial;
+  cursor: pointer;
+  @include clean-tap;
+}

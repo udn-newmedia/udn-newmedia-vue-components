@@ -48,7 +48,7 @@
         target="_self"
         rel="noopener"
       >
-        <button class="footer-next-article__content__button custom-button"
+        <button class="footer-next-article__content__button"
           @click="test"
           name="下一篇"
         >
@@ -252,6 +252,7 @@ export default {
   .footer-next-article__content__button {
     position: relative;
     width: 100%;
+    @include clean-btn;
   }
 }
 </style>

@@ -8,18 +8,26 @@
     <HeaderMenu :menuActiveFlag="menuActiveFlag" :theme="theme" :simplified="true" ><slot /></HeaderMenu>
     <nav class="header-bar__nav">
       <div class="header-bar__logo">
-        <UdnLogo />
+        <a
+          :href="href"
+          target="_self"
+          rel="noopener"
+          aria-label="聯logo"
+          name="聯logo"
+        >
+          <UdnLogo />
+        </a>
       </div>
     </nav>
     <nav class="header-bar__nav">
       <div class="header-bar-share__container">
-        <div class="header-bar-share__share-icon custom-button">
+        <div class="header-bar-share__share-icon">
           <ShareTwitter :theme="theme" />
         </div>
-        <div class="header-bar-share__share-icon custom-button">
+        <div class="header-bar-share__share-icon">
           <ShareFb :theme="theme" />
         </div>
-        <div class="header-bar-share__share-icon custom-button">
+        <div class="header-bar-share__share-icon">
           <ShareLine :theme="theme" />
         </div>
       </div>
@@ -157,6 +165,7 @@ export default {
       justify-content: center;
       align-items: center;
       cursor: pointer;
+      @include clean-btn
     }
   }
 

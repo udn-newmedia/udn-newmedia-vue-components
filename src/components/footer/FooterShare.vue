@@ -17,6 +17,8 @@
         :href="shareLineUrl"
         :target="target"
         rel="noopener"
+        aria-label="share-line"
+        name="share-line"
       >
         <img
           class="comment_line_image"
@@ -28,7 +30,14 @@
       </a>
     </div>
     <div class="footer-share__share-twitter">
-      <a :href="'https://twitter.com/intent/tweet?url=' + href" class="twitter-share-button" data-show-count="false">Tweet</a>
+      <a :href="'https://twitter.com/intent/tweet?url=' + href"
+        class="twitter-share-button"
+        data-show-count="false"
+        aria-label="share-line"
+        name="share-line"
+      >
+        Tweet
+      </a>
     </div>
   </div>
 </template>

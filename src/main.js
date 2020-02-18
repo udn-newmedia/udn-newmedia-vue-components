@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import store from './store';
 import '~/style/main.scss';
+import '~/style/_mixins.scss';
 import { rwdMethods } from '@/mixins/masterBuilder.js';
 
 Vue.config.productionTip = false;
@@ -48,6 +49,7 @@ import ArticleCastAnchor from './components/layout/ArticleCastAnchor.vue';
 import ArticleColumnOne from './components/layout/ArticleColumnOne.vue';
 import ArticleColumnThree from './components/layout/ArticleColumnThree.vue';
 import ArticleColumnTwo from './components/layout/ArticleColumnTwo.vue';
+import ArticleContainer from './components/layout/ArticleContainer.vue';
 import ArticleDictionary from './components/layout/ArticleDictionary.vue';
 import ArticleParallax from './components/layout/ArticleParallax.vue';
 import ArticleQuote from './components/layout/ArticleQuote.vue';
@@ -60,7 +62,6 @@ import PageSideAnchor from '@/components/layout/PageSideAnchor.vue';
 // pinhead
 import NmdButton from './components/pinhead/NmdButton.vue';
 import NmdDictionary from './components/pinhead/NmdDictionary.vue';
-import NmdSelector from './components/pinhead/NmdSelector.vue';
 
 new Vue({
   el: '#app',
@@ -83,6 +84,7 @@ new Vue({
     ArticleColumnOne,
     ArticleColumnThree,
     ArticleColumnTwo,
+    ArticleContainer,
     ArticleDictionary,
     ArticleParallax,
     ArticleQuote,
@@ -94,7 +96,6 @@ new Vue({
 
     NmdButton,
     NmdDictionary,
-    NmdSelector
   },
   mixins: [rwdMethods],
 });

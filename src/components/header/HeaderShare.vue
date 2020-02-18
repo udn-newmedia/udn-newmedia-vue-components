@@ -8,14 +8,14 @@
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
-      <div class="header-share__share-icon custom-button header-share__share-text">分享</div>
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon header-share__share-text">分享</div>
+      <div class="header-share__share-icon">
         <ShareFb />
       </div>
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon">
         <ShareLine />
       </div>
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon">
         <ShareTwitter />
       </div>
     </div>
@@ -34,13 +34,13 @@
 
     <!-- pc -->
     <div v-if="!isMob" class="header-share__container">
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon">
         <ShareFb :theme="theme" />
       </div>
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon">
         <ShareLine :theme="theme" />
       </div>
-      <div class="header-share__share-icon custom-button">
+      <div class="header-share__share-icon">
         <ShareTwitter :theme="theme" />
       </div>
     </div>
@@ -157,7 +157,7 @@ export default {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    
+    @include clean-btn;
     &.header-share__share-icon__toggle {
       position: absolute;
       z-index: 5;

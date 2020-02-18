@@ -13,7 +13,13 @@
       }"
       @click="sendGA(formatGA('LogoUnited'))"
     >
-      <a :href="href">
+      <a
+        :href="href"
+        target="_self"
+        rel="noopener"
+        aria-label="聯logo"
+        name="聯logo"
+      >
         <UdnLogo :theme="theme" />
       </a>
     </div>
@@ -30,11 +36,7 @@
           <!-- <UdnLogo :theme="theme" /> -->
         </div>
         <div class="haeder-bar__menu-button-container">
-          <button
-            :class="{
-              'haeder-bar__menu-button': true,
-              'custom-button': true,
-            }"
+          <button class="haeder-bar__menu-button"
             @click="handleMenuButtonClick()"
             name="menu-toggle-button"
           >
@@ -289,7 +291,7 @@ export default {
 
     .haeder-bar__menu-button {
       cursor: pointer;
-      @include clean-tap;
+      @include clean-btn;
 
       .haeder-bar__menu-button__arrow {
         border-style: solid;

@@ -25,6 +25,7 @@ export default {
   position: relative;
   width: 100%;
   padding-bottom: 50px;
+  background: #ffffff;
   .page-footer__copyright {
     position: relative;
     width: 100%;

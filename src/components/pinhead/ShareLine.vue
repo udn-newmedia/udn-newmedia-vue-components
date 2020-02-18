@@ -4,9 +4,14 @@
       :href="shareUrl"
       :target="target"
       rel="noopener"
+      aria-label="share-line"
+      title="share-line"
       @click="sendGA(formatGA('ShareLine'))"
     >
-      <button class="custom-button">
+      <button
+        aria-label="share"
+        name="share-line"
+      >
         <i
           :class="{
             'icon-line-brands': true,

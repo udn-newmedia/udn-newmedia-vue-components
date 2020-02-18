@@ -4,9 +4,14 @@
       :href="shareUrl"
       target="_blank"
       rel="noopener"
+      aria-label="share-twitter"
+      title="share-twitter"
       @click="sendGA(formatGA('ShareTwitter'))"
     >
-      <button class="custom-button">
+      <button
+        aria-label="share"
+        name="share-twitter"
+      >
         <i
           :class="{
             'icon-twitter-brands': true,

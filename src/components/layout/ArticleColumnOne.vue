@@ -43,13 +43,14 @@ export default {
   position: relative;
   width: 100%;
   .article-column-one__img {
-    position: relative;
     width: 100%;
+    display: flex;
     img {
       width: 100%;
     }
   }
   .article-column-one__description {
+    margin-top: 8px;
     p {
       color: #7b7a7a;
     }

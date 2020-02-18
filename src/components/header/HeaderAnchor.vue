@@ -1,7 +1,7 @@
 <template>
   <div id="header-anchor" class="header-anchor">
-    <li id="header-anchor-list" class="header-anchor__list">
-      <ul
+    <ul id="header-anchor-list" class="header-anchor__list">
+      <li
         :class="{
           'header-anchor__list__item': true,
           'header-anchor__list__item--active': item.active,
@@ -20,8 +20,8 @@
         >
           {{item.title}}
         </p>
-      </ul>
-    </li>
+      </li>
+    </ul>
   </div>
 </template>
 

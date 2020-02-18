@@ -7,7 +7,13 @@
       }"
       @click="sendGA(formatGA('LogoUnited'))"
     >
-      <a :href="href">
+      <a
+        :href="href"
+        target="_self"
+        rel="noopener"
+        aria-label="聯logo"
+        name="聯logo"
+      >
         <UdnLogo :theme="theme" />
       </a>
     </div>

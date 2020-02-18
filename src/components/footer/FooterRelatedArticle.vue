@@ -9,6 +9,8 @@
         :href="href1"
         target="_blank"
         rel="noopener"
+        :ariaLabel="title1"
+        :name="title1"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img1" :alt="title1">
@@ -27,6 +29,8 @@
         :href="href2"
         target="_blank"
         rel="noopener"
+        :ariaLabel="title2"
+        :name="title2"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img2" :alt="title2">
@@ -45,6 +49,8 @@
         :href="href3"
         target="_blank"
         rel="noopener"
+        :ariaLabel="title3"
+        :name="title3"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img3" :alt="title3">
@@ -62,7 +68,9 @@
         class="footer-relate-article__article"
         :href="href4"
         target="_blank"
-        rel="noopener"
+        rel="noopener"        
+        :ariaLabel="title4"
+        :name="title4"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img4" :alt="title4">

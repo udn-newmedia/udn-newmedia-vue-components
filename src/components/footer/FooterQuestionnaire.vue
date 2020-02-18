@@ -1,6 +1,14 @@
 <template>
-  <a class="footer-questionnaire" target="_blank" :href="href">
-    <button class="footer-questionnaire__button custom-button"
+  <a
+    class="footer-questionnaire"
+    target="_blank"
+    :href="href"
+    aria-label="next-article"
+    name="next-article"
+  >
+    <button
+      class="footer-questionnaire__button"
+      aria-label="next-article"
       name="下一篇"
     >
       <NmdButton
@@ -64,5 +72,6 @@ export default {
 .footer-questionnaire__button {
   position: relative;
   width: 100%;
+  @include clean-btn;
 }
 </style>

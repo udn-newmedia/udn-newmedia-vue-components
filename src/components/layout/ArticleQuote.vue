@@ -1,37 +1,36 @@
 <template>
-  <div class="quote-contain article"
+  <div class="article-quote"
     :style="{
-      'border-top-color': setProps('borderColor'),
-      'border-bottom-color': setProps('borderColor')
+      borderTopColor: borderColor,
+      borderBottomColor: borderColor
     }"
   >
-    <div class="col-sm-3" v-if="setProps('img')">
-      <div class="quote-img">
-        <img :src="setProps('img')">
+    <div class="article-quote__upper-section">
+      <div class="article-quote__profile">
+        <img :src="img" :alt="text">
+      </div>
+      <div class="article-quote__text">
+        <p>{{text}}</p>
       </div>
     </div>
-    <div :class="dynamicClass">
-      <div class="quote-text" v-html="setProps('text')" :style="{color: setProps('color')}"></div>
-      <div class="quote-ref" v-if="setProps('refer')">{{setProps('refer')}}</div>
+    <div class="article-quote__down-section">
+      <div class="article-quote__refer">
+        <p class="small">—— {{refer}}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { _setProps } from '@/mixins/masterBuilder.js'
 export default {
   name: 'ArticleQuote',
-  mixins: [_setProps],
   props: {
     borderColor: {
-      type: String
+      type: String,
+      default: '#dcdddd',
     },
     img: {
       type: String
-    },
-    jsonProps: {
-      type: Object,
-      default: null
     },
     refer: {
       type: String
@@ -43,68 +42,75 @@ export default {
       type: String
     }
   },
-  computed: {
-    dynamicClass () {
-      if (this.setProps('img') !== undefined) {
-        return 'col-sm-9'
-      } else {
-        return 'col-sm-12'
-      }
-    }
-  },
-  created () {
-    if (this.$props.jsonProps === null) {
-      if (this.$props.text === undefined) {
-        console.error('請輸入 text ex: <Quote text="{文字}"></Quote>')
-      }
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
-  .quote-contain {
-    width: 100%;
-    font-weight: 500;
-    font-size: 32px;
-    padding: 35px 0;
-    color: #888888;
-    border-top: dotted 1px #DCDDDD;
-    border-bottom: dotted 1px #DCDDDD;
+@import '~/style/_mixins.scss';
+
+.article-quote {
+  position: relative;
+  width: 100%;
+  padding: 35px 0;
+  border-top: solid 1px #dcdddd;
+  border-bottom: solid 1px #dcdddd;
+  @include pc {
+    padding: 50px 0;
+  }
+
+  .article-quote__upper-section {
     position: relative;
-    letter-spacing: -1px;
-    &::after{
-      content: '';
-      clear: both;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include pad {
+      flex-direction: row;
     }
-  }
-  .quote-ref{
-    float: right;
-    font-size: 16px;
-    margin-top: 30px;
-  }
-  .quote-img {
-    margin-bottom: 19px;
-  }
-  @media screen and (max-width: 767px) {
-    .quote-contain{
-      font-size: 26px;
+    @include pc {
+      flex-direction: row;
     }
-    .quote-img {
+    .article-quote__profile {
+      flex-shrink: 0;
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 19px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      @include pad {
+        margin-right: 18px;
+        margin-bottom: 0;
+      }
+      @include pc {
+        margin-right: 18px;
+        margin-bottom: 0;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .article-quote__text {
+      p {
+        margin: 0;
+        color: #888888;
+      }
     }
   }
-  @media screen and (min-width: 1024px){
-    .quote-contain {
-      padding: 50px 50px 50px 0;
-    }
-    .quote-ref{
-      font-size: 17px;
-    }
-    .quote-img {
-      display: flex;
-      justify-content: flex-end;
+
+  .article-quote__down-section {
+    .article-quote__refer {
+      margin-top: 18px;
+      p {
+        margin: 0;
+        color: #888888;
+        text-align: right;
+      }
     }
   }
+}
 </style>
