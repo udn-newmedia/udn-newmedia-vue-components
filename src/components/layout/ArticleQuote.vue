@@ -54,6 +54,7 @@ export default {
   padding: 35px 0;
   border-top: solid 1px #dcdddd;
   border-bottom: solid 1px #dcdddd;
+  @include layout-margin;
   @include pc {
     padding: 50px 0;
   }

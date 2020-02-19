@@ -28,3 +28,16 @@
   cursor: pointer;
   @include clean-tap;
 }
+
+@mixin layout-margin {
+  margin: 24px 0;
+  @media screen and (min-width: 1025px) {
+    margin: 48px 0;
+  }
+}
+@mixin layout-padding {
+  padding: 24px 0;
+  @media screen and (min-width: 1025px) {
+    padding: 48px 0;
+  }
+}

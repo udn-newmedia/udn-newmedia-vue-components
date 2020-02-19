@@ -148,7 +148,12 @@ export default {
   justify-content: center;
   align-items: flex-start;
   padding: 0 85px;
-  background-color: #fff;
+  background-color: #f6f6f6;
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
+    background-color: rgba(#f6f6f6, 0.8);
+  }
   opacity: 0;
   transition: .333s ease-out;
   pointer-events: none;
@@ -172,8 +177,9 @@ export default {
     outline: none;
     text-decoration: none;
     line-height: 1;
-    color: inherit;
     font-size: 18px;
+    opacity: 0.7;
+    color: #333333;
     cursor: pointer;
     @include clean-tap;
 
@@ -184,6 +190,12 @@ export default {
     @include pc {
       font-size: 24px;
       margin: 8px 0;
+    }
+
+    &.active {
+      color: #333333;
+      opacity: 1;
+      border-bottom: solid 1px #000000;
     }
   }
 }
@@ -197,37 +209,6 @@ export default {
   @include pc {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-.header-menu-simplified--theme-dark {
-  // background-color: #000000;
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      backdrop-filter: blur(23px);
-      background-color: rgba(#000000, 0.6);
-    }
-  a {
-    color: #ffffff;
-    &.active {
-      color: rgb(31, 31, 58);
-      border-bottom: solid 1px #000000;
-    }
-  }
-}
-.header-menu-simplified--theme-light {
-  background-color: #ffffff;
-  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
-    background-color: rgba(#ffffff, 0.8);
-  }
-  a {
-    color: #333333;
-    opacity: 0.7;
-    &.active {
-      color: #333333;
-      opacity: 1;
-      border-bottom: solid 1px #000000;
-    }
   }
 }
 </style>

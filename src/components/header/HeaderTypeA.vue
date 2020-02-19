@@ -5,9 +5,12 @@
       'header-bar--hide': !activeFlag,
     }"
   >
-    <HeaderMenu :menuActiveFlag="menuActiveFlag" :theme="theme" :simplified="true" ><slot /></HeaderMenu>
+    <HeaderMenu :menuActiveFlag="menuActiveFlag" :simplified="true" ><slot /></HeaderMenu>
     <nav class="header-bar__nav">
-      <div class="header-bar__logo">
+      <div
+        class="header-bar__logo"
+        @click="sendGA(formatGA('HeaderUdnLogo'))"
+      >
         <a
           :href="href"
           target="_self"
@@ -22,17 +25,17 @@
     <nav class="header-bar__nav">
       <div class="header-bar-share__container">
         <div class="header-bar-share__share-icon">
-          <ShareTwitter :theme="theme" />
+          <ShareTwitter />
         </div>
         <div class="header-bar-share__share-icon">
-          <ShareFb :theme="theme" />
+          <ShareFb />
         </div>
         <div class="header-bar-share__share-icon">
-          <ShareLine :theme="theme" />
+          <ShareLine />
         </div>
       </div>
       <div class="header-bar__hamburder-container" @click="handleHamburgerClick">
-        <HeaderHamburger :theme="theme" :menuActiveFlag="menuActiveFlag" />
+        <HeaderHamburger :menuActiveFlag="menuActiveFlag" />
       </div>
     </nav>
   </header>
@@ -52,14 +55,14 @@ export default {
   name: 'HeaderTypeA',
   mixins: [sendGaMethods],
   props: {
-    theme: {
-      type: String,
-      default: 'light'
-    },
     useMenu: {
       type: String,
       default: 'true'
-    }
+    },
+    href: {
+      type: String,
+      default: window.location.href,
+    },
   },
   components: {
     HeaderHamburger,
@@ -80,7 +83,9 @@ export default {
   methods: {
     handleHamburgerClick() {
       this.menuActiveFlag = !this.menuActiveFlag;
-      this.sendGA(this.formatGA('HeaderHamburger'));
+
+      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderHamburgerOpen'));
+      else this.sendGA(this.formatGA('HeaderHamburgerOpen'));
     },
     handleScroll: _debounce(function() {
       if (!this.ticking) {
@@ -94,7 +99,7 @@ export default {
           this.ticking = false;
         });
       }
-    }, 100,  {'leading': true, 'trailing': false, 'maxWait': 100}),
+    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, true);

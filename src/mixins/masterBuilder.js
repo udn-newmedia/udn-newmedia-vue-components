@@ -1,6 +1,6 @@
 import _debounce from 'lodash.debounce';
 import { detectPlatform } from '@/utils/udn-newmedia-utils';
-import table from '@/utils/gaFormator';
+import gaTable from '@/utils/gaFormator';
 
 function detectDevice(w) {
   switch (true) {
@@ -119,7 +119,7 @@ const sendGaMethods = {
       });
     },
     formatGA: function(name) {
-      return table[name];
+      return gaTable[name];
     },
   },
 }

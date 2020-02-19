@@ -5,6 +5,7 @@
     :href="href"
     aria-label="next-article"
     name="next-article"
+    @click="sendGA(formatGA('FooterQuestoinnaire'))"
   >
     <button
       class="footer-questionnaire__button"
@@ -26,9 +27,11 @@
 
 <script>
 import NmdButton from '@/components/pinhead/NmdButton.vue';
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
 
 export default {
   name: 'FooterQuestionnaire',
+  mixins: [sendGaMethods],
   components: {
     NmdButton
   },

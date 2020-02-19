@@ -42,6 +42,7 @@ export default {
 .article-column-one {
   position: relative;
   width: 100%;
+  @include layout-padding;
   .article-column-one__img {
     width: 100%;
     display: flex;
@@ -53,6 +54,7 @@ export default {
     margin-top: 8px;
     p {
       color: #7b7a7a;
+      margin: 0;
     }
   }
 }

@@ -5,7 +5,7 @@
         'header-bar__logo': true,
         'header-bar__logo--active': activeFlag,
       }"
-      @click="sendGA(formatGA('LogoUnited'))"
+      @click="sendGA(formatGA('HeaderUdnLogo'))"
     >
       <a
         :href="href"
@@ -83,35 +83,11 @@ export default {
           if (this.lastPosition > window.pageYOffset) this.activeFlag = true;
           else this.activeFlag = false;
           this.lastPosition = window.pageYOffset;
-          // anchor
-          const list = this.$store.state.anchorList;
-          const pageYOffset = window.pageYOffset;
           
-          list.forEach((e, i) => {
-            switch (true) {
-              case (+i === 0):
-                if (pageYOffset >= 0 && pageYOffset < list[1].position) this.handleUpdateAnchor(i, true);
-                else this.handleUpdateAnchor(i, false);
-                break;
-            
-              case (+i === list.length - 1):
-                if (pageYOffset >= list[list.length - 1].position) this.$store.dispatch('updateAnchorStatus', {index: i, status: true});
-                else this.handleUpdateAnchor(i, false);
-                break;
-              default:
-                if (pageYOffset >= list[i].position && pageYOffset < list[i + 1].position) this.handleUpdateAnchor(i, true);
-                else this.handleUpdateAnchor(i, false);
-                break;
-            }
-          });
           this.ticking = false;
         });
       }
-      this.ticking = true;
     }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
-    handleUpdateAnchor(index, status) {
-      this.$store.dispatch('updateAnchorStatus', {index: index, status: status});
-    },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, false);

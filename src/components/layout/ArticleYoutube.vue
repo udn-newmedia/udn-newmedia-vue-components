@@ -57,12 +57,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .article-youtube {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 0;
   padding-bottom: 56.25%;
+  @include layout-margin;
 }
 .article-youtube__responsive-item {
   position: absolute;

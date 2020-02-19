@@ -24,13 +24,13 @@
 </template>
 
 <script>
-import { autoResize_3, selectSrcMethod_3 } from '@/mixins/masterBuilder.js';
+import { autoResize_3, selectSrcMethod_3, sendGaMethods } from '@/mixins/masterBuilder.js';
 import NmdArrow from '@/components/pinhead/NmdArrow.vue';
 import vueScrollTo from 'vue-scrollto';
 
 export default {
   name: 'PageCover',
-  mixins: [autoResize_3, selectSrcMethod_3],
+  mixins: [autoResize_3, selectSrcMethod_3, sendGaMethods],
   components: {
     NmdArrow,
   },
@@ -99,12 +99,14 @@ export default {
   methods: {
     handleScroll() {
       vueScrollTo.scrollTo('#enter-anchor');
+      this.sendGA(this.formatGA('CoverArrow'));
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .page-cover {
   position: relative;
   overflow: hidden;
@@ -112,7 +114,13 @@ export default {
   height: 100vh;
   background-size: cover;
   background-position: center;
-
+  margin-bottom: 48px;
+  @include pad {
+    margin-bottom: 0;
+  }
+  @include pc {
+    margin-bottom: 0;
+  }
   .page-cover__title {
     position: relative;
     display: inline-block;

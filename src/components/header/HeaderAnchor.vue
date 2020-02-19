@@ -13,11 +13,7 @@
         :id="'header-anchor-' + item.title"
         @click="handleScrollVert(item.title)"
       >
-        <p
-          :class="{
-            'small': true,
-          }"
-        >
+        <p class="small">
           {{item.title}}
         </p>
       </li>
@@ -37,14 +33,8 @@ export default {
       type: String,
     },
   },
-  data() {
-    return {
-      onScollingFlag: false,
-    }
-  },
   methods: {
     handleScrollVert(index) {
-      this.onScollingFlag = false;
       vueScrollTo.scrollTo('#anchor-' + index);
       this.sendGA({
         category: 'anchor',
@@ -59,11 +49,25 @@ export default {
         left: anchor.offsetLeft,
         behavior: 'smooth',
       });
-      this.onScollingFlag = true;
-      setTimeout(() => {
-        this.onScollingFlag = false;
-      }, 666);
-    }
+    },
+    handleScroll() {
+      const list = this.$store.state.anchorList;
+      const pageYOffset = window.pageYOffset;
+
+      for (let i = list.length - 1; i >= 0; i--) {
+        const pos = document.getElementById('anchor-' + list[i].title).getBoundingClientRect().top;
+        if (pos < 1) {
+          this.$store.dispatch('updateAnchorStatus', {index: i, status: true}); 
+          for (let j = 0; j < list.length; j++) {
+            if (j !== i) this.handleUpdateAnchor(j, false);
+          }
+          break;
+        }
+      }
+    },
+    handleUpdateAnchor(index, status) {
+      this.$store.dispatch('updateAnchorStatus', {index: index, status: status});
+    },
   },
   computed: {
     anchorList() {
@@ -85,6 +89,12 @@ export default {
       },
       deep: true,
     },
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, false);
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll, false);
   },
 }
 </script>

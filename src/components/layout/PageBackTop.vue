@@ -25,6 +25,7 @@ import vueScrollTo from 'vue-scrollto';
 
 export default {
   name: 'PageBackTop',
+  mixins: [sendGaMethods],
   data() {
     return {
       activeFlag: false,
@@ -33,6 +34,7 @@ export default {
   methods: {
     handleClick() {
       vueScrollTo.scrollTo('#app');
+      this.sendGA(this.formatGA('PageBackTop'));
     },
     handleScroll: _debounce(function() {
       const currentH = window.pageYOffset;

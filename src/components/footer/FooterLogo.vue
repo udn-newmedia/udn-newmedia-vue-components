@@ -6,7 +6,7 @@
       rel="noopener"
       aria-label="聯合新聞網"
       name="聯合新聞網"
-      @click="sendGA(formatGA('LogoDotCom'))"
+      @click="sendGA(formatGA('FooterLogoDotCom'))"
     >
       <img :src="img.dotCom" alt="聯合新聞網">
     </a>
@@ -16,7 +16,7 @@
       rel="noopener"
       aria-label="聯合報新媒體中心"
       name="聯合報新媒體中心"
-      @click="sendGA(formatGA('LogoNMD'))"
+      @click="sendGA(formatGA('FooterLogoNMD'))"
     >
       <img :src="img.nmd" alt="聯合報新媒體中心">
     </a>
@@ -27,7 +27,7 @@
       rel="noopener"
       aria-label="聯合報系願景工程"
       name="聯合報系願景工程"
-      @click="sendGA(formatGA('LogoNMD'))"
+      @click="sendGA(formatGA('FooterLogoVision'))"
     >
       <img :src="img.vision" alt="聯合報系願景工程">
     </a>

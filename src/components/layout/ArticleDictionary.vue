@@ -20,8 +20,10 @@
 </template>
 
 <script>
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 export default {
   name: 'ArticleDictionary',
+  mixins: [sendGaMethods],
   props: {
     name: {
       type: String,
@@ -36,6 +38,9 @@ export default {
   methods: {
     handleClick() {
       this.activeFlag = !this.activeFlag;
+      
+      if (this.activeFlag) this.sendGA(this.formatGA('DictionaryOpen'));
+      else this.sendGA(this.formatGA('DictionaryClose'));
     },
   },
 }

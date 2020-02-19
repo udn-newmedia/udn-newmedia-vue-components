@@ -12,7 +12,6 @@ export default {
     const anchor = {
       title: this.title,
       active: false,
-      position: document.getElementById('anchor-' + this.title).offsetTop,
     };
     this.$store.dispatch('addAnchor', anchor);
   },
