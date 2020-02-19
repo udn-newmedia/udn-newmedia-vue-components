@@ -49,7 +49,7 @@
         rel="noopener"
       >
         <button class="footer-next-article__content__button"
-          @click="test"
+          @click="handleGA()"
           name="下一篇"
         >
           <NmdButton
@@ -68,10 +68,12 @@
 </template>
 
 <script>
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
 import NmdButton from '@/components/pinhead/NmdButton.vue';
 
 export default {
   name: 'FooterNextArticle',
+  mixins: [sendGaMethods],
   components: {
     NmdButton
   },
@@ -114,8 +116,12 @@ export default {
     }
   },
   methods: {
-    test() {
-      console.log('test');
+    handleGA() {
+      this.sendGA({
+        category: 'next',
+        action: 'click',
+        label: this.title + '_next'
+      });
     }
   },
 }

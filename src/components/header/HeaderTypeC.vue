@@ -142,8 +142,8 @@ export default {
     handleMenuButtonClick() {
       this.menuActiveFlag = !this.menuActiveFlag;
 
-      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderHamburgerOpen'));
-      else this.sendGA(this.formatGA('HeaderHamburgerOpen'));
+      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'));
+      else this.sendGA(this.formatGA('HeaderMenuClose'));
     }
   },
   mounted() {

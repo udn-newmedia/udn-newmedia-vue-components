@@ -24,30 +24,20 @@ const gaTable = {
     action: 'click',
     label: 'twitter_top'
   },
-  HeaderHamburgerOpen: {
-    category: 'hamburger',
+  HeaderMenuOpen: {
+    category: 'menu',
     action: 'click',
-    label: 'hamburger_open'
+    label: 'menu_open'
   },
-  HeaderHamburgerOpen: {
-    category: 'hamburger',
+  HeaderMenuClose: {
+    category: 'menu',
     action: 'click',
-    label: 'hamburger_close'
+    label: 'menu_close'
   },
   HeaderUdnLogo: {    
     category: 'logo',
     action: 'click',
     label: '圓形聯logo'
-  },
-  DictionaryOpen: {
-    category: 'dictionary',
-    action: 'click',
-    label: 'dictionary_open'
-  },
-  DictionaryClose: {
-    category: 'dictionary',
-    action: 'click',
-    label: 'dictionary_close'
   },
   CoverArrow: {
     category: 'arrow',

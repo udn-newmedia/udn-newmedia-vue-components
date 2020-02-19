@@ -84,8 +84,8 @@ export default {
     handleHamburgerClick() {
       this.menuActiveFlag = !this.menuActiveFlag;
 
-      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderHamburgerOpen'));
-      else this.sendGA(this.formatGA('HeaderHamburgerOpen'));
+      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'));
+      else this.sendGA(this.formatGA('HeaderMenuClose'));
     },
     handleScroll: _debounce(function() {
       if (!this.ticking) {
@@ -120,10 +120,6 @@ export default {
   justify-content: space-between;
   align-items: center;
   transition: .333s linear;
-
-  // @include pc {
-  //   height: 80px;
-  // }
 
   &.header-bar--hide {
     transition: .333s .333s linear;

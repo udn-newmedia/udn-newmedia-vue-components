@@ -11,6 +11,7 @@
         rel="noopener"
         :ariaLabel="title1"
         :name="title1"
+        @click="handleGA(title1)"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img1" :alt="title1">
@@ -31,6 +32,7 @@
         rel="noopener"
         :ariaLabel="title2"
         :name="title2"
+        @click="handleGA(title2)"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img2" :alt="title2">
@@ -51,6 +53,7 @@
         rel="noopener"
         :ariaLabel="title3"
         :name="title3"
+        @click="handleGA(title3)"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img3" :alt="title3">
@@ -71,6 +74,7 @@
         rel="noopener"        
         :ariaLabel="title4"
         :name="title4"
+        @click="handleGA(title4)"
       >
         <div class="footer-relate-article__article__head">
           <img :src="img4" :alt="title4">
@@ -172,8 +176,12 @@ export default {
     },
   },
   methods: {
-    handleClick() {
-
+    handleGA(title) {
+      this.sendGA({
+        category: 'related',
+        action: 'click',
+        label: title
+      });
     },
   },
 };

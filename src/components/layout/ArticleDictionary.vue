@@ -28,6 +28,10 @@ export default {
     name: {
       type: String,
       default: '解釋'
+    },
+    title: { // for ga
+      type: String,
+      default: 'dictionary'
     }
   },
   data() {
@@ -39,8 +43,19 @@ export default {
     handleClick() {
       this.activeFlag = !this.activeFlag;
       
-      if (this.activeFlag) this.sendGA(this.formatGA('DictionaryOpen'));
-      else this.sendGA(this.formatGA('DictionaryClose'));
+      if (this.activeFlag) {
+        this.sendGA({
+          category: 'hamburger',
+          action: 'click',
+          label: this.title + ' open'
+        });
+      } else {
+        this.sendGA({
+          category: 'hamburger',
+          action: 'click',
+          label: this.title + ' close'
+        });
+      }
     },
   },
 }
@@ -48,7 +63,6 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/style/_mixins.scss';
-.article-dictionary {}
 .article-dictionary__button {
   display: inline-block;
   font-size: 0.9rem;
