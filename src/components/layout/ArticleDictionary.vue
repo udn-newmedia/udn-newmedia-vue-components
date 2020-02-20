@@ -64,6 +64,7 @@ export default {
 <style lang="scss" scoped>
 @import '~/style/_mixins.scss';
 .article-dictionary__button {
+  @include clean-btn;
   display: inline-block;
   font-size: 0.9rem;
   padding: 1px 5px;
@@ -72,7 +73,6 @@ export default {
   background-color: #f3f3f3;
   color: #959595;
   cursor: pointer;
-  @include clean-btn;
 }
 .article-dictionary__description {
   display: none;

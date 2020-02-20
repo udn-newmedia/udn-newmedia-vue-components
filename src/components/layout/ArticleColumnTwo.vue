@@ -89,7 +89,7 @@ export default {
       }
       img {
         width: 100%;
-        display: flex;
+        height: auto;
       }
     }
   }

@@ -117,7 +117,7 @@ export default {
   height: 100%;
   transition: .333s linear;
   &.header-bar--hide {
-    transition: .333s .333s linear;
+    transition: .333s .666s linear;
     transform: translateY(-100%);
   }
   &.header-bar--theme-light {
@@ -178,10 +178,13 @@ export default {
   opacity: 0.7;
   transform: scale(0.75);
   transition: .333s ease-in;
-  cursor: pointer;
-  @include clean-tap;
   &:hover {
     transform: rotate(20deg);
+  }
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    @include clean-tap;
   }
   &.header-bar__logo--active {
     opacity: 1;

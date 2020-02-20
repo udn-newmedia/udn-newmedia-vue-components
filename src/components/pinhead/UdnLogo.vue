@@ -31,7 +31,6 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 35px;
-  @include clean-tap;
   i {
     font-family: Arial, 微軟正黑體, sans-serif;
     color: #000000;

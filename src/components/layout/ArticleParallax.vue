@@ -46,7 +46,7 @@ export default {
         window.requestAnimationFrame(() => {
           const pos = this.$el.getBoundingClientRect();
           const trigger = window.innerHeight;
-          if (pos.top < trigger || pos.bottom < -trigger) this.activeFlag = true;
+          if (pos.top < trigger && pos.bottom >= 0) this.activeFlag = true;
           else this.activeFlag = false;
           this.ticking = false;
         });

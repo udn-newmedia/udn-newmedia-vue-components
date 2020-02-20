@@ -8,14 +8,28 @@
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
-      <div class="header-share__share-icon header-share__share-text">分享</div>
-      <div class="header-share__share-icon">
+      <div
+        :class="{
+          'header-share__share-icon': true,
+          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
+        }"
+      >
         <ShareFb />
       </div>
-      <div class="header-share__share-icon">
+      <div
+        :class="{
+          'header-share__share-icon': true,
+          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
+        }"
+      >
         <ShareLine />
       </div>
-      <div class="header-share__share-icon">
+      <div
+        :class="{
+          'header-share__share-icon': true,
+          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
+        }"
+      >
         <ShareTwitter />
       </div>
     </div>
@@ -92,6 +106,7 @@ export default {
 .header-share {
   position: relative;
   height: 50px;
+  width: 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -101,50 +116,44 @@ export default {
   }
   .header-share__container {
     pointer-events: none;
-    overflow: hidden;
     box-sizing: content-box;
-    display: none;
-
-    position: relative;
-    width: 0;
+    // display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
     height: 35px;
-    padding: 0 37px 0 8px;
-    border-radius: 17.5px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 80px;
     opacity: 0;
-    transform: translateX(100%);
+    transform-origin: 100% 0;
+    transform: translate(100%, -50%) scale(0);
     transition: .333s ease-in-out;
     @include pc {
+      position: relative;
+      top: auto;
+      right: auto;
       pointer-events: auto;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       justify-content: flex-end;
-      padding-right: 0;
+      padding: 0 0 0 8px;
       background-color: initial;
       border-radius: initial;
       opacity: 1;
       transform: translateX(0);
     }
 
-
     &.header-share__container--active {
-      pointer-events: auto;      
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      pointer-events: auto;
+      padding: 0 56px 0 8px;
+      opacity: 1;
       background-color: #f6f6f6;
-      transform: translateX(0);
-      animation: slide-out .333s ease-in-out forwards;
-      @keyframes slide-out {
-        30% {
-          opacity: 0;
-        }
-        100% {
-          opacity: 1;
-          width: 100%;
-        }
-      }
+      transform: translate(0%, -50%) scale(1.35);
     }
   }
   .header-share__share-icon {
@@ -158,6 +167,9 @@ export default {
     align-items: center;
     cursor: pointer;
     @include clean-btn;
+    &.header-share__share-icon--active {
+      margin: 0 8px;
+    }
     &.header-share__share-icon__toggle {
       position: absolute;
       z-index: 5;
@@ -166,20 +178,16 @@ export default {
       color: #aaaaaa;
       line-height: 0.5;
       transform: translateY(-52%);
+      transform-origin: 100% 0;
       transition: .333s ease-in-out;
-
       &.header-share__share-icon__toggle--active {
+        right: 28%;
+        transform: translateY(-52%) scale(1.35);
         color: #000000;
       }
       i {
-        font-size: 22px; 
+        font-size: 22px;
       }
-    }
-    &.header-share__share-text {
-      width: 30px;
-      line-height: 1;
-      font-size: 10px;
-      cursor: initial;
     }
   }
 }

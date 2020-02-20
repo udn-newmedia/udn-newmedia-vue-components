@@ -30,11 +30,11 @@
       </a>
     </div>
     <div class="footer-share__share-twitter">
-      <a :href="'https://twitter.com/intent/tweet?url=' + href"
+      <a :href="shareTwitterUrl"
         class="twitter-share-button"
         data-show-count="false"
-        aria-label="share-line"
-        name="share-line"
+        aria-label="share-twiier"
+        name="share-twiier"
       >
         Tweet
       </a>
@@ -55,6 +55,9 @@ export default {
     },
   },
   computed: {
+    shareTwitterUrl() {
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(document.querySelector('meta[property="og:description"]').content)}%0D%0A%0D%0A`;
+    },
     shareLineUrl() {
       const sharedText = document.querySelector('title').innerHTML
       const shareContent = document.querySelector('meta[property="og:description"]').content

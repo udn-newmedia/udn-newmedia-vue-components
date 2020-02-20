@@ -120,12 +120,9 @@ export default {
   .article-column__image-container__down-section {
     width: 100%;
   }
-  .article-column__image {
+  img {
     width: 100%;
-    display: flex;
-    img {
-      width: 100%;
-    }
+    height: auto;
   }
   .article-column__description {
     margin-top: 8px;

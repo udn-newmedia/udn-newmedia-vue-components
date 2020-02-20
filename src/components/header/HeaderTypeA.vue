@@ -6,38 +6,40 @@
     }"
   >
     <HeaderMenu :menuActiveFlag="menuActiveFlag" :simplified="true" ><slot /></HeaderMenu>
-    <nav class="header-bar__nav">
-      <div
-        class="header-bar__logo"
-        @click="sendGA(formatGA('HeaderUdnLogo'))"
-      >
-        <a
-          :href="href"
-          target="_self"
-          rel="noopener"
-          aria-label="聯logo"
-          name="聯logo"
+    <div class="header-bar__nav__container">
+      <nav class="header-bar__nav">
+        <div
+          class="header-bar__logo"
+          @click="sendGA(formatGA('HeaderUdnLogo'))"
         >
-          <UdnLogo />
-        </a>
-      </div>
-    </nav>
-    <nav class="header-bar__nav">
-      <div class="header-bar-share__container">
-        <div class="header-bar-share__share-icon">
-          <ShareTwitter />
+          <a
+            :href="href"
+            target="_self"
+            rel="noopener"
+            aria-label="聯logo"
+            name="聯logo"
+          >
+            <UdnLogo />
+          </a>
         </div>
-        <div class="header-bar-share__share-icon">
-          <ShareFb />
+      </nav>
+      <nav class="header-bar__nav">
+        <div class="header-bar-share__container">
+          <div class="header-bar-share__share-icon">
+            <ShareFb />
+          </div>
+          <div class="header-bar-share__share-icon">
+            <ShareLine />
+          </div>
+          <div class="header-bar-share__share-icon">
+            <ShareTwitter />
+          </div>
         </div>
-        <div class="header-bar-share__share-icon">
-          <ShareLine />
+        <div class="header-bar__hamburder-container" @click="handleHamburgerClick">
+          <HeaderHamburger :menuActiveFlag="menuActiveFlag" />
         </div>
-      </div>
-      <div class="header-bar__hamburder-container" @click="handleHamburgerClick">
-        <HeaderHamburger :menuActiveFlag="menuActiveFlag" />
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 </template>
 
@@ -116,14 +118,21 @@ export default {
   left: 0;
   width: 100%;
   height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   transition: .333s linear;
 
   &.header-bar--hide {
-    transition: .333s .333s linear;
+    transition: .333s .666s linear;
     transform: translateY(-100%);
+  }
+
+  .header-bar__nav__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .header-bar__nav {
@@ -141,11 +150,13 @@ export default {
     justify-content: center;
     align-items: center;
     transition: .333s ease-in;
-    cursor: pointer;
-    @include clean-tap;
-
     &:hover {
       transform: rotate(20deg);
+    }
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      @include clean-tap;
     }
   }
 

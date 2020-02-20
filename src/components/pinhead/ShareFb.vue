@@ -33,7 +33,7 @@ export default {
   props: {
     href: {
       type: String,
-      default: window.location.href,
+      default: document.querySelector('meta[property="og:url"]').content,
     },
     theme: {
       type: String,
@@ -43,11 +43,7 @@ export default {
   computed: {
     shareUrl() {
       const url = encodeURIComponent(this.href);
-      return
-      'https://www.facebook.com/dialog/share?app_id=1010324812347164&display=popup&href='
-      + url
-      + '&redirect_uri='
-      + url;
+      return ('https://www.facebook.com/dialog/share?app_id=1010324812347164&display=popup&href=' + url + '&redirect_uri=' + url);
     },
   },
 };

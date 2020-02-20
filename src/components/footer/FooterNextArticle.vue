@@ -9,7 +9,7 @@
       backgroundImage: 'url(' + img + ')',
     }"
   >
-    <div class="footer-next-article__shadow-mask">
+    <!-- <div class="footer-next-article__shadow-mask">
       <div
         :class="{
           'footer-next-article__shadow-mask__mask-left': true,
@@ -23,7 +23,7 @@
           'footer-next-article__shadow-mask__mask-right--type_2': type === '2',
         }"
       />
-    </div>
+    </div> -->
     <div :class="{
       'footer-next-article__content': true,
       'footer-next-article__content--type-2': type === '2',
@@ -138,7 +138,8 @@ export default {
   
   padding: 32px 24px;
   background-position: center;
-  background-size: auto 100%;
+  // background-size: auto 100%;
+  background-size: cover;
   background-repeat: no-repeat;
   &.footer-next-article--type-1 {
     justify-content: flex-end;
@@ -156,63 +157,63 @@ export default {
     padding: 64px 0;
   }
 
-  .footer-next-article__shadow-mask {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    visibility: hidden;
-    display: none;
-    @include pad {
-      visibility: visible;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    @include pc {
-      visibility: visible;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-next-article__shadow-mask__mask-left {
-      height: 100%;
-      background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1));
-      @include pad {
-        width: 65%;
-      }
-      @include pc {
-        width: 65%;
-      }
-      &.footer-next-article__shadow-mask__mask-left--type_2 {
-        @include pad {
-          width: 50%;
-        }
-        @include pc {
-          width: 50%;
-        }
-      }
-    }
-    .footer-next-article__shadow-mask__mask-right {
-      height: 100%;
-      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1));
-      @include pad {
-        width: 35%;
-      }
-      @include pc {
-        width: 35%;
-      }
-      &.footer-next-article__shadow-mask__mask-right--type_2 {
-        @include pad {
-          width: 50%;
-        }
-        @include pc {
-          width: 50%;
-        }
-      }
-    }
-  }
+  // .footer-next-article__shadow-mask {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   visibility: hidden;
+  //   display: none;
+  //   @include pad {
+  //     visibility: visible;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //   }
+  //   @include pc {
+  //     visibility: visible;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //   }
+  //   .footer-next-article__shadow-mask__mask-left {
+  //     height: 100%;
+  //     background-image: linear-gradient(to left, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1));
+  //     @include pad {
+  //       width: 65%;
+  //     }
+  //     @include pc {
+  //       width: 65%;
+  //     }
+  //     &.footer-next-article__shadow-mask__mask-left--type_2 {
+  //       @include pad {
+  //         width: 50%;
+  //       }
+  //       @include pc {
+  //         width: 50%;
+  //       }
+  //     }
+  //   }
+  //   .footer-next-article__shadow-mask__mask-right {
+  //     height: 100%;
+  //     background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1));
+  //     @include pad {
+  //       width: 35%;
+  //     }
+  //     @include pc {
+  //       width: 35%;
+  //     }
+  //     &.footer-next-article__shadow-mask__mask-right--type_2 {
+  //       @include pad {
+  //         width: 50%;
+  //       }
+  //       @include pc {
+  //         width: 50%;
+  //       }
+  //     }
+  //   }
+  // }
 
   .footer-next-article__content {
     width: 100%;

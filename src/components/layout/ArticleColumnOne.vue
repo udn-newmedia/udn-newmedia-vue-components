@@ -1,11 +1,9 @@
 <template>
   <div class="article-column-one">
-    <div class="article-column-one__img">
-      <img
-        :src="selectSrc_3(srcMob, srcPad, srcPc)"
-        :alt="alt"
-      >
-    </div>
+    <img
+      :src="selectSrc_3(srcMob, srcPad, srcPc)"
+      :alt="alt"
+    >
     <div class="article-column-one__description">
       <p class="small">
         <slot />
@@ -43,12 +41,9 @@ export default {
   position: relative;
   width: 100%;
   @include layout-padding;
-  .article-column-one__img {
+  img {
     width: 100%;
-    display: flex;
-    img {
-      width: 100%;
-    }
+    height: auto
   }
   .article-column-one__description {
     margin-top: 8px;

@@ -7,7 +7,7 @@ function detectDevice(w) {
     case (w < 767.98):
       return 'mob';          
       break;
-    case (768 <= w && w <= 1023.98):
+    case (768 <= w && w <= 1024.98):
       return 'pad';
       break;
     default:

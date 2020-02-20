@@ -5,7 +5,7 @@
       target="_blank"
       rel="noopener"
       aria-label="share-twitter"
-      title="share-twitter"
+      name="share-twitter"
       @click="sendGA(formatGA('ShareTwitter'))"
     >
       <button
@@ -33,8 +33,8 @@ export default {
   props: {
     href: {
       type: String,
-      default: window.location.href,
-    },    
+      default: document.querySelector('meta[property="og:url"]').content,
+    },
     theme: {
       type: String,
       default: 'light'
@@ -42,7 +42,7 @@ export default {
   },
   computed: {
     shareUrl() {
-      return 'https://twitter.com/intent/tweet?url=' + this.href;
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(document.querySelector('meta[property="og:description"]').content)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`;
     },
   },
 };

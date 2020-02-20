@@ -37,7 +37,7 @@ export default {
   props: {
     href: {
       type: String,
-      default: window.location.href,
+      default: document.querySelector('meta[property="og:url"]').content,
     },    
     theme: {
       type: String,
@@ -50,18 +50,18 @@ export default {
       const shareContent = document.querySelector('meta[property="og:description"]').content
 
       // desktop
-      if (!this.isMobile) {
+      if (!isMobile) {
         return `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}&url=${encodeURIComponent(this.href)}`
       }
       // mobile
-      if (!this.isInApp) {
+      if (!isInApp) {
         return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
       }
       // mobile in-app webview
       return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
     },
     target() {
-      if (!this.isMobile) return '_blank';
+      if (!isMobile) return '_blank';
       return '_self';
     },
   },
