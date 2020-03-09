@@ -6,7 +6,7 @@
       rel="noopener"
       aria-label="share-fb"
       title="share-fb"
-      @click="sendGA(formatGA('ShareFb'))"
+      @click="sendGA(formatGA('HeaderShareFb'))"
     >
       <button
         aria-label="share"

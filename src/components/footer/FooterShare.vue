@@ -51,7 +51,7 @@ export default {
   props: {
     href: {
       type: String,
-      default: window.location.href,
+      default: document.querySelector('meta[property="og:url"]').content,
     },
   },
   computed: {

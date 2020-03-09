@@ -6,7 +6,7 @@
       rel="noopener"
       aria-label="share-twitter"
       name="share-twitter"
-      @click="sendGA(formatGA('ShareTwitter'))"
+      @click="sendGA(formatGA('HeaderShareTwitter'))"
     >
       <button
         aria-label="share"

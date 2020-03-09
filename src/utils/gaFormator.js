@@ -64,7 +64,6 @@ const gaTable = {
     action: 'click',
     label: '新媒體中心_logo'
   },
-  
   FooterLogoVision: {
     category: 'logo',
     action: 'click',

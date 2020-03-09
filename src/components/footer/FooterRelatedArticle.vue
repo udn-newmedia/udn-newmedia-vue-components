@@ -237,6 +237,7 @@ export default {
   border-radius: 15px;
   outline: none;
   text-decoration: none;
+  transition: .111s ease-in-out;
   cursor: pointer;
   @include pad {
     display: block;
@@ -247,6 +248,9 @@ export default {
   @include pc {
     width: 230px;
     margin: 8px;
+  }
+  &:hover {
+    transform: translateY(-4px);
   }
   .footer-relate-article__article__head {
     position: relative;

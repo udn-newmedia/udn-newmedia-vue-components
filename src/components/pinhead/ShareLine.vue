@@ -6,7 +6,7 @@
       rel="noopener"
       aria-label="share-line"
       title="share-line"
-      @click="sendGA(formatGA('ShareLine'))"
+      @click="sendGA(formatGA('HeaderShareLine'))"
     >
       <button
         aria-label="share"

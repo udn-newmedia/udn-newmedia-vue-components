@@ -5,7 +5,20 @@
       'header-bar--hide': !activeFlag,
     }"
   >
-    <HeaderMenu :menuActiveFlag="menuActiveFlag" :simplified="true" ><slot /></HeaderMenu>
+    <HeaderMenu v-if="outlink" :menuActiveFlag="menuActiveFlag" :simplified="true" >
+      <a v-for="(item, index) in outlink"
+        :key="index"
+        :href="item.url"
+        target="_blank"
+        rel="noopener"
+        :class="{ active: item.active}"
+      >
+        {{item.title}}
+      </a>
+    </HeaderMenu>
+    <HeaderMenu v-else :menuActiveFlag="menuActiveFlag" :simplified="true" >
+      <slot />
+    </HeaderMenu>
     <div class="header-bar__nav__container">
       <nav class="header-bar__nav">
         <div
@@ -57,14 +70,14 @@ export default {
   name: 'HeaderTypeA',
   mixins: [sendGaMethods],
   props: {
-    useMenu: {
-      type: String,
-      default: 'true'
-    },
     href: {
       type: String,
-      default: window.location.href,
+      default: document.querySelector('meta[property="og:url"]').content,
     },
+    outlink: {
+      type: Array,
+      default: null
+    }
   },
   components: {
     HeaderHamburger,
@@ -101,6 +114,7 @@ export default {
           this.ticking = false;
         });
       }
+      this.ticking = true;
     }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
   },
   mounted() {

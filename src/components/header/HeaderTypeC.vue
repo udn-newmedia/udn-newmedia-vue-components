@@ -94,7 +94,7 @@ import HeaderMenu from '@/components/header/HeaderMenu.vue';
 import UdnLogo from '@/components/pinhead/UdnLogo.vue';
 
 export default {
-  name: 'HeaderBar',
+  name: 'HeaderTypeC',
   mixins: [autoResize_3, sendGaMethods],
   components: {
     HeaderAnchor,
