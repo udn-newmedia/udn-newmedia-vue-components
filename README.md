@@ -51,12 +51,6 @@ npm run dev
 npm run build
 ```
 
-## Loading
-```html=
-<script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
-<link rel="stylesheet" href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css">
-```
-
 ## Initial
 ### main.js
 ```javascript=
@@ -102,7 +96,27 @@ new Vue({
   |—style
 ```
 
-## Class
+### mixins
+> add "masterBuilder.js"
+```
+|—mixins
+  |—masterBuilder.js
+```
+### utils
+> add "gaFormator.js", "udn-newmedia-utils.js"
+|—utils
+  |—gaFormator.js
+  |—udn-newmedia-utils.js
+
+### Loading
+```html=
+<script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
+<link rel="stylesheet" href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css">
+```
+
+
+## Usage
+### Class
 ```html=
 <div class="article">
   <p>正常字</p>
@@ -110,8 +124,8 @@ new Vue({
 </div>
 ```
 
-## Components
-### Header頁首
+### Components
+#### Header頁首
 + header-type-a
   > 有 outlink 沒 anchor 的 header
   ```html=
@@ -220,5 +234,5 @@ new Vue({
 
 
 
-### Footer
-### Layout
+#### Footer
+#### Layout
