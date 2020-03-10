@@ -133,10 +133,14 @@ new Vue({
 + header-type-a
   > 有 outlink 沒 anchor 的 header
   ```html
-  <header-type-a page-title="這一頁的標題" :outlink="outlink" /><header-type-a>
+  <header-type-a :outlink="outlink" ></header-type-a>
   ```
   + props:
-    1. page-title
+    1. href
+    ```
+    for 聯logo
+    default: document.querySelector('meta[property="og:url"]').content
+    ```
     2. outlink
     ```js
     [
@@ -168,24 +172,32 @@ new Vue({
 + header-type-b
   > 沒 outlink 沒 anchor 的 header
   ```html
-  <header-type-b page-title="這一頁的標題" /><header-type-b>
+  <header-type-b></header-type-b>
   ```
   + props:
-      1. page-title
-
+    1. href
+    ```
+    for 聯logo
+    default: document.querySelector('meta[property="og:url"]').content
+    ```
 
 + header-type-c
 > 有 outlink 有 anchor 的 header
   ```html
-  <header-type-c page-title="這一頁的標題" theme="dark" :outlink="outlink" /><header-type-c>
+  <header-type-c page-title="這一頁的標題" theme="dark" :outlink="outlink" ></header-type-c>
   ```
   + props:
-    1. page-title
-    2. theme
+    1. href
+    ```
+    for 聯logo
+    default: document.querySelector('meta[property="og:url"]').content
+    ```
+    2. page-title
+    3. theme
     ```
     dark | light
     ```
-    3. outlink
+    4. outlink
     ```js
     [
       {
@@ -207,7 +219,7 @@ new Vue({
     ```
   + slot:
     1. outlink
-    ```html=
+    ```html
     <a href="https://udn.com" target="_blank">外連1</a>
     <a href="https://udn.com" target="_blank">外連2</a>
     <a class="active">自己這頁</a>
@@ -216,10 +228,14 @@ new Vue({
 + header-type-d
 > 沒 outlink 有 anchor 的 header
   ```html
-  <header-type-d page-title="這一頁的標題" theme="light" /><header-type-d>
+  <header-type-d theme="light" ></header-type-d>
   ```
   + props:
-    1. page-title
+    1. href
+    ```
+    for 聯logo
+    default: document.querySelector('meta[property="og:url"]').content
+    ```
     2. theme
     ```
     dark | light

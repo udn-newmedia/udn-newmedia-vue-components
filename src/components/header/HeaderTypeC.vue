@@ -1,6 +1,24 @@
 <template>
   <header class="header-bar">
     <HeaderMenu
+      v-if="outlink"
+      :menuActiveFlag="menuActiveFlag"
+      :theme="theme"
+    >
+      <a v-for="(item, index) in outlink"
+        :key="index"
+        :href="item.url"
+        target="_blank"
+        rel="noopener"
+        :ariaLabel="item.title"
+        :name="item.title"
+        :class="{ active: item.active}"
+      >
+        {{item.title}}
+      </a>
+    </HeaderMenu>
+    <HeaderMenu
+      v-else
       :menuActiveFlag="menuActiveFlag"
       :theme="theme"
     >
@@ -112,8 +130,12 @@ export default {
     },
     href: {
       type: String,
-      default: window.location.href,
+      default: document.querySelector('meta[property="og:url"]').content,
     },
+    outlink: {
+      type: Array,
+      default: null
+    }
   },
   data() {
     return {
