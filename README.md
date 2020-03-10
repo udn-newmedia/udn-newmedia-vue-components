@@ -24,31 +24,48 @@ version: v4.0
   |—App.vue
   |—store.js
   |—main.js
+  |—main_wc.js
 |—index.html
+|—index_wc.html
+|—template.html
 |—package-lock.json
 |—package.json
 |—webpack.common.js
 |—webpack.dev.js
 |—webpack.prod.js
+|—webpack.common_wc.js
+|—webpack.dev_wc.js
+|—webpack.prod_wc.js
 |—manual.md
 |—README.md
 ```
 
 ## 使用方式
-> 1. 新建vue spa project(vue-cli)
-> 2. 直接使用公版修改(webpack)
+> 1. SPA project
+> 2. Web components
+> 3. 只使用components（直接跳到initial的部分）
 
 ### Project setup
 ```
 npm install
 ```
-### Compiles and hot-reloads for development
+### SPA
+#### Compiles and hot-reloads for development
 ```
 npm run dev
 ```
-### Compiles and minifies for production
+#### Compiles and minifies for production
 ```
 npm run build
+```
+### Web Components
+#### Compiles and hot-reloads for development
+```
+npm run dev-wc
+```
+#### Compiles and minifies for production
+```
+npm run build-wc
 ```
 
 ## Initial

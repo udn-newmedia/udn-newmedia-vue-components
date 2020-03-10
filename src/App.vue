@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <PageIndicator />
     <!-- <HeaderTypeA
       :outlink="menuOutlink"
     /> -->
@@ -140,6 +141,7 @@ import HeaderTypeC from '@/components/header/HeaderTypeC.vue';
 import HeaderTypeD from '@/components/header/HeaderTypeD.vue';
 import PageCover from '@/components/layout/PageCover.vue';
 import PageFooter from '@/components/footer/PageFooter.vue';
+import PageIndicator from '@/components/layout/PageIndicator.vue';
 
 export default {
   name: 'app',
@@ -161,6 +163,7 @@ export default {
     HeaderTypeD,
     PageCover,
     PageFooter,
+    PageIndicator,
   },
   data() {
     return {

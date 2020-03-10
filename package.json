@@ -5,7 +5,9 @@
   "main": "dist/udn-newmedia-vue-components.min.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "build-wc": "webpack --config webpack.prod_wc.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "dev-wc": "webpack-dev-server --open --config webpack.dev_wc.js"
   },
   "dependencies": {
     "es6-promise": "^4.2.8",
