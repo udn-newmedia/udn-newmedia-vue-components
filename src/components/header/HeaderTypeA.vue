@@ -11,6 +11,8 @@
         :href="item.url"
         target="_blank"
         rel="noopener"
+        :ariaLabel="item.title"
+        :name="item.title"
         :class="{ active: item.active}"
       >
         {{item.title}}

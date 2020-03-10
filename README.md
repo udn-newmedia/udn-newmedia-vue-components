@@ -48,7 +48,7 @@ npm run dev
 ```
 ### Compiles and minifies for production
 ```
-npm run buil
+npm run build
 ```
 
 ## Loading
@@ -102,7 +102,6 @@ new Vue({
   |—style
 ```
 
-
 ## Class
 ```html=
 <div class="article">
@@ -116,20 +115,37 @@ new Vue({
 + header-type-a
 > 有 outlink 沒 anchor 的 header
 ```html=
-<header-bar
-  theme="dark"
-  page-title="這一頁的標題"
-/>
-
-<header-bar>
+<header-type-a page-title="這一頁的標題" /><header-type-a>
 ```
   + props:
-    1. theme
-    2. page-title
+    1. page-title
+    2. outlink
+    ```
+    [
+      {
+        title: '外連1',
+        url: 'https://udn.com',
+        active: false,
+      },
+      {
+        title: '外連2',
+        url: 'https://udn.com',
+        active: false,
+      },
+      {
+        title: '自己這頁',
+        url: null,
+        active: true,
+      }
+    ]
+    ```
   + slot:
-
-
-
+    1. outlink
+    ```
+    <a href="https://udn.com" target="_blank" rel="noopener">外連1</a>
+    <a href="https://udn.com" target="_blank" rel="noopener">外連2</a>
+    <a class="active">自己這頁</a>
+    ```
 
 + header-type-b
 > 沒 outlink 沒 anchor 的 header
