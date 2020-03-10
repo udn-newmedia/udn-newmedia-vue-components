@@ -53,7 +53,7 @@ npm run build
 
 ## Initial
 ### main.js
-```javascript=
+```js
 import '~/style/main.scss';
 import store from './store'; // for anchor
 import { rwdMethods } from '@/mixins/masterBuilder.js';
@@ -70,7 +70,7 @@ new Vue({
 ```
 ### webpack config
 > set alias
-```javascript=
+```js=
 .set('~', resolve('src/assets'))
 ```
 ### assets
@@ -111,7 +111,7 @@ new Vue({
 ```
 
 ### Loading
-```html=
+```html
 <script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
 <link rel="stylesheet" href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css">
 ```
@@ -121,7 +121,7 @@ new Vue({
 
 ### Class
 #### 段落、字級
-```html=
+```html
 <div class="article">
   <p>正常字</p>
   <p class="small">小字</p>
@@ -132,13 +132,13 @@ new Vue({
 #### Header頁首
 + header-type-a
   > 有 outlink 沒 anchor 的 header
-  ```html=
+  ```html
   <header-type-a page-title="這一頁的標題" :outlink="outlink" /><header-type-a>
   ```
   + props:
     1. page-title
     2. outlink
-    ```
+    ```js
     [
       {
         title: '外連1',
@@ -167,7 +167,7 @@ new Vue({
 
 + header-type-b
   > 沒 outlink 沒 anchor 的 header
-  ```html=
+  ```html
   <header-type-b page-title="這一頁的標題" /><header-type-b>
   ```
   + props:
@@ -176,7 +176,7 @@ new Vue({
 
 + header-type-c
 > 有 outlink 有 anchor 的 header
-  ```html=
+  ```html
   <header-type-c page-title="這一頁的標題" theme="dark" :outlink="outlink" /><header-type-c>
   ```
   + props:
@@ -186,7 +186,7 @@ new Vue({
     dark | light
     ```
     3. outlink
-    ```
+    ```js
     [
       {
         title: '外連1',
@@ -215,7 +215,7 @@ new Vue({
 
 + header-type-d
 > 沒 outlink 有 anchor 的 header
-  ```html=
+  ```html
   <header-type-d page-title="這一頁的標題" theme="light" /><header-type-d>
   ```
   + props:
