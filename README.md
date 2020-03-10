@@ -113,10 +113,10 @@ new Vue({
 ## Components
 ### Header頁首
 + header-type-a
-> 有 outlink 沒 anchor 的 header
-```html=
-<header-type-a page-title="這一頁的標題" /><header-type-a>
-```
+  > 有 outlink 沒 anchor 的 header
+  ```html=
+  <header-type-a page-title="這一頁的標題" :outlink="outlink" /><header-type-a>
+  ```
   + props:
     1. page-title
     2. outlink
@@ -141,25 +141,71 @@ new Vue({
     ```
   + slot:
     1. outlink
-    ```
-    <a href="https://udn.com" target="_blank" rel="noopener">外連1</a>
-    <a href="https://udn.com" target="_blank" rel="noopener">外連2</a>
+    ```html=
+    <a href="https://udn.com" target="_blank">外連1</a>
+    <a href="https://udn.com" target="_blank">外連2</a>
     <a class="active">自己這頁</a>
     ```
 
 + header-type-b
-> 沒 outlink 沒 anchor 的 header
-
+  > 沒 outlink 沒 anchor 的 header
+  ```html=
+  <header-type-b page-title="這一頁的標題" /><header-type-b>
+  ```
+  + props:
+      1. page-title
 
 
 + header-type-c
 > 有 outlink 有 anchor 的 header
-
+  ```html=
+  <header-type-c page-title="這一頁的標題" theme="dark" :outlink="outlink" /><header-type-c>
+  ```
+  + props:
+    1. page-title
+    2. theme
+    ```
+    dark | light
+    ```
+    3. outlink
+    ```
+    [
+      {
+        title: '外連1',
+        url: 'https://udn.com',
+        active: false,
+      },
+      {
+        title: '外連2',
+        url: 'https://udn.com',
+        active: false,
+      },
+      {
+        title: '自己這頁',
+        url: null,
+        active: true,
+      }
+    ]
+    ```
+  + slot:
+    1. outlink
+    ```html=
+    <a href="https://udn.com" target="_blank">外連1</a>
+    <a href="https://udn.com" target="_blank">外連2</a>
+    <a class="active">自己這頁</a>
+    ```
 
 + header-type-d
 > 沒 outlink 有 anchor 的 header
-
-
+  ```html=
+  <header-type-d page-title="這一頁的標題" theme="light" /><header-type-d>
+  ```
+  + props:
+    1. page-title
+    2. theme
+    ```
+    dark | light
+    ```
 
 
 
