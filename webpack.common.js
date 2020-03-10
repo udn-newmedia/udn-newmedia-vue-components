@@ -5,13 +5,14 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const monitorCode = require("./template/monitor");
 
 module.exports = {
   entry: "./src/main.js",
   output: {
     filename: "nmd-components.min.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./"
+    publicPath: "./",
   },
   module: {
     rules: [{
@@ -57,7 +58,9 @@ module.exports = {
     new VueLoaderPlugin(),
     new CleanWebpackPlugin({ dry: true, protectWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      template: "./template/index.html"
+      template: "./template/index.html",
+      BASE_URL: 'http://nmdap.udn.com.tw/test/longform_v4/t_brian/', // 測試網址
+      MONITOR: monitorCode
     }),
   ],
 };

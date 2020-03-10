@@ -11,7 +11,7 @@ module.exports = {
   output: {
     filename: "nmd-components.min.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./"
+    publicPath: "./",
   },
   module: {
     rules: [{
@@ -57,7 +57,9 @@ module.exports = {
     new VueLoaderPlugin(),
     new CleanWebpackPlugin({ dry: true, protectWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      template: "./template/index_wc.html"
+      template: "./template/index_wc.html",
+      BASE_URL: 'http://nmdap.udn.com.tw/test/longform_v4/t_brian/', // 測試網址
+      MONITOR: monitorCode
     }),
   ],
 };
