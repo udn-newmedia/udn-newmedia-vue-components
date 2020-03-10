@@ -5,20 +5,7 @@
       'header-bar--hide': !activeFlag,
     }"
   >
-    <HeaderMenu v-if="outlink" :menuActiveFlag="menuActiveFlag" :simplified="true" >
-      <a v-for="(item, index) in outlink"
-        :key="index"
-        :href="item.url"
-        target="_blank"
-        rel="noopener"
-        :ariaLabel="item.title"
-        :name="item.title"
-        :class="{ active: item.active}"
-      >
-        {{item.title}}
-      </a>
-    </HeaderMenu>
-    <HeaderMenu v-else :menuActiveFlag="menuActiveFlag" :simplified="true" >
+    <HeaderMenu :menuActiveFlag="menuActiveFlag" :simplified="true" :outlink="outlink">
       <slot />
     </HeaderMenu>
     <div class="header-bar__nav__container">

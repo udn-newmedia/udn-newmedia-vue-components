@@ -7,6 +7,28 @@
     }"
   >
     <div
+      v-if="outlink"
+      :class="{
+        'header-menu__content': true,
+        'header-menu__content-dark': theme === 'dark',
+        'header-menu__content-light': theme === 'light',
+        'header-menu__content--active': menuActiveFlag,
+      }"
+    >
+      <a v-for="(item, index) in outlink"
+        :key="index"
+        :href="item.url"
+        target="_blank"
+        rel="noopener"
+        :ariaLabel="item.title"
+        :name="item.title"
+        :class="{ active: item.active}"
+      >
+        {{item.title}}
+      </a>
+    </div>
+    <div
+      v-else
       :class="{
         'header-menu__content': true,
         'header-menu__content-dark': theme === 'dark',
@@ -24,6 +46,26 @@
     }"
   >
     <div
+      v-if="outlink"
+      :class="{
+        'header-menu__content': true,
+        'header-menu__content--active': menuActiveFlag,
+      }"
+    >
+      <a v-for="(item, index) in outlink"
+        :key="index"
+        :href="item.url"
+        target="_blank"
+        rel="noopener"
+        :ariaLabel="item.title"
+        :name="item.title"
+        :class="{ active: item.active}"
+      >
+        {{item.title}}
+      </a>
+    </div>
+    <div
+      v-else
       :class="{
         'header-menu__content': true,
         'header-menu__content--active': menuActiveFlag,
@@ -52,6 +94,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    outlink: {
+      type: Array,
+      default: null
+    }
   },
   watch: {
     menuActiveFlag: function(value) {
@@ -133,6 +179,10 @@ export default {
           opacity: 1;
           border-bottom: solid 1px #e9e9e9;
         }
+        &:hover {
+          color: #ffffff;
+          opacity: 1;
+        }
       }
     }
     &.header-menu__content-light {
@@ -149,6 +199,9 @@ export default {
           border-bottom: solid 1px #000000;
           cursor: initial;
         }
+        &:hover {
+          color: #787878;
+        }
       }
     }
   }
@@ -163,7 +216,6 @@ export default {
     color: inherit;
     cursor: pointer;
     @include clean-tap;
-
     @include pad {
       width: 35%;
     }

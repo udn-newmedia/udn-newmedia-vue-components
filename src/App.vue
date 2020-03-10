@@ -3,9 +3,7 @@
     <!-- <HeaderTypeA
       :outlink="menuOutlink"
     /> -->
-    <!-- <HeaderTypeB
-      :outlink="menuOutlink"
-    /> -->
+    <!-- <HeaderTypeB /> -->
     <HeaderTypeC
       page-title="這一頁的標題"
       theme="light"
