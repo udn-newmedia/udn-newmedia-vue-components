@@ -17,8 +17,9 @@ version: v4.0
   |—components
     |—footer
     |—header
+    |—lab
     |—layout
-    |—ui
+    |—pinhead
   |—mixins
   |—utils
   |—App.vue

@@ -57,7 +57,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new CleanWebpackPlugin({ dry: true, protectWebpackAssets: false }),
     new HtmlWebpackPlugin({
-      template: "./index_wc.html"
+      template: "./template/index_wc.html"
     }),
   ],
 };
