@@ -104,9 +104,11 @@ new Vue({
 ```
 ### utils
 > add "gaFormator.js", "udn-newmedia-utils.js"
+```
 |—utils
   |—gaFormator.js
   |—udn-newmedia-utils.js
+```
 
 ### Loading
 ```html=
@@ -116,7 +118,9 @@ new Vue({
 
 
 ## Usage
+
 ### Class
+#### 段落、字級
 ```html=
 <div class="article">
   <p>正常字</p>
