@@ -104,6 +104,7 @@ export default {
   transition: .333s linear;
 
   &.header-bar--hide {
+    pointer-events: none;
     transition: .333s .666s linear;
     transform: translateY(-100%);
   }

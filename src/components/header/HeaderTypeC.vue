@@ -225,6 +225,7 @@ export default {
     height: 50px;
     transition: .333s linear;
     &.header-bar__nav--hide {
+      pointer-events: none;
       transition: .333s .666s linear;
       transform: translateY(-100%);
     }
@@ -292,9 +293,9 @@ export default {
     }
 
     .haeder-bar__menu-button {
+      background-color: transparent;
       cursor: pointer;
       @include clean-btn;
-
       .haeder-bar__menu-button__arrow {
         border-style: solid;
         border-width: 0 2px 2px 0;

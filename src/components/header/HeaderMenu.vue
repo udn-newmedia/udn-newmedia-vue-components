@@ -75,12 +75,14 @@ export default {
   opacity: 0;
   transition: .333s ease-in-out;
   @include pad {
+    background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       backdrop-filter: blur(8px);
       background-color: rgba(#000000, 0.6);
     }
   }
   @include pc {
+    background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       backdrop-filter: blur(8px);
       background-color: rgba(#000000, 0.6);
@@ -118,6 +120,7 @@ export default {
       transform: translateY(0);
     }
     &.header-menu__content-dark {
+      background-color: rgba(#000000, 0.8);
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
         backdrop-filter: blur(23px);
         background-color: rgba(#000000, 0.8);
@@ -133,7 +136,7 @@ export default {
       }
     }
     &.header-menu__content-light {
-      background-color: #ffffff;
+      background-color: rgba(#ffffff, 0.8);
       @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
         backdrop-filter: blur(8px);
         box-shadow: 0 0 10px 0 rgba(165, 165, 165, 0.23);
@@ -185,12 +188,14 @@ export default {
   opacity: 0;
   transition: .333s ease-in-out;
   @include pad {
+    background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       backdrop-filter: blur(8px);
       background-color: rgba(#000000, 0.6);
     }
   }
   @include pc {
+    background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       backdrop-filter: blur(8px);
       background-color: rgba(#000000, 0.6);

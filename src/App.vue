@@ -1,11 +1,19 @@
 <template>
   <div id="app">
-    <HeaderTypeA
-      page-title="這一頁的標題"
+    <!-- <HeaderTypeA
       :outlink="menuOutlink"
-    >
-
-    </HeaderTypeA>
+    /> -->
+    <!-- <HeaderTypeB
+      :outlink="menuOutlink"
+    /> -->
+    <HeaderTypeC
+      page-title="這一頁的標題"
+      theme="light"
+      :outlink="menuOutlink"
+    />
+    <!-- <HeaderTypeD
+      :outlink="menuOutlink"
+    /> -->
     <PageCover
       :srcMob="img.imgCoverMob"
       :srcPad="img.imgCoverPad"
@@ -39,6 +47,14 @@
       <p>第六款作品《最後一戰：瑞曲之戰》於2010年9月14日發行，為《最後一戰：戰鬥進化》的前部曲。</p>
       <p>第七款作品《最後一戰 復刻版》於2011年11月15日發行，為《最後一戰：戰鬥進化》的重製版。</p>
     </article-container>
+    <PageFooter>
+      <FooterNextArticle
+        type="2"
+        title="空服人生"
+        :img="img.imgNextArticle"
+        href="https://udn.com"
+      />
+    </PageFooter>
   </div>
 </template>
 
@@ -49,13 +65,19 @@ import imgCoverPc from '~/img/cover/mob.jpg';
 import imgClnMob from '~/img/halo/1.jpg';
 import imgClnPad from '~/img/halo/1.jpg';
 import imgClnPc from '~/img/parallax.jpg';
+import imgNextArticle from '~/img/parallax.jpg';
 
 import ArticleCastAnchor from '@/components/layout/ArticleCastAnchor.vue';
 import ArticleColumnOne from '@/components/layout/ArticleColumnOne.vue';
 import ArticleContainer from '@/components/layout/ArticleContainer.vue';
 import ArticleDictionary from '@/components/layout/ArticleDictionary.vue';
+import FooterNextArticle from '@/components/footer/FooterNextArticle.vue';
 import HeaderTypeA from '@/components/header/HeaderTypeA.vue';
+import HeaderTypeB from '@/components/header/HeaderTypeB.vue';
+import HeaderTypeC from '@/components/header/HeaderTypeC.vue';
+import HeaderTypeD from '@/components/header/HeaderTypeD.vue';
 import PageCover from '@/components/layout/PageCover.vue';
+import PageFooter from '@/components/footer/PageFooter.vue';
 
 export default {
   name: 'app',
@@ -64,8 +86,13 @@ export default {
     ArticleColumnOne,
     ArticleContainer,
     ArticleDictionary,
+    FooterNextArticle,
     HeaderTypeA,
+    HeaderTypeB,
+    HeaderTypeC,
+    HeaderTypeD,
     PageCover,
+    PageFooter,
   },
   data() {
     return {
@@ -76,6 +103,7 @@ export default {
         imgClnMob: imgClnMob,
         imgClnPad: imgClnPad,
         imgClnPc: imgClnPc,
+        imgNextArticle: imgNextArticle,
       },
       menuOutlink: [
         {

@@ -134,10 +134,10 @@ export default {
   left: 0;
   width: 100%;
   height: 50px;
-
   transition: .333s linear;
 
   &.header-bar--hide {
+    pointer-events: none;
     transition: .333s .666s linear;
     transform: translateY(-100%);
   }

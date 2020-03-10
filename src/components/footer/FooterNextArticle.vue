@@ -259,6 +259,7 @@ export default {
   .footer-next-article__content__button {
     position: relative;
     width: 100%;
+    background-color: transparent;
     @include clean-btn;
   }
 }
