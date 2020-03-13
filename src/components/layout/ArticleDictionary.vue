@@ -90,17 +90,17 @@ export default {
   }
   &.article-dictionary__description--active {
     display: block;
-    animation: appear .333s ease-in-out forwards;
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+    // animation: appear .333s ease-in-out forwards;
+    // @keyframes appear {
+    //   from {
+    //     opacity: 0;
+    //     transform: scale(0.9);
+    //   }
+    //   to {
+    //     opacity: 1;
+    //     transform: scale(1);
+    //   }
+    // }
   }
 }
 </style>

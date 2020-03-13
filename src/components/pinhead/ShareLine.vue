@@ -69,10 +69,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .share-line {
   i {
-    font-size: 25px;
+    font-size: 19px;
     font-family: Arial, 微軟正黑體, sans-serif;
+    @include pad {
+      font-size: 25px;
+    }
+    @include pc {
+      font-size: 25px;
+    }
   }
 }
 </style>

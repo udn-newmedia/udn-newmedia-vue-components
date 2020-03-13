@@ -50,10 +50,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .share-fb {
   i {
-    font-size: 23px;
+    font-size: 17px;
     font-family: Arial, 微軟正黑體, sans-serif;
+    @include pad {
+      font-size: 23px;
+    }
+    @include pc {
+      font-size: 23px;
+    }
   }
 }
 </style>

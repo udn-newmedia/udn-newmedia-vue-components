@@ -79,6 +79,9 @@ export default {
   img {
     width: 100px;
     margin: 0 8px;
+    @include pc {
+      width: 180px;
+    }
   }
 }
 </style>

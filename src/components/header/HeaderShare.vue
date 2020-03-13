@@ -110,8 +110,8 @@ export default {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 12px;
   @include pc {
+    margin-right: 12px;
     width: auto;
   }
   .header-share__container {
@@ -186,7 +186,13 @@ export default {
         color: #000000;
       }
       i {
-        font-size: 22px;
+        font-size: 19px;
+        @include pad {
+          font-size: 22px;
+        }
+        @include pc {
+          font-size: 22px;
+        }
       }
     }
   }

@@ -226,6 +226,7 @@ export default {
     width: 100%;;
   }
   @include pc {
+    align-items: flex-start;
     flex-direction: row;
   }
 }
@@ -242,8 +243,10 @@ export default {
   @include pad {
     display: block;
     float: left;
-    width: 50%;
-    padding: 8px;
+    width: calc(50% - 8px);
+    &:nth-child(odd) {
+      margin-right: 16px;
+    }
   }
   @include pc {
     width: 230px;
@@ -257,18 +260,21 @@ export default {
     overflow: hidden;
     width: 100%;
     height: 168px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    @include pad {
+      height: 250px;
+    }
     @include pc {
       height: 145px;
     }
     img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       height: 100%;
-      @include pad {
-        width: 100%;
-        height: auto;
-      }
+      transform: translate(-50%, -50%);
     }
   }
   .footer-relate-article__article__body {
