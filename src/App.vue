@@ -112,6 +112,7 @@
       <FooterFbComment />
       <FooterLogo />
     </PageFooter>
+    <PageBackTop />
   </div>
 </template>
 
@@ -139,6 +140,7 @@ import HeaderTypeA from '@/components/header/HeaderTypeA.vue';
 import HeaderTypeB from '@/components/header/HeaderTypeB.vue';
 import HeaderTypeC from '@/components/header/HeaderTypeC.vue';
 import HeaderTypeD from '@/components/header/HeaderTypeD.vue';
+import PageBackTop from '@/components/layout/PageBackTop.vue';
 import PageCover from '@/components/layout/PageCover.vue';
 import PageFooter from '@/components/footer/PageFooter.vue';
 import PageIndicator from '@/components/layout/PageIndicator.vue';
@@ -161,6 +163,7 @@ export default {
     HeaderTypeB,
     HeaderTypeC,
     HeaderTypeD,
+    PageBackTop,
     PageCover,
     PageFooter,
     PageIndicator,

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-back-top" @click="handleClick">
+  <div class="page-back-top">
     <button
       :class="{
         'page-back-top__btn': true,
@@ -7,6 +7,7 @@
       }"
       aria-label="go-top"
       name="go-top"
+      @click="handleClick"
     >
       <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
         <g id="Group_1106" data-name="Group 1106" transform="translate(-2030 -985)">
@@ -63,6 +64,7 @@ export default {
   height: 45px;
 }
 .page-back-top__btn {
+  pointer-events: none;
   position: relative;
   width: 100%;
   height: 100%;
@@ -71,6 +73,7 @@ export default {
   transition: .333s ease-in-out;
   @include clean-btn;
   &.page-back-top__btn--active {
+    pointer-events: auto;
     transform: translateY(0);
   }
 }

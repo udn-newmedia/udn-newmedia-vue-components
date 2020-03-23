@@ -260,12 +260,6 @@ export default {
     overflow: hidden;
     width: 100%;
     height: 168px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    @include pad {
-      height: 250px;
-    }
     @include pc {
       height: 145px;
     }
@@ -273,8 +267,12 @@ export default {
       position: absolute;
       top: 50%;
       left: 50%;
-      height: 100%;
+      width: 100%;
       transform: translate(-50%, -50%);
+      @include pc {
+        width: auto;
+        height: 100%;
+      }
     }
   }
   .footer-relate-article__article__body {

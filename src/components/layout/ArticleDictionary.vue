@@ -75,32 +75,39 @@ export default {
   cursor: pointer;
 }
 .article-dictionary__description {
-  display: none;
+  overflow: hidden;
+  display: inline-block;
   color: #999999;
   background-color: #f6f6f6;
   border-radius: 8px;
-  padding: 32px 24px;
-  margin: 32px 0;
-  transition: 1s ease-in-out;
-  @include pad {
-    padding: 32px 72px;
-  }
-  @include pc {
-    padding: 32px 72px;
-  }
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  transition: .111s ease-in-out;
   &.article-dictionary__description--active {
-    display: block;
-    // animation: appear .333s ease-in-out forwards;
-    // @keyframes appear {
-    //   from {
-    //     opacity: 0;
-    //     transform: scale(0.9);
-    //   }
-    //   to {
-    //     opacity: 1;
-    //     transform: scale(1);
-    //   }
-    // }
+    // display: block;
+    width: 100%;
+    padding: 32px 24px;
+    margin: 32px 0;
+    @include pad {
+      padding: 32px 72px;
+    }
+    @include pc {
+      padding: 32px 72px;
+    }
+    animation: grow .333s .111s ease-in-out forwards;
+    @keyframes grow {
+      0% {
+        opacity: 0;
+        height: auto;
+      }
+      100% {
+        opacity: 1;
+        height: auto;
+      }
+    }
   }
 }
 </style>

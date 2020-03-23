@@ -8,30 +8,9 @@
         'header-share__container--active': toggleFlag && headerActiveFlag,
       }"
     >
-      <div
-        :class="{
-          'header-share__share-icon': true,
-          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
-        }"
-      >
-        <ShareFb />
-      </div>
-      <div
-        :class="{
-          'header-share__share-icon': true,
-          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
-        }"
-      >
-        <ShareLine />
-      </div>
-      <div
-        :class="{
-          'header-share__share-icon': true,
-          'header-share__share-icon--active': toggleFlag && headerActiveFlag,
-        }"
-      >
-        <ShareTwitter />
-      </div>
+      <div class="header-share__share-icon"><ShareFb /></div>
+      <div class="header-share__share-icon"><ShareLine /></div>
+      <div class="header-share__share-icon"><ShareTwitter /></div>
     </div>
     <div
       v-if="isMob"
@@ -167,9 +146,6 @@ export default {
     align-items: center;
     cursor: pointer;
     @include clean-btn;
-    &.header-share__share-icon--active {
-      margin: 0 8px;
-    }
     &.header-share__share-icon__toggle {
       position: absolute;
       z-index: 5;

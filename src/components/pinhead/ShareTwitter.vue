@@ -51,7 +51,6 @@ export default {
 <style lang="scss" scoped>
 @import '~/style/_mixins.scss';
 .share-twitter {
-  padding-top: 2px;
   i {
     font-size: 18px;
     font-family: Arial, 微軟正黑體, sans-serif;
