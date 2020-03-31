@@ -6,13 +6,10 @@ function detectDevice(w) {
   switch (true) {
     case (w < 767.98):
       return 'mob';          
-      break;
     case (768 <= w && w <= 1024.98):
       return 'pad';
-      break;
     default:
       return 'pc';
-      break;
   }
 }
 
@@ -87,15 +84,10 @@ const selectSrcMethod_3 = {
       switch (deviceType) {
         case 'mob':
           return mob;
-          break;
-
         case 'pad':
           return pad;    
-          break;
-      
         default:
           return pc;
-          break;
       }
     },
   },
