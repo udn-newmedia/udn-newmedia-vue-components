@@ -12,11 +12,6 @@ import { autoResize_3 } from '@/mixins/masterBuilder.js';
 export default {
   name: 'PageFooter',
   mixins: [autoResize_3],
-  data() {
-    return {
-
-    }
-  },
 }
 </script>
 
@@ -29,8 +24,8 @@ export default {
   .page-footer__copyright {
     position: relative;
     width: 100%;
-    text-align: center;
     p {
+      text-align: center;
       color: #9a9a9a;
     }
   }
