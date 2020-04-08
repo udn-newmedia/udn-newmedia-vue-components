@@ -38,7 +38,7 @@ export default {
   props: {
     href: {
       type: String,
-      default: ''
+      default: 'https://www.surveycake.com/s/KpQKN'
     },
     text: {
       type: String,
