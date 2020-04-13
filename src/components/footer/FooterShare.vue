@@ -44,10 +44,14 @@
 
 <script>
 import Utils from '@/utils/udn-newmedia-utils';
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
+
 const isMobile = Utils.detectMob();
 const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp();
+
 export default {
   name: 'FooterShare',
+  mixins: [sendGaMethods],
   props: {
     href: {
       type: String,
