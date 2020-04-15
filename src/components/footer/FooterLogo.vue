@@ -11,7 +11,7 @@
       <img :src="img.dotCom" alt="聯合新聞網">
     </a>
     <a
-      href="https://www.facebook.com/udnNewMediaLab/" 
+      href="https://udn.com/newmedia/office/" 
       target="_blank"
       rel="noopener"
       aria-label="聯合報新媒體中心"
