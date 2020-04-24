@@ -70,7 +70,7 @@ const autoResize_3 = {
 const selectSrcMethod_2 = {
   methods: {
     selectSrc_2: function(mob, pc) {
-      const isMob = window.innerWidthwidth <= 1024 ? true : false;;
+      const isMob = window.innerWidthwidth <= 1024 ? true : false;
       return isMob ? mob : pc;
     },
   },
