@@ -13,9 +13,6 @@ const mainContent = contentGenerator('./contents/main_content.html');
 const mainPage = 'http://nmdap.udn.com.tw/test/MAIN_PAGE/';
 const pathRoot = process.env.NODE_ENV === 'production' ? 'http://nmdap.udn.com.tw/test/MAIN_PAGE/SUB_PAGE/' : './';
 
-/* 作者 */
-const jsonLdAuthor = 'THE JSON-LD AUTHOR';
-
 module.exports = {
   publicPath: pathRoot,
   pages: {
@@ -26,7 +23,7 @@ module.exports = {
       title: 'THE PROJECT TITLE',
       description: 'THE PROJECT DESCRIPTION',
       keywords: 'THE PROJECT KEYWORD',
-      author: jsonLdAuthor,
+      author: 'THE JSON-LD AUTHOR',
       datePublished: '2020-06-08T07:00:00+08:00',
       dateModified: '2020-06-08T07:00:00+08:00',
       MONITOR: monitorCode,
