@@ -1,9 +1,9 @@
-const contentGenerator = require('./contentGenerator.js')
+const contentGenerator = require('./utils/contentGenerator.js')
 
 // /* seo內容文件 */
-const monitorCode = contentGenerator('./contents/monitor.html');
-const authorContent = contentGenerator('./contents/author.html');
-const mainContent = contentGenerator('./contents/main_content.html');
+const monitorCode = contentGenerator('../contents/monitor.html');
+const authorContent = contentGenerator('../contents/author.html');
+const mainContent = contentGenerator('../contents/main_content.html');
 
 /* 正式路徑 */
 // const mainPage = 'https://udn.com/newmedia/MAIN_PAGE/';
