@@ -7,6 +7,7 @@ function detectDevice(w) {
     case (w < 767.98):
       return 'mob';          
     case (768 <= w && w <= 1024.98):
+      if (window.matchMedia('(orientation: landscape)').matches) return 'pc';
       return 'pad';
     default:
       return 'pc';

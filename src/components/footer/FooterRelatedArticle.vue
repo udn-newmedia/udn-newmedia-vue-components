@@ -264,15 +264,9 @@ export default {
       height: 145px;
     }
     img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      object-fit: cover;
       width: 100%;
-      transform: translate(-50%, -50%);
-      @include pc {
-        width: auto;
-        height: 100%;
-      }
+      min-height: 100%;
     }
   }
   .footer-relate-article__article__body {
@@ -301,7 +295,7 @@ export default {
         display: none;
       }
       p {
-        color: #131313;
+        color: #a6adb4;
       }
     }
   }
