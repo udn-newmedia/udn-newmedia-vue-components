@@ -3,7 +3,7 @@
     <Defalut>
       <PageIndicator slot="progress" />
       <HeaderTypeA slot="header" />
-      <div slot="main"><h1>Hello Freddy!</h1></div>
+      <div slot="main"><h1>Hello Freddy! Jim!</h1></div>
       <PageFooter slot="footer" />
     </Defalut>
   </div>
