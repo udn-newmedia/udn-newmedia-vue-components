@@ -18,7 +18,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/style/_mixins.sass"`
+        prependData: `@import "@/assets/style/_mixins.scss"`
       },
       scss: {
         prependData: `@import "@/assets/style/_mixins.scss";`
