@@ -1,5 +1,5 @@
 <template>
-  <div class="page-indicator">
+  <progress  class="page-indicator">
     <div
       class="page-indicator__progress"
       :style="{
@@ -7,7 +7,7 @@
         backgroundColor: color
       }"
     />
-  </div>
+  </progress>
 </template>
 
 <script>
