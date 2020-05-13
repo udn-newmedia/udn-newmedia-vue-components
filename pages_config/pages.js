@@ -1,6 +1,6 @@
 const contentGenerator = require('./utils/contentGenerator.js')
 
-// /* seo內容文件 */
+/* seo內容文件 */
 const monitorCode = contentGenerator('../contents/monitor.html');
 const headerContent = contentGenerator('../contents/header.html');
 const mainContent = contentGenerator('../contents/main.html');
