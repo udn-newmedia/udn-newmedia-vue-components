@@ -76,7 +76,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .nmd-button {
   position: relative;
   overflow: hidden;

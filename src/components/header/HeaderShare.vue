@@ -81,7 +81,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .header-share {
   position: relative;
   height: 50px;
@@ -96,7 +95,6 @@ export default {
   .header-share__container {
     pointer-events: none;
     box-sizing: content-box;
-    // display: none;
     position: absolute;
     top: 50%;
     right: 0;

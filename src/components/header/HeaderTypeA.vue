@@ -113,7 +113,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .header-bar {
   position: fixed;
   z-index: 4999;

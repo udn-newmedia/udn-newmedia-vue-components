@@ -64,7 +64,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .article-parallax {
   position: relative;
   width: 100%;

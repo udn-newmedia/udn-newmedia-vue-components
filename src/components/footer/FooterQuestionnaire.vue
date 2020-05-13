@@ -60,7 +60,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .footer-questionnaire {
   position: relative;
   display: block;
