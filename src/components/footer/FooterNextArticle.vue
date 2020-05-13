@@ -1,5 +1,5 @@
 <template>
-  <div
+  <article
     :class="{
       'footer-next-article': true,
       'footer-next-article--type-1': type === '1',
@@ -64,7 +64,7 @@
         </button>
       </a>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

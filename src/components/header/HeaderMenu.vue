@@ -1,5 +1,5 @@
 <template>
-  <div
+  <nav
     v-if="!simplified"
     :class="{
       'header-menu': true,
@@ -38,8 +38,8 @@
     >
       <slot />
     </div>
-  </div>
-  <div v-else
+  </nav>
+  <nav v-else
     :class="{
       'header-menu-simplified': true,
       'header-menu-simplified--active': menuActiveFlag,
@@ -73,7 +73,7 @@
     >
       <slot />
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
