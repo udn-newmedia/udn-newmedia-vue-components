@@ -1,27 +1,33 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Defalut>
+      <PageIndicator slot="progress" />
+      <HeaderTypeA slot="header" />
+      <div slot="main"><h1>Hello</h1></div>
+      <PageFooter slot="footer" />
+    </Defalut>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Defalut from '@/layouts/Default.vue';
+
+import HeaderTypeA from '@/components/header/HeaderTypeA.vue';
+import PageIndicator from '@/components/layout/PageIndicator.vue';
+import PageFooter from '@/components/footer/PageFooter.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Defalut,
+    
+    HeaderTypeA,
+    PageIndicator,
+    PageFooter,
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="sass">
+
 </style>

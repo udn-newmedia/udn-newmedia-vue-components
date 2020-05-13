@@ -1,5 +1,5 @@
 <template>
-  <div class="article-column-two">
+  <figure class="article-column-two">
     <div class="article-column__image__container">
       <div class="article-column__image">
         <img :src="selectSrc_3(srcMob_1, srcPad_1, srcPc_1)" :alt="alt_1">
@@ -8,12 +8,12 @@
         <img :src="selectSrc_3(srcMob_2, srcPad_2, srcPc_2)" :alt="alt_2">
       </div>
     </div>
-    <div class="article-column__description">
+    <figcaption class="article-column__description">
       <p class="small">
         <slot />
       </p>
-    </div>
-  </div>
+    </figcaption>
+  </figure>
 </template>
 
 <script>
