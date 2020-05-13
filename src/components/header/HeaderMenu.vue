@@ -109,7 +109,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .header-menu {
   position: absolute;
   visibility: hidden;

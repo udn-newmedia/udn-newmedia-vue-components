@@ -106,7 +106,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .page-cover {
   position: relative;
   overflow: hidden;

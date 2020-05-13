@@ -62,7 +62,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .article-dictionary__button {
   @include clean-btn;
   display: inline-block;

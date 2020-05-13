@@ -52,7 +52,6 @@ export default {
     },
     handleScroll() {
       const list = this.$store.state.anchorList;
-      const pageYOffset = window.pageYOffset;
 
       for (let i = list.length - 1; i >= 0; i--) {
         const pos = document.getElementById('anchor-' + list[i].title).getBoundingClientRect().top;

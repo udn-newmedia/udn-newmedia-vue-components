@@ -128,7 +128,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .footer-next-article {
   position: relative;
   width: 100%;

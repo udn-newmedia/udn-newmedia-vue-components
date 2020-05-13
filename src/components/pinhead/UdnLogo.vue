@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .udn-logo {
   position: relative;
   width: 35px;

@@ -100,7 +100,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .header-bar-container {
   position: fixed;
   top: 0;

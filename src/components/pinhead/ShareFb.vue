@@ -50,7 +50,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .share-fb {
   i {
     font-size: 17px;

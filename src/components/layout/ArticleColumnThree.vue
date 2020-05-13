@@ -87,7 +87,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .article-column-three {
   position: relative;
   width: 100%;

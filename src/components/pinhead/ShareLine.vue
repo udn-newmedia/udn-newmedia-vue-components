@@ -69,7 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .share-line {
   i {
     font-size: 19px;

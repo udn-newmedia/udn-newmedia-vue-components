@@ -188,7 +188,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .footer-relate-article {
   position: relative;
   display: block;

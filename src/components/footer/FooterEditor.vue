@@ -11,7 +11,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '~/style/_mixins.scss';
 .footer-editor {
   width: 325px;
   @include smob {
