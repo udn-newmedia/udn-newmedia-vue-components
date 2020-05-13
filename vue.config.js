@@ -15,4 +15,14 @@ module.exports = {
     config.resolve.alias
       .set('~', resolve('src/assets'));
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `@import "@/assets/style/_mixins.sass"`
+      },
+      scss: {
+        prependData: `@import "@/assets/style/_mixins.scss";`
+      },
+    }
+  }
 };
