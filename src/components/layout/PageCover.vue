@@ -1,5 +1,5 @@
 <template>
-  <div class="page-cover"
+  <section class="page-cover"
     :style="{
       backgroundImage: 'url(' + selectSrc_3(srcMob, srcPad, srcPc) + ')'
     }"
@@ -20,7 +20,7 @@
       <NmdArrow />
     </div>
     <div class="page-cover__enter-anchor" id="enter-anchor" />
-  </div>
+  </section>
 </template>
 
 <script>

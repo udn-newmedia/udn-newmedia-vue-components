@@ -1,6 +1,6 @@
 
 <template>
-  <div class="footer-share">
+  <section class="footer-share">
     <div class="footer-share__share-fb">
       <div
         class="fb-like"

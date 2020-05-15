@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store';
 import { rwdMethods } from '@/mixins/masterBuilder.js';
+import '~/style/main.scss';
 
 Vue.config.productionTip = false
 

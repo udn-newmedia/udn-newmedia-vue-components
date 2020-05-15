@@ -1,5 +1,5 @@
 <template>
-  <div class="header-hamburger">
+  <nav class="header-hamburger">
     <span
       :class="{
         'header-hamburger__line': true,
@@ -24,7 +24,7 @@
         'header-hamburger__line-3--active': menuActiveFlag,
       }"
     />
-  </div>
+  </nav>
 </template>
 
 <script>

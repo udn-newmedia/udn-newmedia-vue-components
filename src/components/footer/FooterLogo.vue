@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-logo">
+  <article class="footer-logo">
     <a
       href="https://udn.com/news/index" 
       target="_blank"
