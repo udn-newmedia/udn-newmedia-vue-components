@@ -1,5 +1,5 @@
 <template>
-  <div class="article-parallax">
+  <section class="article-parallax">
     <div :class="{
       'article-parallax__bg': true,
       'article-parallax__bg--active': activeFlag,
@@ -12,7 +12,7 @@
         <slot />
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

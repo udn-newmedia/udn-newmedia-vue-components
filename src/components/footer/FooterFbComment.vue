@@ -1,5 +1,5 @@
 <template>
-  <div class="fb-comment-block article">
+  <article class="fb-comment-block article">
     <div
       class="fb-comments"
       :data-href="href"
@@ -7,7 +7,7 @@
       data-width="100%"
       data-order-by="reverse_time"
     />
-  </div>
+  </article>
 </template>
 
 <script>

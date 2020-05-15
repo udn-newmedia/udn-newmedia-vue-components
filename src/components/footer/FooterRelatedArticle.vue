@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-relate-article">
+  <article class="footer-relate-article">
     <div class="footer-relate-article__title">
       <h4>{{title}}</h4>
     </div>
@@ -92,7 +92,7 @@
     <div class="footer-relate-article__questionnaire">
       <FooterQuestionnaire href="https://www.surveycake.com/s/KpQKN" />
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="header-share">
+  <sectoin class="header-share">
     <!-- mob -->
     <div
       v-if="isMob"
@@ -37,7 +37,7 @@
         <ShareTwitter :theme="theme" />
       </div>
     </div>
-  </div>
+  </sectoin>
 </template>
 
 <script>

@@ -1,13 +1,13 @@
 <template>
-  <div class="article-container"
+  <section class="article-container"
     :style="{
       backgroundColor: bgColor,
     }"
   >
-    <div class="article">
+    <article class="article">
       <slot />
-    </div>
-  </div>
+    </article>
+  </section>
 </template>
 
 <script>

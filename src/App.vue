@@ -3,8 +3,9 @@
     <Defalut>
       <PageIndicator slot="progress" />
       <HeaderTypeA slot="header" />
-      <div slot="main"><h1>Hello Freddy! Jim!</h1></div>
+      <div slot="main"><h1>Hello Freddy! Jim!</h1><div class="a"></div></div>
       <PageFooter slot="footer" />
+      
     </Defalut>
   </div>
 </template>
@@ -28,6 +29,8 @@ export default {
 }
 </script>
 
-<style lang="sass">
-
+<style lang="scss">
+.a {
+  height: 500vh;
+}
 </style>
