@@ -8,6 +8,7 @@
     >
       {{name}}
     </button>
+    <br v-if="breakFlag">
     <div
       :class="{
         'article-dictionary__description': true,
@@ -37,21 +38,25 @@ export default {
   data() {
     return {
       activeFlag: false,
+      breakFlag: false,
     }
   },
   methods: {
     handleClick() {
       this.activeFlag = !this.activeFlag;
+      setTimeout(() => {
+        this.breakFlag = !this.breakFlag;
+      }, 111);
       
       if (this.activeFlag) {
         this.sendGA({
-          category: 'hamburger',
+          category: 'dictionary',
           action: 'click',
           label: this.title + ' open'
         });
       } else {
         this.sendGA({
-          category: 'hamburger',
+          category: 'dictionary',
           action: 'click',
           label: this.title + ' close'
         });
@@ -62,6 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/style/_mixins.scss';
 .article-dictionary__button {
   @include clean-btn;
   display: inline-block;
@@ -86,7 +92,7 @@ export default {
   height: 0;
   transition: .111s ease-in-out;
   &.article-dictionary__description--active {
-    // display: block;
+    display: block;
     width: 100%;
     padding: 32px 24px;
     margin: 32px 0;

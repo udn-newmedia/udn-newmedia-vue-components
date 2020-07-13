@@ -42,10 +42,10 @@
 <script>
 import _debounce from 'lodash.debounce';
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
-import UdnLogo from '@/components/pinhead/UdnLogo.vue';
-import ShareFb from '@/components/pinhead/ShareFb.vue';
-import ShareLine from '@/components/pinhead/ShareLine.vue';
-import ShareTwitter from '@/components/pinhead/ShareTwitter.vue';
+import UdnLogo from '@/components/accessories/UdnLogo.vue';
+import ShareFb from '@/components/accessories/ShareFb.vue';
+import ShareLine from '@/components/accessories/ShareLine.vue';
+import ShareTwitter from '@/components/accessories/ShareTwitter.vue';
 
 export default {
   name: 'HeaderTypeB',

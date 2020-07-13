@@ -5,6 +5,7 @@ const monitorCode = contentGenerator('../contents/monitor.html');
 const headerContent = contentGenerator('../contents/header.html');
 const mainContent = contentGenerator('../contents/main.html');
 const footerContent = contentGenerator('../contents/footer.html');
+const noIndex = contentGenerator("../contents/noIndex.html");
 
 /* 正式路徑 */
 // const mainPage = 'https://udn.com/newmedia/MAIN_PAGE/';
@@ -31,7 +32,8 @@ module.exports = {
       CONTENT: headerContent + mainContent + footerContent,
       pageUrl: pathRoot,
       mainPage,
-      theme: '#ffffff'
+      theme: '#ffffff',
+      noIndex
     },
   }
 }

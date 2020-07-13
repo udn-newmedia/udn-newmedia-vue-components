@@ -16,7 +16,6 @@ export default {
   @include smob {
     width: 300px;
   }
-  // @include pad {}
   @include pc {
     width: 720px;
     padding: 72px 0 16px 0;

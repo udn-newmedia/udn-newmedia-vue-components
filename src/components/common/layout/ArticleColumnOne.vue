@@ -1,9 +1,11 @@
 <template>
   <figure class="article-column-one">
-    <img
-      :src="selectSrc_3(srcMob, srcPad, srcPc)"
+    <BasePicture
+      :srcMob="srcMob"
+      :srcPad="srcPad"
+      :srcPc="srcPc"
       :alt="alt"
-    >
+    />
     <figcaption class="article-column-one__description">
       <p class="small">
         <slot />
@@ -13,10 +15,13 @@
 </template>
 
 <script>
-import { autoResize_3, selectSrcMethod_3 } from '@/mixins/masterBuilder.js';
+import BasePicture from '@/components/common/accessories/BasePicture.vue';
+
 export default {
   name: 'ArticleColumnOne',
-  mixins: [autoResize_3, selectSrcMethod_3],
+  components: {
+    BasePicture
+  },
   props: {
     srcMob: {
       type: String,
@@ -38,12 +43,7 @@ export default {
 <style lang="scss" scoped>
 .article-column-one {
   position: relative;
-  width: 100%;
   @include layout-padding;
-  img {
-    width: 100%;
-    height: auto
-  }
   .article-column-one__description {
     margin-top: 8px;
     p {

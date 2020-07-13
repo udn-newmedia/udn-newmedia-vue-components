@@ -1,30 +1,15 @@
 <template>
-  <div class="nmd-button"
-    :class="{
-      'nmd-button--outlined': theme === 'outlined',
-      'nmd-button--contained': theme === 'contained',
-      'nmd-button--border-s': border === 's',
-      'nmd-button--border-m': border === 'm',
-      'nmd-button--border-l': border === 'l',
-      'nmd-button--size-xs': size === 'xs',
-      'nmd-button--size-s': size === 's',
-      'nmd-button--size-m': size === 'm',
-      'nmd-button--size-l': size === 'l',
-      'nmd-button--size-xl': size === 'xl',
-    }"
+  <button
+    :class="buttonClassAttr"
     :style="{
       'border-color': theme === 'contained' ?  'transparent' : bgColor,
       'background-color': theme === 'contained' ? bgColor : 'transparent',
     }"
+    @click="clickEvent"
     @mouseenter="handleHover(true)"
     @mouseleave="handleHover(false)"
   >
-    <div
-      :class="{
-        'nmd-button__ripple': true,
-        'nmd-button__ripple--hover': hoverFlag
-      }"
-    />
+    <div :class="rippleClassAttr"></div>
     <div class="nmd-button__text">
       <p class="small"
         :style="{
@@ -34,7 +19,7 @@
         <slot />
       </p>
     </div>
-  </div>
+  </button>
 </template>
 
 <script>
@@ -61,36 +46,60 @@ export default {
       type: String,
       default: 'm' /* xs, x, m, l, xl */
     },
+    clickEvent: {
+      type: Function,
+      default: function() {}
+    }
   },
   data() {
     return {
       hoverFlag: false,
     };
   },
+  computed: {
+    buttonClassAttr() {
+      return {
+        'nmd-button': true,
+        'nmd-button--outlined': this.theme === 'outlined',
+        'nmd-button--contained': this.theme === 'contained',
+        'nmd-button--border-s': this.border === 's',
+        'nmd-button--border-m': this.border === 'm',
+        'nmd-button--border-l': this.border === 'l',
+        'nmd-button--size-xs': this.size === 'xs',
+        'nmd-button--size-s': this.size === 's',
+        'nmd-button--size-m': this.size === 'm',
+        'nmd-button--size-l': this.size === 'l',
+        'nmd-button--size-xl': this.size === 'xl'
+      }
+    },
+    rippleClassAttr() {
+      return {
+        'nmd-button__ripple': true,
+        'nmd-button__ripple--light': this.theme === 'contained',
+        'nmd-button__ripple--dark': this.theme === 'outlined',
+        'nmd-button__ripple--hover': this.hoverFlag,
+      }
+    }
+  },
   methods: {
     handleHover(flag) {
       this.hoverFlag = flag;
     }
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .nmd-button {
-  position: relative;
   overflow: hidden;
-  width: 100%;
+  position: relative;
   height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 64px;
   border-style: solid;
   border-width: 1px;
   background-color: #ffffff;
-  cursor: pointer;
-  @include clean-tap;
+  @include clean-btn;
 
-  // &.nmd-button--outlined {}
   &.nmd-button--contained {
     border: none;
   }
@@ -144,23 +153,29 @@ export default {
       padding: 0;
     }
   }
+
   .nmd-button__ripple {
-    will-change: transform, opacity;
     position: absolute;
     overflow: hidden;
     z-index: 1;
     top: 50%;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
     border-radius: 50%;
-    background-color: #ababab;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    transition: .333s ease-in-out;
+    transition: .5s ease-in-out;
+    &.nmd-button__ripple--light {
+      background-color: #434343;
+    }
+    &.nmd-button__ripple--dark {
+      background-color: #ababab;
+    }
     &.nmd-button__ripple--hover {
-      opacity: 0.7;
-      transform: translate(-50%, -50%) scale(5);
+      opacity: 0.2;
+      transform: translate(-50%, -50%) scale(1.25);
     }
   }
 }
