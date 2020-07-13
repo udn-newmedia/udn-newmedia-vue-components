@@ -1,5 +1,5 @@
 <template>
-  <div class="ScrollDownArrow">
+  <i class="scroll-down-arrow">
     <div class="arrows">
       <span class="arrow-top">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42" height="32" viewBox="0 0 42 32">
@@ -34,7 +34,7 @@
         </svg>
       </span>
     </div>
-  </div>
+  </i>
 </template>
 
 <script>
@@ -55,8 +55,8 @@ $size: 20px;
 $speed: 3s;
 $peakopacity:0.7;
 $color: #fff;
-.ScrollDownArrow {
-  margin: 0 auto;
+.scroll-down-arrow {
+  display: inline-block;
   .arrows {
     position: relative;
     cursor: pointer;

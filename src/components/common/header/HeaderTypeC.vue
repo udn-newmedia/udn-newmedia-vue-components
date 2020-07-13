@@ -92,7 +92,7 @@ import { autoResize_3, sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderAnchor from '@/components/header/HeaderAnchor.vue';
 import HeaderShare from '@/components/header/HeaderShare.vue';
 import HeaderMenu from '@/components/header/HeaderMenu.vue';
-import UdnLogo from '@/components/pinhead/UdnLogo.vue';
+import UdnLogo from '@/components/accessories/UdnLogo.vue';
 
 export default {
   name: 'HeaderTypeC',

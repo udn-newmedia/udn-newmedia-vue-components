@@ -1,3 +1,27 @@
+.article {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  padding: 24px 16px 24px 16px;
+  background-color: #fff;
+  @include pad {
+    padding: 72px 0 72px 0;
+    max-width: 576px;
+  }
+  @include pc {
+    max-width: 720px;
+    padding: 72px 0 72px 0;
+  }
+  h1, h2, h3, h4 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    text-align: justify;
+    margin-bottom: 32px;
+  }
+}
+
 .share-button {
   position: relative;
   width: 100%;

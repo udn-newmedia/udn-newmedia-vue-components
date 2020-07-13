@@ -25,7 +25,7 @@
 
 <script>
 import { autoResize_3, selectSrcMethod_3, sendGaMethods } from '@/mixins/masterBuilder.js';
-import NmdArrow from '@/components/pinhead/NmdArrow.vue';
+import NmdArrow from '@/components/accessories/NmdArrow.vue';
 import vueScrollTo from 'vue-scrollto';
 
 export default {
