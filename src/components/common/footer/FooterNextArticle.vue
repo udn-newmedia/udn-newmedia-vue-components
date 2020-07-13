@@ -69,7 +69,7 @@
 
 <script>
 import { sendGaMethods } from "@/mixins/masterBuilder.js";
-import NmdButton from '@/components/accessories/NmdButton.vue';
+import NmdButton from '@/components/common/accessories/NmdButton.vue';
 
 export default {
   name: 'FooterNextArticle',

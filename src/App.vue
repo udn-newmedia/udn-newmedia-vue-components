@@ -1,9 +1,9 @@
 <template>
   <div id="app">
+    <HeaderTypeA></HeaderTypeA>
     <div class="middle">
       <NmdArrow />
     </div>
-
     <article class="article">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
@@ -63,6 +63,7 @@ import ArticleColumnOne from '@/components/common/layout/ArticleColumnOne.vue'
 import ArticleColumnTwo from '@/components/common/layout/ArticleColumnTwo.vue'
 import ArticleColumnThree from '@/components/common/layout/ArticleColumnThree.vue'
 import ArticleDictionary from '@/components/common/layout/ArticleDictionary.vue'
+import HeaderTypeA from '@/components/common/header/HeaderTypeA.vue'
 import NmdButton from '@/components/common/accessories/NmdButton.vue'
 import NmdArrow from '@/components/common/accessories/NmdArrow.vue'
 
@@ -73,6 +74,7 @@ export default {
     ArticleColumnTwo,
     ArticleColumnThree,
     ArticleDictionary,
+    HeaderTypeA,
     NmdButton,
     NmdArrow
   }
@@ -80,8 +82,8 @@ export default {
 </script>
 
 <style lang="scss">
-  .middle {
-    text-align: center;
-    background-color: blue;
-  }
+.middle {
+  text-align: center;
+  background-color: blue;
+}
 </style>

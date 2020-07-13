@@ -48,12 +48,12 @@
 <script>
 import _debounce from 'lodash.debounce';
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
-import HeaderHamburger from '@/components/header/HeaderHamburger.vue';
-import HeaderMenu from '@/components/header/HeaderMenu.vue';
-import UdnLogo from '@/components/accessories/UdnLogo.vue';
-import ShareFb from '@/components/accessories/ShareFb.vue';
-import ShareLine from '@/components/accessories/ShareLine.vue';
-import ShareTwitter from '@/components/accessories/ShareTwitter.vue';
+import HeaderHamburger from '@/components/common/header/HeaderHamburger.vue';
+import HeaderMenu from '@/components/common/header/HeaderMenu.vue';
+import UdnLogo from '@/components/common/accessories/UdnLogo.vue';
+import ShareFb from '@/components/common/accessories/ShareFb.vue';
+import ShareLine from '@/components/common/accessories/ShareLine.vue';
+import ShareTwitter from '@/components/common/accessories/ShareTwitter.vue';
 
 export default {
   name: 'HeaderTypeA',
