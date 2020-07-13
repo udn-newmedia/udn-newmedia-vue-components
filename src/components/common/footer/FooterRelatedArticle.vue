@@ -97,7 +97,7 @@
 
 <script>
 import { sendGaMethods } from "@/mixins/masterBuilder.js";
-import FooterQuestionnaire from '@/components/footer/FooterQuestionnaire.vue';
+import FooterQuestionnaire from '@/components/common/footer/FooterQuestionnaire.vue';
 
 export default {
   name: 'FooterRelateArticle',

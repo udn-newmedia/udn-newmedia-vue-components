@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import NmdButton from '@/components/accessories/NmdButton.vue';
+import NmdButton from '@/components/common/accessories/NmdButton.vue';
 import { sendGaMethods } from "@/mixins/masterBuilder.js";
 
 export default {

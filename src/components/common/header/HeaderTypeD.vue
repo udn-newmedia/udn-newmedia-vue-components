@@ -47,9 +47,9 @@
 <script>
 import _debounce from 'lodash.debounce';
 import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
-import HeaderAnchor from '@/components/header/HeaderAnchor.vue';
-import HeaderShare from '@/components/header/HeaderShare.vue';
-import UdnLogo from '@/components/accessories/UdnLogo.vue';
+import HeaderAnchor from '@/components/common/header/HeaderAnchor.vue';
+import HeaderShare from '@/components/common/header/HeaderShare.vue';
+import UdnLogo from '@/components/common/accessories/UdnLogo.vue';
 export default {
   name: 'HeaderTypeD',
   mixins: [autoResize_2, sendGaMethods],
