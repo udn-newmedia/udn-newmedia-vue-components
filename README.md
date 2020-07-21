@@ -119,10 +119,7 @@ npm run test:unit
 
 ```js
 <script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
-<link
-  rel="stylesheet"
-  href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css"
-/>
+<link rel="stylesheet" href="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.css" />
 ```
 
 ### pages_config
@@ -149,4 +146,42 @@ npm run test:unit
 
 ### ui
 
+#### ArticleCastAnchor
+
+#### ArticleColumnOne
+
+#### ArticleColumnTwo
+
+#### ArticleColumnThree
+
+#### ArticleContainer
+
+#### ArticleDictionary
+
+#### ArticleParallax
+
+#### ArticleQuote
+
+#### ArticleYoutube
+
+#### PageBackTop
+
+#### PageCover
+
+#### PageIndicator
+
 ### accessories
+
+#### BasePicture
+
+#### NmdArrow
+
+#### NmdButton
+
+#### ShareFb
+
+#### ShareLine
+
+#### ShareTwitter
+
+#### UdnLogo
