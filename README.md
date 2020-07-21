@@ -2,7 +2,7 @@
 
 ```=
 udn-newmedia-vue-components
-version: v4.0
+version: v4.1
 ```
 
 ## 目錄
@@ -41,19 +41,19 @@ version: v4.0
 |—vue.config.js
 ```
 
-### Project setup
+## Project setup
 
 ```=
 npm install
 ```
 
-#### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development
 
 ```=
 npm run dev
 ```
 
-#### Compiles and minifies for production
+### Compiles and minifies for production
 
 ```=
 npm run build
@@ -66,24 +66,6 @@ npm run test:unit
 ```
 
 ## Initial
-
-### main.js
-
-```js=
-import "~/style/main.scss";
-import store from "./store"; // for anchor
-import { rwdMethods } from "@/mixins/masterBuilder.js";
-Window.Promise = Promise; // for vuex
-
-new Vue({
-  el: "#app",
-  store, // for anchor
-  components: {
-    App,
-  },
-  mixins: [rwdMethods],
-});
-```
 
 ### assets
 
@@ -133,7 +115,9 @@ new Vue({
 
 ### Loading
 
-```html=
+> 加在 index.html 裡，不需要可以拿掉。
+
+```js
 <script src="https://newmedia.udn.com.tw/cms_assets/nmd_loading/nmd-loading.min.js"></script>
 <link
   rel="stylesheet"
@@ -141,25 +125,28 @@ new Vue({
 />
 ```
 
-## Usage
+### pages_config
 
-### Class
-
-#### 段落、字級
-
-```html=
-<div class="article">
-  <p>正常字</p>
-  <p class="small">小字</p>
-</div>
+```=
+|—pages_config
+  |—contents
+    |—main.html
+    |—monitor.html
+    |—noIndex.html
+  |—utils
+    |—contentGenerator.js
 ```
 
-### Components
+## Components Usage
 
-#### Header
+### Header
 
 等待新的設計
 
-#### Footer
+### Footer
 
-#### Layout
+等待新的設計
+
+### ui
+
+### accessories
