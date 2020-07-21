@@ -5,6 +5,7 @@ import { rwdMethods } from '@/mixins/masterBuilder.js';
 import '~/style/main.scss';
 
 Vue.config.productionTip = false;
+Vue.prototype.$anchorList = [];
 
 new Vue({
   store,

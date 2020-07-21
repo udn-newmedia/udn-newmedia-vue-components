@@ -2,9 +2,7 @@ const contentGenerator = require('./utils/contentGenerator.js')
 
 /* seo內容文件 */
 const monitorCode = contentGenerator('../contents/monitor.html');
-const headerContent = contentGenerator('../contents/header.html');
 const mainContent = contentGenerator('../contents/main.html');
-const footerContent = contentGenerator('../contents/footer.html');
 const noIndex = contentGenerator("../contents/noIndex.html");
 
 /* 正式路徑 */
@@ -29,7 +27,7 @@ module.exports = {
       datePublished: '2020-06-08T07:00:00+08:00',
       dateModified: '2020-06-08T07:00:00+08:00',
       MONITOR: monitorCode,
-      CONTENT: headerContent + mainContent + footerContent,
+      CONTENT: mainContent,
       pageUrl: pathRoot,
       mainPage,
       theme: '#ffffff',

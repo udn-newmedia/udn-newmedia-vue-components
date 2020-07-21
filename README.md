@@ -1,61 +1,51 @@
 # 【聯合報新媒體中心 共用元件使用手冊】
 
-```
+```=
 udn-newmedia-vue-components
 version: v4.0
 ```
 
 ## 目錄
 
-```
-|—dist
-  |—assets
-  |—index.html
-  |—nmd-components.min.js
-|—assets
-  |—img
-  |—style
+```=
+|—pages_config
+  |—contents
+    |—main.html
+    |—monitor.html
+    |—noIndex.html
+  |—utils
+    |—contentGenerator.js
 |—src
+  |—assets
+    |—img
+    |—style
   |—components
+    |—accessories
     |—footer
     |—header
-    |—lab
-    |—layout
-    |—pinhead
+    |—ui
   |—mixins
   |—utils
   |—App.vue
   |—store.js
   |—main.js
-  |—main_wc.js
-|—index.html
-|—index_wc.html
-|—template.html
-|—package-lock.json
+|—tests
+  |—mocks
+  |—unit
+    |—components
+    |—mixins
+|—babel.config.json
+|—jest.config.json
 |—package.json
-|—webpack.common.js
-|—webpack.dev.js
-|—webpack.prod.js
-|—webpack.common_wc.js
-|—webpack.dev_wc.js
-|—webpack.prod_wc.js
-|—manual.md
 |—README.md
+|—vue.config.js
 ```
-
-## 使用方式
-
-> 1. SPA project
-> 2. Web components
-> 3. 只使用 components（直接跳到 initial 的部分）
 
 ### Project setup
 
 ```=
 npm install
 ```
-
-### SPA
 
 #### Compiles and hot-reloads for development
 
@@ -93,14 +83,6 @@ new Vue({
   },
   mixins: [rwdMethods],
 });
-```
-
-### webpack config
-
-> set alias
-
-```js=
-.set('~', resolve('src/assets'))
 ```
 
 ### assets
@@ -174,155 +156,9 @@ new Vue({
 
 ### Components
 
-#### Header 頁首
+#### Header
 
-- header-type-a
-
-  > 有 outlink 沒 anchor 的 header
-
-  ```html=
-  <header-type-a :outlink="outlink"></header-type-a>
-  ```
-
-  - props:
-
-    1. href
-
-    ```=
-    for 聯logo
-    default: document.querySelector('meta[property="og:url"]').content
-    ```
-
-    2. outlink
-
-    ```js=
-    [
-      {
-        title: "外連1",
-        url: "https://udn.com",
-        active: false,
-      },
-      {
-        title: "外連2",
-        url: "https://udn.com",
-        active: false,
-      },
-      {
-        title: "自己這頁",
-        url: null,
-        active: true,
-      },
-    ];
-    ```
-
-  - slot:
-
-    1. outlink
-
-    ```html=
-    <a href="https://udn.com" target="_blank">外連1</a>
-    <a href="https://udn.com" target="_blank">外連2</a>
-    <a class="active">自己這頁</a>
-    ```
-
-- header-type-b
-
-  > 沒 outlink 沒 anchor 的 header
-
-  ```html
-  <header-type-b></header-type-b>
-  ```
-
-  - props:
-
-    1. href
-
-    ```=
-    for 聯logo
-    default: document.querySelector('meta[property="og:url"]').content
-    ```
-
-- header-type-c
-
-> 有 outlink 有 anchor 的 header
-
-```html
-<header-type-c
-  page-title="這一頁的標題"
-  theme="dark"
-  :outlink="outlink"
-></header-type-c>
-```
-
-- props:
-  1. href
-
-    ```=
-    for 聯logo
-    default: document.querySelector('meta[property="og:url"]').content
-    ```
-
-  2. page-title
-  3. theme
-
-    ```=
-    dark | light
-    ```
-
-  4. outlink
-
-    ```js
-    [
-      {
-        title: "外連1",
-        url: "https://udn.com",
-        active: false,
-      },
-      {
-        title: "外連2",
-        url: "https://udn.com",
-        active: false,
-      },
-      {
-        title: "自己這頁",
-        url: null,
-        active: true,
-      },
-    ];
-    ```
-
-- slot:
-
-  1. outlink
-
-  ```html
-  <a href="https://udn.com" target="_blank">外連1</a>
-  <a href="https://udn.com" target="_blank">外連2</a>
-  <a class="active">自己這頁</a>
-  ```
-
-- header-type-d
-
-> 沒 outlink 有 anchor 的 header
-
-```html
-<header-type-d theme="light"></header-type-d>
-```
-
-- props:
-
-  1. href
-
-  ```=
-  for 聯logo
-  default: document.querySelector('meta[property="og:url"]').content
-  ```
-
-  2. theme
-
-  ```=
-  dark | light
-  ```
+等待新的設計
 
 #### Footer
 

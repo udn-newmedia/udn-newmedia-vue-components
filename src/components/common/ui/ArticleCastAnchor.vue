@@ -8,12 +8,9 @@ export default {
   props: {
     title: String,
   },
-  mounted() {
-    const anchor = {
-      title: this.title,
-      active: false,
-    };
-    this.$store.dispatch('addAnchor', anchor);
+  created() {
+    const anchor = { title: this.title, active: false };
+    this.$anchorList.push(anchor);
   },
 }
 </script>

@@ -25,34 +25,48 @@ export default {
   },
   data() {
     return {
+      ticking: false,
       readProgress: 0,
       lastStage: 0,
-      ticking: false,
+      stagePool: [],
     };
   },
   computed: {
     progressWidth() {
-      return this.readProgress + '%';
+      return `${this.readProgress}%`;
     }
   },
   methods: {
+    handleCalcProgress() {
+      const currentHeight = window.pageYOffset;
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      
+      return ((currentHeight / totalHeight) * 100).toFixed(2);
+    },
+    handleSendGA(stage) {
+      if (!document.querySelector('title')) return;
+      this.sendGA({
+        category: 'read',
+        action: 'scroll',
+        label: `page read: ${stage}%`
+      });
+    },
+    handleUpdateStage(lastStage, newStage) {
+      if (newStage < lastStage) return;
+      for (let i = lastStage + 10; i <= newStage; i += 10) {
+        this.stagePool.push(i);
+        this.handleSendGA(i)
+      }
+    },
     handleScroll: _debounce(function() {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          let currentHeight = window.pageYOffset;
-          let totalHeight = document.body.scrollHeight - window.innerHeight;
-          this.readProgress = ((currentHeight / totalHeight) * 100).toFixed(2);
-          this.ticking = false;
+          this.readProgress = this.handleCalcProgress();
 
-          const progress = Math.floor(this.readProgress / 10);
-          if (progress > this.lastStage) {
-            this.lastStage = progress;
-            this.sendGA({
-              category: 'read',
-              action: 'scroll',
-              label: 'page read: ' + (this.lastStage * 10) + '%'
-            });
-          }
+          this.lastStage = Math.max(...this.stagePool) | 0;
+          this.handleUpdateStage(this.lastStage, this.readProgress)
+
+          this.ticking = false;
         });
       }
       this.ticking = true;

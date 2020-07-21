@@ -9,21 +9,6 @@
       backgroundImage: 'url(' + img + ')',
     }"
   >
-    <!-- <div class="footer-next-article__shadow-mask">
-      <div
-        :class="{
-          'footer-next-article__shadow-mask__mask-left': true,
-          'footer-next-article__shadow-mask__mask-left--type_2':  type === '2',
-
-        }"
-      />
-      <div
-        :class="{
-          'footer-next-article__shadow-mask__mask-right': true,
-          'footer-next-article__shadow-mask__mask-right--type_2': type === '2',
-        }"
-      />
-    </div> -->
     <div :class="{
       'footer-next-article__content': true,
       'footer-next-article__content--type-2': type === '2',

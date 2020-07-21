@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <HeaderTypeA></HeaderTypeA>
+    <PageIndicator></PageIndicator>
+    <HeaderTypeC></HeaderTypeC>
     <div class="middle">
       <NmdArrow />
     </div>
+    <ArticleCastAnchor title="123" />
     <article class="article">
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
@@ -12,6 +14,7 @@
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam eum porro, nam ipsum quam itaque perferendis accusantium vitae ab alias nesciunt quis amet, rerum dicta delectus veniam ex sit omnis!
     </article>
+    <ArticleCastAnchor title="456" />
 
     <NmdButton>緊張緊張緊張</NmdButton>
     <div class="a123">
@@ -35,6 +38,7 @@
         alt_2="123"
       > 123
       </ArticleColumnTwo>
+      <ArticleCastAnchor title="789" />
       <ArticleColumnThree
         :srcMob_1="require('@/assets/img/halo/1.jpg')"
         :srcPad_1="require('@/assets/img/halo/2.jpg')"
@@ -59,31 +63,34 @@
 
 <script>
 
-import ArticleColumnOne from '@/components/common/layout/ArticleColumnOne.vue'
-import ArticleColumnTwo from '@/components/common/layout/ArticleColumnTwo.vue'
-import ArticleColumnThree from '@/components/common/layout/ArticleColumnThree.vue'
-import ArticleDictionary from '@/components/common/layout/ArticleDictionary.vue'
-import HeaderTypeA from '@/components/common/header/HeaderTypeA.vue'
+import ArticleCastAnchor from '@/components/common/ui/ArticleCastAnchor.vue'
+import ArticleColumnOne from '@/components/common/ui/ArticleColumnOne.vue'
+import ArticleColumnTwo from '@/components/common/ui/ArticleColumnTwo.vue'
+import ArticleColumnThree from '@/components/common/ui/ArticleColumnThree.vue'
+import ArticleDictionary from '@/components/common/ui/ArticleDictionary.vue'
+import HeaderTypeC from '@/components/common/header/HeaderTypeC.vue'
 import NmdButton from '@/components/common/accessories/NmdButton.vue'
 import NmdArrow from '@/components/common/accessories/NmdArrow.vue'
+import PageIndicator from '@/components/common/ui/PageIndicator.vue'
 
 export default {
   name: 'App',
   components: {
+    ArticleCastAnchor,
     ArticleColumnOne,
     ArticleColumnTwo,
     ArticleColumnThree,
     ArticleDictionary,
-    HeaderTypeA,
+    HeaderTypeC,
     NmdButton,
-    NmdArrow
-  }
+    NmdArrow,
+    PageIndicator
+  },
 }
 </script>
 
 <style lang="scss">
 .middle {
   text-align: center;
-  background-color: blue;
 }
 </style>
