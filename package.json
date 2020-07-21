@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:common",
+    "test:unit": "vue-cli-service test:unit",
     "testwatch": "jest --watchAll",
     "lint": "vue-cli-service lint"
   },
