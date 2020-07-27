@@ -52,18 +52,17 @@ export default {
       type: String,
       default: 'true',
     },
-    useHint: {
+    posMob: {
       type: String,
-      default: 'true',
-    },
-    pos: {
-      type: String,
+      default: null,
     },
     posPad: {
       type: String,
+      default: null,
     },
     posPc: {
       type: String,
+      default: null,
     },
     textColor: {
       type: String,
@@ -76,16 +75,18 @@ export default {
   },
   computed: {
     titleTop() {
-      if (this.deviceType === 'mob') return this.pos.split(',')[1].concat('vh');
+      if (!this.posMob && !this.posPad && !this.posPc) return 0;
+      if (this.deviceType === 'mob') return this.posMob.split(',')[1].concat('vh');
       if (this.deviceType === 'pad') return this.posPad.split(',')[1].concat('vh');
       if (this.deviceType === 'pc') return this.posPc.split(',')[1].concat('vh');
-      return 'initial';
+      return 0;
     },
     titleLeft() {
-      if (this.deviceType === 'mob') return this.pos.split(',')[0].concat('vw');
+      if (!this.posMob && !this.posPad && !this.posPc) return 0;
+      if (this.deviceType === 'mob') return this.posMob.split(',')[0].concat('vw');
       if (this.deviceType === 'pad') return this.posPad.split(',')[0].concat('vw');
       if (this.deviceType === 'pc') return this.posPc.split(',')[0].concat('vw');
-      return 'initial';
+      return 0;
     },
     titleTranslate() {
       return 'translate(' + this.titleLeft + ',' + this.titleTop + ')'

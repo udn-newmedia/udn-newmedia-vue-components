@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'ArticleCastAnchor',
+  name: 'CastAnchor',
   props: {
     title: String,
   },

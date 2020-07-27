@@ -5,17 +5,15 @@
       'border-color': theme === 'contained' ?  'transparent' : bgColor,
       'background-color': theme === 'contained' ? bgColor : 'transparent',
     }"
+    :ariaLabel="ariaLabel"
+    :name="name"
     @click="clickEvent"
     @mouseenter="handleHover(true)"
     @mouseleave="handleHover(false)"
   >
     <div :class="rippleClassAttr"></div>
     <div class="nmd-button__text">
-      <p class="small"
-        :style="{
-          'color': textColor,
-        }"
-      >
+      <p class="small" :style="{ 'color': textColor }" >
         <slot />
       </p>
     </div>
@@ -44,7 +42,15 @@ export default {
     },
     size: {
       type: String,
-      default: 'm' /* xs, x, m, l, xl */
+      default: 'm' /* xs, s, m, l, xl */
+    },
+    ariaLabel: {
+      type: String,
+      default: 'btn'
+    },
+    name: {
+      type: String,
+      default: 'btn'
     },
     clickEvent: {
       type: Function,
@@ -98,6 +104,7 @@ export default {
   border-style: solid;
   border-width: 1px;
   background-color: #ffffff;
+  white-space: nowrap;
   @include clean-btn;
 
   &.nmd-button--contained {
