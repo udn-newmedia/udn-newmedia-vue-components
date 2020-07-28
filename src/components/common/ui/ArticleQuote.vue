@@ -6,14 +6,14 @@
     }"
   >
     <div class="article-quote__upper-section">
-      <div class="article-quote__profile">
+      <div v-if="img" class="article-quote__profile">
         <img :src="img" :alt="text">
       </div>
-      <div class="article-quote__text">
+      <div v-if="text" class="article-quote__text">
         <p>{{text}}</p>
       </div>
     </div>
-    <div class="article-quote__down-section">
+    <div v-if="refer" class="article-quote__down-section">
       <div class="article-quote__refer">
         <p class="small">—— {{refer}}</p>
       </div>

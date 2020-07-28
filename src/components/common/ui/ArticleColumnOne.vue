@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 .article-column-one {
   position: relative;
+  margin: 0;
   @include layout-padding;
   .article-column-one__description {
     margin-top: 8px;

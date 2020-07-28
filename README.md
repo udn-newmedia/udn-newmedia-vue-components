@@ -121,7 +121,7 @@ npm run test:unit
 
 ```js
 <script src="https://udn.com/cms_assets/nmd_loading/nmd-loading.min.js"></script>
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
 <link rel="stylesheet" href="https://udn.com/cms_assets/nmd_loading/nmd-loading.css" />
 ```
 
@@ -194,11 +194,11 @@ Footer 相關元件
 
 ```html
 <ArticleColumnOne
-  :srcMob="require('@/assets/img/halo/1.jpg')"
-  :srcPad="require('@/assets/img/halo/2.jpg')"
-  :srcPc="require('@/assets/img/parallax.jpg')"
-  alt="123"
-> 123
+  :srcMob="require('@/assets/img/mob.jpg')"
+  :srcPad="require('@/assets/img/pad.jpg')"
+  :srcPc="require('@/assets/img/pc.jpg')"
+  alt="一張有溫度的照片"
+> 一段有溫度的文字
 </ArticleColumnOne>
 ```
 
@@ -217,17 +217,17 @@ Footer 相關元件
 
 ```html
 <ArticleColumnTwo
-  :srcMob_1="require('@/assets/img/halo/1.jpg')"
-  :srcPad_1="require('@/assets/img/halo/2.jpg')"
-  :srcPc_1="require('@/assets/img/parallax.jpg')"
+  :srcMob_1="require('@/assets/img/mob1.jpg')"
+  :srcPad_1="require('@/assets/img/pad1.jpg')"
+  :srcPc_1="require('@/assets/img/pc1.jpg')"
 
-  :srcMob_2="require('@/assets/img/halo/1.jpg')"
-  :srcPad_2="require('@/assets/img/halo/2.jpg')"
-  :srcPc_2="require('@/assets/img/parallax.jpg')"
+  :srcMob_2="require('@/assets/img/mob2.jpg')"
+  :srcPad_2="require('@/assets/img/pad2.jpg')"
+  :srcPc_2="require('@/assets/img/pc2.jpg')"
 
-  alt_1="123"
-  alt_2="123"
-> 123
+  alt_1="一張有溫度的照片"
+  alt_2="一張有故事的照片"
+> 一段有溫度的文字
 </ArticleColumnTwo>
 ```
 
@@ -250,19 +250,22 @@ Footer 相關元件
 
 ```html
 <ArticleColumnThree
-  :srcMob_1="require('@/assets/img/halo/1.jpg')"
-  :srcPad_1="require('@/assets/img/halo/2.jpg')"
-  :srcPc_1="require('@/assets/img/parallax.jpg')"
-  :srcMob_2="require('@/assets/img/halo/1.jpg')"
-  :srcPad_2="require('@/assets/img/halo/2.jpg')"
-  :srcPc_2="require('@/assets/img/parallax.jpg')"
-  :srcMob_3="require('@/assets/img/halo/1.jpg')"
-  :srcPad_3="require('@/assets/img/halo/2.jpg')"
-  :srcPc_3="require('@/assets/img/parallax.jpg')"
-  alt_1="123"
-  alt_2="123"
-  alt_3="123"
-> 123
+  :srcMob_1="require('@/assets/img/mob1.jpg')"
+  :srcPad_1="require('@/assets/img/pad1.jpg')"
+  :srcPc_1="require('@/assets/img/pc1.jpg')"
+
+  :srcMob_2="require('@/assets/img/mob2.jpg')"
+  :srcPad_2="require('@/assets/img/pad2.jpg')"
+  :srcPc_2="require('@/assets/img/pc2.jpg')"
+
+  :srcMob_3="require('@/assets/img/mob3.jpg')"
+  :srcPad_3="require('@/assets/img/pad3.jpg')"
+  :srcPc_3="require('@/assets/img/pc3.jpg')"
+
+  alt_1="一張有溫度的照片"
+  alt_2="一張有故事的照片"
+  alt_3="一張不怎麼樣的照片"
+> 一段有溫度的文字
 </ArticleColumnThree>
 ```
 
@@ -284,23 +287,26 @@ Footer 相關元件
 
 #### ArticleContainer
 
-100%螢幕寬的內文段落
+100%螢幕寬的內文段落，`slot` 會放在 `<article class="article"></article>` 裡
 
 ```html
-
+<ArticleContainer bgColor="#434343" textColor="#ffffff">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis ab quos ullam natus impedit, autem tempore vel corrupti consectetur ea vero numquam ex adipisci perspiciatis. Quibusdam ad sit excepturi aperiam.
+</ArticleContainer>
 ```
 
 + props
   + [ bgColor ] : { String } 背景顏色，ex: `"#434343"`
+  + [ textColor ] : { String } 文字文字顏色，ex: `"#ffffff"`
 + slot
-  + { String } 段落文字，ex: `<p>段落<p>`
+  + 任何內容，ex: `<p>段落<p>`
 
 #### ArticleDictionary
 
 段落內插入小辭典功能
 
 ```html
-
+<p>聯合報<ArticleDictionary>是在中華民國台灣地區發行的中文報紙，由前中國國民黨中央常務委員王惕吾於1951年9月16日創立</ArticleDictionary></p>
 ```
 
 #### ArticleParallax
@@ -316,16 +322,38 @@ Footer 相關元件
 引言
 
 ```html
-
+<ArticleQuote
+  :img="require('@/assets/img/cortana.jpg')"
+  text="＂未來老人不會忙著生病，會愈來愈健康＂＂未來老人不會忙著生病，會愈來愈健康＂"
+  refer="Cortana"
+/>
 ```
+
++ props
+  + [ borderColor ] : { String } 人頭圖
+  + [ img ] : { String } 引言內文
+  + [ refer ] : { String } 引言者
+  + [ text ] : { String } 引言文字顏色，預設:#888888
+  + [ color ] : { String } 引言框顏色
 
 #### ArticleYoutube
 
 嵌入 Youtube 影片
 
 ```html
-
+<ArticleYoutube
+  src="https://www.youtube.com/embed/44oJi5w2Wjc"
+  showinfo="no"
+  controls="no"
+/>
 ```
+
++ props
+  + [ src ] : { String } 連結網址
+  + [ showinfo ] : { String } 是否顯示標題 ex: showinfo="yes"
+  + [ controls ] : { String } 是否顯示控制板 ex: controls="yes"
+  + [ muted ] : { String } 是否靜音 ex: muted="yes"
+  + [ autoplay ] : { String } 是否自動撥放 ex: autoplay="yes"
 
 #### PageBackTop
 
@@ -475,7 +503,7 @@ Facebook icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
 ```
 
 ```html
@@ -494,7 +522,7 @@ Line icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
 ```
 
 ```html
@@ -513,7 +541,7 @@ Twitter icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
 ```
 
 ```html
@@ -531,7 +559,7 @@ Twitter icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
 ```
 
 ```html

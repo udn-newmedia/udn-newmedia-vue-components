@@ -31,7 +31,7 @@
     >
       <img :src="img.vision" alt="聯合報系願景工程">
     </a>
-  </div>
+  </article>
 </template>
 
 <script>

@@ -4,7 +4,7 @@
       backgroundColor: bgColor,
     }"
   >
-    <article class="article">
+    <article class="article" :style="{ color: textColor }">
       <slot />
     </article>
   </section>
@@ -18,6 +18,10 @@ export default {
       type: String,
       default: '#ffffff',
     },
+    textColor: {
+      type: String,
+      default: 'initial',
+    }
   },
 }
 </script>

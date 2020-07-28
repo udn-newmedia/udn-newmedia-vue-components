@@ -93,6 +93,7 @@ export default {
 <style lang="scss" scoped>
 .article-column-three {
   position: relative;
+  margin: 0;
   @include layout-padding;
   .article-column__image-container__upper-section {
     display: flex;
