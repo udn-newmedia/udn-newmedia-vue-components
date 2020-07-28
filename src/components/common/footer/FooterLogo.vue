@@ -21,7 +21,7 @@
       <img :src="img.nmd" alt="聯合報新媒體中心">
     </a>
     <a
-      v-if="useVision === 'yes'"
+      v-if="useVision"
       href="https://vision.udn.com/" 
       target="_blank"
       rel="noopener"
@@ -45,7 +45,7 @@ export default {
   mixins: [sendGaMethods],
   props: {
     useVision: {
-      type: String,
+      type: Boolean,
     },
   },
   data() {

@@ -77,15 +77,12 @@
         :srcMob_1="require('@/assets/img/pc2.jpg')"
         :srcPad_1="require('@/assets/img/pc2.jpg')"
         :srcPc_1="require('@/assets/img/pc2.jpg')"
-
         :srcMob_2="require('@/assets/img/pc3.jpg')"
         :srcPad_2="require('@/assets/img/pc3.jpg')"
         :srcPc_2="require('@/assets/img/pc3.jpg')"
-
         :srcMob_3="require('@/assets/img/pc4.jpg')"
         :srcPad_3="require('@/assets/img/pc4.jpg')"
         :srcPc_3="require('@/assets/img/pc4.jpg')"
-
         alt_1="智慧音箱 可能記錄你的私密對話"
         alt_2="運動手環 恐洩個資和ATM密碼"
         alt_3="人臉辨識 恐侵犯民眾隱私"
@@ -134,6 +131,19 @@
       <p>莫泊桑曾說過，世上真不知有多少能夠成功立業的人，都因為把難得的時間輕輕放過而致默默無聞。希望大家能從這段話中有所收穫。克勞斯·莫瑟爵士說過一句發人省思的話，教育需要花費錢，而無知也是一樣。這句話看似簡單，但其中的陰鬱不禁讓人深思。我們不得不面對一個非常尷尬的事實，那就是，高雄發大財似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。</p>
     </ArticleContainer>
     <PageFooter>
+      <FooterNextArticle
+        type="1"
+        title="空服人生"
+        text="一般來講，我們都必須務必慎重的考慮考慮。若無法徹底理解空服員，恐怕會是人類的一大遺憾。探討空服員時，如果發現非常複雜，那麼想必不簡單。"
+        :img="require('@/assets/img/next/2.jpg')"
+        href="#"
+      />
+      <FooterNextArticle
+        type="2"
+        title="空服人生"
+        :img="require('@/assets/img/next/1.jpg')"
+        href="#"
+      />
       <FooterRelatedArticle
         title="讓台灣更好"
         href1="#"
@@ -199,6 +209,7 @@ import CastAnchor from '@/components/common/accessories/CastAnchor.vue'
 import FooterEditor from '@/components/common/footer/FooterEditor.vue'
 import FooterFbComment from '@/components/common/footer/FooterFbComment.vue'
 import FooterLogo from '@/components/common/footer/FooterLogo.vue'
+import FooterNextArticle from '@/components/common/footer/FooterNextArticle.vue'
 import FooterRelatedArticle from '@/components/common/footer/FooterRelatedArticle.vue'
 import FooterShare from '@/components/common/footer/FooterShare.vue'
 import HeaderTypeC from '@/components/common/header/HeaderTypeC.vue'
@@ -221,6 +232,7 @@ export default {
     FooterEditor,
     FooterFbComment,
     FooterLogo,
+    FooterNextArticle,
     FooterRelatedArticle,
     FooterShare,
     HeaderTypeC,
@@ -231,9 +243,3 @@ export default {
   },
 }
 </script>
-
-<style lang="scss">
-.middle {
-  text-align: center;
-}
-</style>

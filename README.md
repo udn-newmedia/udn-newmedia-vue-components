@@ -177,7 +177,168 @@ Header 相關元件
 ### Footer
 
 Footer 相關元件
-> Issues: 等待新的設計
+
+#### PageFooter
+
+聯合報系 copyright，包含一個 `slot` 插入其他 footer 元件
+
+```html
+<PageFooter>
+  <FooterRelatedArticle/>
+  <FooterEditor>
+    ...
+  </FooterEditor>
+  <FooterShare />
+  <FooterFbComment />
+  <FooterLogo />
+</PageFooter>
+```
+
++ slot
+  + { FooterRelatedAritcle } 圖說文字
+  + { FooterQuestionnaire } 圖說文字
+  + { FooterEditor } 圖說文字
+  + { FooterFbComment } 圖說文字
+  + { FooterLogo } 圖說文字
+
+#### FooterEditor
+
+作者區塊
+
+```html
+<FooterEditor>
+  <div>
+    <p>製作人</p>
+    <p>妙蛙種子</p>
+  </div>
+  <div>
+    <p>視覺設計</p>
+    <p>小火龍</p>
+  </div>
+  <div>
+    <p>網頁製作</p>
+    <p>傑尼龜</p>
+  </div>
+  <div>
+    <p>製作單位</p>
+    <p>聯合報新媒體中心、<br>視覺設計中心</p>
+  </div>
+  <div>
+    <p>監製</p>
+    <p>聯合報新聞部</p>
+  </div>
+  <div>
+    <p></p>
+    <p>2020.03.03</p>
+  </div>
+</FooterEditor>
+```
+
++ slot
+  + 作者資訊
+
+#### FooterFbComment
+
+臉書留言區塊
+
+```html
+<FooterFbComment />
+```
+
+#### FooterLogo
+
+Logo 區塊
+
+```html
+<FooterLogo />
+```
+
++ props
+  + [ useVision ] : { Boolean } 使用願景工程 logo
+
+#### FooterNextArticle
+
+下一篇文章連結區塊
+
+```html
+<FooterNextArticle
+  type="2"
+  title="空服人生"
+  :img="require('@/assets/img/next/2.jpg')"
+  href="#"
+/>
+```
+
++ props
+  + [ type ] : { String } 樣式，ex : "1"
+    + default : "1"
+    + "1" : 樣式1
+    + "2" : 樣式2
+  + [ title ] : { String } 下一篇文章標題
+  + [ text ] : { String } 下一篇文章敘述
+  + [ img ] : { String } 下一篇文章圖片
+  + [ href ] : { String } 下一篇文章連結
+
+#### FooterQuestionnaire
+
+填寫閱讀問卷按鈕
+
+```html
+<FooterQuestionnaire href="https://www.surveycake.com/s/KpQKN" />
+```
+
+#### FooterRelatedAritcle
+
+延伸閱讀區塊
+
+```html
+<FooterRelatedArticle
+  title="讓台灣更好"
+  href1="#"
+  :img1="require('@/assets/img/relate/r1.jpg')"
+  topic1="支持美實施嚴格隱私權法 庫克：個資正被「武器化」"
+  text1="新聞的存在，令我無法停止對他的思考。面對如此難題，我們必須設想周全。一般來講，我們都必須務必慎重的考慮考慮。尼采說過一句經典的名言，人可以控制行為，卻不能約束感情，因為感情是變化無常的。這句話看似簡單，但其中的陰鬱不禁讓人深思。"
+  href2="#"
+  :img2="require('@/assets/img/relate/r2.jpg')"
+  topic2="抖音蒐集兒童個資 遭美重罰570萬美元"
+  text2="士光敏夫講過一段耐人尋思的話，領導幹部應去掉權力意識，對下級要以誠相待。這讓我對於看待這個問題的方法有了巨大的改變。把新聞輕鬆帶過，顯然並不適合。"
+  href3="#"
+  :img3="require('@/assets/img/relate/r3.jpg')"
+  topic3="用臉書帳號登入App 恐曝3大風險"
+  text3="一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。"
+  href4="#"
+  :img4="require('@/assets/img/relate/r4.jpg')"
+  topic4="Gmail被踢爆開後門 百萬用戶信件看光光"
+  text4="新聞勢必能夠左右未來。在這種困難的抉擇下，本人思來想去，寢食難安。不要先入為主覺得新聞很複雜，實際上，新聞可能比你想的還要更複雜。"
+/>
+```
+
++ props
+  + [ title ] : { String } 延伸閱讀區塊標題
+  + [ href1 ] : { String } 第一篇連結
+  + [ img1 ] : { String } 第一篇圖片
+  + [ topic1 ] : { String } 第一篇標題
+  + [ text1 ] : { String } 第一篇敘述
+  + [ href2 ] : { String } 第二篇連結
+  + [ img2 ] : { String } 第二篇圖片
+  + [ topic2 ] : { String } 第二篇標題
+  + [ text2 ] : { String } 第二篇敘述
+  + [ href3 ] : { String } 第三篇連結
+  + [ img3 ] : { String } 第三篇圖片
+  + [ topic3 ] : { String } 第三篇標題
+  + [ text3 ] : { String } 第三篇敘述
+  + [ href4 ] : { String } 第四篇連結
+  + [ img4 ] : { String } 第四篇圖片
+  + [ topic4 ] : { String } 第四篇標題
+  + [ text4 ] : { String } 第四篇敘述
+
+#### FooterShare
+
+分享按鈕區塊
+
+```html
+<FooterShare />
+```
 
 ### ui
 
@@ -447,6 +608,7 @@ Footer 相關元件
 #### NmdButton
 
 常用按鈕
+> Issues: 增加 shadow color 的 prop
 
 ```html
 <NmdButton
@@ -478,6 +640,7 @@ Footer 相關元件
     + m : `56px`
     + l : `64px`
     + xl : `72px`
+  + [ extendWidth ] : { Boolean } 寬度是否100%
   + [ ariaLabel ] : { String } 按鈕 `aria-label` 屬性
   + [ name ] : { String } 按鈕 `name` 屬性
   + [ clickEvent ] : { function } 按鈕事件
