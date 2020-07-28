@@ -7,6 +7,10 @@ version: v4.1
 
 ## Demo
 
+[v2.0](http://nmdap.udn.com.tw/test/longform_v2/)  
+[v3.0](http://nmdap.udn.com.tw/test/longform_v3/)  
+[v4.1](http://nmdap.udn.com.tw/test/longform_v4/v4-1/)  
+
 ## 目錄
 
 ```=
@@ -121,8 +125,8 @@ npm run test:unit
 
 ```js
 <script src="https://udn.com/cms_assets/nmd_loading/nmd-loading.min.js"></script>
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
-<link rel="stylesheet" href="https://udn.com/cms_assets/nmd_loading/nmd-loading.css" />
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
+<link rel="stylesheet" href="https://udn.com/cms_assets/nmd_loading/nmd-loading.css">
 ```
 
 ### pages_config
@@ -140,7 +144,7 @@ index.html 對應欄位
   |—page.js
 ```
 
-#### monitor.html
+#### main.html
 
 加入 `<div id="app">[程式碼]</div>` 內全部程式碼
 
@@ -162,14 +166,6 @@ pages:
 + MONITOR : 新聞網監控程式碼、GA 程式碼欄位
 + CONTENT : SEO 內容欄位
 + noIndex : 是否使用 `noIndex`
-
-#### contents/main.html
-
-#### contents/monitor.html
-
-#### contents/noIndex.html
-
-#### utils/contentGenerator.js
 
 ## Components Usage
 
@@ -198,7 +194,7 @@ Footer 相關元件
   :srcPad="require('@/assets/img/pad.jpg')"
   :srcPc="require('@/assets/img/pc.jpg')"
   alt="一張有溫度的照片"
-> 一段有溫度的文字
+> 一段有<strong>溫度</strong>的文字
 </ArticleColumnOne>
 ```
 
@@ -227,7 +223,7 @@ Footer 相關元件
 
   alt_1="一張有溫度的照片"
   alt_2="一張有故事的照片"
-> 一段有溫度的文字
+> 一段有<strong>溫度</strong>的文字
 </ArticleColumnTwo>
 ```
 
@@ -265,7 +261,7 @@ Footer 相關元件
   alt_1="一張有溫度的照片"
   alt_2="一張有故事的照片"
   alt_3="一張不怎麼樣的照片"
-> 一段有溫度的文字
+> 一段有<strong>溫度</strong>的文字
 </ArticleColumnThree>
 ```
 
@@ -307,14 +303,6 @@ Footer 相關元件
 
 ```html
 <p>聯合報<ArticleDictionary>是在中華民國台灣地區發行的中文報紙，由前中國國民黨中央常務委員王惕吾於1951年9月16日創立</ArticleDictionary></p>
-```
-
-#### ArticleParallax
-
-滾動視差
-
-```html
-
 ```
 
 #### ArticleQuote
@@ -503,7 +491,7 @@ Facebook icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
 ```
 
 ```html
@@ -522,7 +510,7 @@ Line icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
 ```
 
 ```html
@@ -541,7 +529,7 @@ Twitter icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
 ```
 
 ```html
@@ -559,7 +547,7 @@ Twitter icon
 
 ```html
 <!-- 相依 -->
-<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css" />
+<link rel="stylesheet" href="https://udn.com/newmedia/cms_assets/icons_v4/icons.css">
 ```
 
 ```html
