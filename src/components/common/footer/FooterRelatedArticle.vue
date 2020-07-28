@@ -9,16 +9,16 @@
         :href="href1"
         target="_blank"
         rel="noopener"
-        :ariaLabel="title1"
-        :name="title1"
-        @click="handleGA(title1)"
+        :ariaLabel="topic1"
+        :name="topic1"
+        @click="handleGA(topic1)"
       >
         <div class="footer-relate-article__article__head">
-          <img :src="img1" :alt="title1">
+          <img :src="img1" :alt="topic1">
         </div>
         <div class="footer-relate-article__article__body">
           <div class="footer-relate-article__article__body__title">
-            <p class="small">{{title1}}</p>
+            <p class="small">{{topic1}}</p>
           </div>
           <div class="footer-relate-article__article__body__text">
             <p class="small">{{text1}}</p>
@@ -30,16 +30,16 @@
         :href="href2"
         target="_blank"
         rel="noopener"
-        :ariaLabel="title2"
-        :name="title2"
-        @click="handleGA(title2)"
+        :ariaLabel="topic2"
+        :name="topic2"
+        @click="handleGA(topic2)"
       >
         <div class="footer-relate-article__article__head">
-          <img :src="img2" :alt="title2">
+          <img :src="img2" :alt="topic2">
         </div>
         <div class="footer-relate-article__article__body">
           <div class="footer-relate-article__article__body__title">
-            <p class="small">{{title2}}</p>
+            <p class="small">{{topic2}}</p>
           </div>
           <div class="footer-relate-article__article__body__text">
             <p class="small">{{text2}}</p>
@@ -51,16 +51,16 @@
         :href="href3"
         target="_blank"
         rel="noopener"
-        :ariaLabel="title3"
-        :name="title3"
-        @click="handleGA(title3)"
+        :ariaLabel="topic3"
+        :name="topic3"
+        @click="handleGA(topic3)"
       >
         <div class="footer-relate-article__article__head">
-          <img :src="img3" :alt="title3">
+          <img :src="img3" :alt="topic3">
         </div>
         <div class="footer-relate-article__article__body">
           <div class="footer-relate-article__article__body__title">
-            <p class="small">{{title3}}</p>
+            <p class="small">{{topic3}}</p>
           </div>
           <div class="footer-relate-article__article__body__text">
             <p class="small">{{text3}}</p>
@@ -72,16 +72,16 @@
         :href="href4"
         target="_blank"
         rel="noopener"        
-        :ariaLabel="title4"
-        :name="title4"
-        @click="handleGA(title4)"
+        :ariaLabel="topic4"
+        :name="topic4"
+        @click="handleGA(topic4)"
       >
         <div class="footer-relate-article__article__head">
-          <img :src="img4" :alt="title4">
+          <img :src="img4" :alt="topic4">
         </div>
         <div class="footer-relate-article__article__body">
           <div class="footer-relate-article__article__body__title">
-            <p class="small">{{title4}}</p>
+            <p class="small">{{topic4}}</p>
           </div>
           <div class="footer-relate-article__article__body__text">
             <p class="small">{{text4}}</p>
@@ -118,7 +118,7 @@ export default {
       type: String,
       required: true,
     },
-    title1: {
+    topic1: {
       type: String,
       required: true,
     },
@@ -134,7 +134,7 @@ export default {
       type: String,
       required: true,
     },
-    title2: {
+    topic2: {
       type: String,
       required: true,
     },
@@ -150,7 +150,7 @@ export default {
       type: String,
       required: true,
     },
-    title3: {
+    topic3: {
       type: String,
       required: true,
     },
@@ -166,7 +166,7 @@ export default {
       type: String,
       required: true,
     },
-    title4: {
+    topic4: {
       type: String,
       default: '',
     },    
@@ -176,11 +176,11 @@ export default {
     },
   },
   methods: {
-    handleGA(title) {
+    handleGA(topic) {
       this.sendGA({
         category: 'related',
         action: 'click',
-        label: title
+        label: topic
       });
     },
   },

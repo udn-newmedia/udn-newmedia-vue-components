@@ -7,21 +7,9 @@
     name="next-article"
     @click="sendGA(formatGA('FooterQuestoinnaire'))"
   >
-    <button
-      class="footer-questionnaire__button"
-      aria-label="next-article"
-      name="下一篇"
-    >
-      <NmdButton
-        :textColor="buttonStyle.textColor"
-        :bgColor="buttonStyle.bgColor"
-        :theme="buttonStyle.theme"
-        :border="buttonStyle.border"
-        :size="buttonStyle.size"
-      >
-        {{text}}
-      </NmdButton>
-    </button>
+    <NmdButton :size="buttonStyle.size">
+      {{text}}
+    </NmdButton>
   </a>
 </template>
 
@@ -48,10 +36,6 @@ export default {
   data() {
     return {
       buttonStyle: {
-        // textColor: '',
-        // bgColor: '',
-        // theme: '',
-        // border: '',
         size: 'xl',
       }
     }
@@ -70,10 +54,5 @@ export default {
   @include pc {
     width: 576px;
   }
-}
-.footer-questionnaire__button {
-  position: relative;
-  width: 100%;
-  @include clean-btn;
 }
 </style>

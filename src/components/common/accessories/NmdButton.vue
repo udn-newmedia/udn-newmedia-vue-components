@@ -5,17 +5,15 @@
       'border-color': theme === 'contained' ?  'transparent' : bgColor,
       'background-color': theme === 'contained' ? bgColor : 'transparent',
     }"
+    :ariaLabel="ariaLabel"
+    :name="name"
     @click="clickEvent"
     @mouseenter="handleHover(true)"
     @mouseleave="handleHover(false)"
   >
     <div :class="rippleClassAttr"></div>
     <div class="nmd-button__text">
-      <p class="small"
-        :style="{
-          'color': textColor,
-        }"
-      >
+      <p class="small" :style="{ 'color': textColor }" >
         <slot />
       </p>
     </div>
@@ -44,7 +42,19 @@ export default {
     },
     size: {
       type: String,
-      default: 'm' /* xs, x, m, l, xl */
+      default: 'm' /* xs, s, m, l, xl */
+    },
+    extendWidth: {
+      type: Boolean,
+      default: false
+    },
+    ariaLabel: {
+      type: String,
+      default: 'btn'
+    },
+    name: {
+      type: String,
+      default: 'btn'
     },
     clickEvent: {
       type: Function,
@@ -69,7 +79,8 @@ export default {
         'nmd-button--size-s': this.size === 's',
         'nmd-button--size-m': this.size === 'm',
         'nmd-button--size-l': this.size === 'l',
-        'nmd-button--size-xl': this.size === 'xl'
+        'nmd-button--size-xl': this.size === 'xl',
+        'nmd-button--extend-width': this.extendWidth === true
       }
     },
     rippleClassAttr() {
@@ -95,10 +106,11 @@ export default {
   position: relative;
   height: 35px;
   padding: 0 64px;
+  @include clean-btn;
   border-style: solid;
   border-width: 1px;
   background-color: #ffffff;
-  @include clean-btn;
+  white-space: nowrap;
 
   &.nmd-button--contained {
     border: none;
@@ -111,6 +123,10 @@ export default {
   }
   &.nmd-button--border-l {
     border-radius: 100px;
+  }
+
+  &.nmd-button--extend-width {
+    width: 100%;
   }
 
   &.nmd-button--size-xs {

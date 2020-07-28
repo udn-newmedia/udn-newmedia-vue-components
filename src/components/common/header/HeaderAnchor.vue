@@ -33,6 +33,11 @@ export default {
       type: String,
     },
   },
+  data() {
+    return {
+      anchorList: null
+    }
+  },
   methods: {
     handleScrollVert(index) {
       vueScrollTo.scrollTo('#anchor-' + index);
@@ -51,12 +56,12 @@ export default {
       });
     },
     handleScroll() {
-      const list = this.$store.state.anchorList;
+      const list = this.anchorList;
 
       for (let i = list.length - 1; i >= 0; i--) {
         const pos = document.getElementById('anchor-' + list[i].title).getBoundingClientRect().top;
         if (pos < 1) {
-          this.$store.dispatch('updateAnchorStatus', {index: i, status: true}); 
+          this.handleUpdateAnchor(i, true);
           for (let j = 0; j < list.length; j++) {
             if (j !== i) this.handleUpdateAnchor(j, false);
           }
@@ -65,13 +70,8 @@ export default {
       }
     },
     handleUpdateAnchor(index, status) {
-      this.$store.dispatch('updateAnchorStatus', {index: index, status: status});
+      this.anchorList[index].active = status;
     },
-  },
-  computed: {
-    anchorList() {
-      return this.$store.state.anchorList;
-    }
   },
   watch: {
     anchorList: {
@@ -90,6 +90,10 @@ export default {
     },
   },
   mounted() {
+    this.$nextTick(() => {
+      this.anchorList = this.$anchorList;
+    });
+
     window.addEventListener('scroll', this.handleScroll, false);
   },
   destroyed() {
