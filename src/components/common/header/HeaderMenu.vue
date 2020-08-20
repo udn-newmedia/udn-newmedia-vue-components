@@ -15,7 +15,8 @@
         'header-menu__content--active': menuActiveFlag,
       }"
     >
-      <a v-for="(item, index) in outlink"
+      <a
+        v-for="(item, index) in outlink"
         :key="index"
         :href="item.url"
         target="_blank"
@@ -23,9 +24,7 @@
         :ariaLabel="item.title"
         :name="item.title"
         :class="{ active: item.active}"
-      >
-        {{item.title}}
-      </a>
+      >{{item.title}}</a>
     </div>
     <div
       v-else
@@ -39,7 +38,8 @@
       <slot />
     </div>
   </nav>
-  <nav v-else
+  <nav
+    v-else
     :class="{
       'header-menu-simplified': true,
       'header-menu-simplified--active': menuActiveFlag,
@@ -52,7 +52,8 @@
         'header-menu__content--active': menuActiveFlag,
       }"
     >
-      <a v-for="(item, index) in outlink"
+      <a
+        v-for="(item, index) in outlink"
         :key="index"
         :href="item.url"
         target="_blank"
@@ -60,9 +61,7 @@
         :ariaLabel="item.title"
         :name="item.title"
         :class="{ active: item.active}"
-      >
-        {{item.title}}
-      </a>
+      >{{item.title}}</a>
     </div>
     <div
       v-else
@@ -77,7 +76,7 @@
 </template>
 
 <script>
-import { autoResize_3, sendGaMethods } from '@/mixins/masterBuilder.js';
+import { autoResize_3, sendGaMethods } from '@/mixins/masterBuilder.js'
 
 export default {
   name: 'HeaderMenu',
@@ -85,7 +84,7 @@ export default {
   props: {
     menuActiveFlag: {
       type: Boolean,
-      default: false
+      default: false,
     },
     theme: {
       type: String,
@@ -96,14 +95,15 @@ export default {
     },
     outlink: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   watch: {
-    menuActiveFlag: function(value) {
-      if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-      else document.getElementsByTagName('body')[0].style.overflow = 'auto';
-    }
+    menuActiveFlag: function (value) {
+      if (value)
+        document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+      else document.getElementsByTagName('body')[0].style.overflow = 'auto'
+    },
   },
 }
 </script>
@@ -118,7 +118,7 @@ export default {
   width: 100%;
   height: 100vh;
   opacity: 0;
-  transition: .333s ease-in-out;
+  transition: 0.333s ease-in-out;
   @include pad {
     background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -148,7 +148,7 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
     padding: 125px 56px;
-    transition: .666s ease-in-out;
+    transition: 0.666s ease-in-out;
     transform: translateY(-100%);
 
     @include pad {
@@ -237,7 +237,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   opacity: 0;
-  transition: .333s ease-in-out;
+  transition: 0.333s ease-in-out;
   @include pad {
     background-color: rgba(#000000, 0.6);
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -270,18 +270,19 @@ export default {
     padding: 0 85px;
     background-color: #f6f6f6;
     transform: translateX(100%);
-    transition: .666s ease-out;
+    transition: 0.666s ease-out;
 
     @include pad {
-      width: 60%;
+      width: 100%;
       min-width: 450px;
       justify-content: start;
       padding: 250px 45px;
     }
     @include pc {
-      width: 35%;
+      width: 100%;
       min-width: 450px;
       justify-content: start;
+      align-items: center;
       padding: 185px 100px;
     }
 
@@ -318,7 +319,9 @@ export default {
         font-size: 24px;
         margin: 8px 0;
         &:hover {
-          color: #000000;
+          color: red;
+          text-decoration: underline;
+          // color: #000000;
         }
       }
 
