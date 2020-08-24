@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import _debounce from 'lodash.debounce';
-import { sendGaMethods } from '@/mixins/masterBuilder.js';
+import _debounce from 'lodash.debounce'
+import { sendGaMethods } from '@/mixins/masterBuilder.js'
 
 export default {
   name: 'PageIndicator',
@@ -20,7 +20,7 @@ export default {
   props: {
     color: {
       type: String,
-      default: '#cf0606'
+      default: '#cf0606',
     },
   },
   data() {
@@ -29,54 +29,54 @@ export default {
       readProgress: 0,
       lastStage: 0,
       stagePool: [],
-    };
+    }
   },
   computed: {
     progressWidth() {
-      return `${this.readProgress}%`;
-    }
+      return `${this.readProgress}%`
+    },
   },
   methods: {
     handleCalcProgress() {
-      const currentHeight = window.pageYOffset;
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      
-      return ((currentHeight / totalHeight) * 100).toFixed(2);
+      const currentHeight = window.pageYOffset
+      const totalHeight = document.body.scrollHeight - window.innerHeight
+
+      return ((currentHeight / totalHeight) * 100).toFixed(2)
     },
     handleSendGA(stage) {
-      if (!document.querySelector('title')) return;
+      if (!document.querySelector('title')) return
       this.sendGA({
         category: 'read',
         action: 'scroll',
-        label: `page read: ${stage}%`
-      });
+        label: `page read: ${stage}%`,
+      })
     },
     handleUpdateStage(lastStage, newStage) {
-      if (newStage < lastStage) return;
+      if (newStage < lastStage) return
       for (let i = lastStage + 10; i <= newStage; i += 10) {
-        this.stagePool.push(i);
+        this.stagePool.push(i)
         this.handleSendGA(i)
       }
     },
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
-          this.readProgress = this.handleCalcProgress();
+          this.readProgress = this.handleCalcProgress()
 
-          this.lastStage = Math.max(...this.stagePool) | 0;
+          this.lastStage = Math.max(...this.stagePool) | 0
           this.handleUpdateStage(this.lastStage, this.readProgress)
 
-          this.ticking = false;
-        });
+          this.ticking = false
+        })
       }
-      this.ticking = true;
-    }, 100),
+      this.ticking = true
+    }, 500),
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll, { passive: true });
+    window.addEventListener('scroll', this.handleScroll, { passive: true })
   },
-  destroyed () {
-    window.removeEventListener('scroll', this.handleScroll, { passive: true });
+  destroyed() {
+    window.removeEventListener('scroll', this.handleScroll, { passive: true })
   },
 }
 </script>
@@ -94,7 +94,7 @@ export default {
     position: relative;
     width: 0;
     height: 100%;
-    transition: width .666s ease-out;
+    transition: width 0.666s ease-out;
   }
 }
 </style>

@@ -28,3 +28,10 @@ export default {
   margin: 104px auto 72px auto;
 }
 </style>
+<style lang="scss">
+.fb-comments {
+  iframe {
+    width: 100% !important;
+  }
+}
+</style>

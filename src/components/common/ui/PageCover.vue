@@ -1,5 +1,6 @@
 <template>
-  <section class="page-cover"
+  <section
+    class="page-cover"
     :style="{
       backgroundImage: 'url(' + selectSrc_3(srcMob, srcPad, srcPc) + ')'
     }"
@@ -24,13 +25,17 @@
 </template>
 
 <script>
-import { autoResize_3, selectSrcMethod_3, sendGaMethods } from '@/mixins/masterBuilder.js';
-import NmdArrow from '@/components/common/accessories/NmdArrow.vue';
-import vueScrollTo from 'vue-scrollto';
+import {
+  autoResize_3,
+  selectSrcMethods,
+  sendGaMethods,
+} from '@/mixins/masterBuilder.js'
+import NmdArrow from '@/components/common/accessories/NmdArrow.vue'
+import vueScrollTo from 'vue-scrollto'
 
 export default {
   name: 'PageCover',
-  mixins: [autoResize_3, selectSrcMethod_3, sendGaMethods],
+  mixins: [autoResize_3, selectSrcMethods, sendGaMethods],
   components: {
     NmdArrow,
   },
@@ -39,10 +44,10 @@ export default {
       type: String,
     },
     srcPad: {
-      type: String
+      type: String,
     },
     srcPc: {
-      type: String
+      type: String,
     },
     useAnimate: {
       type: String,
@@ -70,23 +75,27 @@ export default {
     },
     writingMode: {
       type: String,
-      default: 'horizontal'
+      default: 'horizontal',
     },
   },
   computed: {
     titleTop() {
-      if (!this.posMob && !this.posPad && !this.posPc) return 0;
-      if (this.deviceType === 'mob') return this.posMob.split(',')[1].concat('vh');
-      if (this.deviceType === 'pad') return this.posPad.split(',')[1].concat('vh');
-      if (this.deviceType === 'pc') return this.posPc.split(',')[1].concat('vh');
-      return 0;
+      if (!this.posMob && !this.posPad && !this.posPc) return 0
+      if (this.deviceType === 'mob')
+        return this.posMob.split(',')[1].concat('vh')
+      if (this.deviceType === 'pad')
+        return this.posPad.split(',')[1].concat('vh')
+      if (this.deviceType === 'pc') return this.posPc.split(',')[1].concat('vh')
+      return 0
     },
     titleLeft() {
-      if (!this.posMob && !this.posPad && !this.posPc) return 0;
-      if (this.deviceType === 'mob') return this.posMob.split(',')[0].concat('vw');
-      if (this.deviceType === 'pad') return this.posPad.split(',')[0].concat('vw');
-      if (this.deviceType === 'pc') return this.posPc.split(',')[0].concat('vw');
-      return 0;
+      if (!this.posMob && !this.posPad && !this.posPc) return 0
+      if (this.deviceType === 'mob')
+        return this.posMob.split(',')[0].concat('vw')
+      if (this.deviceType === 'pad')
+        return this.posPad.split(',')[0].concat('vw')
+      if (this.deviceType === 'pc') return this.posPc.split(',')[0].concat('vw')
+      return 0
     },
     titleTranslate() {
       return 'translate(' + this.titleLeft + ',' + this.titleTop + ')'
@@ -95,15 +104,15 @@ export default {
       if (this.writingMode === 'vrl') return 'vertical-rl'
       if (this.writingMode === 'vlr') return 'vertical-lr'
       return 'horizontal-tb'
-    }
+    },
   },
   methods: {
     handleScroll() {
-      vueScrollTo.scrollTo('#enter-anchor');
-      this.sendGA(this.formatGA('CoverArrow'));
-    }
-  }
-};
+      vueScrollTo.scrollTo('#enter-anchor')
+      this.sendGA(this.formatGA('CoverArrow'))
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -124,7 +133,12 @@ export default {
   .page-cover__title {
     position: relative;
     display: inline-block;
-    p, h1, h2, h3, h4, h5 {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
       color: inherit;
     }
   }

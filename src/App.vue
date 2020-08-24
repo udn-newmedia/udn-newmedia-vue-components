@@ -181,24 +181,32 @@
       />
       <FooterNextArticle type="2" title="空服人生" :img="require('@/assets/img/next/1.jpg')" href="#" />
       <CastAnchor title="台灣篇" />
-      <FooterRelatedArticle
-        title="讓台灣更好"
-        href1="#"
-        :img1="require('@/assets/img/relate/r1.jpg')"
-        topic1="支持美實施嚴格隱私權法 庫克：個資正被「武器化」"
-        text1="新聞的存在，令我無法停止對他的思考。面對如此難題，我們必須設想周全。一般來講，我們都必須務必慎重的考慮考慮。尼采說過一句經典的名言，人可以控制行為，卻不能約束感情，因為感情是變化無常的。這句話看似簡單，但其中的陰鬱不禁讓人深思。"
-        href2="#"
-        :img2="require('@/assets/img/relate/r2.jpg')"
-        topic2="抖音蒐集兒童個資 遭美重罰570萬美元"
-        text2="士光敏夫講過一段耐人尋思的話，領導幹部應去掉權力意識，對下級要以誠相待。這讓我對於看待這個問題的方法有了巨大的改變。把新聞輕鬆帶過，顯然並不適合。"
-        href3="#"
-        :img3="require('@/assets/img/relate/r3.jpg')"
-        topic3="用臉書帳號登入App 恐曝3大風險"
-        text3="一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。"
-        href4="#"
-        :img4="require('@/assets/img/relate/r4.jpg')"
-        topic4="Gmail被踢爆開後門 百萬用戶信件看光光"
-        text4="新聞勢必能夠左右未來。在這種困難的抉擇下，本人思來想去，寢食難安。不要先入為主覺得新聞很複雜，實際上，新聞可能比你想的還要更複雜。"
+      <FooterRelatedArticleV1
+        title="不設定每行個數"
+        :relatedArray="[
+        {topic:'支持美實施嚴格隱私權法 庫克：個資正被「武器化」',text:'新聞的存在，令我無法停止對他的思考。面對如此難題，我們必須設想周全。一般來講，我們都必須務必慎重的考慮考慮。尼采說過一句經典的名言，人可以控制行為，卻不能約束感情，因為感情是變化無常的。這句話看似簡單，但其中的陰鬱不禁讓人深思。',img:require('@/assets/img/relate/r1.jpg'),href:'#'},
+        {topic:'抖音蒐集兒童個資 遭美重罰570萬美元',text:'士光敏夫講過一段耐人尋思的話，領導幹部應去掉權力意識，對下級要以誠相待。這讓我對於看待這個問題的方法有了巨大的改變。把新聞輕鬆帶過，顯然並不適合。',img:require('@/assets/img/relate/r2.jpg'),href:'#'},
+        {topic:'用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'123用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'1用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'12用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'13用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'143用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'Gmail被踢爆開後門 百萬用戶信件看光光',text:'新聞勢必能夠左右未來。在這種困難的抉擇下，本人思來想去，寢食難安。不要先入為主覺得新聞很複雜，實際上，新聞可能比你想的還要更複雜。',img:require('@/assets/img/relate/r4.jpg'),href:'#'}]"
+      />
+      <FooterRelatedArticleV1
+        title="設定每行3個"
+        :relatedArray="[
+        {topic:'支持美實施嚴格隱私權法 庫克：個資正被「武器化」',text:'新聞的存在，令我無法停止對他的思考。面對如此難題，我們必須設想周全。一般來講，我們都必須務必慎重的考慮考慮。尼采說過一句經典的名言，人可以控制行為，卻不能約束感情，因為感情是變化無常的。這句話看似簡單，但其中的陰鬱不禁讓人深思。',img:require('@/assets/img/relate/r1.jpg'),href:'#'},
+        {topic:'抖音蒐集兒童個資 遭美重罰570萬美元',text:'士光敏夫講過一段耐人尋思的話，領導幹部應去掉權力意識，對下級要以誠相待。這讓我對於看待這個問題的方法有了巨大的改變。把新聞輕鬆帶過，顯然並不適合。',img:require('@/assets/img/relate/r2.jpg'),href:'#'},
+        {topic:'用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'123用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'1用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'12用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'13用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'143用臉書帳號登入App 恐曝3大風險',text:'一般來講，我們都必須務必慎重的考慮考慮。既然如此，世界需要改革，需要對新聞有新的認知。若沒有新聞的存在，那麼後果可想而知。',img:require('@/assets/img/relate/r3.jpg'),href:'#'},
+        {topic:'Gmail被踢爆開後門 百萬用戶信件看光光',text:'新聞勢必能夠左右未來。在這種困難的抉擇下，本人思來想去，寢食難安。不要先入為主覺得新聞很複雜，實際上，新聞可能比你想的還要更複雜。',img:require('@/assets/img/relate/r4.jpg'),href:'#'}]"
+        :column="3"
       />
       <FooterEditor>
         <div>
@@ -249,7 +257,8 @@ import FooterEditor from '@/components/common/footer/FooterEditor.vue'
 import FooterFbComment from '@/components/common/footer/FooterFbComment.vue'
 // import FooterLogo from '@/components/common/footer/FooterLogo.vue'
 import FooterNextArticle from '@/components/common/footer/FooterNextArticle.vue'
-import FooterRelatedArticle from '@/components/common/footer/FooterRelatedArticle.vue'
+//import FooterRelatedArticle from '@/components/common/footer/FooterRelatedArticle.vue'
+import FooterRelatedArticleV1 from '@/components/common/footer/FooterRelatedArticleV1.vue'
 import FooterShare from '@/components/common/footer/FooterShare.vue'
 import HeaderTypeA1 from '@/components/common/header/HeaderTypeA1.vue'
 // import HeaderTypeC from '@/components/common/header/HeaderTypeC.vue'
@@ -274,7 +283,8 @@ export default {
     FooterFbComment,
     // FooterLogo,
     FooterNextArticle,
-    FooterRelatedArticle,
+    // FooterRelatedArticle,
+    FooterRelatedArticleV1,
     FooterShare,
     HeaderTypeA1,
     // HeaderTypeC,

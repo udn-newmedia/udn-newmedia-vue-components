@@ -20,34 +20,39 @@
         aria-label="share-line"
         name="share-line"
       >
-        <img
+        <img class="comment_line_image" :src="btnLINEImg" width="84" height="20" alt="LINE分享給朋友" />
+        <!-- <img
           class="comment_line_image"
           src="//media.line.me/img/button/zh-hant/84x20.png"
           width="84"
           height="20"
           alt="LINE分享給朋友"
-        >
+        />-->
       </a>
     </div>
     <div class="footer-share__share-twitter">
-      <a :href="shareTwitterUrl"
+      <a
+        :href="shareTwitterUrl"
         class="twitter-share-button"
         data-show-count="false"
         aria-label="share-twiier"
         name="share-twiier"
       >
-        Tweet
+        <img :src="btnTWITTERImg" width="60" height="20" alt="TWITTER分享給朋友" />
+        <!-- Tweet -->
       </a>
     </div>
   </article>
 </template>
 
 <script>
-import Utils from '@/utils/udn-newmedia-utils';
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import Utils from '@/utils/udn-newmedia-utils'
+import { sendGaMethods } from '@/mixins/masterBuilder.js'
+import btnLINEImg from '@/assets/img/button/btn_LINE.svg'
+import btnTWITTERImg from '@/assets/img/button/btn_TWITTER.png'
 
-const isMobile = Utils.detectMob();
-const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp();
+const isMobile = Utils.detectMob()
+const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp()
 
 export default {
   name: 'FooterShare',
@@ -58,27 +63,46 @@ export default {
       default: document.querySelector('meta[property="og:url"]').content,
     },
   },
+  data() {
+    return { btnLINEImg, btnTWITTERImg }
+  },
   computed: {
     shareTwitterUrl() {
-      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(document.querySelector('meta[property="og:description"]').content)}%0D%0A%0D%0A`;
+      return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+        document.querySelector('meta[property="og:description"]').content,
+      )}%0D%0A%0D%0A`
     },
     shareLineUrl() {
       const sharedText = document.querySelector('title').innerHTML
-      const shareContent = document.querySelector('meta[property="og:description"]').content
+      const shareContent = document.querySelector(
+        'meta[property="og:description"]',
+      ).content
       // desktop
       if (!isMobile) {
-        return `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}&url=${encodeURIComponent(this.href)}`
+        return `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(
+          sharedText,
+        )}%0D%0A%0D%0A${encodeURIComponent(
+          shareContent,
+        )}&url=${encodeURIComponent(this.href)}`
       }
       // mobile
       if (!isInApp) {
-        return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
+        return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(
+          sharedText,
+        )}%0D%0A%0D%0A${encodeURIComponent(
+          shareContent,
+        )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
       }
       // mobile in-app webview
-      return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(sharedText)}%0D%0A%0D%0A${encodeURIComponent(shareContent)}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
+      return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(
+        sharedText,
+      )}%0D%0A%0D%0A${encodeURIComponent(
+        shareContent,
+      )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
     },
     target() {
-      if (!this.isMobile) return '_blank';
-      return '_self';
+      if (!this.isMobile) return '_blank'
+      return '_self'
     },
   },
 }
@@ -106,5 +130,10 @@ export default {
   justify-content: center;
   align-items: flex-end;
   margin-left: 8px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 }
 </style>

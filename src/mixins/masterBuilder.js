@@ -1,16 +1,16 @@
-import _debounce from 'lodash.debounce';
-import { detectPlatform } from '@/utils/udn-newmedia-utils';
-import gaTable from '@/utils/gaFormator';
+import _debounce from "lodash.debounce";
+import { detectPlatform } from "@/utils/udn-newmedia-utils";
+import gaTable from "@/utils/gaFormator";
 
 function detectDevice(w) {
   switch (true) {
-    case (w < 767.98):
-      return 'mob';          
-    case (768 <= w && w <= 1024.98):
-      if (window.matchMedia('(orientation: landscape)').matches) return 'pc';
-      return 'pad';
+    case w < 767.98:
+      return "mob";
+    case 768 <= w && w <= 1024.98:
+      if (window.matchMedia("(orientation: landscape)").matches) return "pc";
+      return "pad";
     default:
-      return 'pc';
+      return "pc";
   }
 }
 
@@ -18,7 +18,7 @@ const rwdMethods = {
   data() {
     return {
       windowWidth: window.innerWidth,
-    }
+    };
   },
   computed: {
     isMob() {
@@ -27,7 +27,7 @@ const rwdMethods = {
     deviceType() {
       const w = this.windowWidth;
       return detectDevice(w);
-    }
+    },
   },
   methods: {
     handleResize: _debounce(function() {
@@ -35,38 +35,38 @@ const rwdMethods = {
     }, 100),
   },
   mounted() {
-    window.addEventListener('resize', this.handleResize, true);
+    window.addEventListener("resize", this.handleResize, true);
   },
   destroyed() {
-    window.removeEventListener('resize', this.handleResize, true);
+    window.removeEventListener("resize", this.handleResize, true);
   },
-}
+};
 
 const autoResize_2 = {
   computed: {
     isMob() {
       return this.$root.isMob;
-    }
+    },
   },
   watch: {
     isMob: function() {
       this.$forceUpdate();
-    }
-  }
-}
+    },
+  },
+};
 
 const autoResize_3 = {
   computed: {
     deviceType() {
       return this.$root.deviceType;
-    }
+    },
   },
   watch: {
     deviceType: function() {
       this.$forceUpdate();
-    }
-  }
-}
+    },
+  },
+};
 
 const selectSrcMethod_2 = {
   methods: {
@@ -75,73 +75,95 @@ const selectSrcMethod_2 = {
       return isMob ? mob : pc;
     },
   },
-}
+};
 
-const selectSrcMethod_3 = {
+const selectSrcMethods = {
   methods: {
     selectSrc_3: function(mob, pad, pc) {
       const w = window.innerWidth;
       const deviceType = detectDevice(w);
       switch (deviceType) {
-        case 'mob':
+        case "mob":
           return mob;
-        case 'pad':
-          return pad;    
+        case "pad":
+          return pad;
         default:
           return pc;
       }
     },
   },
-}
+};
 
 const sendGaMethods = {
   methods: {
     sendGA: function(item) {
       /**
-      * item = {
-      *   category: ... 
-      *   action: ... 
-      *   label: ... 
-      * }
-      */
+       * item = {
+       *   category: ...
+       *   action: ...
+       *   label: ...
+       * }
+       */
       window.ga("newmedia.send", {
-        "hitType": "event",
-        "eventCategory": item.category,
-        "eventAction": item.action,
-        "eventLabel": "[" + detectPlatform() + "] [" + document.querySelector('title').innerHTML + "] [" + item.label +"]"
+        hitType: "event",
+        eventCategory: item.category,
+        eventAction: item.action,
+        eventLabel:
+          "[" +
+          detectPlatform() +
+          "] [" +
+          document.querySelector("title").innerHTML +
+          "] [" +
+          item.label +
+          "]",
+      });
+    },
+    sendUDNGA: function(item) {
+      window.ga("udn.send", {
+        hitType: "event",
+        eventCategory: item.category,
+        eventAction: item.action,
+        eventLabel:
+          "[" +
+          detectPlatform() +
+          "] [" +
+          document.querySelector("title").innerHTML +
+          "] [" +
+          item.label +
+          "]",
       });
     },
     formatGA: function(name) {
       return gaTable[name];
     },
   },
-}
+};
 
 const _setProps = {
   methods: {
     // p = 傳入的props
     // 優先使用jsonProps的資料
     // 有jsonProps 不能有其他props
-    setProps (p) {
+    setProps(p) {
       if (this.jsonProps !== null) {
         if (this.jsonProps[p] !== undefined) {
-          return this.jsonProps[p]
-        } else { 
-          return this[p]
+          return this.jsonProps[p];
+        } else {
+          return this[p];
         }
       } else {
-        return this[p]
+        return this[p];
       }
-    }
-  }
-}
+    },
+  },
+};
 
 export {
   rwdMethods,
   autoResize_2,
   autoResize_3,
   selectSrcMethod_2,
-  selectSrcMethod_3,
+  selectSrcMethods,
   sendGaMethods,
-  _setProps
+  _setProps,
 };

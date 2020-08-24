@@ -7,8 +7,18 @@
           <div class="member-limited">聯合報付費會員限定</div>
           <p>還不是會員嗎？馬上加入會員，即可享有7天免費試用！</p>
           <div class="button-area">
-            <button type="button" class="login" @click="login">會員登入</button>
-            <button type="button" class="signup">加入會員</button>
+            <a
+              class="login"
+              @click="login"
+              target="_blank"
+              href="https://member.udn.com/member/login.jsp?from=udn_topicmember_login_cate"
+            >會員登入</a>
+            <a
+              class="signup"
+              @click="signup"
+              target="_blank"
+              href="https://member.udn.com/member/ShowMember?from=udn_topicmember_ShowMember_cate"
+            >加入會員</a>
           </div>
         </div>
       </div>
@@ -21,57 +31,75 @@
 </template>
 
 <script>
+import { sendGaMethods } from '@/mixins/masterBuilder.js'
+
 export default {
-  name: "Paywall",
+  name: 'Paywall',
+  mixins: [sendGaMethods],
   data() {
-    return { memberStatus: { isMember: false, isPaid: false } };
+    return { memberStatus: { isMember: false, isPaid: false } }
   },
   methods: {
     login() {
-      console.log("log in");
+      this.sendUDNGA({
+        category: 'memberlogin',
+        action: 'click',
+        label: `專區_點擊_會員登入`,
+      })
+
+      console.log('log in')
+    },
+    signup() {
+      this.sendUDNGA({
+        category: 'Joinamember',
+        action: 'click',
+        label: `專區_點擊_加入會員`,
+      })
+
+      console.log('sign up')
     },
     checkIdentity() {
-      const cors = "https://cors-anywhere.herokuapp.com/";
-      const url = "https://vip.udn.com/api/paywall_article";
+      const cors = 'https://cors-anywhere.herokuapp.com/'
+      const url = 'https://vip.udn.com/api/paywall_article'
 
       const data = {
-        account: "cookie udnland",
-        udngold: "cookie udngold",
+        account: 'cookie udnland',
+        udngold: 'cookie udngold',
         checkIdentity: true,
-      };
+      }
 
       fetch(`${cors}${url}`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
       })
         .then((res) => res.json())
-        .then((jsonData) => console.log(jsonData));
+        .then((jsonData) => console.log(jsonData))
       fetch(`${cors}${url}`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
         body: data,
       })
         .then((res) => res.json())
-        .then((jsonData) => console.log(jsonData));
+        .then((jsonData) => console.log(jsonData))
       // identity:0 未登入
       // identity:1 登入但未付費
       // identity:2 登入且已付費
     },
   },
   mounted() {
-    this.checkIdentity();
+    this.checkIdentity()
   },
   // updated() {
   //   this.checkIdentity()
   // },
-};
+}
 </script>
 <style lang="scss" scope>
 .paywall-container {
@@ -127,8 +155,9 @@ export default {
 .button-area {
   display: flex;
   justify-content: center;
-  & > button {
-    @include clean-btn;
+  & > a {
+    // @include clean-btn;
+    text-decoration: none;
     @media screen and (min-width: 1025px) {
       width: 50%;
       min-width: 250px;
