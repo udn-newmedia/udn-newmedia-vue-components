@@ -101,12 +101,38 @@ export default {
     handleUpdateAnchor(index, status) {
       this.anchorList[index].active = status
     },
+    handleAnchorScroll() {},
     openMenu(button) {
       if (button.activeExisting === false) {
         this.handleScrollVert(button.title)
       }
 
       this.isOpen = !this.isOpen
+    },
+    intersectionObserver() {
+      const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0,
+      }
+
+      const callback = (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            for (let i = 0; i < this.anchorList.length; i++) {
+              if (entry.target.id.indexOf(this.anchorList[i].title) !== -1) {
+                this.handleUpdateAnchor(i, true)
+              } else {
+                this.handleUpdateAnchor(i, false)
+              }
+            }
+          }
+        })
+      }
+
+      const observer = new IntersectionObserver(callback, options)
+
+      return observer
     },
   },
   watch: {
@@ -173,11 +199,15 @@ export default {
     this.$nextTick(() => {
       this.anchorList = this.$anchorList
     })
+    // window.addEventListener('scroll', this.handleScroll, false)
 
-    window.addEventListener('scroll', this.handleScroll, false)
+    const targets = document.querySelectorAll('.cast-anchor')
+    targets.forEach((target) => {
+      this.intersectionObserver().observe(target)
+    })
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll, false)
+    // window.removeEventListener('scroll', this.handleScroll, false)
   },
 }
 </script>

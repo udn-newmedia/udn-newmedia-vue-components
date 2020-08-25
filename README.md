@@ -9,7 +9,7 @@ version: v4.2
 
 [v2.0](http://nmdap.udn.com.tw/test/longform_v2/)  
 [v3.0](http://nmdap.udn.com.tw/test/longform_v3/)  
-[v4.1](http://nmdap.udn.com.tw/test/longform_v4/v4-1/)
+[v4.1](http://nmdap.udn.com.tw/test/longform_v4/v4-1/)  
 [v4.2](http://nmdap.udn.com.tw/test/2020Q2common/)
 
 ## 目錄
@@ -610,6 +610,20 @@ Logo 區塊
 
 ```html
 <CastAnchor title="免費的最貴" />
+```
+
+- props
+  - [ title ] : { String } 傳入 `Vue.prototype.$anchorList` 作為錨點名稱。
+
+#### CastAnchorFrame
+
+加入錨點，需要包裹住內容
+因為改用 intersection observer，需要圈定觸發範圍
+
+```html
+<CastAnchor title="免費的最貴">
+  <slot />
+</CastAnchor>
 ```
 
 - props

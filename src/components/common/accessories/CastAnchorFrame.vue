@@ -1,10 +1,12 @@
 <template>
-  <div :id="'anchor-' + title" class="cast-anchor" />
+  <div :id="'anchor-' + title" class="cast-anchor">
+    <slot></slot>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'CastAnchor',
+  name: 'CastAnchorFrame',
   props: {
     title: String,
   },
