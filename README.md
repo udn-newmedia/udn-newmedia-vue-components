@@ -10,6 +10,7 @@ version: v4.2
 [v2.0](http://nmdap.udn.com.tw/test/longform_v2/)  
 [v3.0](http://nmdap.udn.com.tw/test/longform_v3/)  
 [v4.1](http://nmdap.udn.com.tw/test/longform_v4/v4-1/)
+[v4.2](http://nmdap.udn.com.tw/test/2020Q2common/)
 
 ## 目錄
 
@@ -173,11 +174,14 @@ pages:
 
 Header 相關元件
 
-> Issues: 等待新的設計
+- HeaderTypeA1
+  - { withSubpage } {Boolean} 是否要漢堡選單，不需要的話除了 slot 清空這個值也要設為 false
+  - 如果錨點為空的話，即使向下滾動 icon 仍不會消失
 
 ### Footer
 
-Footer 相關元件
+- PageFooterV1
+  - 新版 Footer
 
 #### PageFooter
 
@@ -332,6 +336,19 @@ Logo 區塊
   - [ img4 ] : { String } 第四篇圖片
   - [ topic4 ] : { String } 第四篇標題
   - [ text4 ] : { String } 第四篇敘述
+
+#### FooterRelatedAritcleV1
+
+```html
+<FooterRelatedArticleV1 title="讓台灣更好" :relatedArray=[
+{topic:'',text:'',img:'',href:''}...... ] :column="3" />
+```
+
+- props
+  - [ title ] : { String } 延伸閱讀區塊標題
+  - [ relatedArray ] : { Array<{topic: String,text: String,img: String,href: String}> }
+    每篇的連結，標題，文字，圖片
+  - [ column ] : { Number } 每行有幾個延伸閱讀，0 或不預設則塞到滿才換行
 
 #### FooterShare
 
@@ -515,6 +532,7 @@ Logo 區塊
 #### PageBackTop
 
 回到最上方按鈕
+超過總進度 50%出現，遇上#footer-go-top 會消失
 
 ```html
 <PageBackTop />

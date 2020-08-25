@@ -163,12 +163,18 @@
     </ArticleContainer>
     <ArticleContainer>
       <p>高雄發大財勢必能夠左右未來。伯爾告訴我們，消磨時間是一種多麼勞累、多麼可怕的事情啊，這只肉眼看不見的秒針無時不在地平線下轉圈，你一再醉生夢死地消磨時間，到頭來你還得明白，它仍在繼續轉圈，無情地繼續轉圈。這不禁令我深思。</p>
-      <ArticleColumnOne
+      <!-- <ArticleColumnOne
         :srcMob="require('@/assets/img/mob6.jpg')"
         :srcPad="require('@/assets/img/mob6.jpg')"
         :srcPc="require('@/assets/img/pc6.jpg')"
         alt="有些手電筒App要求存取過多軟體用不到的權限，可能造成用戶隱私外洩。"
-      >有些手電筒App要求存取過多軟體用不到的權限，可能造成用戶隱私外洩。</ArticleColumnOne>
+      >-->
+      <ArticleColumnOne
+        :srcMob="require('@/assets/img/mob6.jpg')"
+        :srcPad="require('@/assets/img/mob6.jpg')"
+        :srcPc="require('@/assets/img/peoplefish.jpg')"
+        alt="有些手電筒App要求存取過多軟體用不到的權限，可能造成用戶隱私外洩。"
+      >有些手電筒App要求存取過多軟體用不到的權限，可能造成用戶隱私外洩。(本圖由Brian熱情提供)</ArticleColumnOne>
       <p>莫泊桑曾說過，世上真不知有多少能夠成功立業的人，都因為把難得的時間輕輕放過而致默默無聞。希望大家能從這段話中有所收穫。克勞斯·莫瑟爵士說過一句發人省思的話，教育需要花費錢，而無知也是一樣。這句話看似簡單，但其中的陰鬱不禁讓人深思。我們不得不面對一個非常尷尬的事實，那就是，高雄發大財似乎是一種巧合，但如果我們從一個更大的角度看待問題，這似乎是一種不可避免的事實。</p>
     </ArticleContainer>
     <PageFooterV1>
