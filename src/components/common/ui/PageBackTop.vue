@@ -3,14 +3,23 @@
     <button
       :class="{
         'page-back-top__btn': true,
-        'page-back-top__btn--active': activeFlag,
+        'page-back-top__btn--active': activeFlag
       }"
       aria-label="go-top"
       name="go-top"
       @click="handleClick"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
-        <g id="Group_1106" data-name="Group 1106" transform="translate(-2030 -985)">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="45"
+        height="45"
+        viewBox="0 0 45 45"
+      >
+        <g
+          id="Group_1106"
+          data-name="Group 1106"
+          transform="translate(-2030 -985)"
+        >
           <path
             id="Path_1100"
             data-name="Path 1100"
@@ -37,64 +46,64 @@
 </template>
 
 <script>
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
-import _debounce from 'lodash.debounce'
-import vueScrollTo from 'vue-scrollto'
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import _debounce from "lodash.debounce";
+import vueScrollTo from "vue-scrollto";
 
 export default {
-  name: 'PageBackTop',
+  name: "PageBackTop",
   mixins: [sendGaMethods],
   data() {
     return {
       activeFlag: false,
-      isHide: false,
-    }
+      isHide: false
+    };
   },
   methods: {
     handleClick() {
-      vueScrollTo.scrollTo('#app')
-      this.sendGA(this.formatGA('PageBackTop'))
+      vueScrollTo.scrollTo("#app");
+      this.sendGA(this.formatGA("PageBackTop"));
     },
-    handleScroll: _debounce(function () {
-      const currentH = window.pageYOffset
-      const totalH = document.body.scrollHeight - window.innerHeight
-      this.currentProgress = (currentH / totalH) * 100
-      this.activeFlag = this.currentProgress > 50 ? true : false
-    }, 100),
-    intersectionObserver() {
-      const options = {
-        // root: document.querySelector('#scrollArea'),
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.5,
-      }
+    handleScroll: _debounce(function() {
+      const currentH = window.pageYOffset;
+      const totalH = document.body.scrollHeight - window.innerHeight;
+      this.currentProgress = (currentH / totalH) * 100;
+      this.activeFlag = this.currentProgress > 50 ? true : false;
+    }, 100)
+    // intersectionObserver() {
+    //   const options = {
+    //     // root: document.querySelector('#scrollArea'),
+    //     root: null,
+    //     rootMargin: '0px',
+    //     threshold: 0.5,
+    //   }
 
-      const callback = (entries, observer) => {
-        entries.forEach((entry) => {
-          // console.log(entry)
-          if (entry.isIntersecting) {
-            this.isHide = true
-          } else {
-            this.isHide = false
-          }
-        })
-      }
+    //   const callback = (entries, observer) => {
+    //     entries.forEach((entry) => {
+    //       // console.log(entry)
+    //       if (entry.isIntersecting) {
+    //         this.isHide = true
+    //       } else {
+    //         this.isHide = false
+    //       }
+    //     })
+    //   }
 
-      const observer = new IntersectionObserver(callback, options)
+    //   const observer = new IntersectionObserver(callback, options)
 
-      return observer
-    },
+    //   return observer
+    // },
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll, true)
+    window.addEventListener("scroll", this.handleScroll, true);
 
-    const target = document.querySelector('#footer-go-top')
-    this.intersectionObserver().observe(target)
+    // const target = document.querySelector('#footer-go-top')
+    // this.intersectionObserver().observe(target)
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll, true)
-  },
-}
+    window.removeEventListener("scroll", this.handleScroll, true);
+  }
+};
 </script>
 
 <style lang="scss" scoped>

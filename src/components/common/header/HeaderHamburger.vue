@@ -5,7 +5,7 @@
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-1': true,
-        'header-hamburger__line-1--active': menuActiveFlag,
+        'header-hamburger__line-1--active': menuActiveFlag
       }"
     />
     <span
@@ -13,7 +13,7 @@
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-2': true,
-        'header-hamburger__line-2--active': menuActiveFlag,
+        'header-hamburger__line-2--active': menuActiveFlag
       }"
     />
     <span
@@ -21,30 +21,30 @@
         'header-hamburger__line': true,
         'header-hamburger__line--white': theme === 'dark',
         'header-hamburger__line-3': true,
-        'header-hamburger__line-3--active': menuActiveFlag,
+        'header-hamburger__line-3--active': menuActiveFlag
       }"
     />
   </nav>
 </template>
 
 <script>
-
 export default {
-  name: 'HeaderHamburger',
+  name: "HeaderHamburger",
   props: {
     theme: {
-      type: String,
+      type: String
     },
     menuActiveFlag: {
       type: Boolean,
-      default: false,
-    },
-  },
+      default: false
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .header-hamburger {
+  z-index: 5001;
   position: relative;
   width: 50px;
   height: 50px;
@@ -63,7 +63,7 @@ export default {
     width: 100%;
     height: 2px;
     background-color: #121212;
-    transition: .333s ease-in-out;
+    transition: 0.333s ease-in-out;
     &.header-hamburger__line--white {
       background-color: #ffffff;
     }

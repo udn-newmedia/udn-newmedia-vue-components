@@ -2,8 +2,8 @@
   <button
     :class="buttonClassAttr"
     :style="{
-      'border-color': theme === 'contained' ?  'transparent' : bgColor,
-      'background-color': theme === 'contained' ? bgColor : 'transparent',
+      'border-color': theme === 'contained' ? 'transparent' : bgColor,
+      'background-color': theme === 'contained' ? bgColor : 'transparent'
     }"
     :ariaLabel="ariaLabel"
     :name="name"
@@ -13,7 +13,7 @@
   >
     <div :class="rippleClassAttr"></div>
     <div class="nmd-button__text">
-      <p class="small" :style="{ 'color': textColor }" >
+      <p class="small" :style="{ color: textColor }">
         <slot />
       </p>
     </div>
@@ -22,27 +22,27 @@
 
 <script>
 export default {
-  name: 'NmdButton',
+  name: "NmdButton",
   props: {
     textColor: {
       type: String,
-      default: '#000000'
+      default: "#000000"
     },
     bgColor: {
       type: String,
-      default: '#ededed'
+      default: "#ededed"
     },
     theme: {
       type: String,
-      default: 'contained' /* contained, outlined */
+      default: "contained" /* contained, outlined */
     },
     border: {
       type: String,
-      default: 'm' /* s, m, l */
+      default: "m" /* s, m, l */
     },
     size: {
       type: String,
-      default: 'm' /* xs, s, m, l, xl */
+      default: "m" /* xs, s, m, l, xl */
     },
     extendWidth: {
       type: Boolean,
@@ -50,11 +50,11 @@ export default {
     },
     ariaLabel: {
       type: String,
-      default: 'btn'
+      default: "btn"
     },
     name: {
       type: String,
-      default: 'btn'
+      default: "btn"
     },
     clickEvent: {
       type: Function,
@@ -63,33 +63,33 @@ export default {
   },
   data() {
     return {
-      hoverFlag: false,
+      hoverFlag: false
     };
   },
   computed: {
     buttonClassAttr() {
       return {
-        'nmd-button': true,
-        'nmd-button--outlined': this.theme === 'outlined',
-        'nmd-button--contained': this.theme === 'contained',
-        'nmd-button--border-s': this.border === 's',
-        'nmd-button--border-m': this.border === 'm',
-        'nmd-button--border-l': this.border === 'l',
-        'nmd-button--size-xs': this.size === 'xs',
-        'nmd-button--size-s': this.size === 's',
-        'nmd-button--size-m': this.size === 'm',
-        'nmd-button--size-l': this.size === 'l',
-        'nmd-button--size-xl': this.size === 'xl',
-        'nmd-button--extend-width': this.extendWidth === true
-      }
+        "nmd-button": true,
+        "nmd-button--outlined": this.theme === "outlined",
+        "nmd-button--contained": this.theme === "contained",
+        "nmd-button--border-s": this.border === "s",
+        "nmd-button--border-m": this.border === "m",
+        "nmd-button--border-l": this.border === "l",
+        "nmd-button--size-xs": this.size === "xs",
+        "nmd-button--size-s": this.size === "s",
+        "nmd-button--size-m": this.size === "m",
+        "nmd-button--size-l": this.size === "l",
+        "nmd-button--size-xl": this.size === "xl",
+        "nmd-button--extend-width": this.extendWidth === true
+      };
     },
     rippleClassAttr() {
       return {
-        'nmd-button__ripple': true,
-        'nmd-button__ripple--light': this.theme === 'contained',
-        'nmd-button__ripple--dark': this.theme === 'outlined',
-        'nmd-button__ripple--hover': this.hoverFlag,
-      }
+        "nmd-button__ripple": true,
+        "nmd-button__ripple--light": this.theme === "contained",
+        "nmd-button__ripple--dark": this.theme === "outlined",
+        "nmd-button__ripple--hover": this.hoverFlag
+      };
     }
   },
   methods: {
@@ -97,7 +97,7 @@ export default {
       this.hoverFlag = flag;
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -106,6 +106,9 @@ export default {
   position: relative;
   height: 35px;
   padding: 0 64px;
+  @media screen and (max-width: 374.98px) {
+    max-width: 290px;
+  }
   @include clean-btn;
   border-style: solid;
   border-width: 1px;
@@ -136,7 +139,7 @@ export default {
     }
   }
   &.nmd-button--size-s {
-    height: 40px;    
+    height: 40px;
     p {
       font-size: 10px;
     }
@@ -182,7 +185,7 @@ export default {
     border-radius: 50%;
     opacity: 0;
     transform: translate(-50%, -50%) scale(0);
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
     &.nmd-button__ripple--light {
       background-color: #434343;
     }

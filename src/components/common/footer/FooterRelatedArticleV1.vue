@@ -1,12 +1,12 @@
 <template>
   <article class="footer-relate-article">
     <div class="footer-relate-article__title">
-      <h4>{{title}}</h4>
+      <h4>{{ title }}</h4>
     </div>
     <div class="footer-relate-article__article-wrapper">
       <div
         class="footer-relate-article__article-container"
-        :style="{width:column?`${(230+8*2)*column}px`:'100%'}"
+        :style="{ width: column ? `${(230 + 8 * 2) * column}px` : '100%' }"
       >
         <a
           class="footer-relate-article__article"
@@ -24,10 +24,10 @@
           </div>
           <div class="footer-relate-article__article__body">
             <div class="footer-relate-article__article__body__title">
-              <p class="small">{{item.topic}}</p>
+              <p class="small">{{ item.topic }}</p>
             </div>
             <div class="footer-relate-article__article__body__text">
-              <p class="small">{{item.text}}</p>
+              <p class="small">{{ item.text }}</p>
             </div>
           </div>
         </a>
@@ -41,37 +41,37 @@
 </template>
 
 <script>
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
-import FooterQuestionnaire from '@/components/common/footer/FooterQuestionnaire.vue'
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import FooterQuestionnaire from "@/components/common/footer/FooterQuestionnaire.vue";
 
 export default {
-  name: 'FooterRelatedArticleV1',
+  name: "FooterRelatedArticleV1",
   mixins: [sendGaMethods],
   components: {
-    FooterQuestionnaire,
+    FooterQuestionnaire
   },
   props: {
     title: {
       type: String,
-      default: '延伸閱讀',
+      default: "延伸閱讀"
     },
     relatedArray: {
-      type: Array,
+      type: Array
     },
     column: {
-      type: Number,
-    },
+      type: Number
+    }
   },
   methods: {
     handleGA(topic) {
       this.sendGA({
-        category: 'related',
-        action: 'click',
-        label: topic,
-      })
-    },
-  },
-}
+        category: "related",
+        action: "click",
+        label: topic
+      });
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

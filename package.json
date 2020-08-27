@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.4",
+    "detect-inapp": "^1.4.0",
     "es6-promise": "^4.2.8",
     "lodash.debounce": "^4.0.8",
     "vue": "^2.6.11",
@@ -39,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/udn-newmedia/udn-newmedia-vue-components/issues"
   },
-  "homepage": "https://github.com/udn-newmedia/udn-newmedia-vue-components#readme"
+  "homepage": "https://github.com/udn-newmedia/udn-newmedia-vue-components#readme",
+  "prettier": {
+    "vueIndentScriptAndStyle": false
+  }
 }

@@ -1,21 +1,39 @@
 <template>
-  <header :class="{
-      'header-bar': true,
-    }">
+  <header
+    :class="{
+      'header-bar': true
+    }"
+  >
     <!-- <header :class="{
       'header-bar': true,
       'header-bar--hide': !activeFlag,
     }">-->
-    <HeaderMenu :menuActiveFlag="menuActiveFlag" :simplified="true" :outlink="outlink">
+    <HeaderMenu
+      :menuActiveFlag="menuActiveFlag"
+      :simplified="true"
+      :outlink="outlink"
+    >
       <slot />
     </HeaderMenu>
     <div class="header-bar__nav__container" style="background:white">
       <!-- <nav class="header-bar__nav" v-if="activeFlag"> -->
       <div style="display:flex">
         <!-- <nav class="header-bar__nav header-bar-logo" :class="{'header-bar-logo-hide':!activeFlag}"> -->
-        <nav class="header-bar__nav header-bar-logo" :class="{'header-bar-logo-hide':!isAtTop}">
-          <div class="header-bar__logo" @click="sendGA(formatGA('HeaderUdnLogo'))">
-            <a :href="href" target="_self" rel="noopener" aria-label="聯logo" name="聯logo">
+        <nav
+          class="header-bar__nav header-bar-logo"
+          :class="{ 'header-bar-logo-hide': !isAtTop }"
+        >
+          <div
+            class="header-bar__logo"
+            @click="sendGA(formatGA('HeaderUdnLogo'))"
+          >
+            <a
+              :href="href"
+              target="_blank"
+              rel="noopener"
+              aria-label="聯logo"
+              name="聯logo"
+            >
               <UdnLogo />
             </a>
           </div>
@@ -23,11 +41,11 @@
 
         <nav
           :class="{
-        'header-bar__nav': true,
-        'header-bar__nav--hide': !activeFlag,
-        'header-bar__nav--theme-dark': theme === 'dark',
-        'header-bar__nav--theme-light': theme === 'light',
-      }"
+            'header-bar__nav': true,
+            'header-bar__nav--hide': !activeFlag,
+            'header-bar__nav--theme-dark': theme === 'dark',
+            'header-bar__nav--theme-light': theme === 'light'
+          }"
         >
           <div class="header-bar__nav__section">
             <div class="header-bar__logo-seat">
@@ -98,41 +116,42 @@
 </template>
 
 <script>
-import _debounce from 'lodash.debounce'
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
-import HeaderHamburger from '@/components/common/header/HeaderHamburger.vue'
-import HeaderMenu from '@/components/common/header/HeaderMenu.vue'
-import UdnLogo from '@/components/common/accessories/UdnLogo.vue'
-import ShareFb from '@/components/common/accessories/ShareFb.vue'
-import ShareLine from '@/components/common/accessories/ShareLine.vue'
-import ShareTwitter from '@/components/common/accessories/ShareTwitter.vue'
-import HeaderAnchor from '@/components/common/header/HeaderAnchor.vue'
-import HeaderAnchorMob from '@/components/common/header/HeaderAnchorMob.vue'
+import _debounce from "lodash.debounce";
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import { fbBrowserResize } from "@/mixins/fbBrowserResize.js";
+import HeaderHamburger from "@/components/common/header/HeaderHamburger.vue";
+import HeaderMenu from "@/components/common/header/HeaderMenu.vue";
+import UdnLogo from "@/components/common/accessories/UdnLogo.vue";
+import ShareFb from "@/components/common/accessories/ShareFb.vue";
+import ShareLine from "@/components/common/accessories/ShareLine.vue";
+import ShareTwitter from "@/components/common/accessories/ShareTwitter.vue";
+import HeaderAnchor from "@/components/common/header/HeaderAnchor.vue";
+import HeaderAnchorMob from "@/components/common/header/HeaderAnchorMob.vue";
 
 export default {
-  name: 'HeaderTypeA1',
-  mixins: [sendGaMethods],
+  name: "HeaderTypeA1",
+  mixins: [sendGaMethods, fbBrowserResize],
   props: {
     theme: {
       type: String,
-      default: 'light',
+      default: "light"
     },
     pageTitle: {
-      type: String,
+      type: String
     },
     href: {
       type: String,
-      default: 'https://bit.ly/34ea7d9',
+      default: "https://bit.ly/34ea7d9"
       // default: document.querySelector('meta[property="og:url"]').content,
     },
     outlink: {
       type: Array,
-      default: null,
+      default: null
     },
     withSubpage: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   components: {
     HeaderHamburger,
@@ -142,7 +161,7 @@ export default {
     ShareLine,
     ShareTwitter,
     HeaderAnchor,
-    HeaderAnchorMob,
+    HeaderAnchorMob
   },
   data() {
     return {
@@ -150,78 +169,81 @@ export default {
       menuActiveFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
-      deviceType: 'pc',
-      isAtTop: true,
-    }
+      deviceType: "pc",
+      isAtTop: true
+    };
   },
   methods: {
     handleHamburgerClick() {
-      this.menuActiveFlag = !this.menuActiveFlag
+      this.menuActiveFlag = !this.menuActiveFlag;
 
-      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'))
-      else this.sendGA(this.formatGA('HeaderMenuClose'))
+      if (this.menuActiveFlag) {
+        this.sendGA(this.formatGA("HeaderMenuOpen"));
+
+        // setTimeout(() => window.scrollTo({ top: 0 }), 600);
+      } else this.sendGA(this.formatGA("HeaderMenuClose"));
     },
     handleMenuButtonClick() {
-      this.menuActiveFlag = !this.menuActiveFlag
+      this.menuActiveFlag = !this.menuActiveFlag;
 
-      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'))
-      else this.sendGA(this.formatGA('HeaderMenuClose'))
+      if (this.menuActiveFlag) this.sendGA(this.formatGA("HeaderMenuOpen"));
+      else this.sendGA(this.formatGA("HeaderMenuClose"));
     },
     handleScroll: _debounce(
-      function () {
+      function() {
         if (!this.ticking) {
           window.requestAnimationFrame(() => {
             // activeFlag
             if (!this.menuActiveFlag) {
               if (this.lastPosition >= window.pageYOffset)
-                this.activeFlag = true
-              else this.activeFlag = false
-              this.lastPosition = window.pageYOffset
+                this.activeFlag = true;
+              else this.activeFlag = false;
+              this.lastPosition = window.pageYOffset;
             }
-            this.ticking = false
-          })
+            this.ticking = false;
+          });
         }
-        this.ticking = true
+        this.ticking = true;
       },
       30,
-      { leading: true, trailing: false, maxWait: 30 },
+      { leading: true, trailing: false, maxWait: 30 }
     ),
     handleDevice() {
       if (window.innerWidth >= 768) {
-        this.deviceType = 'pc'
+        this.deviceType = "pc";
       } else {
-        this.deviceType = 'mob'
+        this.deviceType = "mob";
       }
     },
     handleTop() {
-      const { pageYOffset } = window
+      const { pageYOffset } = window;
       if (pageYOffset === 0) {
-        this.isAtTop = true
+        this.isAtTop = true;
       } else {
-        this.isAtTop = false
+        this.isAtTop = false;
       }
     },
     checkAnchor() {
       if (this.$anchorList.length === 0) {
-        this.isAtTop = true
-        window.removeEventListener('scroll', this.handleTop, false)
+        this.isAtTop = true;
+        window.removeEventListener("scroll", this.handleTop, false);
       }
-    },
+    }
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll, true)
-    this.handleTop()
-    window.addEventListener('scroll', this.handleTop, false)
-    this.handleDevice()
-    window.addEventListener('resize', this.handleDevice, false)
-    this.checkAnchor()
+    window.addEventListener("scroll", this.handleScroll, true);
+    this.handleTop();
+    window.addEventListener("scroll", this.handleTop, false);
+    this.handleDevice();
+    window.addEventListener("resize", this.handleDevice, false);
+    this.checkAnchor();
   },
   destroyed() {
-    window.removeEventListener('scroll', this.handleScroll, true)
-    window.removeEventListener('scroll', this.handleTop, false)
-    window.removeEventListener('resize', this.handleDevice, false)
-  },
-}
+    window.removeEventListener("scroll", this.handleScroll, true);
+    window.removeEventListener("scroll", this.handleTop, false);
+    window.removeEventListener("resize", this.handleDevice, false);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -263,9 +285,9 @@ export default {
     justify-content: center;
     align-items: center;
     transition: 0.333s ease-in;
-    &:hover {
-      transform: rotate(20deg);
-    }
+    // &:hover {
+    //   transform: rotate(20deg);
+    // }
     a {
       text-decoration: none;
       cursor: pointer;

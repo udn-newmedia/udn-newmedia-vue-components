@@ -10,10 +10,10 @@ const noIndex = contentGenerator("../contents/noIndex.html");
 // const pathRoot = process.env.NODE_ENV === 'production' ? 'https://udn.com/newmedia/MAIN_PAGE/SUB_PAGE/' : './';
 
 /* 測試路徑 */
-const mainPage = "http://nmdap.udn.com.tw/test/2020Q2common/";
+const mainPage = "https://nmdap.udn.com.tw/test/2020Q2common/";
 const pathRoot =
   process.env.NODE_ENV === "production"
-    ? "http://nmdap.udn.com.tw/test/2020Q2common/"
+    ? "https://nmdap.udn.com.tw/test/2020Q2common/"
     : "./";
 // const mainPage = 'http://nmdap.udn.com.tw/test/longform_v4/v4-1/';
 // const pathRoot = process.env.NODE_ENV === 'production' ? 'http://nmdap.udn.com.tw/test/longform_v4/v4-1/' : './';
@@ -36,7 +36,7 @@ module.exports = {
       pageUrl: pathRoot,
       mainPage,
       theme: "#ffffff",
-      noIndex,
-    },
-  },
+      noIndex
+    }
+  }
 };

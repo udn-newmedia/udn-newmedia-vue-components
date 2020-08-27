@@ -3,7 +3,7 @@
     v-if="!simplified"
     :class="{
       'header-menu': true,
-      'header-menu--active': menuActiveFlag,
+      'header-menu--active': menuActiveFlag
     }"
   >
     <div
@@ -12,7 +12,7 @@
         'header-menu__content': true,
         'header-menu__content-dark': theme === 'dark',
         'header-menu__content-light': theme === 'light',
-        'header-menu__content--active': menuActiveFlag,
+        'header-menu__content--active': menuActiveFlag
       }"
     >
       <a
@@ -23,8 +23,9 @@
         rel="noopener"
         :ariaLabel="item.title"
         :name="item.title"
-        :class="{ active: item.active}"
-      >{{item.title}}</a>
+        :class="{ active: item.active }"
+        >{{ item.title }}</a
+      >
     </div>
     <div
       v-else
@@ -32,7 +33,7 @@
         'header-menu__content': true,
         'header-menu__content-dark': theme === 'dark',
         'header-menu__content-light': theme === 'light',
-        'header-menu__content--active': menuActiveFlag,
+        'header-menu__content--active': menuActiveFlag
       }"
     >
       <slot />
@@ -42,14 +43,14 @@
     v-else
     :class="{
       'header-menu-simplified': true,
-      'header-menu-simplified--active': menuActiveFlag,
+      'header-menu-simplified--active': menuActiveFlag
     }"
   >
     <div
       v-if="outlink"
       :class="{
         'header-menu__content': true,
-        'header-menu__content--active': menuActiveFlag,
+        'header-menu__content--active': menuActiveFlag
       }"
     >
       <a
@@ -60,14 +61,15 @@
         rel="noopener"
         :ariaLabel="item.title"
         :name="item.title"
-        :class="{ active: item.active}"
-      >{{item.title}}</a>
+        :class="{ active: item.active }"
+        >{{ item.title }}</a
+      >
     </div>
     <div
       v-else
       :class="{
         'header-menu__content': true,
-        'header-menu__content--active': menuActiveFlag,
+        'header-menu__content--active': menuActiveFlag
       }"
     >
       <slot />
@@ -76,36 +78,36 @@
 </template>
 
 <script>
-import { autoResize_3, sendGaMethods } from '@/mixins/masterBuilder.js'
+import { autoResize_3, sendGaMethods } from "@/mixins/masterBuilder.js";
 
 export default {
-  name: 'HeaderMenu',
+  name: "HeaderMenu",
   mixins: [autoResize_3, sendGaMethods],
   props: {
     menuActiveFlag: {
       type: Boolean,
-      default: false,
+      default: false
     },
     theme: {
-      type: String,
+      type: String
     },
     simplified: {
       type: Boolean,
-      default: false,
+      default: false
     },
     outlink: {
       type: Array,
-      default: null,
-    },
+      default: null
+    }
   },
   watch: {
-    menuActiveFlag: function (value) {
+    menuActiveFlag: function(value) {
       if (value)
-        document.getElementsByTagName('body')[0].style.overflow = 'hidden'
-      else document.getElementsByTagName('body')[0].style.overflow = 'auto'
-    },
-  },
-}
+        document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      else document.getElementsByTagName("body")[0].style.overflow = "auto";
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -257,6 +259,7 @@ export default {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
+    z-index: 5000;
   }
 
   .header-menu__content {

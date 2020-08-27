@@ -621,9 +621,9 @@ Logo 區塊
 因為改用 intersection observer，需要圈定觸發範圍
 
 ```html
-<CastAnchor title="免費的最貴">
+<CastAnchorFrame title="免費的最貴">
   <slot />
-</CastAnchor>
+</CastAnchorFrame>
 ```
 
 - props
