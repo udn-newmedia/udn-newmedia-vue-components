@@ -1,5 +1,11 @@
 <template>
-  <div class="udn-logo">
+  <div
+    class="udn-logo"
+    :class="{
+        'light': theme === 'light',
+        'dark': theme === 'dark',
+      }"
+  >
     <!-- <i
       :class="{
         'icon-round_logo': true,
@@ -19,19 +25,19 @@
 </template>
 
 <script>
-import newUdnImg from '@/assets/img/logo/logo_udngroup.svg'
+import newUdnImg from "@/assets/img/logo/logo_udngroup.svg";
 
 export default {
-  name: 'UdnLogo',
+  name: "UdnLogo",
   props: {
     theme: {
       type: String,
     },
   },
   data() {
-    return { newUdnImg }
+    return { newUdnImg };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -43,7 +49,12 @@ export default {
   justify-content: center;
   align-items: center;
   font-size: 35px;
-  background-color: #ffffff;
+  &.dark {
+    background-color: #000;
+  }
+  &.light {
+    background-color: #ffffff;
+  }
   & > img {
     &.icon-theme-light {
       color: #aaaaaa;
