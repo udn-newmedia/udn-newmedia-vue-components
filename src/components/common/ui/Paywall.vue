@@ -1,6 +1,6 @@
 <template>
   <div class="paywall-container">
-    <template v-if="!memberStatus.isPaid">
+    <template v-if="!isMember">
       <div class="paywall-cover" />
       <div class="paywall-login">
         <div class="paywall-login-area">
@@ -12,94 +12,67 @@
               @click="login"
               target="_blank"
               href="https://member.udn.com/member/login.jsp?from=udn_topicmember_login_cate"
-            >會員登入</a>
+              >會員登入</a
+            >
             <a
               class="signup"
               @click="signup"
               target="_blank"
               href="https://member.udn.com/member/ShowMember?from=udn_topicmember_ShowMember_cate"
-            >加入會員</a>
+              >加入會員</a
+            >
           </div>
         </div>
       </div>
     </template>
-    <div class="content">
-      <slot name="isPaid" v-if="memberStatus.isPaid" />
+    <div :class="{ content: !isMember }">
+      <slot name="isPaid" v-if="isMember" />
       <slot name="isNotPaid" v-else />
     </div>
   </div>
 </template>
 
 <script>
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
+import { sendGaMethods } from "@/mixins/masterBuilder.js";
 
 export default {
-  name: 'Paywall',
+  name: "Paywall",
   mixins: [sendGaMethods],
   data() {
-    return { memberStatus: { isMember: false, isPaid: false } }
+    return { memberStatus: { isMember: false, isPaid: false } };
+  },
+  computed: {
+    isMember() {
+      return this.$store.state.isMember;
+    }
   },
   methods: {
     login() {
       this.sendUDNGA({
-        category: 'memberlogin',
-        action: 'click',
-        label: `專區_點擊_會員登入`,
-      })
+        category: "memberlogin",
+        action: "click",
+        label: `專區_點擊_會員登入`
+      });
 
-      console.log('log in')
+      console.log("log in");
     },
     signup() {
       this.sendUDNGA({
-        category: 'Joinamember',
-        action: 'click',
-        label: `專區_點擊_加入會員`,
-      })
+        category: "Joinamember",
+        action: "click",
+        label: `專區_點擊_加入會員`
+      });
 
-      console.log('sign up')
+      console.log("sign up");
     },
     checkIdentity() {
-      const cors = 'https://cors-anywhere.herokuapp.com/'
-      const url = 'https://vip.udn.com/api/paywall_article'
-
-      const data = {
-        account: 'cookie udnland',
-        udngold: 'cookie udngold',
-        checkIdentity: true,
-      }
-
-      fetch(`${cors}${url}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((jsonData) => console.log(jsonData))
-      fetch(`${cors}${url}`, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: data,
-      })
-        .then((res) => res.json())
-        .then((jsonData) => console.log(jsonData))
-      // identity:0 未登入
-      // identity:1 登入但未付費
-      // identity:2 登入且已付費
-    },
+      this.$store.dispatch("checkIdentity");
+    }
   },
   mounted() {
-    this.checkIdentity()
-  },
-  // updated() {
-  //   this.checkIdentity()
-  // },
-}
+    this.checkIdentity();
+  }
+};
 </script>
 <style lang="scss" scope>
 .paywall-container {
