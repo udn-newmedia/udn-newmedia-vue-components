@@ -1,48 +1,71 @@
 {
-  "name": "udn-newmedia-vue-components",
-  "version": "1.4.5",
-  "description": "Udn NewMedia Vue Components",
-  "main": "dist/udn-newmedia-vue-components.min.js",
+  "name": "108_set",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "build": "webpack -p",
-    "dev": "webpack-dev-server"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/udn-newmedia/udn-newmedia-vue-components.git"
-  },
-  "keywords": [
-    "Vue",
-    "Webpack",
-    "Node.js"
-  ],
-  "author": "waiting7777",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/udn-newmedia/udn-newmedia-vue-components/issues"
-  },
-  "homepage": "https://github.com/udn-newmedia/udn-newmedia-vue-components#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "clean-webpack-plugin": "^0.1.18",
-    "css-loader": "^0.28.9",
-    "postcss-loader": "^2.1.3",
-    "vue": "^2.5.13",
-    "vue-loader": "^13.7.1",
-    "vue-template-compiler": "^2.5.13",
-    "webpack": "^3.10.0"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "d3": "^4.13.0",
-    "hammerjs": "^2.0.8",
-    "lodash.throttle": "^4.1.1",
-    "lottie-web": "^5.1.7",
-    "node-sass": "^4.7.2",
-    "postcss-cssnext": "^3.1.0",
-    "sass-loader": "^6.0.6",
-    "udn-newmedia-utils": "^1.0.9",
-    "webpack-dev-server": "^2.11.1"
+    "core-js": "^3.6.5",
+    "detect-inapp": "^1.4.0",
+    "lodash.debounce": "^4.0.8",
+    "normalize-scss": "^7.0.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-0",
+    "vue-scrollto": "^2.20.0",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-vue": "^7.0.0-0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "@vue/airbnb"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "comma-dangle": "off",
+      "arrow-parens": "off",
+      "operator-linebreak": "off",
+      "object-curly-newline": "off",
+      "max-len": "off",
+      "space-before-function-paren": "off",
+      "camelcase": "off",
+      "func-names": "off",
+      "semi": [
+        "error",
+        "never"
+      ]
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }

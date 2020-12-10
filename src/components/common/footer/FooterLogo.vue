@@ -1,0 +1,87 @@
+<template>
+  <article class="footer-logo">
+    <a
+      href="https://udn.com/news/index"
+      target="_blank"
+      rel="noopener"
+      aria-label="聯合新聞網"
+      name="聯合新聞網"
+      @click="sendGA(formatGA('FooterLogoDotCom'))"
+    >
+      <img :src="img.dotCom" alt="聯合新聞網" />
+    </a>
+    <a
+      href="https://udn.com/newmedia/office/"
+      target="_blank"
+      rel="noopener"
+      aria-label="聯合報新媒體中心"
+      name="聯合報新媒體中心"
+      @click="sendGA(formatGA('FooterLogoNMD'))"
+    >
+      <img :src="img.nmd" alt="聯合報新媒體中心" />
+    </a>
+    <a
+      v-if="useVision"
+      href="https://vision.udn.com/"
+      target="_blank"
+      rel="noopener"
+      aria-label="聯合報系願景工程"
+      name="聯合報系願景工程"
+      @click="sendGA(formatGA('FooterLogoVision'))"
+    >
+      <img :src="img.vision" alt="聯合報系願景工程" />
+    </a>
+  </article>
+</template>
+
+<script>
+import { sendGaMethods } from '@/mixins/masterBuilder'
+
+import dotCom from '~/img/logo/dot_com.jpg'
+import nmd from '~/img/logo/nmd.jpg'
+import vision from '~/img/logo/vision.jpg'
+
+export default {
+  name: 'FooterLogo',
+  mixins: [sendGaMethods],
+  props: {
+    useVision: {
+      type: Boolean
+    }
+  },
+  data() {
+    return {
+      img: {
+        dotCom,
+        nmd,
+        vision
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.footer-logo {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  @include pad {
+    width: 420px;
+  }
+  @include pc {
+    width: 420px;
+  }
+  a {
+    @include clean-tap;
+  }
+  img {
+    width: 100px;
+    margin: 0 8px;
+    @include pc {
+      width: 180px;
+    }
+  }
+}
+</style>
