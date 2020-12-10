@@ -29,16 +29,16 @@
 
 <script>
 export default {
-  name: "HeaderHamburger",
+  name: 'HeaderHamburger',
   props: {
     theme: {
-      type: String
+      type: String,
     },
     menuActiveFlag: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 };
 </script>
 

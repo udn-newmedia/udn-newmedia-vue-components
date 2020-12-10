@@ -9,10 +9,11 @@
 
 <script>
 import { autoResize_3 } from '@/mixins/masterBuilder.js';
+
 export default {
   name: 'PageFooter',
   mixins: [autoResize_3],
-}
+};
 </script>
 
 <style lang="scss" scoped>

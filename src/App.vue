@@ -431,33 +431,33 @@
 </template>
 
 <script>
-import ArticleColumnOne from "@/components/common/ui/ArticleColumnOne.vue";
-import ArticleColumnThree from "@/components/common/ui/ArticleColumnThree.vue";
-import ArticleContainer from "@/components/common/ui/ArticleContainer.vue";
-import ArticleDictionary from "@/components/common/ui/ArticleDictionary.vue";
-import ArticleQuote from "@/components/common/ui/ArticleQuote.vue";
-import ArticleYoutube from "@/components/common/ui/ArticleYoutube.vue";
+import ArticleColumnOne from '@/components/common/ui/ArticleColumnOne.vue';
+import ArticleColumnThree from '@/components/common/ui/ArticleColumnThree.vue';
+import ArticleContainer from '@/components/common/ui/ArticleContainer.vue';
+import ArticleDictionary from '@/components/common/ui/ArticleDictionary.vue';
+import ArticleQuote from '@/components/common/ui/ArticleQuote.vue';
+import ArticleYoutube from '@/components/common/ui/ArticleYoutube.vue';
 // import CastAnchor from '@/components/common/accessories/CastAnchor.vue'
-import CastAnchorFrame from "@/components/common/accessories/CastAnchorFrame.vue";
-import FooterEditor from "@/components/common/footer/FooterEditor.vue";
-import FooterFbComment from "@/components/common/footer/FooterFbComment.vue";
+import CastAnchorFrame from '@/components/common/accessories/CastAnchorFrame.vue';
+import FooterEditor from '@/components/common/footer/FooterEditor.vue';
+import FooterFbComment from '@/components/common/footer/FooterFbComment.vue';
 // import FooterLogo from '@/components/common/footer/FooterLogo.vue'
-import FooterNextArticle from "@/components/common/footer/FooterNextArticle.vue";
-//import FooterRelatedArticle from '@/components/common/footer/FooterRelatedArticle.vue'
-import FooterRelatedArticleV1 from "@/components/common/footer/FooterRelatedArticleV1.vue";
-import FooterShare from "@/components/common/footer/FooterShare.vue";
-import HeaderTypeA1 from "@/components/common/header/HeaderTypeA1.vue";
+import FooterNextArticle from '@/components/common/footer/FooterNextArticle.vue';
+// import FooterRelatedArticle from '@/components/common/footer/FooterRelatedArticle.vue'
+import FooterRelatedArticleV1 from '@/components/common/footer/FooterRelatedArticleV1.vue';
+import FooterShare from '@/components/common/footer/FooterShare.vue';
+import HeaderTypeA1 from '@/components/common/header/HeaderTypeA1.vue';
 // import HeaderTypeC from '@/components/common/header/HeaderTypeC.vue'
-import NmdButton from "@/components/common/accessories/NmdButton.vue";
-import PageBackTop from "@/components/common/ui/PageBackTop.vue";
-import PageCover from "@/components/common/ui/PageCover.vue";
-import PageFooterV1 from "@/components/common/footer/PageFooterV1.vue";
-import PageIndicator from "@/components/common/ui/PageIndicator.vue";
-import Paywall from "@/components/common/ui/Paywall.vue";
-import PaywallModal from "@/components/common/ui/PaywallModal.vue";
+import NmdButton from '@/components/common/accessories/NmdButton.vue';
+import PageBackTop from '@/components/common/ui/PageBackTop.vue';
+import PageCover from '@/components/common/ui/PageCover.vue';
+import PageFooterV1 from '@/components/common/footer/PageFooterV1.vue';
+import PageIndicator from '@/components/common/ui/PageIndicator.vue';
+import Paywall from '@/components/common/ui/Paywall.vue';
+import PaywallModal from '@/components/common/ui/PaywallModal.vue';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     ArticleColumnOne,
     ArticleColumnThree,
@@ -481,12 +481,15 @@ export default {
     PageFooterV1,
     PageIndicator,
     Paywall,
-    PaywallModal
+    PaywallModal,
   },
   computed: {
     modalIsOpen() {
       return this.$store.state.modalIsOpen;
-    }
-  }
+    },
+  },
+  mounted() {
+    console.log(fbq);
+  },
 };
 </script>

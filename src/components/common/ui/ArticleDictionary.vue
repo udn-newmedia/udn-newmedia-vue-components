@@ -22,24 +22,25 @@
 
 <script>
 import { sendGaMethods } from '@/mixins/masterBuilder.js';
+
 export default {
   name: 'ArticleDictionary',
   mixins: [sendGaMethods],
   props: {
     name: {
       type: String,
-      default: '解釋'
+      default: '解釋',
     },
     title: { // for ga
       type: String,
-      default: 'dictionary'
-    }
+      default: 'dictionary',
+    },
   },
   data() {
     return {
       activeFlag: false,
       breakFlag: false,
-    }
+    };
   },
   methods: {
     handleClick() {
@@ -47,23 +48,23 @@ export default {
       setTimeout(() => {
         this.breakFlag = !this.breakFlag;
       }, 111);
-      
+
       if (this.activeFlag) {
         this.sendGA({
           category: 'dictionary',
           action: 'click',
-          label: this.title + ' open'
+          label: `${this.title} open`,
         });
       } else {
         this.sendGA({
           category: 'dictionary',
           action: 'click',
-          label: this.title + ' close'
+          label: `${this.title} close`,
         });
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

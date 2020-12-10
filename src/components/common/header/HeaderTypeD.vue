@@ -50,18 +50,19 @@ import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
 import HeaderAnchor from '@/components/common/header/HeaderAnchor.vue';
 import HeaderShare from '@/components/common/header/HeaderShare.vue';
 import UdnLogo from '@/components/common/accessories/UdnLogo.vue';
+
 export default {
   name: 'HeaderTypeD',
   mixins: [autoResize_2, sendGaMethods],
   components: {
     HeaderAnchor,
     HeaderShare,
-    UdnLogo
+    UdnLogo,
   },
   props: {
     theme: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
     href: {
       type: String,
@@ -73,22 +74,22 @@ export default {
       activeFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
-    }
+    };
   },
   methods: {
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
           // activeFlag
           if (this.lastPosition > window.pageYOffset) this.activeFlag = true;
           else this.activeFlag = false;
           this.lastPosition = window.pageYOffset;
-          
+
           this.ticking = false;
         });
       }
       this.ticking = true;
-    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
+    }, 30, { leading: true, trailing: false, maxWait: 30 }),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, false);

@@ -17,43 +17,43 @@ export default {
   name: 'ArticleYoutube',
   props: {
     src: {
-      type: String
+      type: String,
     },
     showinfo: {
       type: String,
-      default: 'no'
+      default: 'no',
     },
     controls: {
       type: String,
-      default: 'yes'
+      default: 'yes',
     },
     autoplay: {
       type: String,
-      default: 'no'
+      default: 'no',
     },
     muted: {
       type: String,
-      default: 'no'
+      default: 'no',
     },
     jsonProps: {
       type: Object,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     youtubeSrc() {
-      return this.src + 
-      '?playsinline=1&rel=0&controls=' +
-      (this.controlsValue === 'yes' ? 1 : 0) +
-      '&showinfo=' +
-      (this.showinfoValue === 'yes' ? 1 : 0) +
-      '&autoplay=' +
-      (this.autoPlayValue === 'yes' ? 1 : 0) +
-      '&mute=' +
-      (this.mutedValue === 'yes' ? 1 : 0);
-    }
+      return `${this.src
+      }?playsinline=1&rel=0&controls=${
+        this.controlsValue === 'yes' ? 1 : 0
+      }&showinfo=${
+        this.showinfoValue === 'yes' ? 1 : 0
+      }&autoplay=${
+        this.autoPlayValue === 'yes' ? 1 : 0
+      }&mute=${
+        this.mutedValue === 'yes' ? 1 : 0}`;
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

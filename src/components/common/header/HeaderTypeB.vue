@@ -60,35 +60,35 @@ export default {
     UdnLogo,
     ShareFb,
     ShareLine,
-    ShareTwitter
+    ShareTwitter,
   },
   data() {
     return {
       activeFlag: true,
       lastPosition: window.pageYOffset,
       ticking: false,
-    }
+    };
   },
   methods: {
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
           // activeFlag
           if (!this.menuActiveFlag) {
             if (this.lastPosition >= window.pageYOffset) this.activeFlag = true;
             else this.activeFlag = false;
-            this.lastPosition = window.pageYOffset;            
+            this.lastPosition = window.pageYOffset;
           }
           this.ticking = false;
         });
       }
       this.ticking = true;
-    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
+    }, 30, { leading: true, trailing: false, maxWait: 30 }),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, true);
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

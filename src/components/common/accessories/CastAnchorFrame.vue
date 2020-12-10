@@ -11,8 +11,8 @@ export default {
     title: String,
   },
   created() {
-    const anchor = { title: this.title, active: false }
-    this.$anchorList.push(anchor)
+    const anchor = { title: this.title, active: false };
+    this.$anchorList.push(anchor);
   },
-}
+};
 </script>

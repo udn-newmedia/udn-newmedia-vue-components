@@ -25,10 +25,10 @@
 </template>
 
 <script>
-import newUdnImg from "@/assets/img/logo/logo_udngroup.svg";
+import newUdnImg from '@/assets/img/logo/logo_udngroup.svg';
 
 export default {
-  name: "UdnLogo",
+  name: 'UdnLogo',
   props: {
     theme: {
       type: String,

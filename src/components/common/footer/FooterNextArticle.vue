@@ -52,23 +52,23 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 import NmdButton from '@/components/common/accessories/NmdButton.vue';
 
 export default {
   name: 'FooterNextArticle',
   mixins: [sendGaMethods],
   components: {
-    NmdButton
+    NmdButton,
   },
   props: {
     type: {
       type: String,
-      default: '1'
+      default: '1',
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     text: {
       type: String,
@@ -79,38 +79,38 @@ export default {
     href: {
       type: String,
       required: true,
-    }
+    },
   },
   data() {
     return {
       buttonStyle_1: {
         size: 'l',
-        extendWidth: true
+        extendWidth: true,
       },
       buttonStyle_2: {
         textColor: '#f6f6f6',
         theme: 'outlined',
         size: 'l',
-        extendWidth: true
+        extendWidth: true,
       },
-    }
+    };
   },
   computed: {
     buttonStyle() {
       if (this.type === '2') return this.buttonStyle_2;
       return this.buttonStyle_1;
-    }
+    },
   },
   methods: {
     handleGA() {
       this.sendGA({
         category: 'next',
         action: 'click',
-        label: this.title + '_next'
+        label: `${this.title}_next`,
       });
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -120,7 +120,7 @@ export default {
   height: 466px;
   display: flex;
   flex-direction: column;
-  
+
   padding: 32px 24px;
   background-position: center;
   // background-size: auto 100%;
@@ -153,7 +153,7 @@ export default {
     &.footer-next-article__content--type-2 {
       @include pad {
         width: 400px;
-      }  
+      }
       @include pc {
         width: 400px;
       }

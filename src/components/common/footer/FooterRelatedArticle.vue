@@ -71,7 +71,7 @@
         class="footer-relate-article__article"
         :href="href4"
         target="_blank"
-        rel="noopener"        
+        rel="noopener"
         :ariaLabel="topic4"
         :name="topic4"
         @click="handleGA(topic4)"
@@ -96,19 +96,19 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 import FooterQuestionnaire from '@/components/common/footer/FooterQuestionnaire.vue';
 
 export default {
   name: 'FooterRelateArticle',
   mixins: [sendGaMethods],
   components: {
-    FooterQuestionnaire
+    FooterQuestionnaire,
   },
   props: {
     title: {
       type: String,
-      default: '延伸閱讀'
+      default: '延伸閱讀',
     },
     href1: {
       type: String,
@@ -169,7 +169,7 @@ export default {
     topic4: {
       type: String,
       default: '',
-    },    
+    },
     text4: {
       type: String,
       required: true,
@@ -180,7 +180,7 @@ export default {
       this.sendGA({
         category: 'related',
         action: 'click',
-        label: topic
+        label: topic,
       });
     },
   },

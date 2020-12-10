@@ -23,11 +23,11 @@
 </template>
 
 <script>
-import Utils from '@/utils/udn-newmedia-utils'
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
+import Utils from '@/utils/udn-newmedia-utils';
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
-const isMobile = Utils.detectMob()
-const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp()
+const isMobile = Utils.detectMob();
+const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp();
 
 export default {
   name: 'ShareImg',
@@ -79,11 +79,11 @@ export default {
     //   )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
     // },
     target() {
-      if (!isMobile) return '_blank'
-      return '_self'
+      if (!isMobile) return '_blank';
+      return '_self';
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

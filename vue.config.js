@@ -1,11 +1,13 @@
 const path = require('path');
-function resolve (dir) {
-  return path.join(__dirname, dir)
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
 }
 
 const pagesConfig = require('./pages_config/pages.js');
-const publicPath = pagesConfig.publicPath;
-const pages = pagesConfig.pages;
+
+const { publicPath } = pagesConfig;
+const { pages } = pagesConfig;
 
 module.exports = {
   publicPath,
@@ -18,11 +20,11 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `@import "@/assets/style/_mixins.scss"`
+        prependData: '@import "@/assets/style/_mixins.scss"',
       },
       scss: {
-        prependData: `@import "@/assets/style/_mixins.scss";`
+        prependData: '@import "@/assets/style/_mixins.scss";',
       },
-    }
-  }
+    },
+  },
 };

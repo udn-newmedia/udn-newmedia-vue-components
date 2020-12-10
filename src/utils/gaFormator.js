@@ -2,73 +2,73 @@ const gaTable = {
   HeaderShareOpen: {
     category: 'share',
     action: 'click',
-    label: 'share_open'
+    label: 'share_open',
   },
   HeaderShareClose: {
     category: 'share',
     action: 'click',
-    label: 'share_close'
+    label: 'share_close',
   },
   HeaderShareFb: {
     category: 'share',
     action: 'click',
-    label: 'fb_top'
+    label: 'fb_top',
   },
   HeaderShareLine: {
     category: 'share',
     action: 'click',
-    label: 'line_top'
+    label: 'line_top',
   },
   HeaderShareTwitter: {
     category: 'share',
     action: 'click',
-    label: 'twitter_top'
+    label: 'twitter_top',
   },
   HeaderMenuOpen: {
     category: 'menu',
     action: 'click',
-    label: 'menu_open'
+    label: 'menu_open',
   },
   HeaderMenuClose: {
     category: 'menu',
     action: 'click',
-    label: 'menu_close'
+    label: 'menu_close',
   },
-  HeaderUdnLogo: {    
+  HeaderUdnLogo: {
     category: 'logo',
     action: 'click',
-    label: '圓形聯logo'
+    label: '圓形聯logo',
   },
   CoverArrow: {
     category: 'arrow',
     action: 'click',
-    label: 'goto_content'
+    label: 'goto_content',
   },
-  PageBackTop: {    
+  PageBackTop: {
     category: 'button',
     action: 'click',
-    label: '回到最上面'
+    label: '回到最上面',
   },
   FooterQuestoinnaire: {
     category: 'button',
     action: 'click',
-    label: 'feedback'
+    label: 'feedback',
   },
   FooterLogoDotCom: {
     category: 'logo',
     action: 'click',
-    label: '聯合新聞網_logo'
-  },  
+    label: '聯合新聞網_logo',
+  },
   FooterLogoNMD: {
     category: 'logo',
     action: 'click',
-    label: '新媒體中心_logo'
+    label: '新媒體中心_logo',
   },
   FooterLogoVision: {
     category: 'logo',
     action: 'click',
-    label: '願景工程_logo'
+    label: '願景工程_logo',
   },
-}
+};
 
 export default gaTable;

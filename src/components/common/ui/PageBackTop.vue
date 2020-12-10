@@ -46,30 +46,30 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
-import _debounce from "lodash.debounce";
-import vueScrollTo from "vue-scrollto";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
+import _debounce from 'lodash.debounce';
+import vueScrollTo from 'vue-scrollto';
 
 export default {
-  name: "PageBackTop",
+  name: 'PageBackTop',
   mixins: [sendGaMethods],
   data() {
     return {
       activeFlag: false,
-      isHide: false
+      isHide: false,
     };
   },
   methods: {
     handleClick() {
-      vueScrollTo.scrollTo("#app");
-      this.sendGA(this.formatGA("PageBackTop"));
+      vueScrollTo.scrollTo('#app');
+      this.sendGA(this.formatGA('PageBackTop'));
     },
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       const currentH = window.pageYOffset;
       const totalH = document.body.scrollHeight - window.innerHeight;
       this.currentProgress = (currentH / totalH) * 100;
-      this.activeFlag = this.currentProgress > 50 ? true : false;
-    }, 100)
+      this.activeFlag = this.currentProgress > 50;
+    }, 100),
     // intersectionObserver() {
     //   const options = {
     //     // root: document.querySelector('#scrollArea'),
@@ -95,14 +95,14 @@ export default {
     // },
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, true);
 
     // const target = document.querySelector('#footer-go-top')
     // this.intersectionObserver().observe(target)
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll, true);
-  }
+    window.removeEventListener('scroll', this.handleScroll, true);
+  },
 };
 </script>
 

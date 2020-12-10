@@ -21,9 +21,9 @@ export default {
     textColor: {
       type: String,
       default: 'initial',
-    }
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

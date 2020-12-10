@@ -19,7 +19,7 @@
         'header-share__share-icon__toggle': true,
         'header-share__share-icon__toggle--active': toggleFlag && headerActiveFlag,
         'custom-button': true,
-      }" 
+      }"
       @click="toggle()"
     >
       <i class="icon-share-alt-solid" />
@@ -65,19 +65,19 @@ export default {
   data() {
     return {
       toggleFlag: false,
-    }
+    };
   },
   watch: {
-    headerActiveFlag: function(value) {
+    headerActiveFlag(value) {
       if (!value) this.toggleFlag = false;
-    }
+    },
   },
   methods: {
     toggle() {
       this.toggleFlag = !this.toggleFlag;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

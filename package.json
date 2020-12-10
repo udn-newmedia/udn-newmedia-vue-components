@@ -1,14 +1,15 @@
 {
   "name": "udn-newmedia-vue-components",
   "version": "4.1.0",
-  "description": "Components for udn newmedia",
   "private": true,
+  "description": "Components for udn newmedia",
+  "author": "udn-newmedia",
   "scripts": {
-    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "testwatch": "jest --watchAll",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "vue-cli-service serve",
+    "testwatch": "jest --watchAll"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -20,10 +21,11 @@
     "vuex": "^3.3.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.3.0",
-    "@vue/cli-plugin-eslint": "^4.3.0",
-    "@vue/cli-plugin-unit-jest": "^4.4.6",
-    "@vue/cli-service": "^4.3.0",
+    "@vue/cli-plugin-babel": "~4.5.8",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.8",
+    "@vue/cli-service": "~4.5.8",
+    "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
@@ -35,13 +37,14 @@
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.11"
   },
-  "author": "udn-newmedia",
-  "license": "ISC",
+  "prettier": {
+    "vueIndentScriptAndStyle": false,
+    "singleQuote": true,
+    "semi": false
+  },
   "bugs": {
     "url": "https://github.com/udn-newmedia/udn-newmedia-vue-components/issues"
   },
   "homepage": "https://github.com/udn-newmedia/udn-newmedia-vue-components#readme",
-  "prettier": {
-    "vueIndentScriptAndStyle": false
-  }
+  "license": "ISC"
 }

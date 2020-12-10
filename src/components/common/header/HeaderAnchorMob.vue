@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js'
-import vueScrollTo from 'vue-scrollto'
+import { autoResize_2, sendGaMethods } from '@/mixins/masterBuilder.js';
+import vueScrollTo from 'vue-scrollto';
 
 export default {
   name: 'HeaderAnchorMob',
@@ -60,79 +60,79 @@ export default {
     return {
       anchorList: null,
       isOpen: false,
-    }
+    };
   },
   methods: {
     handleScrollVert(index) {
-      this.isOpen = false
-      vueScrollTo.scrollTo('#anchor-' + index)
+      this.isOpen = false;
+      vueScrollTo.scrollTo(`#anchor-${index}`);
       this.sendGA({
         category: 'anchor',
         action: 'click',
         label: index,
-      })
+      });
     },
     handleScrollHorz(index) {
-      const anchorList = document.getElementById('header-anchor')
-      const anchor = document.getElementById('header-anchor-' + index)
+      const anchorList = document.getElementById('header-anchor');
+      const anchor = document.getElementById(`header-anchor-${index}`);
       if (anchor) {
         anchorList.scrollTo({
           left: anchor.offsetLeft,
           behavior: 'smooth',
-        })
+        });
       }
     },
     handleScroll() {
-      const list = this.anchorList
+      const list = this.anchorList;
 
       for (let i = list.length - 1; i >= 0; i--) {
         const pos = document
-          .getElementById('anchor-' + list[i].title)
-          .getBoundingClientRect().top
+          .getElementById(`anchor-${list[i].title}`)
+          .getBoundingClientRect().top;
         if (pos < 1) {
-          this.handleUpdateAnchor(i, true)
+          this.handleUpdateAnchor(i, true);
           for (let j = 0; j < list.length; j++) {
-            if (j !== i) this.handleUpdateAnchor(j, false)
+            if (j !== i) this.handleUpdateAnchor(j, false);
           }
-          break
+          break;
         }
       }
     },
     handleUpdateAnchor(index, status) {
-      this.anchorList[index].active = status
+      this.anchorList[index].active = status;
     },
     handleAnchorScroll() {},
     openMenu(button) {
       if (button.activeExisting === false) {
-        this.handleScrollVert(button.title)
+        this.handleScrollVert(button.title);
       }
 
-      this.isOpen = !this.isOpen
+      this.isOpen = !this.isOpen;
     },
     intersectionObserver() {
       const options = {
         root: null,
         rootMargin: '0px',
         threshold: 0,
-      }
+      };
 
       const callback = (entries, observer) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
             for (let i = 0; i < this.anchorList.length; i++) {
               if (entry.target.id.indexOf(this.anchorList[i].title) !== -1) {
-                this.handleUpdateAnchor(i, true)
+                this.handleUpdateAnchor(i, true);
               } else {
-                this.handleUpdateAnchor(i, false)
+                this.handleUpdateAnchor(i, false);
               }
             }
           }
-        })
-      }
+        });
+      };
 
-      const observer = new IntersectionObserver(callback, options)
+      const observer = new IntersectionObserver(callback, options);
 
-      return observer
+      return observer;
     },
   },
   watch: {
@@ -142,74 +142,74 @@ export default {
           if (!this.onScollingFlag) {
             list.forEach((e) => {
               if (e.active) {
-                this.handleScrollHorz(e.title)
+                this.handleScrollHorz(e.title);
               }
-            })
+            });
           }
         }
       },
       deep: true,
     },
-    activeFlag: function () {
+    activeFlag() {
       if (this.activeFlag) {
-        this.isOpen = false
+        this.isOpen = false;
       }
     },
   },
   computed: {
     anchorListArranged() {
-      const result = []
-      let button = {}
-      let activeExisting = false
+      const result = [];
+      let button = {};
+      let activeExisting = false;
 
       if (!this.anchorList) {
-        return { result: this.anchorList, button }
+        return { result: this.anchorList, button };
       }
 
       for (let i = 0; i < this.anchorList.length; i++) {
         if (this.anchorList[i].active) {
-          activeExisting = true
+          activeExisting = true;
         }
       }
 
       if (activeExisting) {
         for (let i = 0; i < this.anchorList.length; i++) {
           if (this.anchorList[i].active) {
-            button = this.anchorList[i]
+            button = this.anchorList[i];
           }
         }
         for (let i = 0; i < this.anchorList.length; i++) {
           if (!this.anchorList[i].active) {
-            result.push(this.anchorList[i])
+            result.push(this.anchorList[i]);
           }
         }
       } else {
         for (let i = 0; i < this.anchorList.length; i++) {
           if (i === 0) {
-            button = { ...this.anchorList[i], activeExisting }
+            button = { ...this.anchorList[i], activeExisting };
           } else {
-            result.push(this.anchorList[i])
+            result.push(this.anchorList[i]);
           }
         }
       }
-      return { result, button }
+      return { result, button };
     },
   },
   mounted() {
     this.$nextTick(() => {
-      this.anchorList = this.$anchorList
-    })
+      this.anchorList = this.$anchorList;
+    });
     // window.addEventListener('scroll', this.handleScroll, false)
 
-    const targets = document.querySelectorAll('.cast-anchor')
+    const targets = document.querySelectorAll('.cast-anchor');
     targets.forEach((target) => {
-      this.intersectionObserver().observe(target)
-    })
+      this.intersectionObserver().observe(target);
+    });
   },
   destroyed() {
     // window.removeEventListener('scroll', this.handleScroll, false)
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

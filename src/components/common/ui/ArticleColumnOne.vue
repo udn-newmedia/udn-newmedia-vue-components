@@ -1,11 +1,6 @@
 <template>
   <figure class="article-column-one">
-    <BasePicture
-      :srcMob="srcMob"
-      :srcPad="srcPad"
-      :srcPc="srcPc"
-      :alt="alt"
-    />
+    <BasePicture :srcMob="srcMob" :srcPad="srcPad" :srcPc="srcPc" :alt="alt" />
     <figcaption class="article-column-one__description">
       <p class="small">
         <slot />
@@ -20,7 +15,7 @@ import BasePicture from '@/components/common/accessories/BasePicture.vue';
 export default {
   name: 'ArticleColumnOne',
   components: {
-    BasePicture
+    BasePicture,
   },
   props: {
     srcMob: {
@@ -35,9 +30,9 @@ export default {
     alt: {
       type: String,
       default: document.querySelector('title').innerHTML,
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

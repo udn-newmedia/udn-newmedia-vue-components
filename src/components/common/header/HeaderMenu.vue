@@ -78,35 +78,34 @@
 </template>
 
 <script>
-import { autoResize_3, sendGaMethods } from "@/mixins/masterBuilder.js";
+import { autoResize_3, sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
-  name: "HeaderMenu",
+  name: 'HeaderMenu',
   mixins: [autoResize_3, sendGaMethods],
   props: {
     menuActiveFlag: {
       type: Boolean,
-      default: false
+      default: false,
     },
     theme: {
-      type: String
+      type: String,
     },
     simplified: {
       type: Boolean,
-      default: false
+      default: false,
     },
     outlink: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   watch: {
-    menuActiveFlag: function(value) {
-      if (value)
-        document.getElementsByTagName("body")[0].style.overflow = "hidden";
-      else document.getElementsByTagName("body")[0].style.overflow = "auto";
-    }
-  }
+    menuActiveFlag(value) {
+      if (value) document.getElementsByTagName('body')[0].style.overflow = 'hidden';
+      else document.getElementsByTagName('body')[0].style.overflow = 'auto';
+    },
+  },
 };
 </script>
 

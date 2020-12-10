@@ -41,36 +41,36 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
-import FooterQuestionnaire from "@/components/common/footer/FooterQuestionnaire.vue";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
+import FooterQuestionnaire from '@/components/common/footer/FooterQuestionnaire.vue';
 
 export default {
-  name: "FooterRelatedArticleV1",
+  name: 'FooterRelatedArticleV1',
   mixins: [sendGaMethods],
   components: {
-    FooterQuestionnaire
+    FooterQuestionnaire,
   },
   props: {
     title: {
       type: String,
-      default: "延伸閱讀"
+      default: '延伸閱讀',
     },
     relatedArray: {
-      type: Array
+      type: Array,
     },
     column: {
-      type: Number
-    }
+      type: Number,
+    },
   },
   methods: {
     handleGA(topic) {
       this.sendGA({
-        category: "related",
-        action: "click",
-        label: topic
+        category: 'related',
+        action: 'click',
+        label: topic,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

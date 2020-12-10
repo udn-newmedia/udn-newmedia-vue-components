@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
@@ -12,15 +12,15 @@ export default new Vuex.Store({
     },
     TRIGGER_MODAL(state) {
       state.modalIsOpen = !state.modalIsOpen;
-    }
+    },
   },
   actions: {
     async checkIdentity(context) {
-      const getCookie = name => {
-        const cookieArr = document.cookie.split(";");
+      const getCookie = (name) => {
+        const cookieArr = document.cookie.split(';');
         // Loop through the array elements
         for (let i = 0; i < cookieArr.length; i += 1) {
-          const cookiePair = cookieArr[i].split("=");
+          const cookiePair = cookieArr[i].split('=');
           // Removing whitespace at the beginning of the cookie name
           // and compare it with the given string
           if (name === cookiePair[0].trim()) {
@@ -32,21 +32,21 @@ export default new Vuex.Store({
         return null;
       };
 
-      const account = getCookie("udnland");
-      const udngold = getCookie("udngold");
-      const cors = "https://cors-anywhere.herokuapp.com/";
-      const url = "https://vip.udn.com/api/paywall_article";
+      const account = getCookie('udnland');
+      const udngold = getCookie('udngold');
+      const cors = 'https://cors-anywhere.herokuapp.com/';
+      const url = 'https://vip.udn.com/api/paywall_article';
       const body = {
-        method: "POST",
+        method: 'POST',
         headers: {
           // Accept: "application/json",
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           account,
           udngold: encodeURIComponent(udngold),
-          checkIdentity: true
-        })
+          checkIdentity: true,
+        }),
       };
 
       const res = await fetch(`${cors}${url}`, body);
@@ -54,17 +54,17 @@ export default new Vuex.Store({
       // fix the result
       result.state = true;
 
-      context.commit("CHECK_IDENTITY", result);
+      context.commit('CHECK_IDENTITY', result);
     },
     triggerModal(context) {
-      let bodyEl = document.querySelector("body");
-      if (bodyEl.style.overflow !== "hidden") {
-        bodyEl.style.overflow = "hidden";
+      const bodyEl = document.querySelector('body');
+      if (bodyEl.style.overflow !== 'hidden') {
+        bodyEl.style.overflow = 'hidden';
       } else {
         bodyEl.style.overflow = null;
       }
 
-      context.commit("TRIGGER_MODAL");
-    }
-  }
+      context.commit('TRIGGER_MODAL');
+    },
+  },
 });

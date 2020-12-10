@@ -65,8 +65,8 @@ export default {
     },
     outlink: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   components: {
     HeaderHamburger,
@@ -74,7 +74,7 @@ export default {
     UdnLogo,
     ShareFb,
     ShareLine,
-    ShareTwitter
+    ShareTwitter,
   },
   data() {
     return {
@@ -82,7 +82,7 @@ export default {
       menuActiveFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
-    }
+    };
   },
   methods: {
     handleHamburgerClick() {
@@ -91,25 +91,25 @@ export default {
       if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'));
       else this.sendGA(this.formatGA('HeaderMenuClose'));
     },
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
           // activeFlag
           if (!this.menuActiveFlag) {
             if (this.lastPosition >= window.pageYOffset) this.activeFlag = true;
             else this.activeFlag = false;
-            this.lastPosition = window.pageYOffset;            
+            this.lastPosition = window.pageYOffset;
           }
           this.ticking = false;
         });
       }
       this.ticking = true;
-    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
+    }, 30, { leading: true, trailing: false, maxWait: 30 }),
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, true);
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

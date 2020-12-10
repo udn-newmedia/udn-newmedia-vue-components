@@ -37,7 +37,7 @@ export default {
     },
     theme: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
   },
   computed: {

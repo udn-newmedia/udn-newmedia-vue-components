@@ -29,7 +29,7 @@ describe('PageIndicator.vue', () => {
         if (e < 0 || e > 100) isValid = false;
       }
     }
-    
+
     expect(isValid).toBeTruthy();
   });
 
@@ -41,7 +41,6 @@ describe('PageIndicator.vue', () => {
     */
     for (const key in scrollScript) {
       if (scrollScript.hasOwnProperty(key)) {
-
         wrapper.vm.readProgress = scrollScript[key] - scrollScript[key] % 10;
         wrapper.vm.lastStage = Math.max(...wrapper.vm.stagePool) | 0;
         wrapper.vm.handleUpdateStage(wrapper.vm.lastStage, wrapper.vm.readProgress);

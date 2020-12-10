@@ -38,32 +38,32 @@
 </template>
 
 <script>
-import { autoResize_3 } from "@/mixins/masterBuilder.js";
+import { autoResize_3 } from '@/mixins/masterBuilder.js';
 // import ShareLine from '@/components/common/accessories/ShareLine.vue'
-import ShareImg from "@/components/common/accessories/ShareImg.vue";
-import imgFb from "@/assets/img/logo/footer_f_logo_30.svg";
-import imgIns from "@/assets/img/logo/footer_glyph-logo_May2016.svg";
-import imgLine from "@/assets/img/logo/footer_line.svg";
-import imgYT from "@/assets/img/logo/footer_youtube-方.svg";
-import goTopImg from "@/assets/img/logo/footer_arrow.svg";
+import ShareImg from '@/components/common/accessories/ShareImg.vue';
+import imgFb from '@/assets/img/logo/footer_f_logo_30.svg';
+import imgIns from '@/assets/img/logo/footer_glyph-logo_May2016.svg';
+import imgLine from '@/assets/img/logo/footer_line.svg';
+import imgYT from '@/assets/img/logo/footer_youtube-方.svg';
+import goTopImg from '@/assets/img/logo/footer_arrow.svg';
 
 export default {
-  name: "PageFooterV1",
+  name: 'PageFooterV1',
   mixins: [autoResize_3],
   components: { ShareImg },
   data() {
     return {
       isHovered: false,
       imgs: [imgFb, imgIns, imgYT, imgLine],
-      goTopImg
+      goTopImg,
     };
   },
   methods: {
     goTop() {
       window.scrollTo(0, 0);
       this.isHovered = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

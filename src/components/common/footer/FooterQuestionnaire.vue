@@ -14,32 +14,32 @@
 </template>
 
 <script>
-import NmdButton from "@/components/common/accessories/NmdButton.vue";
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import NmdButton from '@/components/common/accessories/NmdButton.vue';
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
-  name: "FooterQuestionnaire",
+  name: 'FooterQuestionnaire',
   mixins: [sendGaMethods],
   components: {
-    NmdButton
+    NmdButton,
   },
   props: {
     href: {
       type: String,
-      default: "https://www.surveycake.com/s/KpQKN"
+      default: 'https://www.surveycake.com/s/KpQKN',
     },
     text: {
       type: String,
-      default: "請填寫閱讀體驗問卷"
-    }
+      default: '請填寫閱讀體驗問卷',
+    },
   },
   data() {
     return {
       buttonStyle: {
-        size: "xl"
-      }
+        size: 'xl',
+      },
     };
-  }
+  },
 };
 </script>
 

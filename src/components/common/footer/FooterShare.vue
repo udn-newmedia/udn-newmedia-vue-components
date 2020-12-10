@@ -1,4 +1,3 @@
-
 <template>
   <article class="footer-share">
     <div class="footer-share__share-fb">
@@ -46,13 +45,13 @@
 </template>
 
 <script>
-import Utils from '@/utils/udn-newmedia-utils'
-import { sendGaMethods } from '@/mixins/masterBuilder.js'
-import btnLINEImg from '@/assets/img/button/btn_LINE.svg'
-import btnTWITTERImg from '@/assets/img/button/btn_TWITTER.png'
+import Utils from '@/utils/udn-newmedia-utils';
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
+import btnLINEImg from '@/assets/img/button/btn_LINE.svg';
+import btnTWITTERImg from '@/assets/img/button/btn_TWITTER.png';
 
-const isMobile = Utils.detectMob()
-const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp()
+const isMobile = Utils.detectMob();
+const isInApp = Utils.isFacebookApp(148) || Utils.isLineApp();
 
 export default {
   name: 'FooterShare',
@@ -64,26 +63,26 @@ export default {
     },
   },
   data() {
-    return { btnLINEImg, btnTWITTERImg }
+    return { btnLINEImg, btnTWITTERImg };
   },
   computed: {
     shareTwitterUrl() {
       return `https://twitter.com/intent/tweet?text=${encodeURIComponent(
         document.querySelector('meta[property="og:description"]').content,
-      )}%0D%0A%0D%0A`
+      )}%0D%0A%0D%0A`;
     },
     shareLineUrl() {
-      const sharedText = document.querySelector('title').innerHTML
+      const sharedText = document.querySelector('title').innerHTML;
       const shareContent = document.querySelector(
         'meta[property="og:description"]',
-      ).content
+      ).content;
       // desktop
       if (!isMobile) {
         return `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(
           sharedText,
         )}%0D%0A%0D%0A${encodeURIComponent(
           shareContent,
-        )}&url=${encodeURIComponent(this.href)}`
+        )}&url=${encodeURIComponent(this.href)}`;
       }
       // mobile
       if (!isInApp) {
@@ -91,21 +90,21 @@ export default {
           sharedText,
         )}%0D%0A%0D%0A${encodeURIComponent(
           shareContent,
-        )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
+        )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`;
       }
       // mobile in-app webview
       return `https://line.naver.jp/R/msg/text/?${encodeURIComponent(
         sharedText,
       )}%0D%0A%0D%0A${encodeURIComponent(
         shareContent,
-      )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`
+      )}%0D%0A%0D%0A${encodeURIComponent(this.href)}`;
     },
     target() {
-      if (!this.isMobile) return '_blank'
-      return '_self'
+      if (!this.isMobile) return '_blank';
+      return '_self';
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

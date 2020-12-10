@@ -37,13 +37,13 @@ export default {
     },
     theme: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
   },
   computed: {
     shareUrl() {
       const url = encodeURIComponent(this.href);
-      return ('https://www.facebook.com/dialog/share?app_id=1010324812347164&display=popup&href=' + url + '&redirect_uri=' + url);
+      return (`https://www.facebook.com/dialog/share?app_id=1010324812347164&display=popup&href=${url}&redirect_uri=${url}`);
     },
   },
 };

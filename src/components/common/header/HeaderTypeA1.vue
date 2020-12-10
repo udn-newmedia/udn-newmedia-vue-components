@@ -108,32 +108,32 @@
 </template>
 
 <script>
-import _debounce from "lodash.debounce";
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
-import { fbBrowserResize } from "@/mixins/fbBrowserResize.js";
-import HeaderHamburger from "@/components/common/header/HeaderHamburger.vue";
-import HeaderMenu from "@/components/common/header/HeaderMenu.vue";
-import UdnLogo from "@/components/common/accessories/UdnLogo.vue";
-import ShareFb from "@/components/common/accessories/ShareFb.vue";
-import ShareLine from "@/components/common/accessories/ShareLine.vue";
-import ShareTwitter from "@/components/common/accessories/ShareTwitter.vue";
-import HeaderAnchor from "@/components/common/header/HeaderAnchor.vue";
-import HeaderAnchorMob from "@/components/common/header/HeaderAnchorMob.vue";
+import _debounce from 'lodash.debounce';
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
+import { fbBrowserResize } from '@/mixins/fbBrowserResize.js';
+import HeaderHamburger from '@/components/common/header/HeaderHamburger.vue';
+import HeaderMenu from '@/components/common/header/HeaderMenu.vue';
+import UdnLogo from '@/components/common/accessories/UdnLogo.vue';
+import ShareFb from '@/components/common/accessories/ShareFb.vue';
+import ShareLine from '@/components/common/accessories/ShareLine.vue';
+import ShareTwitter from '@/components/common/accessories/ShareTwitter.vue';
+import HeaderAnchor from '@/components/common/header/HeaderAnchor.vue';
+import HeaderAnchorMob from '@/components/common/header/HeaderAnchorMob.vue';
 
 export default {
-  name: "HeaderTypeA1",
+  name: 'HeaderTypeA1',
   mixins: [sendGaMethods, fbBrowserResize],
   props: {
     theme: {
       type: String,
-      default: "light",
+      default: 'light',
     },
     pageTitle: {
       type: String,
     },
     href: {
       type: String,
-      default: "https://bit.ly/34ea7d9",
+      default: 'https://bit.ly/34ea7d9',
       // default: document.querySelector('meta[property="og:url"]').content,
     },
     outlink: {
@@ -161,7 +161,7 @@ export default {
       menuActiveFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
-      deviceType: "pc",
+      deviceType: 'pc',
       isAtTop: true,
     };
   },
@@ -170,16 +170,16 @@ export default {
       this.menuActiveFlag = !this.menuActiveFlag;
 
       if (this.menuActiveFlag) {
-        this.sendGA(this.formatGA("HeaderMenuOpen"));
+        this.sendGA(this.formatGA('HeaderMenuOpen'));
 
         // setTimeout(() => window.scrollTo({ top: 0 }), 600);
-      } else this.sendGA(this.formatGA("HeaderMenuClose"));
+      } else this.sendGA(this.formatGA('HeaderMenuClose'));
     },
     handleMenuButtonClick() {
       this.menuActiveFlag = !this.menuActiveFlag;
 
-      if (this.menuActiveFlag) this.sendGA(this.formatGA("HeaderMenuOpen"));
-      else this.sendGA(this.formatGA("HeaderMenuClose"));
+      if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'));
+      else this.sendGA(this.formatGA('HeaderMenuClose'));
     },
     handleScroll: _debounce(
       function () {
@@ -187,8 +187,7 @@ export default {
           window.requestAnimationFrame(() => {
             // activeFlag
             if (!this.menuActiveFlag) {
-              if (this.lastPosition >= window.pageYOffset)
-                this.activeFlag = true;
+              if (this.lastPosition >= window.pageYOffset) this.activeFlag = true;
               else this.activeFlag = false;
               this.lastPosition = window.pageYOffset;
             }
@@ -198,13 +197,13 @@ export default {
         this.ticking = true;
       },
       30,
-      { leading: true, trailing: false, maxWait: 30 }
+      { leading: true, trailing: false, maxWait: 30 },
     ),
     handleDevice() {
       if (window.innerWidth >= 768) {
-        this.deviceType = "pc";
+        this.deviceType = 'pc';
       } else {
-        this.deviceType = "mob";
+        this.deviceType = 'mob';
       }
     },
     handleTop() {
@@ -218,22 +217,22 @@ export default {
     checkAnchor() {
       if (this.$anchorList.length === 0) {
         this.isAtTop = true;
-        window.removeEventListener("scroll", this.handleTop, false);
+        window.removeEventListener('scroll', this.handleTop, false);
       }
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll, true);
+    window.addEventListener('scroll', this.handleScroll, true);
     this.handleTop();
-    window.addEventListener("scroll", this.handleTop, false);
+    window.addEventListener('scroll', this.handleTop, false);
     this.handleDevice();
-    window.addEventListener("resize", this.handleDevice, false);
+    window.addEventListener('resize', this.handleDevice, false);
     this.checkAnchor();
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll, true);
-    window.removeEventListener("scroll", this.handleTop, false);
-    window.removeEventListener("resize", this.handleDevice, false);
+    window.removeEventListener('scroll', this.handleScroll, true);
+    window.removeEventListener('scroll', this.handleTop, false);
+    window.removeEventListener('resize', this.handleDevice, false);
   },
 };
 </script>

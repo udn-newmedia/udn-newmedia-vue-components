@@ -30,19 +30,19 @@ export default {
       default: '#dcdddd',
     },
     img: {
-      type: String
+      type: String,
     },
     refer: {
-      type: String
+      type: String,
     },
     text: {
-      type: String
+      type: String,
     },
     color: {
-      type: String
-    }
+      type: String,
+    },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

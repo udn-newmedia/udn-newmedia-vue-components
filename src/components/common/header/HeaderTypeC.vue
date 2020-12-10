@@ -57,7 +57,7 @@
                 }"
               />
             </p>
-          </button> 
+          </button>
         </div>
         <div
           v-if="deviceType !== 'mob'"
@@ -101,12 +101,12 @@ export default {
     HeaderAnchor,
     HeaderShare,
     HeaderMenu,
-    UdnLogo
+    UdnLogo,
   },
   props: {
     theme: {
       type: String,
-      default: 'light'
+      default: 'light',
     },
     pageTitle: {
       type: String,
@@ -117,8 +117,8 @@ export default {
     },
     outlink: {
       type: Array,
-      default: null
-    }
+      default: null,
+    },
   },
   data() {
     return {
@@ -126,10 +126,10 @@ export default {
       menuActiveFlag: false,
       lastPosition: window.pageYOffset,
       ticking: false,
-    }
+    };
   },
   methods: {
-    handleScroll: _debounce(function() {
+    handleScroll: _debounce(function () {
       if (!this.ticking) {
         window.requestAnimationFrame(() => {
           // activeFlag
@@ -143,13 +143,13 @@ export default {
         });
       }
       this.ticking = true;
-    }, 30,  {'leading': true, 'trailing': false, 'maxWait': 30}),
+    }, 30, { leading: true, trailing: false, maxWait: 30 }),
     handleMenuButtonClick() {
       this.menuActiveFlag = !this.menuActiveFlag;
 
       if (this.menuActiveFlag) this.sendGA(this.formatGA('HeaderMenuOpen'));
       else this.sendGA(this.formatGA('HeaderMenuClose'));
-    }
+    },
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll, false);
@@ -213,7 +213,7 @@ export default {
     }
     &.header-bar__nav--theme-dark {
       background-color: #000000;
-    } 
+    }
     &.header-bar__nav--theme-light {
       background-color: #ffffff;
     }

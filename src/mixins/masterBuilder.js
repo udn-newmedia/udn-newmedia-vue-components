@@ -1,16 +1,16 @@
-import _debounce from "lodash.debounce";
-import { detectPlatform } from "@/utils/udn-newmedia-utils";
-import gaTable from "@/utils/gaFormator";
+import _debounce from 'lodash.debounce';
+import { detectPlatform } from '@/utils/udn-newmedia-utils';
+import gaTable from '@/utils/gaFormator';
 
 function detectDevice(w) {
   switch (true) {
     case w < 767.98:
-      return "mob";
-    case 768 <= w && w <= 1024.98:
-      if (window.matchMedia("(orientation: landscape)").matches) return "pc";
-      return "pad";
+      return 'mob';
+    case w >= 768 && w <= 1024.98:
+      if (window.matchMedia('(orientation: landscape)').matches) return 'pc';
+      return 'pad';
     default:
-      return "pc";
+      return 'pc';
   }
 }
 
@@ -22,7 +22,7 @@ const rwdMethods = {
   },
   computed: {
     isMob() {
-      return this.windowWidth <= 1024 ? true : false;
+      return this.windowWidth <= 1024;
     },
     deviceType() {
       const w = this.windowWidth;
@@ -30,15 +30,15 @@ const rwdMethods = {
     },
   },
   methods: {
-    handleResize: _debounce(function() {
+    handleResize: _debounce(function () {
       this.windowWidth = window.innerWidth;
     }, 100),
   },
   mounted() {
-    window.addEventListener("resize", this.handleResize, true);
+    window.addEventListener('resize', this.handleResize, true);
   },
   destroyed() {
-    window.removeEventListener("resize", this.handleResize, true);
+    window.removeEventListener('resize', this.handleResize, true);
   },
 };
 
@@ -49,7 +49,7 @@ const autoResize_2 = {
     },
   },
   watch: {
-    isMob: function() {
+    isMob() {
       this.$forceUpdate();
     },
   },
@@ -62,7 +62,7 @@ const autoResize_3 = {
     },
   },
   watch: {
-    deviceType: function() {
+    deviceType() {
       this.$forceUpdate();
     },
   },
@@ -70,8 +70,8 @@ const autoResize_3 = {
 
 const selectSrcMethod_2 = {
   methods: {
-    selectSrc_2: function(mob, pc) {
-      const isMob = window.innerWidthwidth <= 1024 ? true : false;
+    selectSrc_2(mob, pc) {
+      const isMob = window.innerWidthwidth <= 1024;
       return isMob ? mob : pc;
     },
   },
@@ -79,13 +79,13 @@ const selectSrcMethod_2 = {
 
 const selectSrcMethods = {
   methods: {
-    selectSrc_3: function(mob, pad, pc) {
+    selectSrc_3(mob, pad, pc) {
       const w = window.innerWidth;
       const deviceType = detectDevice(w);
       switch (deviceType) {
-        case "mob":
+        case 'mob':
           return mob;
-        case "pad":
+        case 'pad':
           return pad;
         default:
           return pc;
@@ -96,7 +96,7 @@ const selectSrcMethods = {
 
 const sendGaMethods = {
   methods: {
-    sendGA: function(item) {
+    sendGA(item) {
       /**
        * item = {
        *   category: ...
@@ -104,36 +104,36 @@ const sendGaMethods = {
        *   label: ...
        * }
        */
-      window.ga("newmedia.send", {
-        hitType: "event",
+      window.ga('newmedia.send', {
+        hitType: 'event',
         eventCategory: item.category,
         eventAction: item.action,
         eventLabel:
-          "[" +
-          detectPlatform() +
-          "] [" +
-          document.querySelector("title").innerHTML +
-          "] [" +
-          item.label +
-          "]",
+          `[${
+            detectPlatform()
+          }] [${
+            document.querySelector('title').innerHTML
+          }] [${
+            item.label
+          }]`,
       });
     },
-    sendUDNGA: function(item) {
-      window.ga("udn.send", {
-        hitType: "event",
+    sendUDNGA(item) {
+      window.ga('udn.send', {
+        hitType: 'event',
         eventCategory: item.category,
         eventAction: item.action,
         eventLabel:
-          "[" +
-          detectPlatform() +
-          "] [" +
-          document.querySelector("title").innerHTML +
-          "] [" +
-          item.label +
-          "]",
+          `[${
+            detectPlatform()
+          }] [${
+            document.querySelector('title').innerHTML
+          }] [${
+            item.label
+          }]`,
       });
     },
-    formatGA: function(name) {
+    formatGA(name) {
       return gaTable[name];
     },
   },
@@ -148,12 +148,10 @@ const _setProps = {
       if (this.jsonProps !== null) {
         if (this.jsonProps[p] !== undefined) {
           return this.jsonProps[p];
-        } else {
-          return this[p];
         }
-      } else {
         return this[p];
       }
+      return this[p];
     },
   },
 };

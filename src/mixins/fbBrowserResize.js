@@ -8,7 +8,7 @@ const fbBrowserResize = {
   methods: {
     handleFbBrowserResize() {
       // 處理inapp browser window.innerWidth問題
-      (function() {
+      (function () {
         const inapp = new InApp(navigator.userAgent || navigator.vendor || window.opera);
         let currentWidth = window.innerWidth;
         let executeCount = 0;
@@ -24,12 +24,12 @@ const fbBrowserResize = {
             }
           }, 100);
         }
-      })();
-    }
+      }());
+    },
   },
   created() {
     this.handleFbBrowserResize();
   },
-}
+};
 
 export { fbBrowserResize };

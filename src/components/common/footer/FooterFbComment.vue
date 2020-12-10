@@ -19,7 +19,7 @@ export default {
     },
   },
   name: 'FooterFbComment',
-}
+};
 </script>
 
 <style lang="scss" scoped>

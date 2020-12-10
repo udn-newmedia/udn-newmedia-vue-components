@@ -31,15 +31,15 @@ export default {
     size: {
       type: String,
       default: null,
-      validator: function (value) {
+      validator(value) {
         return ['cover', 'contain', null].indexOf(value) !== -1;
-      }
+      },
     },
     alt: {
-      type: String
-    }
-  }
-}
+      type: String,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

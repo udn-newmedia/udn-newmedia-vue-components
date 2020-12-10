@@ -7,7 +7,7 @@
     <div class="paywall-login" v-if="modalIsOpen" @click.self="triggerModal">
       <div class="paywall-login-area" :class="{ show: modalIsOpen }">
         <button type="button" class="paywall-dismiss" @click="triggerModal">
-          X
+          ❌
         </button>
         <div class="member-limited">聯合報付費會員限定</div>
         <p>還不是會員嗎？馬上加入會員，即可享有7天免費試用！</p>
@@ -15,13 +15,13 @@
           <a
             class="login"
             target="_blank"
-            href="https://member.udn.com/member/login.jsp?from=udn_topicmember_login_cate"
+            href="https://vip.udn.com/member/login&redirect=http://nmdap.udn.com.tw/test/2020Q2common/"
             >會員登入</a
           >
           <a
             class="signup"
             target="_blank"
-            href="https://member.udn.com/member/ShowMember?from=udn_topicmember_ShowMember_cate"
+            href="https://vip.udn.com/member/login#signup&redirect=http://nmdap.udn.com.tw/test/2020Q2common/"
             >加入會員</a
           >
         </div>
@@ -31,29 +31,29 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js'
 
 export default {
-  name: "PaywallModal",
+  name: 'PaywallModal',
   mixins: [sendGaMethods],
   computed: {
     modalIsOpen() {
-      return this.$store.state.modalIsOpen;
+      return this.$store.state.modalIsOpen
     }
   },
   methods: {
     checkIdentity() {
-      this.$store.dispatch("checkIdentity");
+      this.$store.dispatch('checkIdentity')
     },
     triggerModal() {
-      console.log("open");
-      this.$store.dispatch("triggerModal");
+      console.log('open')
+      this.$store.dispatch('triggerModal')
     }
   },
   mounted() {
-    this.checkIdentity();
+    this.checkIdentity()
   }
-};
+}
 </script>
 <style lang="scss" scope>
 .fade {
@@ -100,12 +100,30 @@ export default {
   }
 }
 .paywall-dismiss {
+  @include clean-btn;
   position: absolute;
   right: 0;
   top: 0;
   font-weight: 900;
   color: #000;
-  font-size: 50px;
+  font-size: 30px;
+  &:hover {
+    font-size: 60px;
+    animation: 0.1s RotateFast infinite;
+  }
+}
+@keyframes RotateFast {
+  from {
+    transform: rotate(0turn);
+  }
+
+  50% {
+    transform: rotate(0.5turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
 }
 .member-limited {
   font-size: 30px;

@@ -28,7 +28,7 @@
             :alt="alt_3"
           />
         </div>
-      </div>  
+      </div>
       <figcaption class="article-column__description">
         <p class="small">
           <slot />
@@ -44,35 +44,35 @@ import BasePicture from '@/components/common/accessories/BasePicture.vue';
 export default {
   name: 'ArticleColumnThree',
   components: {
-    BasePicture
+    BasePicture,
   },
   props: {
     srcMob_1: {
-      type: String
+      type: String,
     },
     srcPad_1: {
-      type: String
+      type: String,
     },
     srcPc_1: {
-      type: String
+      type: String,
     },
     srcMob_2: {
-      type: String
+      type: String,
     },
     srcPad_2: {
-      type: String
+      type: String,
     },
     srcPc_2: {
-      type: String
+      type: String,
     },
     srcMob_3: {
-      type: String
+      type: String,
     },
     srcPad_3: {
-      type: String
+      type: String,
     },
     srcPc_3: {
-      type: String
+      type: String,
     },
     alt_1: {
       type: String,

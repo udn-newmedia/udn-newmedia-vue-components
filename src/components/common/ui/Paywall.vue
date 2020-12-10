@@ -33,10 +33,10 @@
 </template>
 
 <script>
-import { sendGaMethods } from "@/mixins/masterBuilder.js";
+import { sendGaMethods } from '@/mixins/masterBuilder.js';
 
 export default {
-  name: "Paywall",
+  name: 'Paywall',
   mixins: [sendGaMethods],
   data() {
     return { memberStatus: { isMember: false, isPaid: false } };
@@ -44,34 +44,34 @@ export default {
   computed: {
     isMember() {
       return this.$store.state.isMember;
-    }
+    },
   },
   methods: {
     login() {
       this.sendUDNGA({
-        category: "memberlogin",
-        action: "click",
-        label: `專區_點擊_會員登入`
+        category: 'memberlogin',
+        action: 'click',
+        label: '專區_點擊_會員登入',
       });
 
-      console.log("log in");
+      console.log('log in');
     },
     signup() {
       this.sendUDNGA({
-        category: "Joinamember",
-        action: "click",
-        label: `專區_點擊_加入會員`
+        category: 'Joinamember',
+        action: 'click',
+        label: '專區_點擊_加入會員',
       });
 
-      console.log("sign up");
+      console.log('sign up');
     },
     checkIdentity() {
-      this.$store.dispatch("checkIdentity");
-    }
+      this.$store.dispatch('checkIdentity');
+    },
   },
   mounted() {
     this.checkIdentity();
-  }
+  },
 };
 </script>
 <style lang="scss" scope>

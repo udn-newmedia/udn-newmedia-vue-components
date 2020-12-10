@@ -43,10 +43,10 @@ export default {
   props: {
     iconColor: {
       type: String,
-      default: '#fff'
-    }
-  }
-}
+      default: '#fff',
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
