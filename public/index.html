@@ -105,32 +105,34 @@
 
     <!-- monitor code -->
     <%= htmlWebpackPlugin.options.MONITOR %>
+    <!-- noIndex -->
+    <%=htmlWebpackPlugin.options.noIndex %>
     <script defer>
-      !(function(f, b, e, v, n, t, s) {
-        if (f.fbq) return;
-        n = f.fbq = function() {
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return
+        n = f.fbq = function () {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
-            : n.queue.push(arguments);
-        };
-        if (!f._fbq) f._fbq = n;
-        n.push = n;
-        n.loaded = !0;
-        n.version = "2.0";
-        n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
+            : n.queue.push(arguments)
+        }
+        if (!f._fbq) f._fbq = n
+        n.push = n
+        n.loaded = !0
+        n.version = '2.0'
+        n.queue = []
+        t = b.createElement(e)
+        t.async = !0
+        t.src = v
+        s = b.getElementsByTagName(e)[0]
+        s.parentNode.insertBefore(t, s)
       })(
         window,
         document,
-        "script",
-        "https://connect.facebook.net/zh-TW/fbevents.js"
-      );
-      fbq("init", "321350072644130");
-      fbq("track", "PageView");
+        'script',
+        'https://connect.facebook.net/zh-TW/fbevents.js'
+      )
+      fbq('init', '321350072644130')
+      fbq('track', 'PageView')
     </script>
   </head>
   <style>
@@ -147,14 +149,14 @@
       >
     </noscript>
     <script>
-      window.fbAsyncInit = function() {
+      window.fbAsyncInit = function () {
         FB.init({
-          appId: "1010324812347164",
+          appId: '1010324812347164',
           autoLogAppEvents: true,
           xfbml: true,
-          version: "v5.0"
-        });
-      };
+          version: 'v5.0',
+        })
+      }
     </script>
     <script
       async
@@ -178,9 +180,7 @@
       href="https://udn.com/newmedia/cms_assets/nmd_loading/nmd-loading.css"
     />
 
-    <div id="app" v-cloak>
-      <%= htmlWebpackPlugin.options.CONTENT %>
-    </div>
+    <div id="app" v-cloak><%= htmlWebpackPlugin.options.CONTENT %></div>
     <!-- built files will be auto injected -->
     <script type="application/ld+json">
       {
